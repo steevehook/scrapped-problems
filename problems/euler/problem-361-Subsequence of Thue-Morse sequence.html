@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Subsequence of Thue-Morse sequence</title>
+    <link rel="stylesheet" href="css/style.css">
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async
+            src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
+    </script>
+</head>
+<body>
+<div id="container">
+<div class="center print"></div>
+<h2>Subsequence of Thue-Morse sequence</h2><div id="problem_info"><h3>Problem 361</h3></div>
+<div class="problem_content" role="problem">
+<p>The <b>Thue-Morse sequence</b> {T<sub><var>n</var></sub>} is a binary sequence satisfying:</p>
+<ul><li>T<sub>0</sub> = 0</li>
+<li>T<sub>2<var>n</var></sub> = T<sub><var>n</var></sub></li>
+<li>T<sub>2<var>n</var>+1</sub> = 1 - T<sub><var>n</var></sub></li>
+</ul><p>
+The first several terms of {T<sub><var>n</var></sub>} are given as follows:<br>
+01101001<span style="color:#FF0000;">10010</span>1101001011001101001....
+</p>
+
+<p>
+We define {A<sub><var>n</var></sub>} as the sorted sequence of integers such that the binary expression of each element appears as a subsequence in {T<sub><var>n</var></sub>}.<br>
+For example, the decimal number 18 is expressed as 10010 in binary. 10010 appears in {T<sub><var>n</var></sub>} (T<sub>8</sub> to T<sub>12</sub>), so 18 is an element of {A<sub><var>n</var></sub>}.<br>
+The decimal number 14 is expressed as 1110 in binary. 1110 never appears in {T<sub><var>n</var></sub>}, so 14 is not an element of {A<sub><var>n</var></sub>}.
+</p>
+
+<p>
+The first several terms of A<sub><var>n</var></sub> are given as follows:<br></p><div align="center">
+<table cellspacing="1" cellpadding="5" border="0" align="center"><tbody><tr><td align="left"><var>n</var></td><td>0</td><td>1</td><td>2</td><td>3</td><td>4</td><td>5</td><td>6</td><td>7</td><td>8</td><td>9</td><td>10</td><td>11</td><td>12</td><td>…</td></tr><tr><td>A<sub><var>n</var></sub></td><td>0</td><td>1</td><td>2</td><td>3</td><td>4</td><td>5</td><td>6</td><td>9</td><td>10</td><td>11</td><td>12</td><td>13</td><td>18</td><td>…</td></tr></tbody></table></div>
+
+
+<p>
+We can also verify that A<sub>100</sub> = 3251 and A<sub>1000</sub> = 80852364498.
+</p>
+
+<p>
+Find the last 9 digits of <mjx-container class="MathJax CtxtMenu_Attached_0" jax="CHTML" tabindex="0" ctxtmenu_counter="0" style="font-size: 117.3%; position: relative;"><mjx-math class="MJX-TEX" aria-hidden="true"><mjx-munderover><mjx-over style="padding-bottom: 0.184em; padding-left: 0.282em;"><mjx-texatom size="s" texclass="ORD"><mjx-mn class="mjx-n"><mjx-c class="mjx-c31"></mjx-c><mjx-c class="mjx-c38"></mjx-c></mjx-mn></mjx-texatom></mjx-over><mjx-box><mjx-munder><mjx-row><mjx-base style="padding-left: 0.108em;"><mjx-mo class="mjx-sop"><mjx-c class="mjx-c2211 TEX-S1"></mjx-c></mjx-mo></mjx-base></mjx-row><mjx-row><mjx-under style="padding-top: 0.167em;"><mjx-texatom size="s" texclass="ORD"><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D458 TEX-I"></mjx-c></mjx-mi><mjx-mo class="mjx-n"><mjx-c class="mjx-c3D"></mjx-c></mjx-mo><mjx-mn class="mjx-n"><mjx-c class="mjx-c31"></mjx-c></mjx-mn></mjx-texatom></mjx-under></mjx-row></mjx-munder></mjx-box></mjx-munderover><mjx-texatom space="2" texclass="ORD"><mjx-msub><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D434 TEX-I"></mjx-c></mjx-mi><mjx-script style="vertical-align: -0.271em;"><mjx-texatom size="s" texclass="ORD"><mjx-msup><mjx-mn class="mjx-n"><mjx-c class="mjx-c31"></mjx-c><mjx-c class="mjx-c30"></mjx-c></mjx-mn><mjx-script style="vertical-align: 0.393em;"><mjx-mi class="mjx-i" size="s"><mjx-c class="mjx-c1D458 TEX-I"></mjx-c></mjx-mi></mjx-script></mjx-msup></mjx-texatom></mjx-script></mjx-msub></mjx-texatom></mjx-math><mjx-assistive-mml unselectable="on" display="inline"><math xmlns="http://www.w3.org/1998/Math/MathML"><munderover><mo data-mjx-texclass="OP" movablelimits="false">∑</mo><mrow data-mjx-texclass="ORD"><mi>k</mi><mo>=</mo><mn>1</mn></mrow><mrow data-mjx-texclass="ORD"><mn>18</mn></mrow></munderover><mrow data-mjx-texclass="ORD"><msub><mi>A</mi><mrow data-mjx-texclass="ORD"><msup><mn>10</mn><mi>k</mi></msup></mrow></msub></mrow></math></mjx-assistive-mml></mjx-container>.
+</p>
+</div><br>
+<br>
+</div>
+</body>
+</html>

@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Irrational base</title>
+    <link rel="stylesheet" href="css/style.css">
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async
+            src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
+    </script>
+</head>
+<body>
+<div id="container">
+<div class="center print"></div>
+<h2>Irrational base</h2><div id="problem_info"><h3>Problem 558</h3></div>
+<div class="problem_content" role="problem">
+<p>Let <var>r</var> be the real root of the equation <var>x</var><sup>3</sup>&nbsp;=&nbsp;<var>x</var><sup>2</sup>&nbsp;+&nbsp;1.<br>
+Every positive integer can be written as the sum of distinct increasing powers of <var>r</var>.<br>
+If we require the number of terms to be finite and the difference between any two exponents to be three or more, then the representation is unique.<br>
+For example, 3&nbsp;=&nbsp;<var>r</var><sup>&nbsp;-10</sup>&nbsp;+&nbsp;<var>r</var><sup>&nbsp;-5</sup>&nbsp;+&nbsp;<var>r</var><sup>&nbsp;-1</sup>&nbsp;+&nbsp;<var>r</var><sup>&nbsp;2</sup> and 10&nbsp;=&nbsp;<var>r</var><sup>&nbsp;-10</sup>&nbsp;+&nbsp;<var>r</var><sup>&nbsp;-7</sup>&nbsp;+&nbsp;<var>r</var><sup>&nbsp;6</sup>.<br>
+Interestingly, the relation holds for the complex roots of the equation.</p>
+
+<p>Let <var>w</var>(<var>n</var>) be the number of terms in this unique representation of <var>n</var>. Thus <var>w</var>(3)&nbsp;=&nbsp;4 and <var>w</var>(10)&nbsp;=&nbsp;3.</p>
+
+<p>More formally, for all positive integers <var>n</var>, we have:<br><var>n</var> = <mjx-container class="MathJax CtxtMenu_Attached_0" jax="CHTML" tabindex="0" ctxtmenu_counter="0" style="font-size: 117.5%; position: relative;"><mjx-math class="MJX-TEX" aria-hidden="true"><mjx-mstyle><mjx-munderover><mjx-over style="padding-bottom: 0.192em; padding-left: 0.734em;"><mjx-texatom size="s" texclass="ORD"><mjx-mi class="mjx-n"><mjx-c class="mjx-c221E"></mjx-c></mjx-mi></mjx-texatom></mjx-over><mjx-box><mjx-munder><mjx-row><mjx-base style="padding-left: 0.366em;"><mjx-mo class="mjx-lop"><mjx-c class="mjx-c2211 TEX-S2"></mjx-c></mjx-mo></mjx-base></mjx-row><mjx-row><mjx-under style="padding-top: 0.167em;"><mjx-texatom size="s" texclass="ORD"><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D458 TEX-I"></mjx-c></mjx-mi><mjx-mo class="mjx-n"><mjx-c class="mjx-c3D"></mjx-c></mjx-mo><mjx-mo class="mjx-n"><mjx-c class="mjx-c2212"></mjx-c></mjx-mo><mjx-mi class="mjx-n"><mjx-c class="mjx-c221E"></mjx-c></mjx-mi></mjx-texatom></mjx-under></mjx-row></mjx-munder></mjx-box></mjx-munderover></mjx-mstyle></mjx-math><mjx-assistive-mml unselectable="on" display="inline"><math xmlns="http://www.w3.org/1998/Math/MathML"><mstyle displaystyle="true" scriptlevel="0"><munderover><mo data-mjx-texclass="OP">∑</mo><mrow data-mjx-texclass="ORD"><mi>k</mi><mo>=</mo><mo>−</mo><mi mathvariant="normal">∞</mi></mrow><mrow data-mjx-texclass="ORD"><mi mathvariant="normal">∞</mi></mrow></munderover></mstyle></math></mjx-assistive-mml></mjx-container> <var>b<sub>k</sub>&nbsp;r<sup>k</sup></var><br>
+under the conditions that:<br><var>b<sub>k</sub></var> is 0 or 1 for all <var>k</var>;<br><var>b<sub>k</sub></var>&nbsp;+&nbsp;<var>b</var><sub><var>k</var>+1</sub>&nbsp;+&nbsp;<var>b</var><sub><var>k</var>+2</sub>&nbsp;≤&nbsp;1 for all <var>k</var>;<br><var>w</var>(<var>n</var>) = <mjx-container class="MathJax CtxtMenu_Attached_0" jax="CHTML" tabindex="0" ctxtmenu_counter="1" style="font-size: 117.5%; position: relative;"><mjx-math class="MJX-TEX" aria-hidden="true"><mjx-mstyle><mjx-munderover><mjx-over style="padding-bottom: 0.192em; padding-left: 0.734em;"><mjx-texatom size="s" texclass="ORD"><mjx-mi class="mjx-n"><mjx-c class="mjx-c221E"></mjx-c></mjx-mi></mjx-texatom></mjx-over><mjx-box><mjx-munder><mjx-row><mjx-base style="padding-left: 0.366em;"><mjx-mo class="mjx-lop"><mjx-c class="mjx-c2211 TEX-S2"></mjx-c></mjx-mo></mjx-base></mjx-row><mjx-row><mjx-under style="padding-top: 0.167em;"><mjx-texatom size="s" texclass="ORD"><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D458 TEX-I"></mjx-c></mjx-mi><mjx-mo class="mjx-n"><mjx-c class="mjx-c3D"></mjx-c></mjx-mo><mjx-mo class="mjx-n"><mjx-c class="mjx-c2212"></mjx-c></mjx-mo><mjx-mi class="mjx-n"><mjx-c class="mjx-c221E"></mjx-c></mjx-mi></mjx-texatom></mjx-under></mjx-row></mjx-munder></mjx-box></mjx-munderover></mjx-mstyle></mjx-math><mjx-assistive-mml unselectable="on" display="inline"><math xmlns="http://www.w3.org/1998/Math/MathML"><mstyle displaystyle="true" scriptlevel="0"><munderover><mo data-mjx-texclass="OP">∑</mo><mrow data-mjx-texclass="ORD"><mi>k</mi><mo>=</mo><mo>−</mo><mi mathvariant="normal">∞</mi></mrow><mrow data-mjx-texclass="ORD"><mi mathvariant="normal">∞</mi></mrow></munderover></mstyle></math></mjx-assistive-mml></mjx-container> <var>b<sub>k</sub></var> is finite.</p>
+
+<p>Let S(<var>m</var>)&nbsp;= <mjx-container class="MathJax CtxtMenu_Attached_0" jax="CHTML" tabindex="0" ctxtmenu_counter="2" style="font-size: 117.3%; position: relative;"><mjx-math class="MJX-TEX" aria-hidden="true"><mjx-mstyle><mjx-munderover><mjx-over style="padding-bottom: 0.192em; padding-left: 0.412em;"><mjx-texatom size="s" texclass="ORD"><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D45A TEX-I"></mjx-c></mjx-mi></mjx-texatom></mjx-over><mjx-box><mjx-munder><mjx-row><mjx-base><mjx-mo class="mjx-lop"><mjx-c class="mjx-c2211 TEX-S2"></mjx-c></mjx-mo></mjx-base></mjx-row><mjx-row><mjx-under style="padding-top: 0.167em; padding-left: 0.124em;"><mjx-texatom size="s" texclass="ORD"><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D457 TEX-I"></mjx-c></mjx-mi><mjx-mo class="mjx-n"><mjx-c class="mjx-c3D"></mjx-c></mjx-mo><mjx-mn class="mjx-n"><mjx-c class="mjx-c31"></mjx-c></mjx-mn></mjx-texatom></mjx-under></mjx-row></mjx-munder></mjx-box></mjx-munderover></mjx-mstyle></mjx-math><mjx-assistive-mml unselectable="on" display="inline"><math xmlns="http://www.w3.org/1998/Math/MathML"><mstyle displaystyle="true" scriptlevel="0"><munderover><mo data-mjx-texclass="OP">∑</mo><mrow data-mjx-texclass="ORD"><mi>j</mi><mo>=</mo><mn>1</mn></mrow><mrow data-mjx-texclass="ORD"><mi>m</mi></mrow></munderover></mstyle></math></mjx-assistive-mml></mjx-container> <var>w</var>(<var>j</var><sup>2</sup>).<br>
+You are given S(10) = 61 and S(1000) = 19403.</p>
+
+<p>Find S(5 000 000).</p>
+
+</div><br>
+<br>
+</div>
+</body>
+</html>

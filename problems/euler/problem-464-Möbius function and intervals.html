@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Möbius function and intervals</title>
+    <link rel="stylesheet" href="css/style.css">
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async
+            src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
+    </script>
+</head>
+<body>
+<div id="container">
+<div class="center print"></div>
+<h2>Möbius function and intervals</h2><div id="problem_info"><h3>Problem 464</h3></div>
+<div class="problem_content" role="problem">
+<p>
+The <b>Möbius function</b>, denoted <var>μ</var>(<var>n</var>), is defined as:
+</p><ul><li><var>μ</var>(<var>n</var>) = (-1)<sup><var>ω</var>(<var>n</var>)</sup> if <var>n</var> is squarefree (where <var>ω</var>(<var>n</var>) is the number of distinct prime factors of <var>n</var>)</li>
+<li><var>μ</var>(<var>n</var>) = 0 if <var>n</var> is not squarefree.</li>
+</ul><p>
+Let P(<var>a</var>,<var>b</var>) be the number of integers <var>n</var> in the interval [<var>a</var>,<var>b</var>] such that <var>μ</var>(<var>n</var>) = 1.<br>
+Let N(<var>a</var>,<var>b</var>) be the number of integers <var>n</var> in the interval [<var>a</var>,<var>b</var>] such that <var>μ</var>(<var>n</var>) = -1.<br>
+For example, P(2,10) = 2 and N(2,10) = 4.
+</p>
+
+<p>
+Let C(<var>n</var>) be the number of integer pairs (<var>a</var>,<var>b</var>) such that:
+</p><ul><li> 1&nbsp;≤&nbsp;<var>a</var>&nbsp;≤&nbsp;<var>b</var>&nbsp;≤&nbsp;<var>n</var>,</li>
+<li> 99·N(<var>a</var>,<var>b</var>)&nbsp;≤&nbsp;100·P(<var>a</var>,<var>b</var>), and</li>
+<li> 99·P(<var>a</var>,<var>b</var>)&nbsp;≤&nbsp;100·N(<var>a</var>,<var>b</var>).</li>
+</ul><p>
+For example, C(10)&nbsp;=&nbsp;13, C(500)&nbsp;=&nbsp;16676 and C(10&nbsp;000)&nbsp;=&nbsp;20155319.
+</p>
+
+<p>
+Find C(20&nbsp;000&nbsp;000).
+</p>
+
+</div><br>
+<br>
+</div>
+</body>
+</html>

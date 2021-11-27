@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Chinese leftovers</title>
+    <link rel="stylesheet" href="css/style.css">
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async
+            src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
+    </script>
+</head>
+<body>
+<div id="container">
+<div class="center print"></div>
+<h2>Chinese leftovers</h2><div id="problem_info"><h3>Problem 531</h3></div>
+<div class="problem_content" role="problem">
+<p>
+Let g(<var>a,n,b,m</var>) be the smallest non-negative solution <var>x</var> to the system:<br><var>x = a</var> mod <var>n</var><br><var>x = b</var> mod <var>m</var><br>
+if such a solution exists, otherwise 0.
+</p>
+<p>
+E.g. g(2,4,4,6)=10, but g(3,4,4,6)=0.
+</p>
+<p>
+Let φ(<var>n</var>) be Euler's totient function.
+</p>
+<p>
+Let f(n,m)=g(φ(n),n,φ(m),m)
+</p>
+<p>
+Find <span style="font-size:larger;"><span style="font-size:larger;">∑</span></span> f(n,m) for 1000000 ≤ n &lt; m &lt; 1005000
+</p>
+</div><br>
+<br>
+</div>
+</body>
+</html>

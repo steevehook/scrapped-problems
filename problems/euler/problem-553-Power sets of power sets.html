@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Power sets of power sets</title>
+    <link rel="stylesheet" href="css/style.css">
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async
+            src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
+    </script>
+</head>
+<body>
+<div id="container">
+<div class="center print"></div>
+<h2>Power sets of power sets</h2><div id="problem_info"><h3>Problem 553</h3></div>
+<div class="problem_content" role="problem">
+<p>Let <var>P</var>(<var>n</var>) be the set of the first <var>n</var> positive integers {1, 2, ..., <var>n</var>}.<br>
+Let Q(<var>n</var>) be the set of all the non-empty subsets of <var>P</var>(<var>n</var>).<br>
+Let R(<var>n</var>) be the set of all the non-empty subsets of <var>Q</var>(<var>n</var>).</p>
+
+<p>An element <var>X</var>&nbsp;∈&nbsp;<var>R</var>(<var>n</var>) is a non-empty subset of <var>Q</var>(<var>n</var>), so it is itself a set.<br>
+From <var>X</var> we can construct a graph as follows:</p>
+
+<ul><li>Each element <var>Y</var>&nbsp;∈&nbsp;<var>X</var> corresponds to a vertex and labeled with <var>Y</var>;</li>
+<li>Two vertices <var>Y</var><sub>1</sub> and <var>Y</var><sub>2</sub> are connected if <var>Y</var><sub>1</sub>&nbsp;∩&nbsp;<var>Y</var><sub>2</sub>&nbsp;≠&nbsp;∅.</li>
+</ul><p>For example, <var>X</var>&nbsp;=&nbsp;{{1},&nbsp;{1,2,3},&nbsp;{3},&nbsp;{5,6},&nbsp;{6,7}} results in the following graph:</p>
+
+<div align="center"><img src="images/p553-power-sets.gif" alt="p553-power-sets.gif"></div>
+
+<p>This graph has two <b>connected components</b>.</p>
+
+<p>Let <var>C</var>(<var>n</var>,<var>k</var>) be the number of elements of <var>R</var>(<var>n</var>) that have exactly <var>k</var> connected components in their graph.<br>
+You are given <var>C</var>(2,1)&nbsp;=&nbsp;6, <var>C</var>(3,1)&nbsp;=&nbsp;111, <var>C</var>(4,2)&nbsp;=&nbsp;486, <var>C</var>(100,10)&nbsp;mod&nbsp;1&nbsp;000&nbsp;000&nbsp;007&nbsp;=&nbsp;728209718.</p>
+
+<p>Find <var>C</var>(10<sup>4</sup>,10)&nbsp;mod&nbsp;1&nbsp;000&nbsp;000&nbsp;007.</p>
+</div><br>
+<br>
+</div>
+</body>
+</html>

@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Binary Circles</title>
+    <link rel="stylesheet" href="css/style.css">
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async
+            src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
+    </script>
+</head>
+<body>
+<div id="container">
+<div class="center print"></div>
+<h2>Binary Circles</h2><div id="problem_info"><h3>Problem 265</h3></div>
+<div class="problem_content" role="problem">
+<p>2<sup>N</sup> binary digits can be placed in a circle so that all the N-digit clockwise subsequences are distinct.</p>
+
+<p>For N=3, two such circular arrangements are possible, ignoring rotations:</p>
+<div align="center"><img src="images/p265_BinaryCircles.gif" class="dark_img" alt="p265_BinaryCircles.gif"></div>
+
+<p>For the first arrangement, the 3-digit subsequences, in clockwise order, are:<br> 000, 001, 010, 101, 011, 111, 110 and 100.</p>
+
+<p>Each circular arrangement can be encoded as a number by concatenating the binary digits starting with the subsequence of all zeros as the most significant bits and proceeding clockwise. The two arrangements for N=3 are thus represented as 23 and 29:
+</p><div align="center">00010111 <sub>2</sub> = 23</div>
+<div align="center">00011101 <sub>2</sub> = 29</div>
+
+<p>Calling S(N) the sum of the unique numeric representations, we can see that S(3) = 23 + 29 = 52.</p>
+
+<p>Find S(5).</p>
+
+</div><br>
+<br>
+</div>
+</body>
+</html>

@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Unfair wager</title>
+    <link rel="stylesheet" href="css/style.css">
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async
+            src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
+    </script>
+</head>
+<body>
+<div id="container">
+<div class="center print"></div>
+<h2>Unfair wager</h2><div id="problem_info"><h3>Problem 436</h3></div>
+<div class="problem_content" role="problem">
+<p>Julie proposes the following wager to her sister Louise.<br>
+She suggests they play a game of chance to determine who will wash the dishes.<br>
+For this game, they shall use a generator of independent random numbers uniformly distributed between 0 and 1.<br>
+The game starts with <var>S</var> = 0.<br>
+The first player, Louise, adds to <var>S</var> different random numbers from the generator until <var>S</var> &gt; 1 and records her last random number '<var>x</var>'.<br>
+The second player, Julie, continues adding to <var>S</var> different random numbers from the generator until <var>S</var> &gt; 2 and records her last random number '<var>y</var>'.<br>
+The player with the highest number wins and the loser washes the dishes, i.e. if <var>y</var> &gt; <var>x</var> the second player wins.</p>
+
+<p>For example, if the first player draws 0.62 and 0.44, the first player turn ends since 0.62+0.44 &gt; 1 and <var>x</var> = 0.44.<br>
+If the second players draws 0.1, 0.27 and 0.91, the second player turn ends since 0.62+0.44+0.1+0.27+0.91 &gt; 2 and <var>y</var> = 0.91.
+Since <var>y</var> &gt; <var>x</var>, the second player wins.</p>
+
+<p>Louise thinks about it for a second, and objects: "That's not fair".<br>
+What is the probability that the second player wins?<br>
+Give your answer rounded to 10 places behind the decimal point in the form 0.abcdefghij</p>
+
+</div><br>
+<br>
+</div>
+</body>
+</html>

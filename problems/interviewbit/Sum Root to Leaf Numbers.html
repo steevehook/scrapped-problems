@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Sum Root to Leaf Numbers</title>
+    <link rel="stylesheet" media="screen" href="css/style.css">
+</head>
+<body>
+  <div id="react">
+    <div class="react-root">
+        <div class="interviewbit">
+        <div><div class="p-tile"><div class="p-tile__container"><h1 class="p-tile__title">Sum Root to Leaf Numbers</h1><a class="tappable p-share-button"><svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" fill="currentColor" viewBox="0 0 256 256" class="p-share-button__icon"><rect width="256" height="256" fill="none"></rect><circle cx="64" cy="128" r="32" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="24"></circle><circle cx="176" cy="200" r="32" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="24"></circle><circle cx="176" cy="56" r="32" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="24"></circle><line x1="149.08436" y1="73.30291" x2="90.91323" y2="110.69864" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="24"></line><line x1="90.9132" y1="145.30134" x2="149.08428" y2="182.69704" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="24"></line></svg></a></div><div class="p-tile__container"><div class="p-tile-item-list"><div class="p-tile-item-list"><div class="p-difficutly-level p-difficutly-level--medium m-r-10">medium</div><a class="tappable p-tile-action"><svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" fill="currentColor" viewBox="0 0 256 256" class="p-tile__icon p-tile__icon--small"><rect width="256" height="256" fill="none"></rect><path d="M32,120l96-96,96,96H176v88a8,8,0,0,1-8,8H88a8,8,0,0,1-8-8V120Z" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="16"></path></svg><div class="p-tile__text">54</div></a><a class="tappable p-tile-action"><svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" fill="currentColor" viewBox="0 0 256 256" class="p-tile__icon p-tile__icon--small"><rect width="256" height="256" fill="none"></rect><path d="M32,136l96,96,96-96H176V48a8,8,0,0,0-8-8H88a8,8,0,0,0-8,8v88Z" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="16"></path></svg><div class="p-tile__text">79</div></a><a class="tappable p-tile-action"><svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" fill="currentColor" viewBox="0 0 256 256" class="p-tile__icon p-tile__icon--small"><rect width="256" height="256" fill="none"></rect><path d="M128,216S28,160,28,92A52.00881,52.00881,0,0,1,128.00008,71.965l-.00019.00008A52.00881,52.00881,0,0,1,228,92C228,160,128,216,128,216Z" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="16"></path></svg><div class="p-tile__text">Add to favorites</div></a></div></div></div><div class="p-tile__container"><div class="p-tile-item-list"><div class="p-tile__company-list"><svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" fill="currentColor" viewBox="0 0 256 256" class="p-tile__icon p-tile__icon--small m-b-5"><rect width="256" height="256" fill="none"></rect><line x1="16" y1="215.98316" x2="240" y2="215.98316" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="16"></line><path d="M143.99414,215.98316v-176a8,8,0,0,0-8-8h-96a8,8,0,0,0-8,8v176" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="16"></path><path d="M223.99414,215.98316v-112a8,8,0,0,0-8-8h-72" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="16"></path><line x1="63.99414" y1="71.98316" x2="95.99414" y2="71.98316" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="16"></line><line x1="79.99414" y1="135.98316" x2="111.99414" y2="135.98316" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="16"></line><line x1="63.99414" y1="175.98316" x2="95.99414" y2="175.98316" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="16"></line><line x1="175.99414" y1="175.98316" x2="191.99414" y2="175.98316" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="16"></line><line x1="175.99414" y1="135.98316" x2="191.99414" y2="135.98316" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="16"></line></svg><div class="p-tile__text p-tile__text--small m-r-10 m-b-5">Asked In:</div><a class="problem-tag p-tile-company" href="/search/?q=Google" target="_blank" rel="noopener noreferrer">Google</a><a class="problem-tag p-tile-company" href="/search/?q=Microsoft" target="_blank" rel="noopener noreferrer">Microsoft</a></div></div></div></div></div><div class="p-html-content p-statement"><div class="p-html-content__container"><p>Given a binary tree containing digits from 0-9 only, each root-to-leaf path could represent a number.</p>
+
+<p>An example is the root-to-leaf path <code class="highlighter-rouge">1-&gt;2-&gt;3</code> which represents the number <code class="highlighter-rouge">123</code>.</p>
+
+<p>Find the total sum of all root-to-leaf numbers % 1003.</p>
+
+<p><strong>Example :</strong></p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>    1
+   / \
+  2   3
+</code></pre>
+</div>
+
+<p>The root-to-leaf path <code class="highlighter-rouge">1-&gt;2</code> represents the number <code class="highlighter-rouge">12</code>.<br>
+The root-to-leaf path <code class="highlighter-rouge">1-&gt;3</code> represents the number <code class="highlighter-rouge">13</code>.</p>
+
+<p>Return the sum = <code class="highlighter-rouge">(12 + 13) % 1003 = 25 % 1003 = 25</code>.</p>
+</div></div>
+        </div>
+    </div>
+  </div>
+</body>
+</html>
