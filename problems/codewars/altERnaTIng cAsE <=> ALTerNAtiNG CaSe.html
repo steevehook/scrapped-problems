@@ -1,0 +1,122 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>altERnaTIng cAsE <=> ALTerNAtiNG CaSe</title>
+    <link rel="stylesheet" media="screen" href="css/style.css">
+</head>
+<body>
+    <div id="app">
+        <div class="w-full" id="shell">
+            <main id="shell_content">
+                <div class="w-full mt-2">
+                    <h2>altERnaTIng cAsE <=> ALTerNAtiNG CaSe</h2>
+                    <h2>Points: 8 kyu</h2>
+                    <a href="https://www.codewars.com/kata/56efc695740d30f963000557"><h2>Kata ID: 56efc695740d30f963000557</h2></a>
+                    <div class="w-full panel bg-ui-section">
+                        <div class="markdown prose max-w-5xl mx-auto" id="description">
+                            <h1 id="alternating-case--alternating-case">altERnaTIng cAsE &lt;=&gt; ALTerNAtiNG CaSe</h1>
+<p>Define <code>String.prototype.toAlternatingCase</code> (or a similar function/method <em>such as</em> <code>to_alternating_case</code>/<code>toAlternatingCase</code>/<code>ToAlternatingCase</code> in your selected language; <strong>see the initial solution for details</strong>) such that each lowercase letter becomes uppercase and each uppercase letter becomes lowercase. For example:</p>
+<pre><code class="language-javascript"><span class="cm-string">"hello world"</span>.<span class="cm-property">toAlternatingCase</span>() <span class="cm-operator">===</span> <span class="cm-string">"HELLO WORLD"</span>
+<span class="cm-string">"HELLO WORLD"</span>.<span class="cm-property">toAlternatingCase</span>() <span class="cm-operator">===</span> <span class="cm-string">"hello world"</span>
+<span class="cm-string">"hello WORLD"</span>.<span class="cm-property">toAlternatingCase</span>() <span class="cm-operator">===</span> <span class="cm-string">"HELLO world"</span>
+<span class="cm-string">"HeLLo WoRLD"</span>.<span class="cm-property">toAlternatingCase</span>() <span class="cm-operator">===</span> <span class="cm-string">"hEllO wOrld"</span>
+<span class="cm-string">"12345"</span>.<span class="cm-property">toAlternatingCase</span>() <span class="cm-operator">===</span> <span class="cm-string">"12345"</span> <span class="cm-comment">// Non-alphabetical characters are unaffected</span>
+<span class="cm-string">"1a2b3c4d5e"</span>.<span class="cm-property">toAlternatingCase</span>() <span class="cm-operator">===</span> <span class="cm-string">"1A2B3C4D5E"</span>
+<span class="cm-string">"String.prototype.toAlternatingCase"</span>.<span class="cm-property">toAlternatingCase</span>() <span class="cm-operator">===</span> <span class="cm-string">"sTRING.PROTOTYPE.TOaLTERNATINGcASE"</span>
+</code></pre>
+<pre style="display: none;"><code class="language-ruby"><span class="cm-string">"hello world"</span><span class="cm-operator">.</span><span class="cm-property">to_alternating_case</span>() <span class="cm-operator">===</span> <span class="cm-string">"HELLO WORLD"</span>
+<span class="cm-string">"HELLO WORLD"</span><span class="cm-operator">.</span><span class="cm-property">to_alternating_case</span>() <span class="cm-operator">===</span> <span class="cm-string">"hello world"</span>
+<span class="cm-string">"hello WORLD"</span><span class="cm-operator">.</span><span class="cm-property">to_alternating_case</span>() <span class="cm-operator">===</span> <span class="cm-string">"HELLO world"</span>
+<span class="cm-string">"HeLLo WoRLD"</span><span class="cm-operator">.</span><span class="cm-property">to_alternating_case</span>() <span class="cm-operator">===</span> <span class="cm-string">"hEllO wOrld"</span>
+<span class="cm-string">"12345"</span><span class="cm-operator">.</span><span class="cm-property">to_alternating_case</span>() <span class="cm-operator">===</span> <span class="cm-string">"12345"</span> <span class="cm-string-2">//</span> <span class="cm-tag">Non</span><span class="cm-operator">-</span><span class="cm-variable">alphabetical</span> <span class="cm-variable">characters</span> <span class="cm-variable">are</span> <span class="cm-variable">unaffected</span>
+<span class="cm-string">"1a2b3c4d5e"</span><span class="cm-operator">.</span><span class="cm-property">to_alternating_case</span>() <span class="cm-operator">===</span> <span class="cm-string">"1A2B3C4D5E"</span>
+<span class="cm-string">"String.prototype.toAlternatingCase"</span><span class="cm-operator">.</span><span class="cm-property">to_alternating_case</span>() <span class="cm-operator">===</span> <span class="cm-string">"sTRING.PROTOTYPE.TOaLTERNATINGcASE"</span>
+</code></pre>
+<pre style="display: none;"><code class="language-crystal"><span class="cm-string">"hello world"</span><span class="cm-operator">.</span><span class="cm-property">to_alternating_case</span>() <span class="cm-operator">===</span> <span class="cm-string">"HELLO WORLD"</span>
+<span class="cm-string">"HELLO WORLD"</span><span class="cm-operator">.</span><span class="cm-property">to_alternating_case</span>() <span class="cm-operator">===</span> <span class="cm-string">"hello world"</span>
+<span class="cm-string">"hello WORLD"</span><span class="cm-operator">.</span><span class="cm-property">to_alternating_case</span>() <span class="cm-operator">===</span> <span class="cm-string">"HELLO world"</span>
+<span class="cm-string">"HeLLo WoRLD"</span><span class="cm-operator">.</span><span class="cm-property">to_alternating_case</span>() <span class="cm-operator">===</span> <span class="cm-string">"hEllO wOrld"</span>
+<span class="cm-string">"12345"</span><span class="cm-operator">.</span><span class="cm-property">to_alternating_case</span>() <span class="cm-operator">===</span> <span class="cm-string">"12345"</span> <span class="cm-operator">/</span><span class="cm-operator">/</span> <span class="cm-tag">Non</span><span class="cm-operator">-</span><span class="cm-variable">alphabetical</span> <span class="cm-variable">characters</span> <span class="cm-variable">are</span> <span class="cm-variable">unaffected</span>
+<span class="cm-string">"1a2b3c4d5e"</span><span class="cm-operator">.</span><span class="cm-property">to_alternating_case</span>() <span class="cm-operator">===</span> <span class="cm-string">"1A2B3C4D5E"</span>
+<span class="cm-string">"String.prototype.toAlternatingCase"</span><span class="cm-operator">.</span><span class="cm-property">to_alternating_case</span>() <span class="cm-operator">===</span> <span class="cm-string">"sTRING.PROTOTYPE.TOaLTERNATINGcASE"</span>
+</code></pre>
+<pre style="display: none;"><code class="language-java"><span class="cm-variable">StringUtils</span>.<span class="cm-variable">toAlternativeString</span>(<span class="cm-string">"hello world"</span>) <span class="cm-operator">==</span> <span class="cm-string">"HELLO WORLD"</span>
+<span class="cm-variable">StringUtils</span>.<span class="cm-variable">toAlternativeString</span>(<span class="cm-string">"HELLO WORLD"</span>) <span class="cm-operator">==</span> <span class="cm-string">"hello world"</span>
+<span class="cm-variable">StringUtils</span>.<span class="cm-variable">toAlternativeString</span>(<span class="cm-string">"hello WORLD"</span>) <span class="cm-operator">==</span> <span class="cm-string">"HELLO world"</span>
+<span class="cm-variable">StringUtils</span>.<span class="cm-variable">toAlternativeString</span>(<span class="cm-string">"HeLLo WoRLD"</span>) <span class="cm-operator">==</span> <span class="cm-string">"hEllO wOrld"</span>
+<span class="cm-variable">StringUtils</span>.<span class="cm-variable">toAlternativeString</span>(<span class="cm-string">"12345"</span>) <span class="cm-operator">==</span> <span class="cm-string">"12345"</span> <span class="cm-comment">// Non-alphabetical characters are unaffected</span>
+<span class="cm-variable">StringUtils</span>.<span class="cm-variable">toAlternativeString</span>(<span class="cm-string">"1a2b3c4d5e"</span>) <span class="cm-operator">==</span> <span class="cm-string">"1A2B3C4D5E"</span>
+<span class="cm-variable">StringUtils</span>.<span class="cm-variable">toAlternativeString</span>(<span class="cm-string">"StringUtils.toAlternatingCase"</span>) <span class="cm-operator">==</span> <span class="cm-string">"sTRINGuTILS.TOaLTERNATINGcASE"</span>
+</code></pre>
+<pre style="display: none;"><code class="language-haskell"><span class="cm-variable">toAlternatingCase</span> <span class="cm-string">"hello world"</span> `<span class="cm-variable">shouldBe</span>` <span class="cm-string">"HELLO WORLD"</span>
+<span class="cm-variable">toAlternatingCase</span> <span class="cm-string">"HELLO WORLD"</span> `<span class="cm-variable">shouldBe</span>` <span class="cm-string">"hello world"</span>
+<span class="cm-variable">toAlternatingCase</span> <span class="cm-string">"hello WORLD"</span> `<span class="cm-variable">shouldBe</span>` <span class="cm-string">"HELLO world"</span>
+<span class="cm-variable">toAlternatingCase</span> <span class="cm-string">"HeLLo WoRLD"</span> `<span class="cm-variable">shouldBe</span>` <span class="cm-string">"hEllO wOrld"</span>
+<span class="cm-variable">toAlternatingCase</span> <span class="cm-string">"12345"</span>       `<span class="cm-variable">shouldBe</span>` <span class="cm-string">"12345"</span>
+<span class="cm-variable">toAlternatingCase</span> <span class="cm-string">"1a2b3c4d5e"</span>  `<span class="cm-variable">shouldBe</span>` <span class="cm-string">"1A2B3C4D5E"</span>
+</code></pre>
+<pre style="display: none;"><code class="language-csharp"><span class="cm-string">"hello world"</span>.<span class="cm-variable">ToAlternatingCase</span>() <span class="cm-operator">==</span> <span class="cm-string">"HELLO WORLD"</span>
+<span class="cm-string">"HELLO WORLD"</span>.<span class="cm-variable">ToAlternatingCase</span>() <span class="cm-operator">==</span> <span class="cm-string">"hello world"</span>
+<span class="cm-string">"hello WORLD"</span>.<span class="cm-variable">ToAlternatingCase</span>() <span class="cm-operator">==</span> <span class="cm-string">"HELLO world"</span>
+<span class="cm-string">"HeLLo WoRLD"</span>.<span class="cm-variable">ToAlternatingCase</span>() <span class="cm-operator">==</span> <span class="cm-string">"hEllO wOrld"</span>
+<span class="cm-string">"12345"</span>.<span class="cm-variable">ToAlternatingCase</span>() <span class="cm-operator">==</span> <span class="cm-string">"12345"</span> <span class="cm-comment">// Non-alphabetical characters are unaffected</span>
+<span class="cm-string">"1a2b3c4d5e"</span>.<span class="cm-variable">ToAlternatingCase</span>() <span class="cm-operator">==</span> <span class="cm-string">"1A2B3C4D5E"</span>
+<span class="cm-string">"String.ToAlternatingCase"</span>.<span class="cm-variable">ToAlternatingCase</span>() <span class="cm-operator">==</span> <span class="cm-string">"sTRING.tOaLTERNATINGcASE"</span>
+</code></pre>
+<pre style="display: none;"><code class="language-elixir"><span class="cm-variable">alter_case</span>(<span class="cm-string">"hello world"</span>) <span class="cm-operator">=</span><span class="cm-operator">=</span> <span class="cm-string">"HELLO WORLD"</span>
+<span class="cm-variable">alter_case</span>(<span class="cm-string">"HELLO WORLD"</span>) <span class="cm-operator">=</span><span class="cm-operator">=</span> <span class="cm-string">"hello world"</span>
+<span class="cm-variable">alter_case</span>(<span class="cm-string">"hello WORLD"</span>) <span class="cm-operator">=</span><span class="cm-operator">=</span> <span class="cm-string">"HELLO world"</span>
+<span class="cm-variable">alter_case</span>(<span class="cm-string">"HeLLo WoRLD"</span>) <span class="cm-operator">=</span><span class="cm-operator">=</span> <span class="cm-string">"hEllO wOrld"</span>
+<span class="cm-variable">alter_case</span>(<span class="cm-string">"12345"</span>) <span class="cm-operator">=</span><span class="cm-operator">=</span> <span class="cm-string">"12345"</span> <span class="cm-comment"># Non-alphabetical characters are unaffected</span>
+<span class="cm-variable">alter_case</span>(<span class="cm-string">"1a2b3c4d5e"</span>) <span class="cm-operator">=</span><span class="cm-operator">=</span> <span class="cm-string">"1A2B3C4D5E"</span>
+<span class="cm-variable">alter_case</span>(<span class="cm-string">"StringUtils.toAlternatingCase"</span>) <span class="cm-operator">=</span><span class="cm-operator">=</span> <span class="cm-string">"sTRINGuTILS.TOaLTERNATINGcASE"</span>
+</code></pre>
+<pre style="display: none;"><code class="language-c"><span class="cm-variable">to_alternating_case</span>(<span class="cm-string">"hello world"</span>); <span class="cm-comment">// =&gt; "HELLO WORLD"</span>
+<span class="cm-variable">to_alternating_case</span>(<span class="cm-string">"HELLO WORLD"</span>); <span class="cm-comment">// =&gt; "hello world"</span>
+<span class="cm-variable">to_alternating_case</span>(<span class="cm-string">"hello WORLD"</span>); <span class="cm-comment">// =&gt; "HELLO world"</span>
+<span class="cm-variable">to_alternating_case</span>(<span class="cm-string">"HeLLo WoRLD"</span>); <span class="cm-comment">// =&gt; "hEllO wOrld"</span>
+<span class="cm-variable">to_alternating_case</span>(<span class="cm-string">"12345"</span>); <span class="cm-comment">// =&gt; "12345" (Non-alphabetical characters are unaffected)</span>
+<span class="cm-variable">to_alternating_case</span>(<span class="cm-string">"1a2b3c4d5e"</span>); <span class="cm-comment">// =&gt; "1A2B3C4D5E"</span>
+<span class="cm-variable">to_alternating_case</span>(<span class="cm-string">"String.prototype.toAlternatingCase"</span>); <span class="cm-comment">// =&gt; "sTRING.PROTOTYPE.TOaLTERNATINGcASE"</span>
+</code></pre>
+<pre style="display: none;"><code class="language-C++">string source = "HeLLo WoRLD";
+string upperCase = to_alternating_case(source);
+cout &lt;&lt; upperCase &lt;&lt; endl; // outputs: hEllO wOrld
+</code></pre>
+<pre style="display: none;"><code class="language-typescript"><span class="cm-variable">toAlternatingCase</span>(<span class="cm-string">"hello world"</span>) <span class="cm-operator">===</span> <span class="cm-string">"HELLO WORLD"</span>
+<span class="cm-variable">toAlternatingCase</span>(<span class="cm-string">"HELLO WORLD"</span>) <span class="cm-operator">===</span> <span class="cm-string">"hello world"</span>
+<span class="cm-variable">toAlternatingCase</span>(<span class="cm-string">"hello WORLD"</span>) <span class="cm-operator">===</span> <span class="cm-string">"HELLO world"</span>
+<span class="cm-variable">toAlternatingCase</span>(<span class="cm-string">"HeLLo WoRLD"</span>) <span class="cm-operator">===</span> <span class="cm-string">"hEllO wOrld"</span>
+<span class="cm-variable">toAlternatingCase</span>(<span class="cm-string">"12345"</span>) <span class="cm-operator">===</span> <span class="cm-string">"12345"</span> <span class="cm-comment">// Non-alphabetical characters are unaffected</span>
+<span class="cm-variable">toAlternatingCase</span>(<span class="cm-string">"1a2b3c4d5e"</span>) <span class="cm-operator">===</span> <span class="cm-string">"1A2B3C4D5E"</span>
+<span class="cm-variable">toAlternatingCase</span>(<span class="cm-string">"String.prototype.toAlternatingCase"</span>) <span class="cm-operator">===</span> <span class="cm-string">"sTRING.PROTOTYPE.TOaLTERNATINGcASE"</span>
+</code></pre>
+<pre style="display: none;"><code class="language-factor"><span class="cm-string">"</span><span class="cm-string">hello world"</span> <span class="cm-builtin">&gt;alternating</span> <span class="cm-comment">! "HELLO WORLD"</span>
+<span class="cm-string">"</span><span class="cm-string">HELLO WORLD"</span> <span class="cm-builtin">&gt;alternating</span> <span class="cm-comment">! "hello world"</span>
+<span class="cm-string">"</span><span class="cm-string">hello WORLD"</span> <span class="cm-builtin">&gt;alternating</span> <span class="cm-comment">! "HELLO world"</span>
+<span class="cm-string">"</span><span class="cm-string">HeLLo WoRLD"</span> <span class="cm-builtin">&gt;alternating</span> <span class="cm-comment">! "hEllO wOrld"</span>
+<span class="cm-string">"</span><span class="cm-string">12345"</span> <span class="cm-builtin">&gt;alternating</span> <span class="cm-comment">! "12345" (Non-alphabetical characters are unaffected)</span>
+<span class="cm-string">"</span><span class="cm-string">1a2b3c4d5e"</span> <span class="cm-builtin">&gt;alternating</span> <span class="cm-comment">! "1A2B3C4D5E"</span>
+<span class="cm-string">"</span><span class="cm-string">String.prototype.toAlternatingCase"</span> <span class="cm-builtin">&gt;alternating</span> <span class="cm-comment">! "sTRING.PROTOTYPE.TOaLTERNATINGcASE"</span>
+</code></pre>
+<pre style="display: none;"><code class="language-go"><span class="cm-variable">ToAlternatingCase</span>(<span class="cm-string">"hello world"</span>); <span class="cm-comment">// =&gt; "HELLO WORLD"</span>
+<span class="cm-variable">ToAlternatingCase</span>(<span class="cm-string">"HELLO WORLD"</span>); <span class="cm-comment">// =&gt; "hello world"</span>
+<span class="cm-variable">ToAlternatingCase</span>(<span class="cm-string">"hello WORLD"</span>); <span class="cm-comment">// =&gt; "HELLO world"</span>
+<span class="cm-variable">ToAlternatingCase</span>(<span class="cm-string">"HeLLo WoRLD"</span>); <span class="cm-comment">// =&gt; "hEllO wOrld"</span>
+<span class="cm-variable">ToAlternativeCase</span>(<span class="cm-string">"12345"</span>); <span class="cm-comment">// =&gt; "12345" (Non-alphabetical characters are unaffected)</span>
+<span class="cm-variable">ToAlternativeCase</span>(<span class="cm-string">"1a2b3c4d5e"</span>); <span class="cm-comment">// =&gt; "1A2B3C4D5E"</span>
+<span class="cm-variable">ToAlternativeCase</span>(<span class="cm-string">"String.prototype.toAlternatingCase"</span>); <span class="cm-comment">// =&gt; "sTRING.PROTOTYPE.TOaLTERNATINGcASE"</span>
+</code></pre>
+<p>As usual, your function/method should be pure, i.e. it should <strong>not</strong> mutate the original string.</p>
+                        </div>
+                    </div>
+                </div>
+            </main>
+        </div>
+    </div>
+</body>
+</html>

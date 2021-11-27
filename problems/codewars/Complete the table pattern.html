@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Complete the table pattern</title>
+    <link rel="stylesheet" media="screen" href="css/style.css">
+</head>
+<body>
+    <div id="app">
+        <div class="w-full" id="shell">
+            <main id="shell_content">
+                <div class="w-full mt-2">
+                    <h2>Complete the table pattern</h2>
+                    <h2>Points: 6 kyu</h2>
+                    <a href="https://www.codewars.com/kata/5827e2efc983ca6f230000e0"><h2>Kata ID: 5827e2efc983ca6f230000e0</h2></a>
+                    <div class="w-full panel bg-ui-section">
+                        <div class="markdown prose max-w-5xl mx-auto" id="description">
+                            <blockquote>
+<p>When no more interesting kata can be resolved, I just choose to create the new kata, to solve their own, to enjoy the process  --myjinxin2015 said</p>
+</blockquote>
+<h1 id="description">Description:</h1>
+<p> Give you two number <code>rows</code> , <code>columns</code> and a string <code>str</code>. Returns a <code>rows x columns</code> table pattern and fill in the <code>str</code>(each grid fill in a char, the length of str is always less than or equals to the total numbers of grids):</p>
+<pre><code>If rows = 4 and columns = 4, str = "Hello World!"
+The pattern should be a 4x4 table like this:
++---+---+---+---+
+| H | e | l | l |   From left to right
++---+---+---+---+
+| o |   | W | o |   and from top to bottom
++---+---+---+---+
+| r | l | d | ! |   each row separated by "\n"
++---+---+---+---+
+|   |   |   |   |
++---+---+---+---+
+</code></pre>
+<h1 id="some-examples">Some examples:</h1>
+<pre><code>pattern(3, 3, "codewars") should return:
++---+---+---+
+| c | o | d |
++---+---+---+
+| e | w | a |
++---+---+---+
+| r | s |   |
++---+---+---+
+
+pattern(4, 3, "Nice pattern") should return:
++---+---+---+
+| N | i | c |
++---+---+---+
+| e |   | p |
++---+---+---+
+| a | t | t |
++---+---+---+
+| e | r | n |
++---+---+---+
+
+pattern(3, 4, "Nice pattern") should return:
++---+---+---+---+
+| N | i | c | e |
++---+---+---+---+
+|   | p | a | t |
++---+---+---+---+
+| t | e | r | n |
++---+---+---+---+
+</code></pre>
+                        </div>
+                    </div>
+                </div>
+            </main>
+        </div>
+    </div>
+</body>
+</html>

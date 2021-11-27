@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Gap in Primes</title>
+    <link rel="stylesheet" media="screen" href="css/style.css">
+</head>
+<body>
+    <div id="app">
+        <div class="w-full" id="shell">
+            <main id="shell_content">
+                <div class="w-full mt-2">
+                    <h2>Gap in Primes</h2>
+                    <h2>Points: 5 kyu</h2>
+                    <a href="https://www.codewars.com/kata/561e9c843a2ef5a40c0000a4"><h2>Kata ID: 561e9c843a2ef5a40c0000a4</h2></a>
+                    <div class="w-full panel bg-ui-section">
+                        <div class="markdown prose max-w-5xl mx-auto" id="description">
+                            <p>The prime numbers are not regularly spaced. For example from <code>2</code> to <code>3</code> the gap is <code>1</code>.
+From <code>3</code> to <code>5</code> the gap is <code>2</code>. From <code>7</code> to <code>11</code> it is <code>4</code>.
+Between 2 and 50 we have the following pairs of 2-gaps primes:
+<code>3-5, 5-7, 11-13, 17-19, 29-31, 41-43</code></p>
+<p>A prime gap of length n is a run of n-1 consecutive composite numbers between two <strong>successive</strong> primes (see: <a href="http://mathworld.wolfram.com/PrimeGaps.html" target="_blank">http://mathworld.wolfram.com/PrimeGaps.html</a>).</p>
+<p>We will write a function gap with parameters:</p>
+<ul>
+<li><p><code>g</code> (integer &gt;= 2) which indicates the gap we are looking for</p>
+</li>
+<li><p><code>m</code> (integer &gt; 2) which gives the start of the search (m inclusive)</p>
+</li>
+<li><p><code>n</code> (integer &gt;= m) which gives the end of the search (n inclusive)</p>
+<p> n won't go beyond 1100000.</p>
+</li>
+</ul>
+<p>In the example above <code>gap(2, 3, 50)</code> will return <code>[3, 5] or (3, 5) or {3, 5}</code> which is the first pair between 3 and 50 with a 2-gap.</p>
+<p>So this function should return the <strong>first</strong> pair of two prime numbers spaced with a gap of <code>g</code> between the limits <code>m</code>, <code>n</code> if these numbers exist otherwise `nil or null or None or Nothing (or ... depending on the language). </p>
+<p>In C++, Lua: return in such a case <code>{0, 0}</code>. 
+In F#: return <code>[||]</code>. 
+In Kotlin, Dart and Prolog: return <code>[]</code>.
+In Pascal: return Type TGap (0, 0).</p>
+<h4 id="examples">Examples:</h4>
+<ul>
+<li><p><code>gap(2, 5, 7) --&gt; [5, 7] or (5, 7) or {5, 7}</code></p>
+</li>
+<li><p><code>gap(2, 5, 5) --&gt; nil. In C++ {0, 0}. In F# [||]. In Kotlin, Dart and Prolog return </code>[]`</p>
+</li>
+<li><p><code>gap(4, 130, 200) --&gt; [163, 167] or (163, 167) or {163, 167}</code></p>
+</li>
+</ul>
+<p>([193, 197] is also such a 4-gap primes between 130 and 200 but it's not the first pair)</p>
+<ul>
+<li><p><code>gap(6,100,110) --&gt; nil or {0, 0} or ...</code> : between 100 and 110 we have <code>101, 103, 107, 109</code> but <code>101-107</code>is not a 6-gap because there is <code>103</code>in between and <code>103-109</code>is not a 6-gap because there is <code>107</code>in between.</p>
+</li>
+<li><p>You can see more examples of return in Sample Tests.</p>
+</li>
+</ul>
+<h4 id="note-for-go">Note for Go</h4>
+<p>For Go: nil slice is expected when there are no gap between m and n.
+Example: gap(11,30000,100000) --&gt; nil</p>
+<h4 id="ref">Ref</h4>
+<p><a href="https://en.wikipedia.org/wiki/Prime_gap" target="_blank">https://en.wikipedia.org/wiki/Prime_gap</a></p>
+                        </div>
+                    </div>
+                </div>
+            </main>
+        </div>
+    </div>
+</body>
+</html>

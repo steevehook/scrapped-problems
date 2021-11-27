@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Binary multiple of 3</title>
+    <link rel="stylesheet" media="screen" href="css/style.css">
+</head>
+<body>
+    <div id="app">
+        <div class="w-full" id="shell">
+            <main id="shell_content">
+                <div class="w-full mt-2">
+                    <h2>Binary multiple of 3</h2>
+                    <h2>Points: 4 kyu</h2>
+                    <a href="https://www.codewars.com/kata/54de279df565808f8b00126a"><h2>Kata ID: 54de279df565808f8b00126a</h2></a>
+                    <div class="w-full panel bg-ui-section">
+                        <div class="markdown prose max-w-5xl mx-auto" id="description">
+                            <p>In this kata, your task is to create a regular expression capable of evaluating binary strings (strings with only <code>1</code>s and <code>0</code>s) and determining whether the given string represents a number divisible by 3.</p>
+<p>Take into account that:</p>
+<ul>
+<li>An empty string <em>might</em> be evaluated to true (it's not going to be tested, so you don't need to worry about it - unless you want)</li>
+<li>The input should consist only of binary digits - no spaces, other digits, alphanumeric characters, etc.</li>
+<li>There might be leading <code>0</code>s.</li>
+</ul>
+<h3 id="examples-javascript">Examples (Javascript)</h3>
+<ul>
+<li><code>multipleof3Regex.test('000')</code> should be <code>true</code></li>
+<li><code>multipleof3Regex.test('001')</code> should be <code>false</code></li>
+<li><code>multipleof3Regex.test('011')</code> should be <code>true</code></li>
+<li><code>multipleof3Regex.test('110')</code> should be <code>true</code></li>
+<li><code>multipleof3Regex.test(' abc ')</code> should be <code>false</code></li>
+</ul>
+<p>You can check more in the example test cases</p>
+<h3 id="note">Note</h3>
+<p>There's a way to develop an automata (FSM) that evaluates if strings representing numbers in a given base are divisible by a given number. You might want to check an example of an automata for doing this same particular task <a href="http://math.stackexchange.com/questions/140283/why-does-this-fsm-accept-binary-numbers-divisible-by-three" target="_blank">here</a>.</p>
+<p>If you want to understand better the inner principles behind it, you might want to study how to get the modulo of an arbitrarily large number taking one digit at a time.</p>
+                        </div>
+                    </div>
+                </div>
+            </main>
+        </div>
+    </div>
+</body>
+</html>

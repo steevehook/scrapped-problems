@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Mirrored Exponential Chunks</title>
+    <link rel="stylesheet" media="screen" href="css/style.css">
+</head>
+<body>
+    <div id="app">
+        <div class="w-full" id="shell">
+            <main id="shell_content">
+                <div class="w-full mt-2">
+                    <h2>Mirrored Exponential Chunks</h2>
+                    <h2>Points: 5 kyu</h2>
+                    <a href="https://www.codewars.com/kata/5852d0d463adbd39670000a1"><h2>Kata ID: 5852d0d463adbd39670000a1</h2></a>
+                    <div class="w-full panel bg-ui-section">
+                        <div class="markdown prose max-w-5xl mx-auto" id="description">
+                            <h1 id="mirrored-exponential-chunks">Mirrored Exponential Chunks</h1>
+<p>Using a single function provided with an array, create a new one in the following ways:</p>
+<ul>
+<li>Separate array elements into chunks. Each chunk will contain <code>2^abs(n)</code> elements where <code>n</code> is the "distance" to the median chunk.</li>
+<li>The median chunk(s) will have one single element, or will not appear in the output if there is some ambiguity about it.</li>
+<li>If an outlying chunk does not have enough elements to reach the <code>2^abs(n)</code> requirement, it will contain as many elements as remain.</li>
+<li>Chuncks in mirrored places (compared to the median chunk) should be of the same length.</li>
+<li>You must maintain original element order within each chunk.</li>
+<li>You must maintain original element order from chunk to chunk.</li>
+</ul>
+<p>Example Input/Solution:</p>
+<pre><code>input:    [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29]
+solution: [[1,2,3,4,5,6,7,8],[9,10,11,12],[13,14],[15],[16,17],[18,19,20,21],[22,23,24,25,26,27,28,29]]
+</code></pre>
+<p>Note: do it efficiently. Your function will have to be at most 2.5x slower than the reference solution.</p>
+                        </div>
+                    </div>
+                </div>
+            </main>
+        </div>
+    </div>
+</body>
+</html>

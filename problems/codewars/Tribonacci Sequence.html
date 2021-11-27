@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Tribonacci Sequence</title>
+    <link rel="stylesheet" media="screen" href="css/style.css">
+</head>
+<body>
+    <div id="app">
+        <div class="w-full" id="shell">
+            <main id="shell_content">
+                <div class="w-full mt-2">
+                    <h2>Tribonacci Sequence</h2>
+                    <h2>Points: 6 kyu</h2>
+                    <a href="https://www.codewars.com/kata/556deca17c58da83c00002db"><h2>Kata ID: 556deca17c58da83c00002db</h2></a>
+                    <div class="w-full panel bg-ui-section">
+                        <div class="markdown prose max-w-5xl mx-auto" id="description">
+                            <p>Well met with Fibonacci bigger brother, AKA Tribonacci.</p>
+<p>As the name may already reveal, it works basically like a Fibonacci, but summing the last 3 (instead of 2) numbers of the sequence to generate the next. And, worse part of it, regrettably I won't get to hear non-native Italian speakers trying to pronounce it :(</p>
+<p>So, if we are to start our Tribonacci sequence with <code>[1, 1, 1]</code> as a starting input (AKA <em>signature</em>), we have this sequence:</p>
+<pre><code>[1, 1 ,1, 3, 5, 9, 17, 31, ...]
+</code></pre>
+<p>But what if we started with <code>[0, 0, 1]</code> as a signature? As starting with <code>[0, 1]</code> instead of <code>[1, 1]</code> basically <em>shifts</em> the common Fibonacci sequence by once place, you may be tempted to think that we would get the same sequence shifted by 2 places, but that is not the case and we would get:</p>
+<pre><code>[0, 0, 1, 1, 2, 4, 7, 13, 24, ...]
+</code></pre>
+<p>Well, you may have guessed it by now, but to be clear: you need to create a fibonacci function that given a <strong>signature</strong> array/list, returns <strong>the first n elements - signature included</strong> of the so seeded sequence.</p>
+<p>Signature will always contain 3 numbers; n will always be a non-negative number; if <code>n == 0</code>, then return an empty array (except in C return NULL) and be ready for anything else which is not clearly specified ;)</p>
+<p>If you enjoyed this kata more advanced and generalized version of it can be found in the <a title="Xbonacci sequence" href="http://www.codewars.com/kata/fibonacci-tribonacci-and-friends" target="_blank">Xbonacci kata</a></p>
+<p><em>[Personal thanks to Professor <a title="Jim Fowler" href="https://www.coursera.org/instructor/jimfowler" target="_blank">Jim Fowler</a> on Coursera for his awesome classes that I really recommend to any math enthusiast and for showing me this mathematical curiosity too with his usual contagious passion :)]</em></p>
+                        </div>
+                    </div>
+                </div>
+            </main>
+        </div>
+    </div>
+</body>
+</html>

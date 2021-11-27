@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Weird prime generator</title>
+    <link rel="stylesheet" media="screen" href="css/style.css">
+</head>
+<body>
+    <div id="app">
+        <div class="w-full" id="shell">
+            <main id="shell_content">
+                <div class="w-full mt-2">
+                    <h2>Weird prime generator</h2>
+                    <h2>Points: 5 kyu</h2>
+                    <a href="https://www.codewars.com/kata/562b384167350ac93b00010c"><h2>Kata ID: 562b384167350ac93b00010c</h2></a>
+                    <div class="w-full panel bg-ui-section">
+                        <div class="markdown prose max-w-5xl mx-auto" id="description">
+                            <p>Consider the sequence <code>a(1) = 7, a(n) = a(n-1) + gcd(n, a(n-1)) for n &gt;= 2</code>: </p>
+<p><code>7, 8, 9, 10, 15, 18, 19, 20, 21, 22, 33, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 69, 72, 73...</code>.</p>
+<p>Let us take the differences between successive elements of the sequence and
+get a second sequence <code>g: 1, 1, 1, 5, 3, 1, 1, 1, 1, 11, 3, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 23, 3, 1...</code>.</p>
+<p>For the sake of uniformity of the lengths of sequences <strong>we add</strong> a <code>1</code> at the head of g:</p>
+<p><code>g: 1, 1, 1, 1, 5, 3, 1, 1, 1, 1, 11, 3, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 23, 3, 1...</code></p>
+<p>Removing the 1s gives a third sequence:
+<code>p: 5, 3, 11, 3, 23, 3...</code>
+where you can see prime numbers.</p>
+<h4 id="task">Task:</h4>
+<p>Write functions:</p>
+<pre><code>1: an(n) with parameter n: returns the first n terms of the series of a(n) (not tested)
+
+2: gn(n) with parameter n: returns the first n terms of the series of g(n) (not tested)
+
+3: countOnes(n) with parameter n: returns the number of 1 in the series gn(n) 
+    (don't forget to add a `1` at the head) # (tested)
+    
+4:  p(n) with parameter n: returns an array filled with the n first distinct primes in the same order they are found in the sequence gn (not tested)
+
+5: maxPn(n) with parameter n: returns the biggest prime number of the above p(n) # (tested)
+
+6: anOver(n) with parameter n: returns an array (n terms) of the a(i)/i for every i such g(i) != 1 (not tested but interesting result)
+
+7: anOverAverage(n) with parameter n: returns as an *integer* the average of anOver(n) # (tested)
+</code></pre>
+<h4 id="note">Note:</h4>
+<p>You can write directly functions <code>3:</code>, <code>5:</code> and <code>7:</code>. There is no need to write functions <code>1:</code>, <code>2:</code>, <code>4:</code> <code>6:</code> except out of pure curiosity.</p>
+                        </div>
+                    </div>
+                </div>
+            </main>
+        </div>
+    </div>
+</body>
+</html>

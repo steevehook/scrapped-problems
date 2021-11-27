@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Stable Weight Arrangement</title>
+    <link rel="stylesheet" media="screen" href="css/style.css">
+</head>
+<body>
+    <div id="app">
+        <div class="w-full" id="shell">
+            <main id="shell_content">
+                <div class="w-full mt-2">
+                    <h2>Stable Weight Arrangement</h2>
+                    <h2>Points: 5 kyu</h2>
+                    <a href="https://www.codewars.com/kata/5d6eef37f257f8001c886d97"><h2>Kata ID: 5d6eef37f257f8001c886d97</h2></a>
+                    <div class="w-full panel bg-ui-section">
+                        <div class="markdown prose max-w-5xl mx-auto" id="description">
+                            <p>Here is a simple task. Take an array/tuple of unique positive integers, and two additional positive integers. Here's an example below:</p>
+<pre style="display: none;"><code class="language-javascript"><span class="cm-keyword">const</span> <span class="cm-def">arr</span> <span class="cm-operator">=</span> [<span class="cm-number">3</span>,<span class="cm-number">5</span>,<span class="cm-number">7</span>,<span class="cm-number">1</span>,<span class="cm-number">6</span>,<span class="cm-number">8</span>,<span class="cm-number">2</span>,<span class="cm-number">4</span>];
+<span class="cm-keyword">const</span> <span class="cm-def">n</span> <span class="cm-operator">=</span> <span class="cm-number">3</span>; <span class="cm-comment">// span length</span>
+<span class="cm-keyword">const</span> <span class="cm-def">q</span> <span class="cm-operator">=</span> <span class="cm-number">13</span>; <span class="cm-comment">// weight threshold</span>
+</code></pre>
+<pre><code class="language-python"><span class="cm-variable">arr</span> <span class="cm-operator">=</span> (<span class="cm-number">3</span>,<span class="cm-number">5</span>,<span class="cm-number">7</span>,<span class="cm-number">1</span>,<span class="cm-number">6</span>,<span class="cm-number">8</span>,<span class="cm-number">2</span>,<span class="cm-number">4</span>)
+<span class="cm-variable">n</span> <span class="cm-operator">=</span> <span class="cm-number">3</span> <span class="cm-comment"># span length</span>
+<span class="cm-variable">q</span> <span class="cm-operator">=</span> <span class="cm-number">13</span> <span class="cm-comment"># weight threshold</span>
+</code></pre>
+<pre style="display: none;"><code class="language-go"><span class="cm-keyword">var</span> <span class="cm-variable">arr</span> <span class="cm-operator">=</span> []<span class="cm-keyword">int</span>{<span class="cm-number">3</span>,<span class="cm-number">5</span>,<span class="cm-number">7</span>,<span class="cm-number">1</span>,<span class="cm-number">6</span>,<span class="cm-number">8</span>,<span class="cm-number">2</span>,<span class="cm-number">4</span>}
+<span class="cm-keyword">var</span> <span class="cm-variable">n</span> <span class="cm-keyword">int</span> <span class="cm-operator">=</span> <span class="cm-number">3</span> <span class="cm-comment">// span length</span>
+<span class="cm-keyword">var</span> <span class="cm-variable">q</span> <span class="cm-keyword">int</span> <span class="cm-operator">=</span> <span class="cm-number">13</span> <span class="cm-comment">// weight threshold</span>
+</code></pre>
+<p>Try to re-arrange <code>arr</code> so that the sum of any <code>n</code> consecutive values does not exceed <code>q</code>.</p>
+<pre style="display: none;"><code class="language-javascript"><span class="cm-variable">solver</span>(<span class="cm-variable">arr</span>,<span class="cm-variable">n</span>,<span class="cm-variable">q</span>); <span class="cm-comment">// one possible solution: [4,7,1,5,6,2,3,8]</span>
+</code></pre>
+<pre><code class="language-python"><span class="cm-variable">solver</span>(<span class="cm-variable">arr</span>,<span class="cm-variable">n</span>,<span class="cm-variable">q</span>) <span class="cm-comment">## one possible solution: (4,7,1,5,6,2,3,8)</span>
+</code></pre>
+<pre style="display: none;"><code class="language-go"><span class="cm-variable">Solver</span>(<span class="cm-variable">arr</span>,<span class="cm-variable">n</span>,<span class="cm-variable">q</span>) <span class="cm-comment">// one possible solution: {4,7,1,5,6,2,3,8}</span>
+</code></pre>
+<p>Did you succeed? Great! Now teach a computer to do it.</p>
+<h2 style="color:#f88">Technical Details</h2>
+
+<ul>
+<li>All test inputs will be valid</li>
+<li>All test cases will have <code>0</code> or more possible solutions</li>
+<li>If a test case has no solution, return an empty array/tuple. Otherwise, return a valid solution</li>
+<li>Test constraints:<ul>
+<li><code>2 &lt;= n &lt;= 6</code></li>
+<li><code>4 &lt;= arr length &lt; 12</code></li>
+<li><code>n &lt; arr length</code></li>
+<li>Every value in <code>arr</code> will be less than <code>q</code></li>
+<li><code>11</code> fixed tests, <code>25</code> random tests</li>
+</ul>
+</li>
+<li>In JavaScript, <code>module</code> and <code>require</code> are disabled</li>
+<li>For JavaScript, use Node 10+</li>
+<li>For Python, use Python 3.6+</li>
+</ul>
+<p>If you enjoyed this kata, be sure to check out <a style="color:#9f9;text-decoration:none" href="https://www.codewars.com/users/docgunthrop/authored" target="_blank">my other katas</a></p>
+                        </div>
+                    </div>
+                </div>
+            </main>
+        </div>
+    </div>
+</body>
+</html>

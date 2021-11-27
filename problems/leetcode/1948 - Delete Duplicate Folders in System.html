@@ -1,0 +1,105 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>1948 - Delete Duplicate Folders in System</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+</head>
+<body>
+    <div class="container">
+        <div class="description__24sA"><div class="css-101rr4k"><div data-cy="question-title" class="css-v3d350">1948. Delete Duplicate Folders in System</div><div class="css-10o4wqw"><div diff="hard" class="css-t42afm">Hard</div><button class="btn__r7r7 css-1rdgofi"><svg viewBox="0 0 24 24" width="1em" height="1em" class="icon__1Md2"><path fill-rule="evenodd" d="M7 19v-8H4v8h3zM7 9c0-.55.22-1.05.58-1.41L14.17 1l1.06 1.05c.27.27.44.65.44 1.06l-.03.32L14.69 8H21c1.1 0 2 .9 2 2v2c0 .26-.05.5-.14.73l-3.02 7.05C19.54 20.5 18.83 21 18 21H4a2 2 0 0 1-2-2v-8a2 2 0 0 1 2-2h3zm2 0v10h9l3-7v-2h-9l1.34-5.34L9 9z"></path></svg><span>129</span></button><button class="btn__r7r7 css-1rdgofi"><svg viewBox="0 0 24 24" width="1em" height="1em" class="icon__1Md2"><path fill-rule="evenodd" d="M17 3v12c0 .55-.22 1.05-.58 1.41L9.83 23l-1.06-1.05c-.27-.27-.44-.65-.44-1.06l.03-.32.95-4.57H3c-1.1 0-2-.9-2-2v-2c0-.26.05-.5.14-.73l3.02-7.05C4.46 3.5 5.17 3 6 3h11zm-2 12V5H6l-3 7v2h9l-1.34 5.34L15 15zm2-2h3V5h-3V3h3a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2h-3v-2z"></path></svg><span>38</span></button><button class="btn__r7r7 css-1rdgofi"><svg viewBox="0 0 24 24" width="1em" height="1em" class="icon__1Md2"><path fill-rule="evenodd" d="M16.5 3c-1.74 0-3.41.81-4.5 2.09C10.91 3.81 9.24 3 7.5 3 4.42 3 2 5.42 2 8.5c0 3.78 3.4 6.86 8.55 11.54L12 21.35l1.45-1.32C18.6 15.36 22 12.28 22 8.5 22 5.42 19.58 3 16.5 3zm-4.4 15.55l-.1.1-.1-.1C7.14 14.24 4 11.39 4 8.5 4 6.5 5.5 5 7.5 5c1.54 0 3.04.99 3.57 2.36h1.87C13.46 5.99 14.96 5 16.5 5c2 0 3.5 1.5 3.5 3.5 0 2.89-3.14 5.74-7.9 10.05z"></path></svg><span>Add to List</span></button><button class="btn__r7r7 css-1rdgofi"><svg viewBox="0 0 24 24" width="1em" height="1em" class="icon__1Md2"><path fill-rule="evenodd" d="M17 5V2l5 5h-9a2 2 0 0 0-2 2v8H9V9a4 4 0 0 1 4-4h4zm3 14V9h2v10a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h3v2H4v14h16z"></path></svg><span>Share</span></button></div></div><div class="content__u3I1 question-content__JfgR"><div><p>Due to a bug, there are many duplicate folders in a file system. You are given a 2D array <code>paths</code>, where <code>paths[i]</code> is an array representing an absolute path to the <code>i<sup>th</sup></code> folder in the file system.</p>
+
+<ul>
+	<li>For example, <code>["one", "two", "three"]</code> represents the path <code>"/one/two/three"</code>.</li>
+</ul>
+
+<p>Two folders (not necessarily on the same level) are <strong>identical</strong> if they contain the <strong>same non-empty</strong> set of identical subfolders and underlying subfolder structure. The folders <strong>do not</strong> need to be at the root level to be identical. If two or more folders are <strong>identical</strong>, then <strong>mark</strong> the folders as well as all their subfolders.</p>
+
+<ul>
+	<li>For example, folders <code>"/a"</code> and <code>"/b"</code> in the file structure below are identical. They (as well as their subfolders) should <strong>all</strong> be marked:
+
+	<ul>
+		<li><code>/a</code></li>
+		<li><code>/a/x</code></li>
+		<li><code>/a/x/y</code></li>
+		<li><code>/a/z</code></li>
+		<li><code>/b</code></li>
+		<li><code>/b/x</code></li>
+		<li><code>/b/x/y</code></li>
+		<li><code>/b/z</code></li>
+	</ul>
+	</li>
+	<li>However, if the file structure also included the path <code>"/b/w"</code>, then the folders <code>"/a"</code> and <code>"/b"</code> would not be identical. Note that <code>"/a/x"</code> and <code>"/b/x"</code> would still be considered identical even with the added folder.</li>
+</ul>
+
+<p>Once all the identical folders and their subfolders have been marked, the file system will <strong>delete</strong> all of them. The file system only runs the deletion once, so any folders that become identical after the initial deletion are not deleted.</p>
+
+<p>Return <em>the 2D array </em><code>ans</code> <em>containing the paths of the <strong>remaining</strong> folders after deleting all the marked folders. The paths may be returned in <strong>any</strong> order</em>.</p>
+
+<p>&nbsp;</p>
+<p><strong>Example 1:</strong></p>
+<img alt="" src="images/lc-dupfolder1.jpg" style="width: 200px; height: 218px;">
+<pre><strong>Input:</strong> paths = [["a"],["c"],["d"],["a","b"],["c","b"],["d","a"]]
+<strong>Output:</strong> [["d"],["d","a"]]
+<strong>Explanation:</strong> The file structure is as shown.
+Folders "/a" and "/c" (and their subfolders) are marked for deletion because they both contain an empty
+folder named "b".
+</pre>
+
+<p><strong>Example 2:</strong></p>
+<img alt="" src="images/lc-dupfolder2.jpg" style="width: 200px; height: 355px;">
+<pre><strong>Input:</strong> paths = [["a"],["c"],["a","b"],["c","b"],["a","b","x"],["a","b","x","y"],["w"],["w","y"]]
+<strong>Output:</strong> [["c"],["c","b"],["a"],["a","b"]]
+<strong>Explanation: </strong>The file structure is as shown. 
+Folders "/a/b/x" and "/w" (and their subfolders) are marked for deletion because they both contain an empty folder named "y".
+Note that folders "/a" and "/c" are identical after the deletion, but they are not deleted because they were not marked beforehand.
+</pre>
+
+<p><strong>Example 3:</strong></p>
+<img alt="" src="images/lc-dupfolder3.jpg" style="width: 200px; height: 201px;">
+<pre><strong>Input:</strong> paths = [["a","b"],["c","d"],["c"],["a"]]
+<strong>Output:</strong> [["c"],["c","d"],["a"],["a","b"]]
+<strong>Explanation:</strong> All folders are unique in the file system.
+Note that the returned array can be in a different order as the order does not matter.
+</pre>
+
+<p><strong>Example 4:</strong></p>
+<img alt="" src="images/lc-dupfolder4_.jpg" style="width: 300px; height: 290px;">
+<pre><strong>Input:</strong> paths = [["a"],["a","x"],["a","x","y"],["a","z"],["b"],["b","x"],["b","x","y"],["b","z"]]
+<strong>Output:</strong> []
+<strong>Explanation:</strong> The file structure is as shown.
+Folders "/a/x" and "/b/x" (and their subfolders) are marked for deletion because they both contain an
+empty folder named "y".
+Folders "/a" and "/b" (and their subfolders) are marked for deletion because they both contain an empty
+folder "z" and the folder "x" described above.
+</pre>
+
+<p><strong>Example 5:</strong></p>
+<img alt="" src="images/lc-dupfolder5_.jpg" style="width: 300px; height: 282px;">
+<pre><strong>Input:</strong> paths = [["a"],["a","x"],["a","x","y"],["a","z"],["b"],["b","x"],["b","x","y"],["b","z"],["b","w"]]
+<strong>Output:</strong> [["b"],["b","w"],["b","z"],["a"],["a","z"]]
+<strong>Explanation:</strong> This has the same structure as the previous example, except with the added "/b/w".
+Folders "/a/x" and "/b/x" are still marked, but "/a" and "/b" are no longer marked because "/b" has the
+empty folder named "w" and "/a" does not.
+Note that "/a/z" and "/b/z" are not marked because the set of identical subfolders must be non-empty, but these folders are empty.
+</pre>
+
+<p>&nbsp;</p>
+<p><strong>Constraints:</strong></p>
+
+<ul>
+	<li><code>1 &lt;= paths.length &lt;= 2 * 10<sup>4</sup></code></li>
+	<li><code>1 &lt;= paths[i].length &lt;= 500</code></li>
+	<li><code>1 &lt;= paths[i][j].length &lt;= 10</code></li>
+	<li><code>1 &lt;= sum(paths[i][j].length) &lt;= 2 * 10<sup>5</sup></code></li>
+	<li><code>path[i][j]</code> consists of lowercase English letters.</li>
+	<li>No two paths lead to the same folder.</li>
+	<li>For any folder not at the root level, its parent folder will also be in the input.</li>
+</ul>
+</div></div></div>
+    </div>
+</body>
+</html>

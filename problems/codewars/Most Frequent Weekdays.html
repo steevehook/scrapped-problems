@@ -1,0 +1,99 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Most Frequent Weekdays</title>
+    <link rel="stylesheet" media="screen" href="css/style.css">
+</head>
+<body>
+    <div id="app">
+        <div class="w-full" id="shell">
+            <main id="shell_content">
+                <div class="w-full mt-2">
+                    <h2>Most Frequent Weekdays</h2>
+                    <h2>Points: 6 kyu</h2>
+                    <a href="https://www.codewars.com/kata/56eb16655250549e4b0013f4"><h2>Kata ID: 56eb16655250549e4b0013f4</h2></a>
+                    <div class="w-full panel bg-ui-section">
+                        <div class="markdown prose max-w-5xl mx-auto" id="description">
+                            <p>What is your favourite day of the week? Check if it's the most frequent day of the week in the year.</p>
+<p>You are given a year as integer (e. g. 2001). You should return the most frequent day(s) of the week in that year. The result has to be a list of days sorted by the order of days in week (e. g. <code>['Monday', 'Tuesday']</code>, <code>['Saturday', 'Sunday']</code>, <code>['Monday', 'Sunday']</code>). Week starts with Monday.</p>
+<p><strong>Input:</strong> Year as an <strong>int</strong>.</p>
+<p><strong>Output:</strong> The list of most frequent days sorted by the order of days in week (from Monday to Sunday).</p>
+<p><strong>Preconditions:</strong></p>
+<ul>
+<li>Week starts on Monday.</li>
+<li>Year is between 1583 and 4000. </li>
+<li>Calendar is Gregorian.</li>
+</ul>
+<p><strong>Example:</strong></p>
+<pre><code class="language-python"><span class="cm-variable">most_frequent_days</span>(<span class="cm-number">2427</span>) <span class="cm-operator">==</span> [<span class="cm-string">'Friday'</span>]
+<span class="cm-variable">most_frequent_days</span>(<span class="cm-number">2185</span>) <span class="cm-operator">==</span> [<span class="cm-string">'Saturday'</span>]
+<span class="cm-variable">most_frequent_days</span>(<span class="cm-number">2860</span>) <span class="cm-operator">==</span> [<span class="cm-string">'Thursday'</span>, <span class="cm-string">'Friday'</span>]
+</code></pre>
+<pre style="display: none;"><code class="language-ruby"><span class="cm-variable">most_frequent_days</span>(<span class="cm-number">2427</span>) <span class="cm-operator">==</span> [<span class="cm-string">'Friday'</span>]
+<span class="cm-variable">most_frequent_days</span>(<span class="cm-number">2185</span>) <span class="cm-operator">==</span> [<span class="cm-string">'Saturday'</span>]
+<span class="cm-variable">most_frequent_days</span>(<span class="cm-number">2860</span>) <span class="cm-operator">==</span> [<span class="cm-string">'Thursday'</span>, <span class="cm-string">'Friday'</span>]
+</code></pre>
+<pre style="display: none;"><code class="language-csharp"><span class="cm-variable">Kata</span>.<span class="cm-variable">MostFrequentDays</span>(<span class="cm-number">2427</span>) <span class="cm-operator">==</span> {<span class="cm-string">"Friday"</span>}
+<span class="cm-variable">Kata</span>.<span class="cm-variable">MostFrequentDays</span>(<span class="cm-number">2185</span>) <span class="cm-operator">==</span> {<span class="cm-string">"Saturday"</span>}
+<span class="cm-variable">Kata</span>.<span class="cm-variable">MostFrequentDays</span>(<span class="cm-number">2860</span>) <span class="cm-operator">==</span> {<span class="cm-string">"Thursday"</span>, <span class="cm-string">"Friday"</span>}
+</code></pre>
+<pre style="display: none;"><code class="language-javascript"><span class="cm-variable">mostFrequentDays</span>(<span class="cm-number">2427</span>) <span class="cm-operator">=&gt;</span> [<span class="cm-string">'Friday'</span>]
+<span class="cm-variable">mostFrequentDays</span>(<span class="cm-number">2185</span>) <span class="cm-operator">=&gt;</span> [<span class="cm-string">'Saturday'</span>]
+<span class="cm-variable">mostFrequentDays</span>(<span class="cm-number">2860</span>) <span class="cm-operator">=&gt;</span> [<span class="cm-string">'Thursday'</span>, <span class="cm-string">'Friday'</span>]
+</code></pre>
+<pre style="display: none;"><code class="language-scala"><span class="cm-variable">Kata</span>.<span class="cm-variable">mostFrequentDays</span>(<span class="cm-number">2427</span>) <span class="cm-operator">=&gt;</span> <span class="cm-type">List</span>(<span class="cm-string">"Friday"</span>)
+<span class="cm-variable">Kata</span>.<span class="cm-variable">mostFrequentDays</span>(<span class="cm-number">2185</span>) <span class="cm-operator">=&gt;</span> <span class="cm-type">List</span>(<span class="cm-string">"Saturday"</span>)
+<span class="cm-variable">Kata</span>.<span class="cm-variable">mostFrequentDays</span>(<span class="cm-number">2860</span>) <span class="cm-operator">=&gt;</span> <span class="cm-type">List</span>(<span class="cm-string">"Thursday"</span>, <span class="cm-string">"Friday"</span>)
+</code></pre>
+<pre style="display: none;"><code class="language-java"><span class="cm-variable">Kata</span>.<span class="cm-variable">mostFrequentDays</span>(<span class="cm-number">2427</span>) <span class="cm-operator">=&gt;</span> {<span class="cm-string">"Friday"</span>}
+<span class="cm-variable">Kata</span>.<span class="cm-variable">mostFrequentDays</span>(<span class="cm-number">2185</span>) <span class="cm-operator">=&gt;</span> {<span class="cm-string">"Saturday"</span>}
+<span class="cm-variable">Kata</span>.<span class="cm-variable">mostFrequentDays</span>(<span class="cm-number">2860</span>) <span class="cm-operator">=&gt;</span> {<span class="cm-string">"Thursday"</span>, <span class="cm-string">"Friday"</span>}
+</code></pre>
+<pre style="display: none;"><code class="language-groovy"><span class="cm-variable">Kata</span>.<span class="cm-property">mostFrequentDays</span>(<span class="cm-number">2427</span>) <span class="cm-operator">=&gt;</span> [<span class="cm-string">"Friday"</span>]
+<span class="cm-variable">Kata</span>.<span class="cm-property">mostFrequentDays</span>(<span class="cm-number">2185</span>) <span class="cm-operator">=&gt;</span> [<span class="cm-string">"Saturday"</span>]
+<span class="cm-variable">Kata</span>.<span class="cm-property">mostFrequentDays</span>(<span class="cm-number">2860</span>) <span class="cm-operator">=&gt;</span> [<span class="cm-string">"Thursday"</span>, <span class="cm-string">"Friday"</span>]
+</code></pre>
+<pre style="display: none;"><code class="language-fsharp"><span class="cm-variable">mostFrequentDays</span>(<span class="cm-number">2427</span>) <span class="cm-operator">=</span><span class="cm-operator">&gt;</span> [<span class="cm-string">"Friday"</span>]
+<span class="cm-variable">mostFrequentDays</span>(<span class="cm-number">2185</span>) <span class="cm-operator">=</span><span class="cm-operator">&gt;</span> [<span class="cm-string">"Saturday"</span>]
+<span class="cm-variable">mostFrequentDays</span>(<span class="cm-number">2860</span>) <span class="cm-operator">=</span><span class="cm-operator">&gt;</span> [<span class="cm-string">"Thursday"</span>; <span class="cm-string">"Friday"</span>]
+</code></pre>
+<pre style="display: none;"><code class="language-coffeescript"><span class="cm-variable">mostFrequentDays</span><span class="cm-punctuation">(</span><span class="cm-number">2427</span><span class="cm-punctuation">)</span> <span class="cm-operator">=&gt;</span> <span class="cm-punctuation">[</span><span class="cm-string">'Friday'</span><span class="cm-punctuation">]</span>
+<span class="cm-variable">mostFrequentDays</span><span class="cm-punctuation">(</span><span class="cm-number">2185</span><span class="cm-punctuation">)</span> <span class="cm-operator">=&gt;</span> <span class="cm-punctuation">[</span><span class="cm-string">'Saturday'</span><span class="cm-punctuation">]</span>
+<span class="cm-variable">mostFrequentDays</span><span class="cm-punctuation">(</span><span class="cm-number">2860</span><span class="cm-punctuation">)</span> <span class="cm-operator">=&gt;</span> <span class="cm-punctuation">[</span><span class="cm-string">'Thursday'</span><span class="cm-punctuation">,</span> <span class="cm-string">'Friday'</span><span class="cm-punctuation">]</span>
+</code></pre>
+<pre style="display: none;"><code class="language-vb"><span class="cm-variable">Kata</span><span class="cm-variable">.MostFrequentDays</span>(<span class="cm-number">2427</span>) <span class="cm-operator">==</span> {<span class="cm-string">"Friday"</span>}
+<span class="cm-variable">Kata</span><span class="cm-variable">.MostFrequentDays</span>(<span class="cm-number">2185</span>) <span class="cm-operator">==</span> {<span class="cm-string">"Saturday"</span>}
+<span class="cm-variable">Kata</span><span class="cm-variable">.MostFrequentDays</span>(<span class="cm-number">2860</span>) <span class="cm-operator">==</span> {<span class="cm-string">"Thursday"</span>, <span class="cm-string">"Friday"</span>}
+</code></pre>
+<pre style="display: none;"><code class="language-go"><span class="cm-variable">MostFrequentDays</span>(<span class="cm-number">2427</span>) <span class="cm-operator">==</span> []<span class="cm-keyword">string</span>{<span class="cm-string">"Friday"</span>}
+<span class="cm-variable">MostFrequentDays</span>(<span class="cm-number">2185</span>) <span class="cm-operator">==</span> []<span class="cm-keyword">string</span>{<span class="cm-string">"Saturday"</span>}
+<span class="cm-variable">MostFrequentDays</span>(<span class="cm-number">2860</span>) <span class="cm-operator">==</span> []<span class="cm-keyword">string</span>{<span class="cm-string">"Thursday"</span>, <span class="cm-string">"Friday"</span>}
+</code></pre>
+<pre style="display: none;"><code class="language-typescript"><span class="cm-variable">mostFrequentDays</span>(<span class="cm-number">2427</span>) <span class="cm-operator">=&gt;</span> [<span class="cm-string">'Friday'</span>]
+<span class="cm-variable">mostFrequentDays</span>(<span class="cm-number">2185</span>) <span class="cm-operator">=&gt;</span> [<span class="cm-string">'Saturday'</span>]
+<span class="cm-variable">mostFrequentDays</span>(<span class="cm-number">2860</span>) <span class="cm-operator">=&gt;</span> [<span class="cm-string">'Thursday'</span>, <span class="cm-string">'Friday'</span>]
+</code></pre>
+<pre style="display: none;"><code class="language-haskell"><span class="cm-variable">mostFrequentDays</span> <span class="cm-number">2427</span> <span class="cm-builtin">==</span> [<span class="cm-string">"Friday"</span>]
+<span class="cm-variable">mostFrequentDays</span> <span class="cm-number">2185</span> <span class="cm-builtin">==</span> [<span class="cm-string">"Saturday"</span>]
+<span class="cm-variable">mostFrequentDays</span> <span class="cm-number">2860</span> <span class="cm-builtin">==</span> [<span class="cm-string">"Thursday', 'Friday"</span>]
+</code></pre>
+<pre style="display: none;"><code class="language-raku"><span class="cm-meta">mostFrequentDays</span>(<span class="cm-number">1785</span>) <span class="cm-operator">==</span> <span class="cm-def">Array</span>[<span class="cm-def">Str</span>](<span class="cm-string">'Saturday'</span>)
+<span class="cm-meta">mostFrequentDays</span>(<span class="cm-number">1984</span>) <span class="cm-operator">==</span> <span class="cm-def">Array</span>[<span class="cm-def">Str</span>](<span class="cm-string">'Monday'</span>, <span class="cm-string">'Sunday'</span>)
+<span class="cm-meta">mostFrequentDays</span>(<span class="cm-number">2000</span>) <span class="cm-operator">==</span> <span class="cm-def">Array</span>[<span class="cm-def">Str</span>](<span class="cm-string">'Saturday'</span>, <span class="cm-string">'Sunday'</span>)
+</code></pre>
+<pre style="display: none;"><code class="language-rust"><span class="cm-variable">most_frequent_days</span>(<span class="cm-number">2427</span>) <span class="cm-operator">==</span> [<span class="cm-string">"</span><span class="cm-string">Friday</span><span class="cm-string">"</span>]
+<span class="cm-variable">most_frequent_days</span>(<span class="cm-number">2185</span>) <span class="cm-operator">==</span> [<span class="cm-string">"</span><span class="cm-string">Saturday</span><span class="cm-string">"</span>]
+<span class="cm-variable">most_frequent_days</span>(<span class="cm-number">2860</span>) <span class="cm-operator">==</span> [<span class="cm-string">"</span><span class="cm-string">Thursday</span><span class="cm-string">"</span>, <span class="cm-string">"</span><span class="cm-string">Friday</span><span class="cm-string">"</span>]
+</code></pre>
+                        </div>
+                    </div>
+                </div>
+            </main>
+        </div>
+    </div>
+</body>
+</html>

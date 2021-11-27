@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Factorial decomposition</title>
+    <link rel="stylesheet" media="screen" href="css/style.css">
+</head>
+<body>
+    <div id="app">
+        <div class="w-full" id="shell">
+            <main id="shell_content">
+                <div class="w-full mt-2">
+                    <h2>Factorial decomposition</h2>
+                    <h2>Points: 5 kyu</h2>
+                    <a href="https://www.codewars.com/kata/5a045fee46d843effa000070"><h2>Kata ID: 5a045fee46d843effa000070</h2></a>
+                    <div class="w-full panel bg-ui-section">
+                        <div class="markdown prose max-w-5xl mx-auto" id="description">
+                            <p>The aim of the kata is to decompose <code>n!</code> (factorial n) into its prime factors.</p>
+<p>Examples:</p>
+<pre><code>n = 12; decomp(12) -&gt; "2^10 * 3^5 * 5^2 * 7 * 11"
+since 12! is divisible by 2 ten times, by 3 five times, by 5 two times and by 7 and 11 only once.
+
+n = 22; decomp(22) -&gt; "2^19 * 3^9 * 5^4 * 7^3 * 11^2 * 13 * 17 * 19"
+
+n = 25; decomp(25) -&gt; 2^22 * 3^10 * 5^6 * 7^3 * 11^2 * 13 * 17 * 19 * 23
+</code></pre>
+<p>Prime numbers should be in increasing order. When the exponent of a prime is 1 don't put the exponent.</p>
+<p>Notes</p>
+<ul>
+<li>the function is <code>decomp(n)</code> and should return the decomposition of <code>n!</code> into its prime factors in increasing order of the primes, as a string.</li>
+<li>factorial can be a very big number (<code>4000! has 12674 digits</code>, n can go from 300 to 4000).</li>
+<li>In Fortran - as in any other language - the returned string is not permitted to contain any redundant trailing whitespace: you can use <code>dynamically allocated character strings</code>.</li>
+</ul>
+                        </div>
+                    </div>
+                </div>
+            </main>
+        </div>
+    </div>
+</body>
+</html>

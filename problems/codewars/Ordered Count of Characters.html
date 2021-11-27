@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Ordered Count of Characters</title>
+    <link rel="stylesheet" media="screen" href="css/style.css">
+</head>
+<body>
+    <div id="app">
+        <div class="w-full" id="shell">
+            <main id="shell_content">
+                <div class="w-full mt-2">
+                    <h2>Ordered Count of Characters</h2>
+                    <h2>Points: 7 kyu</h2>
+                    <a href="https://www.codewars.com/kata/57a6633153ba33189e000074"><h2>Kata ID: 57a6633153ba33189e000074</h2></a>
+                    <div class="w-full panel bg-ui-section">
+                        <div class="markdown prose max-w-5xl mx-auto" id="description">
+                            <p>Count the number of occurrences of each character and return it as a list of tuples in order of appearance. For empty output return an empty list.</p>
+<p>Example:</p>
+<pre><code class="language-python"><span class="cm-variable">ordered_count</span>(<span class="cm-string">"abracadabra"</span>) <span class="cm-operator">==</span> [(<span class="cm-string">'a'</span>, <span class="cm-number">5</span>), (<span class="cm-string">'b'</span>, <span class="cm-number">2</span>), (<span class="cm-string">'r'</span>, <span class="cm-number">2</span>), (<span class="cm-string">'c'</span>, <span class="cm-number">1</span>), (<span class="cm-string">'d'</span>, <span class="cm-number">1</span>)]
+</code></pre>
+<pre style="display: none;"><code class="language-ruby"><span class="cm-variable">ordered_count</span>(<span class="cm-string">"abracadabra"</span>) <span class="cm-operator">==</span> [[<span class="cm-string">'a'</span>, <span class="cm-number">5</span>], [<span class="cm-string">'b'</span>, <span class="cm-number">2</span>], [<span class="cm-string">'r'</span>, <span class="cm-number">2</span>], [<span class="cm-string">'c'</span>, <span class="cm-number">1</span>], [<span class="cm-string">'d'</span>, <span class="cm-number">1</span>]]
+</code></pre>
+<pre style="display: none;"><code class="language-haskell"><span class="cm-variable">orderedCount</span> <span class="cm-string">"abracadabra"</span> <span class="cm-builtin">==</span> [(<span class="cm-string">'a'</span>, <span class="cm-number">5</span>), (<span class="cm-string">'b'</span>, <span class="cm-number">2</span>), (<span class="cm-string">'r'</span>, <span class="cm-number">2</span>), (<span class="cm-string">'c'</span>, <span class="cm-number">1</span>), (<span class="cm-string">'d'</span>, <span class="cm-number">1</span>)]
+</code></pre>
+<pre style="display: none;"><code class="language-scala"><span class="cm-variable">Kata</span>.<span class="cm-variable">orderedCount</span>(<span class="cm-string">"abracadabra"</span>) <span class="cm-operator">==</span> <span class="cm-type">List</span>((<span class="cm-atom">'a</span><span class="cm-atom">'</span>, <span class="cm-number">5</span>), (<span class="cm-atom">'b</span><span class="cm-atom">'</span>, <span class="cm-number">2</span>), (<span class="cm-atom">'r</span><span class="cm-atom">'</span>, <span class="cm-number">2</span>), (<span class="cm-atom">'c</span><span class="cm-atom">'</span>, <span class="cm-number">1</span>), (<span class="cm-atom">'d</span><span class="cm-atom">'</span>, <span class="cm-number">1</span>))
+</code></pre>
+<pre style="display: none;"><code class="language-groovy"><span class="cm-variable">Kata</span>.<span class="cm-property">orderedCount</span>(<span class="cm-string">"abracadabra"</span>) <span class="cm-operator">==</span> [[<span class="cm-string">'a'</span>, <span class="cm-number">5</span>], [<span class="cm-string">'b'</span>, <span class="cm-number">2</span>], [<span class="cm-string">'r'</span>, <span class="cm-number">2</span>], [<span class="cm-string">'c'</span>, <span class="cm-number">1</span>], [<span class="cm-string">'d'</span>, <span class="cm-number">1</span>]]
+</code></pre>
+<pre style="display: none;"><code class="language-csharp"><span class="cm-variable">Kata</span>.<span class="cm-variable">OrderedCount</span>(<span class="cm-string">"abracadabra"</span>) <span class="cm-operator">==</span> <span class="cm-keyword">new</span> <span class="cm-variable">List</span><span class="cm-operator">&lt;</span><span class="cm-variable">Tuple</span><span class="cm-operator">&lt;</span><span class="cm-type">char</span>, <span class="cm-type">int</span><span class="cm-operator">&gt;&gt;</span> () {
+  <span class="cm-keyword">new</span> <span class="cm-variable">Tuple</span><span class="cm-operator">&lt;</span><span class="cm-type">char</span>, <span class="cm-type">int</span><span class="cm-operator">&gt;</span>(<span class="cm-string">'a'</span>, <span class="cm-number">5</span>),
+  <span class="cm-keyword">new</span> <span class="cm-variable">Tuple</span><span class="cm-operator">&lt;</span><span class="cm-type">char</span>, <span class="cm-type">int</span><span class="cm-operator">&gt;</span>(<span class="cm-string">'b'</span>, <span class="cm-number">2</span>),
+  <span class="cm-keyword">new</span> <span class="cm-variable">Tuple</span><span class="cm-operator">&lt;</span><span class="cm-type">char</span>, <span class="cm-type">int</span><span class="cm-operator">&gt;</span>(<span class="cm-string">'r'</span>, <span class="cm-number">2</span>), 
+  <span class="cm-keyword">new</span> <span class="cm-variable">Tuple</span><span class="cm-operator">&lt;</span><span class="cm-type">char</span>, <span class="cm-type">int</span><span class="cm-operator">&gt;</span>(<span class="cm-string">'c'</span>, <span class="cm-number">1</span>),
+  <span class="cm-keyword">new</span> <span class="cm-variable">Tuple</span><span class="cm-operator">&lt;</span><span class="cm-type">char</span>, <span class="cm-type">int</span><span class="cm-operator">&gt;</span>(<span class="cm-string">'d'</span>, <span class="cm-number">1</span>)
+}
+</code></pre>
+<pre style="display: none;"><code class="language-javascript"><span class="cm-variable">orderedCount</span>(<span class="cm-string">"abracadabra"</span>) <span class="cm-operator">==</span> [[<span class="cm-string">'a'</span>, <span class="cm-number">5</span>], [<span class="cm-string">'b'</span>, <span class="cm-number">2</span>], [<span class="cm-string">'r'</span>, <span class="cm-number">2</span>], [<span class="cm-string">'c'</span>, <span class="cm-number">1</span>], [<span class="cm-string">'d'</span>, <span class="cm-number">1</span>]]
+</code></pre>
+<pre style="display: none;"><code class="language-julia"><span class="cm-comment"># Note the single quotes: don't use a string, a character is used instead</span>
+<span class="cm-variable">orderedCount</span>(<span class="cm-string">"abracadabra</span><span class="cm-string">"</span>) <span class="cm-operator">==</span> [[<span class="cm-string">'a'</span>, <span class="cm-number">5</span>], [<span class="cm-string">'b'</span>, <span class="cm-number">2</span>], [<span class="cm-string">'r'</span>, <span class="cm-number">2</span>], [<span class="cm-string">'c'</span>, <span class="cm-number">1</span>], [<span class="cm-string">'d'</span>, <span class="cm-number">1</span>]]
+</code></pre>
+<pre style="display: none;"><code class="language-crystal"><span class="cm-comment"># Note the single quotes: don't use a string, a character is used instead</span>
+<span class="cm-variable">ordered_count</span>(<span class="cm-string">"abracadabra"</span>) <span class="cm-operator">==</span> [{<span class="cm-atom">'a'</span>, <span class="cm-number">5</span>}, {<span class="cm-atom">'b'</span>, <span class="cm-number">2</span>}, {<span class="cm-atom">'r'</span>, <span class="cm-number">2</span>}, {<span class="cm-atom">'c'</span>, <span class="cm-number">1</span>}, {<span class="cm-atom">'d'</span>, <span class="cm-number">1</span>}]
+</code></pre>
+<pre style="display: none;"><code class="language-php"><span class="cm-variable">orderedCount</span>(<span class="cm-string">"</span><span class="cm-string">abracadabra"</span>) <span class="cm-operator">==</span> [[<span class="cm-string">'a'</span>, <span class="cm-number">5</span>], [<span class="cm-string">'b'</span>, <span class="cm-number">2</span>], [<span class="cm-string">'r'</span>, <span class="cm-number">2</span>], [<span class="cm-string">'c'</span>, <span class="cm-number">1</span>], [<span class="cm-string">'d'</span>, <span class="cm-number">1</span>]]
+</code></pre>
+<pre style="display: none;"><code class="language-fsharp"><span class="cm-variable">orderedCount</span>(<span class="cm-string">"abracadabra"</span>) <span class="cm-operator">=</span> [('<span class="cm-variable">a</span>', <span class="cm-number">5</span>), ('<span class="cm-variable">b</span>', <span class="cm-number">2</span>), ('<span class="cm-variable">r</span>', <span class="cm-number">2</span>), ('<span class="cm-variable">c</span>', <span class="cm-number">1</span>), ('<span class="cm-variable">d</span>', <span class="cm-number">1</span>)]
+</code></pre>
+<pre style="display: none;"><code class="language-c"><span class="cm-variable">ordered_count</span>(<span class="cm-string">"abracadabra"</span>, <span class="cm-operator">*</span><span class="cm-variable">szout</span>);
+
+<span class="cm-comment">// using:</span>
+<span class="cm-keyword">typedef</span> <span class="cm-keyword">struct</span> <span class="cm-def">Character_Count_Pair</span> {
+    <span class="cm-type">char</span> <span class="cm-variable">character</span>;
+    <span class="cm-type">size_t</span> <span class="cm-variable">count</span>;
+} <span class="cm-variable">ccp</span>;
+
+<span class="cm-comment">// returns:</span>
+{{<span class="cm-string">'a'</span>, <span class="cm-number">5</span>}, {<span class="cm-string">'b'</span>, <span class="cm-number">2</span>}, {<span class="cm-string">'r'</span>, <span class="cm-number">2</span>}, {<span class="cm-string">'c'</span>, <span class="cm-number">1</span>}, {<span class="cm-string">'d'</span>, <span class="cm-number">1</span>}}
+
+<span class="cm-comment">// assigns length:</span>
+<span class="cm-variable">szout</span> <span class="cm-operator">=</span> <span class="cm-number">5</span>
+</code></pre>
+<pre style="display: none;"><code class="language-go"><span class="cm-variable">OrderedCount</span>(<span class="cm-string">"abracadabra"</span>) <span class="cm-operator">==</span> []<span class="cm-variable">Tuple</span>{<span class="cm-variable">Tuple</span>{<span class="cm-string">'a'</span>, <span class="cm-number">5</span>}, <span class="cm-variable">Tuple</span>{<span class="cm-string">'b'</span>, <span class="cm-number">2</span>}, <span class="cm-variable">Tuple</span>{<span class="cm-string">'r'</span>, <span class="cm-number">2</span>}, <span class="cm-variable">Tuple</span>{<span class="cm-string">'c'</span>, <span class="cm-number">1</span>}, <span class="cm-variable">Tuple</span>{<span class="cm-string">'d'</span>, <span class="cm-number">1</span>}}
+
+<span class="cm-comment">// Where</span>
+<span class="cm-keyword">type</span> <span class="cm-variable">Tuple</span> <span class="cm-keyword">struct</span> {
+    <span class="cm-variable">Char</span>  <span class="cm-keyword">rune</span>
+    <span class="cm-variable">Count</span> <span class="cm-keyword">int</span>
+}
+</code></pre>
+<pre style="display: none;"><code class="language-vb"><span class="cm-variable">Kata</span><span class="cm-variable">.OrderedCount</span>(<span class="cm-string">"abracadabra"</span>) <span class="cm-operator">==</span> <span class="cm-keyword">new</span> <span class="cm-variable">List</span>(<span class="cm-keyword">Of</span> <span class="cm-variable">Tuple</span>(<span class="cm-keyword">Of</span> <span class="cm-keyword">Char</span>, <span class="cm-keyword">Integer</span>)) () <span class="cm-variable">From</span> {
+  <span class="cm-keyword">new</span> <span class="cm-variable">Tuple</span>(<span class="cm-keyword">char</span>, <span class="cm-variable">int</span>)(<span class="cm-string">"a"</span><span class="cm-variable">c</span>, <span class="cm-number">5</span>),
+  <span class="cm-keyword">new</span> <span class="cm-variable">Tuple</span>(<span class="cm-keyword">char</span>, <span class="cm-variable">int</span>)(<span class="cm-string">"b"</span><span class="cm-variable">c</span>, <span class="cm-number">2</span>),
+  <span class="cm-keyword">new</span> <span class="cm-variable">Tuple</span>(<span class="cm-keyword">char</span>, <span class="cm-variable">int</span>)(<span class="cm-string">"r"</span><span class="cm-variable">c</span>, <span class="cm-number">2</span>), 
+  <span class="cm-keyword">new</span> <span class="cm-variable">Tuple</span>(<span class="cm-keyword">char</span>, <span class="cm-variable">int</span>)(<span class="cm-string">"c"</span><span class="cm-variable">c</span>, <span class="cm-number">1</span>),
+  <span class="cm-keyword">new</span> <span class="cm-variable">Tuple</span>(<span class="cm-keyword">char</span>, <span class="cm-variable">int</span>)(<span class="cm-string">"d"</span><span class="cm-variable">c</span>, <span class="cm-number">1</span>)
+}
+</code></pre>
+<pre style="display: none;"><code class="language-rust"><span class="cm-variable">ordered_count</span>(<span class="cm-string">"</span><span class="cm-string">abracadabra</span><span class="cm-string">"</span>) <span class="cm-operator">==</span> <span class="cm-variable-3">vec!</span>[(<span class="cm-string-2">'a'</span>, <span class="cm-number">5</span>), (<span class="cm-string-2">'b'</span>, <span class="cm-number">2</span>), (<span class="cm-string-2">'r'</span>, <span class="cm-number">2</span>), (<span class="cm-string-2">'c'</span>, <span class="cm-number">1</span>), (<span class="cm-string-2">'d'</span>, <span class="cm-number">1</span>)]
+</code></pre>
+<pre style="display: none;"><code class="language-typescript"><span class="cm-variable">orderedCount</span>(<span class="cm-string">"abracadabra"</span>) <span class="cm-operator">==</span> [[<span class="cm-string">'a'</span>, <span class="cm-number">5</span>], [<span class="cm-string">'b'</span>, <span class="cm-number">2</span>], [<span class="cm-string">'r'</span>, <span class="cm-number">2</span>], [<span class="cm-string">'c'</span>, <span class="cm-number">1</span>], [<span class="cm-string">'d'</span>, <span class="cm-number">1</span>]]
+</code></pre>
+                        </div>
+                    </div>
+                </div>
+            </main>
+        </div>
+    </div>
+</body>
+</html>

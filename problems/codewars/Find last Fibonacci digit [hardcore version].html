@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Find last Fibonacci digit [hardcore version]</title>
+    <link rel="stylesheet" media="screen" href="css/style.css">
+</head>
+<body>
+    <div id="app">
+        <div class="w-full" id="shell">
+            <main id="shell_content">
+                <div class="w-full mt-2">
+                    <h2>Find last Fibonacci digit [hardcore version]</h2>
+                    <h2>Points: 6 kyu</h2>
+                    <a href="https://www.codewars.com/kata/56b7771481290cc283000f28"><h2>Kata ID: 56b7771481290cc283000f28</h2></a>
+                    <div class="w-full panel bg-ui-section">
+                        <div class="markdown prose max-w-5xl mx-auto" id="description">
+                            <p>Just like in the <a href="http://www.codewars.com/kata/find-fibonacci-last-digit/" target="_blank">"father" kata</a>, you will have to return the last digit of the nth element in the Fibonacci sequence (starting with 1,1, to be extra clear, not with 0,1 or other numbers).</p>
+<p>You will just get much bigger numbers, so good luck bruteforcing your way through it ;)</p>
+<pre><code class="language-javascript"><span class="cm-variable">lastFibDigit</span>(<span class="cm-number">1</span>) <span class="cm-operator">==</span> <span class="cm-number">1</span>
+<span class="cm-variable">lastFibDigit</span>(<span class="cm-number">2</span>) <span class="cm-operator">==</span> <span class="cm-number">1</span>
+<span class="cm-variable">lastFibDigit</span>(<span class="cm-number">3</span>) <span class="cm-operator">==</span> <span class="cm-number">2</span>
+<span class="cm-variable">lastFibDigit</span>(<span class="cm-number">1000</span>) <span class="cm-operator">==</span> <span class="cm-number">5</span>
+<span class="cm-variable">lastFibDigit</span>(<span class="cm-number">1000000</span>) <span class="cm-operator">==</span> <span class="cm-number">5</span>
+</code></pre>
+<pre style="display: none;"><code class="language-csharp"><span class="cm-variable">Kata</span>.<span class="cm-variable">LastFibDigit</span>(<span class="cm-number">1</span>) <span class="cm-operator">==</span> <span class="cm-number">1</span>
+<span class="cm-variable">Kata</span>.<span class="cm-variable">LastFibDigit</span>(<span class="cm-number">2</span>) <span class="cm-operator">==</span> <span class="cm-number">1</span>
+<span class="cm-variable">Kata</span>.<span class="cm-variable">LastFibDigit</span>(<span class="cm-number">3</span>) <span class="cm-operator">==</span> <span class="cm-number">2</span>
+<span class="cm-variable">Kata</span>.<span class="cm-variable">LastFibDigit</span>(<span class="cm-number">1000</span>) <span class="cm-operator">==</span> <span class="cm-number">5</span>
+<span class="cm-variable">Kata</span>.<span class="cm-variable">LastFibDigit</span>(<span class="cm-number">1000000</span>) <span class="cm-operator">==</span> <span class="cm-number">5</span>
+</code></pre>
+<pre style="display: none;"><code class="language-python"><span class="cm-variable">last_fib_digit</span>(<span class="cm-number">1</span>) <span class="cm-operator">==</span> <span class="cm-number">1</span>
+<span class="cm-variable">last_fib_digit</span>(<span class="cm-number">2</span>) <span class="cm-operator">==</span> <span class="cm-number">1</span>
+<span class="cm-variable">last_fib_digit</span>(<span class="cm-number">3</span>) <span class="cm-operator">==</span> <span class="cm-number">2</span>
+<span class="cm-variable">last_fib_digit</span>(<span class="cm-number">1000</span>) <span class="cm-operator">==</span> <span class="cm-number">5</span>
+<span class="cm-variable">last_fib_digit</span>(<span class="cm-number">1000000</span>) <span class="cm-operator">==</span> <span class="cm-number">5</span>
+</code></pre>
+<pre style="display: none;"><code class="language-ruby"><span class="cm-variable">last_fib_digit</span>(<span class="cm-number">1</span>) <span class="cm-operator">==</span> <span class="cm-number">1</span>
+<span class="cm-variable">last_fib_digit</span>(<span class="cm-number">2</span>) <span class="cm-operator">==</span> <span class="cm-number">1</span>
+<span class="cm-variable">last_fib_digit</span>(<span class="cm-number">3</span>) <span class="cm-operator">==</span> <span class="cm-number">2</span>
+<span class="cm-variable">last_fib_digit</span>(<span class="cm-number">1000</span>) <span class="cm-operator">==</span> <span class="cm-number">5</span>
+<span class="cm-variable">last_fib_digit</span>(<span class="cm-number">1000000</span>) <span class="cm-operator">==</span> <span class="cm-number">5</span>
+</code></pre>
+<pre style="display: none;"><code class="language-haskell"><span class="cm-variable">lastFibDigit</span>       <span class="cm-number">1</span> <span class="cm-builtin">==</span> <span class="cm-number">1</span>
+<span class="cm-variable">lastFibDigit</span>       <span class="cm-number">2</span> <span class="cm-builtin">==</span> <span class="cm-number">1</span>
+<span class="cm-variable">lastFibDigit</span>       <span class="cm-number">3</span> <span class="cm-builtin">==</span> <span class="cm-number">2</span>
+<span class="cm-variable">lastFibDigit</span>    <span class="cm-number">1000</span> <span class="cm-builtin">==</span> <span class="cm-number">5</span>
+<span class="cm-variable">lastFibDigit</span> <span class="cm-number">1000000</span> <span class="cm-builtin">==</span> <span class="cm-number">5</span>
+</code></pre>
+<pre style="display: none;"><code class="language-java"><span class="cm-variable">Kata</span>.<span class="cm-variable">lastFibDigit</span>(<span class="cm-number">1</span>) <span class="cm-operator">==</span> <span class="cm-number">1</span>
+<span class="cm-variable">Kata</span>.<span class="cm-variable">lastFibDigit</span>(<span class="cm-number">2</span>) <span class="cm-operator">==</span> <span class="cm-number">1</span>
+<span class="cm-variable">Kata</span>.<span class="cm-variable">lastFibDigit</span>(<span class="cm-number">3</span>) <span class="cm-operator">==</span> <span class="cm-number">2</span>
+<span class="cm-variable">Kata</span>.<span class="cm-variable">lastFibDigit</span>(<span class="cm-number">1000</span>) <span class="cm-operator">==</span> <span class="cm-number">5</span>
+<span class="cm-variable">Kata</span>.<span class="cm-variable">lastFibDigit</span>(<span class="cm-number">1000000</span>) <span class="cm-operator">==</span> <span class="cm-number">5</span>
+</code></pre>
+<pre style="display: none;"><code class="language-go"><span class="cm-variable">LastFibDigit</span>(<span class="cm-number">1</span>) <span class="cm-operator">==</span> <span class="cm-number">1</span>
+<span class="cm-variable">LastFibDigit</span>(<span class="cm-number">2</span>) <span class="cm-operator">==</span> <span class="cm-number">1</span>
+<span class="cm-variable">LastFibDigit</span>(<span class="cm-number">3</span>) <span class="cm-operator">==</span> <span class="cm-number">2</span>
+<span class="cm-variable">LastFibDigit</span>(<span class="cm-number">1000</span>) <span class="cm-operator">==</span> <span class="cm-number">5</span>
+<span class="cm-variable">LastFibDigit</span>(<span class="cm-number">1000000</span>) <span class="cm-operator">==</span> <span class="cm-number">5</span>
+</code></pre>
+<pre style="display: none;"><code class="language-cobol">       Last-Fibonacci-Digit (<span class="cm-number">1</span>) <span class="cm-builtin">=</span> <span class="cm-number">1</span>
+       Last-Fibonacci-Digit (<span class="cm-number">2</span>) <span class="cm-builtin">=</span> <span class="cm-number">1</span>
+       Last-Fibonacci-Digit (<span class="cm-number">3</span>) <span class="cm-builtin">=</span> <span class="cm-number">2</span>
+       Last-Fibonacci-Digit (<span class="cm-number">1000</span>) <span class="cm-builtin">=</span> <span class="cm-number">5</span>
+       Last-Fibonacci-Digit (<span class="cm-number">1000000</span>) <span class="cm-builtin">=</span> <span class="cm-number">5</span>
+</code></pre>
+                        </div>
+                    </div>
+                </div>
+            </main>
+        </div>
+    </div>
+</body>
+</html>

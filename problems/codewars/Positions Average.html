@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Positions Average</title>
+    <link rel="stylesheet" media="screen" href="css/style.css">
+</head>
+<body>
+    <div id="app">
+        <div class="w-full" id="shell">
+            <main id="shell_content">
+                <div class="w-full mt-2">
+                    <h2>Positions Average</h2>
+                    <h2>Points: 6 kyu</h2>
+                    <a href="https://www.codewars.com/kata/59f4a0acbee84576800000af"><h2>Kata ID: 59f4a0acbee84576800000af</h2></a>
+                    <div class="w-full panel bg-ui-section">
+                        <div class="markdown prose max-w-5xl mx-auto" id="description">
+                            <p>Suppose you have 4 numbers: <code>'0', '9', '6', '4'</code> and 3 strings composed with them:</p>
+<pre><code>s1 = "6900690040"
+s2 = "4690606946"
+s3 = "9990494604"
+</code></pre>
+<p>Compare <code>s1</code> and <code>s2</code> to see how many positions they have in common:
+<code>0</code> at index 3, <code>6</code> at index 4, <code>4</code> at index 8 ie 3 common positions out of ten.</p>
+<p>Compare <code>s1</code> and <code>s3</code> to see how many positions they have in common:
+<code>9</code> at index 1, <code>0</code> at index 3, <code>9</code> at index 5 ie 3  common positions out of ten.</p>
+<p>Compare <code>s2</code> and <code>s3</code>. We find 2 common positions out of ten.</p>
+<p>So for the 3 strings we have 8 common positions out of 30 ie 0.2666... or 26.666...%</p>
+<p>Given <code>n</code> substrings (n &gt;= 2) in a string <code>s</code> our function <code>pos_average</code> will calculate the average percentage of positions that are the same
+between the <code>(n * (n-1)) / 2</code> sets of substrings taken amongst the given <code>n</code> substrings. It can happen that some substrings are duplicate but since their ranks are not the same in <code>s</code> they are considered as different substrings.</p>
+<p>The function returns the percentage formatted as a float with 10 decimals but the result is tested at 1e.-9 (see function assertFuzzy in the tests).</p>
+<h4 id="example">Example:</h4>
+<p>Given string s = "444996, 699990, 666690, 096904, 600644, 640646, 606469, 409694, 666094, 606490"
+composing a set of n = 10 substrings (hence 45 combinations), <code>pos_average</code> returns <code>29.2592592593</code>.</p>
+<p>In a set the <code>n</code> substrings will have the same length ( &gt; 0 ).</p>
+<h4 id="notes">Notes</h4>
+<ul>
+<li>You can see other examples in the "Sample tests".</li>
+</ul>
+                        </div>
+                    </div>
+                </div>
+            </main>
+        </div>
+    </div>
+</body>
+</html>

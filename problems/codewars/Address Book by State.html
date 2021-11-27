@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Address Book by State</title>
+    <link rel="stylesheet" media="screen" href="css/style.css">
+</head>
+<body>
+    <div id="app">
+        <div class="w-full" id="shell">
+            <main id="shell_content">
+                <div class="w-full mt-2">
+                    <h2>Address Book by State</h2>
+                    <h2>Points: 6 kyu</h2>
+                    <a href="https://www.codewars.com/kata/59d0ee709f0cbcf65400003b"><h2>Kata ID: 59d0ee709f0cbcf65400003b</h2></a>
+                    <div class="w-full panel bg-ui-section">
+                        <div class="markdown prose max-w-5xl mx-auto" id="description">
+                            <p>Given a string with friends to visit in different states:</p>
+<pre><code>ad3="John Daggett, 341 King Road, Plymouth MA
+Alice Ford, 22 East Broadway, Richmond VA
+Sal Carpenter, 73 6th Street, Boston MA"
+</code></pre>
+<p>we want to produce a result that sorts the names by state and lists the name of the state followed by the name of each person residing in that state (people's names sorted). When the result is printed we get:</p>
+<pre><code>Massachusetts
+.....^John Daggett 341 King Road Plymouth Massachusetts
+.....^Sal Carpenter 73 6th Street Boston Massachusetts
+^Virginia
+.....^Alice Ford 22 East Broadway Richmond Virginia
+</code></pre>
+<p>Spaces not being always well seen, in the above result <code>^</code> means a white space.</p>
+<p>The resulting string (when not printed) will be:</p>
+<pre><code>"Massachusetts\n..... John Daggett 341 King Road Plymouth Massachusetts\n..... Sal Carpenter 73 6th Street Boston Massachusetts\n Virginia\n..... Alice Ford 22 East Broadway Richmond Virginia"
+</code></pre>
+<p>or (the separator is <code>\n</code> or <code>\r\n</code> depending on the language)</p>
+<pre><code>"Massachusetts\r\n..... John Daggett 341 King Road Plymouth Massachusetts\r\n..... Sal Carpenter 73 6th Street Boston Massachusetts\r\n Virginia\r\n..... Alice Ford 22 East Broadway Richmond Virginia"
+</code></pre>
+<h4 id="notes">Notes</h4>
+<ul>
+<li>There can be a blank last line in the given string of addresses.</li>
+<li>The tests only contains CA, MA, OK, PA, VA, AZ, ID, IN for states.</li>
+<li>You can see another example in the "Sample tests".</li>
+</ul>
+<h4 id="states">States</h4>
+<p>For the lazy ones:</p>
+<pre><code>'AZ': 'Arizona',
+'CA': 'California',
+'ID': 'Idaho',
+'IN': 'Indiana',
+'MA': 'Massachusetts',
+'OK': 'Oklahoma',
+'PA': 'Pennsylvania',
+'VA': 'Virginia'
+</code></pre>
+                        </div>
+                    </div>
+                </div>
+            </main>
+        </div>
+    </div>
+</body>
+</html>

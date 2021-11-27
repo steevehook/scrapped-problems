@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Maximum subarray sum</title>
+    <link rel="stylesheet" media="screen" href="css/style.css">
+</head>
+<body>
+    <div id="app">
+        <div class="w-full" id="shell">
+            <main id="shell_content">
+                <div class="w-full mt-2">
+                    <h2>Maximum subarray sum</h2>
+                    <h2>Points: 5 kyu</h2>
+                    <a href="https://www.codewars.com/kata/54521e9ec8e60bc4de000d6c"><h2>Kata ID: 54521e9ec8e60bc4de000d6c</h2></a>
+                    <div class="w-full panel bg-ui-section">
+                        <div class="markdown prose max-w-5xl mx-auto" id="description">
+                            <p>The maximum sum subarray problem consists in finding the maximum sum of a contiguous subsequence in an array or list of integers:</p>
+<pre><code class="language-haskell"><span class="cm-variable">maxSequence</span> [<span class="cm-builtin">-</span><span class="cm-number">2</span>, <span class="cm-number">1</span>, <span class="cm-builtin">-</span><span class="cm-number">3</span>, <span class="cm-number">4</span>, <span class="cm-builtin">-</span><span class="cm-number">1</span>, <span class="cm-number">2</span>, <span class="cm-number">1</span>, <span class="cm-builtin">-</span><span class="cm-number">5</span>, <span class="cm-number">4</span>]
+<span class="cm-comment">-- should be 6: [4, -1, 2, 1]</span>
+</code></pre>
+<pre style="display: none;"><code class="language-javascript"><span class="cm-variable">maxSequence</span>([<span class="cm-operator">-</span><span class="cm-number">2</span>, <span class="cm-number">1</span>, <span class="cm-operator">-</span><span class="cm-number">3</span>, <span class="cm-number">4</span>, <span class="cm-operator">-</span><span class="cm-number">1</span>, <span class="cm-number">2</span>, <span class="cm-number">1</span>, <span class="cm-operator">-</span><span class="cm-number">5</span>, <span class="cm-number">4</span>])
+<span class="cm-comment">// should be 6: [4, -1, 2, 1]</span>
+</code></pre>
+<pre style="display: none;"><code class="language-python"><span class="cm-variable">max_sequence</span>([<span class="cm-operator">-</span><span class="cm-number">2</span>, <span class="cm-number">1</span>, <span class="cm-operator">-</span><span class="cm-number">3</span>, <span class="cm-number">4</span>, <span class="cm-operator">-</span><span class="cm-number">1</span>, <span class="cm-number">2</span>, <span class="cm-number">1</span>, <span class="cm-operator">-</span><span class="cm-number">5</span>, <span class="cm-number">4</span>])
+<span class="cm-comment"># should be 6: [4, -1, 2, 1]</span>
+</code></pre>
+<pre style="display: none;"><code class="language-clojure"><span class="cm-bracket">(</span><span class="cm-builtin">max-sequence</span> <span class="cm-bracket">[</span><span class="cm-number">-2</span>, <span class="cm-number">1</span>, <span class="cm-number">-3</span>, <span class="cm-number">4</span>, <span class="cm-number">-1</span>, <span class="cm-number">2</span>, <span class="cm-number">1</span>, <span class="cm-number">-5</span>, <span class="cm-number">4</span><span class="cm-bracket">]</span><span class="cm-bracket">)</span>
+<span class="cm-comment">;; should be 6: [4, -1, 2, 1]</span>
+</code></pre>
+<pre style="display: none;"><code class="language-java"><span class="cm-variable">Max</span>.<span class="cm-variable">sequence</span>(<span class="cm-keyword">new</span> <span class="cm-type">int</span>[]{<span class="cm-operator">-</span><span class="cm-number">2</span>, <span class="cm-number">1</span>, <span class="cm-operator">-</span><span class="cm-number">3</span>, <span class="cm-number">4</span>, <span class="cm-operator">-</span><span class="cm-number">1</span>, <span class="cm-number">2</span>, <span class="cm-number">1</span>, <span class="cm-operator">-</span><span class="cm-number">5</span>, <span class="cm-number">4</span>});
+<span class="cm-comment">// should be 6: {4, -1, 2, 1}</span>
+</code></pre>
+<pre style="display: none;"><code class="language-kotlin"><span class="cm-variable">maxSequence</span>(<span class="cm-variable">listOf</span>(<span class="cm-operator">-</span><span class="cm-number">2</span>, <span class="cm-number">1</span>, <span class="cm-operator">-</span><span class="cm-number">3</span>, <span class="cm-number">4</span>, <span class="cm-operator">-</span><span class="cm-number">1</span>, <span class="cm-number">2</span>, <span class="cm-number">1</span>, <span class="cm-operator">-</span><span class="cm-number">5</span>, <span class="cm-number">4</span>));
+<span class="cm-comment">// should be 6: listOf(4, -1, 2, 1)</span>
+</code></pre>
+<pre style="display: none;"><code class="language-c"><span class="cm-variable">maxSequence</span>({<span class="cm-operator">-</span><span class="cm-number">2</span>, <span class="cm-number">1</span>, <span class="cm-operator">-</span><span class="cm-number">3</span>, <span class="cm-number">4</span>, <span class="cm-operator">-</span><span class="cm-number">1</span>, <span class="cm-number">2</span>, <span class="cm-number">1</span>, <span class="cm-operator">-</span><span class="cm-number">5</span>, <span class="cm-number">4</span>}, <span class="cm-number">9</span>)
+<span class="cm-comment">// should return 6, from sub-array: {4, -1, 2, 1}</span>
+</code></pre>
+<pre style="display: none;"><code class="language-cpp"><span class="cm-variable">maxSequence</span>({<span class="cm-operator">-</span><span class="cm-number">2</span>, <span class="cm-number">1</span>, <span class="cm-operator">-</span><span class="cm-number">3</span>, <span class="cm-number">4</span>, <span class="cm-operator">-</span><span class="cm-number">1</span>, <span class="cm-number">2</span>, <span class="cm-number">1</span>, <span class="cm-operator">-</span><span class="cm-number">5</span>, <span class="cm-number">4</span>});
+<span class="cm-comment">//should be 6: {4, -1, 2, 1}</span>
+</code></pre>
+<p>Easy case is when the list is made up of only positive numbers and the maximum sum is the sum of the whole array. If the list is made up of only negative numbers, return 0 instead.</p>
+<p>Empty list is considered to have zero greatest sum. Note that the empty list or array is also a valid sublist/subarray.</p>
+                        </div>
+                    </div>
+                </div>
+            </main>
+        </div>
+    </div>
+</body>
+</html>

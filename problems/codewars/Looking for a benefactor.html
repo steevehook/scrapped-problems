@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Looking for a benefactor</title>
+    <link rel="stylesheet" media="screen" href="css/style.css">
+</head>
+<body>
+    <div id="app">
+        <div class="w-full" id="shell">
+            <main id="shell_content">
+                <div class="w-full mt-2">
+                    <h2>Looking for a benefactor</h2>
+                    <h2>Points: 7 kyu</h2>
+                    <a href="https://www.codewars.com/kata/569b5cec755dd3534d00000f"><h2>Kata ID: 569b5cec755dd3534d00000f</h2></a>
+                    <div class="w-full panel bg-ui-section">
+                        <div class="markdown prose max-w-5xl mx-auto" id="description">
+                            <p>The accounts of the "Fat to Fit Club (FFC)" association are supervised by John as a volunteered accountant.
+The association is funded through financial donations from generous benefactors. John has a list of
+the first <code>n</code> donations: <code>[14, 30, 5, 7, 9, 11, 15]</code>
+He wants to know how much the next benefactor should give to the association so that the 
+average of the first <code>n + 1</code> donations should reach an average of <code>30</code>.
+After doing the math he found <code>149</code>. He thinks that he made a mistake.
+Could you help him?</p>
+<p>if <code>dons = [14, 30, 5, 7, 9, 11, 15]</code> then <code>new_avg(dons, 30) --&gt; 149</code></p>
+<p>The function <code>new_avg(arr, navg)</code> should return the expected donation
+(rounded up to the next integer) that will permit to reach the average <code>navg</code>. </p>
+<p>Should the last donation be a non positive number <code>(&lt;= 0)</code> John wants us to throw (or raise) an error or</p>
+<ul>
+<li>return Nothing in Haskell, Elm</li>
+<li>return None in F#, Ocaml, Scala</li>
+<li>return <code>-1</code> in C, Fortran,  Nim, PowerShell, Go, Pascal, Prolog, Lua, Perl</li>
+<li>echo <code>ERROR</code> in Shell</li>
+<li>raise-argument-error in Racket</li>
+</ul>
+<p>so that he clearly sees that his expectations are not great enough.</p>
+<p>Notes: </p>
+<ul>
+<li>all donations and <code>navg</code> are numbers (integers or floats), <code>arr</code> can be empty.</li>
+<li>See examples below and "Test Samples" to see which return is to be done.</li>
+</ul>
+<pre><code>new_avg([14, 30, 5, 7, 9, 11, 15], 92) should return 645
+new_avg([14, 30, 5, 7, 9, 11, 15], 2) 
+should raise an error (ValueError or invalid_argument or argument-error or DomainError) 
+or return `-1` or ERROR or Nothing or None depending on the language.
+</code></pre>
+                        </div>
+                    </div>
+                </div>
+            </main>
+        </div>
+    </div>
+</body>
+</html>

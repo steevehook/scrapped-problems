@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Integers: Recreation Two</title>
+    <link rel="stylesheet" media="screen" href="css/style.css">
+</head>
+<body>
+    <div id="app">
+        <div class="w-full" id="shell">
+            <main id="shell_content">
+                <div class="w-full mt-2">
+                    <h2>Integers: Recreation Two</h2>
+                    <h2>Points: 6 kyu</h2>
+                    <a href="https://www.codewars.com/kata/55e86e212fce2aae75000060"><h2>Kata ID: 55e86e212fce2aae75000060</h2></a>
+                    <div class="w-full panel bg-ui-section">
+                        <div class="markdown prose max-w-5xl mx-auto" id="description">
+                            <p>We are still with squared integers.</p>
+<p>Given 4 integers <code>a, b, c, d</code> we form the sum of the squares of <code>a</code> and <code>b</code>
+and then the sum of the squares of <code>c</code> and <code>d</code>. We multiply the two sums hence a number <code>n</code> and we try to
+decompose <code>n</code> in a sum of two squares <code>e</code> and <code>f</code> (e and f integers &gt;= 0) so that <code>n = e² + f²</code>. </p>
+<p>More: <code>e</code> and <code>f</code> must result only from sums (or differences) of products between on the one hand <code>(a, b)</code> and on the other <code>(c, d)</code> each of <code>a, b, c, d</code> taken only once. 
+For example, 
+prod2sum(1, 2, 1, 3) should return [[1, 7], [5, 5]]) 
+because </p>
+<pre><code>1==1*3-1*2
+7==2*3+1*1
+5==1*2+1*3
+</code></pre>
+<p>Suppose we have <code>a = 1, b = 2, c = 1, d = 3</code>. First we calculate the sums 
+<code>1² + 2² = 5 and 1² + 3² = 10</code> hence <code>n = 50</code>.</p>
+<p><code>50 = 1² + 7² or 50 = 7² + 1²</code> (we'll consider that these two solutions are the same)
+or <code>50 = 5² + 5²</code>. </p>
+<p>The return of our function will be an array of subarrays (in C an array of Pairs) sorted on the first elements of the subarrays. In each subarray the lower element should be the first.</p>
+<p><code>prod2sum(1, 2, 1, 3) should return [[1, 7], [5, 5]]</code></p>
+<p><code>prod2sum(2, 3, 4, 5) should return  [[2, 23], [7, 22]]</code></p>
+<p>because <code>(2² + 3²) * (4² + 5²) = 533 = (7² + 22²) = (23² + 2²)</code></p>
+<p><code>prod2sum(1, 2, 2, 3) should return  [[1, 8], [4, 7]]</code></p>
+<p><code>prod2sum(1, 1, 3, 5) should return  [[2, 8]]</code> (there are not always 2 solutions).</p>
+<p>##Hint
+Take a sheet of paper and with a bit of algebra try to write the product of squared numbers in another way.</p>
+                        </div>
+                    </div>
+                </div>
+            </main>
+        </div>
+    </div>
+</body>
+</html>

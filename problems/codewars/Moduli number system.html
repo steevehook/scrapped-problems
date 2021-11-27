@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Moduli number system</title>
+    <link rel="stylesheet" media="screen" href="css/style.css">
+</head>
+<body>
+    <div id="app">
+        <div class="w-full" id="shell">
+            <main id="shell_content">
+                <div class="w-full mt-2">
+                    <h2>Moduli number system</h2>
+                    <h2>Points: 6 kyu</h2>
+                    <a href="https://www.codewars.com/kata/54db15b003e88a6a480000b9"><h2>Kata ID: 54db15b003e88a6a480000b9</h2></a>
+                    <div class="w-full panel bg-ui-section">
+                        <div class="markdown prose max-w-5xl mx-auto" id="description">
+                            <p>A number system with moduli is deﬁned by a vector of k moduli, <code>[m1,m2, ···,mk]</code>. </p>
+<p>The moduli must be <code>pairwise co-prime</code>, which means that, for any pair of moduli, the only common factor is <code>1</code>. </p>
+<p>In such a system each number <code>n</code> is represented by a string <code>"-x1--x2-- ... --xk-"</code> of its residues, one for each modulus. 
+The product <code>m1 * ... * mk</code> must be greater than the given number <code>n</code> which is to be converted in the moduli number system.</p>
+<p>For example, if we use the system <code>[2, 3, 5]</code> the number <code>n = 11</code> is represented by <code>"-1--2--1-"</code>,<br>the number <code>n = 23</code> by <code>"-1--2--3-"</code>. </p>
+<p>If we use the system <code>[8, 7, 5, 3]</code> the number <code>n = 187</code> becomes
+<code>"-3--5--2--1-"</code>.</p>
+<p>You will be given a number <code>n (n &gt;= 0)</code> and a system <code>S = [m1,m2, ···,mk]</code> and you will return a string
+<code>"-x1--x2-- ...--xk-"</code> representing the number <code>n</code> in the system <code>S</code>.</p>
+<p>If the moduli are not <code>pairwise co-prime</code> or if the product <code>m1 * ... * mk</code> is not greater than <code>n</code>, return <code>"Not applicable"</code>.</p>
+<h4 id="examples">Examples:</h4>
+<p>(you can add them in the "Sample tests")</p>
+<pre><code>fromNb2Str(11, [2,3,5]) -&gt; "-1--2--1-"
+fromNb2Str(6, [2, 3, 4]) -&gt; "Not applicable", since 2 and 4 are not coprime
+fromNb2Str(7, [2, 3]) -&gt; "Not applicable" since 2 * 3 &lt; 7
+</code></pre>
+                        </div>
+                    </div>
+                </div>
+            </main>
+        </div>
+    </div>
+</body>
+</html>

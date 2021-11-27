@@ -1,0 +1,109 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>N-Point Crossover</title>
+    <link rel="stylesheet" media="screen" href="css/style.css">
+</head>
+<body>
+    <div id="app">
+        <div class="w-full" id="shell">
+            <main id="shell_content">
+                <div class="w-full mt-2">
+                    <h2>N-Point Crossover</h2>
+                    <h2>Points: 6 kyu</h2>
+                    <a href="https://www.codewars.com/kata/57339a5226196a7f90001bcf"><h2>Kata ID: 57339a5226196a7f90001bcf</h2></a>
+                    <div class="w-full panel bg-ui-section">
+                        <div class="markdown prose max-w-5xl mx-auto" id="description">
+                            <p>In genetic algorithms, a crossover allows 2 chromosomes to exchange part of their genes.</p>
+<p>For more details, you can visit these wikipedia links : <a href="https://en.wikipedia.org/wiki/Genetic_algorithm" target="_blank">Genetic algorithm</a> and <a href="https://en.wikipedia.org/wiki/Crossover_(genetic_algorithm)" target="_blank">Crossover</a>. </p>
+<p>A chromosome is represented by a list of genes.<br>
+Consider for instance 2 chromosomes xs (with genes [x,x,x,x,x,x]) and ys (with genes [y,y,y,y,y,y])</p>
+<p>A single-point crossover at index 2 would give :</p>
+<pre><code class="language-haskell"><span class="cm-variable">new</span> <span class="cm-variable">chromosome1</span> <span class="cm-keyword">=</span> [<span class="cm-variable">x</span>,<span class="cm-variable">x</span>,<span class="cm-variable">y</span>,<span class="cm-variable">y</span>,<span class="cm-variable">y</span>,<span class="cm-variable">y</span>] <span class="cm-builtin">and</span> <span class="cm-variable">new</span> <span class="cm-variable">chromosome2</span> <span class="cm-keyword">=</span> [<span class="cm-variable">y</span>,<span class="cm-variable">y</span>,<span class="cm-variable">x</span>,<span class="cm-variable">x</span>,<span class="cm-variable">x</span>,<span class="cm-variable">x</span>]
+</code></pre>
+<pre style="display: none;"><code class="language-ocaml"><span class="cm-keyword">new</span> <span class="cm-variable">chromosome1</span> <span class="cm-operator">=</span> [<span class="cm-variable">x</span>;<span class="cm-variable">x</span>;<span class="cm-variable">y</span>;<span class="cm-variable">y</span>;<span class="cm-variable">y</span>;<span class="cm-variable">y</span>] <span class="cm-keyword">and</span> <span class="cm-keyword">new</span> <span class="cm-variable">chromosome2</span> <span class="cm-operator">=</span> [<span class="cm-variable">y</span>;<span class="cm-variable">y</span>;<span class="cm-variable">x</span>;<span class="cm-variable">x</span>;<span class="cm-variable">x</span>;<span class="cm-variable">x</span>]
+</code></pre>
+<pre style="display: none;"><code class="language-python"><span class="cm-variable">new</span> <span class="cm-variable">chromosome1</span> <span class="cm-operator">=</span> [<span class="cm-variable">x</span>,<span class="cm-variable">x</span>,<span class="cm-variable">y</span>,<span class="cm-variable">y</span>,<span class="cm-variable">y</span>,<span class="cm-variable">y</span>] <span class="cm-keyword">and</span> <span class="cm-variable">new</span> <span class="cm-variable">chromosome2</span> <span class="cm-operator">=</span> [<span class="cm-variable">y</span>,<span class="cm-variable">y</span>,<span class="cm-variable">x</span>,<span class="cm-variable">x</span>,<span class="cm-variable">x</span>,<span class="cm-variable">x</span>]
+</code></pre>
+<pre style="display: none;"><code class="language-go"><span class="cm-atom">new</span> <span class="cm-variable">chromosome1</span> <span class="cm-operator">=</span> []<span class="cm-keyword">int</span> { <span class="cm-variable">x</span>,<span class="cm-variable">x</span>,<span class="cm-variable">y</span>,<span class="cm-variable">y</span>,<span class="cm-variable">y</span>,<span class="cm-variable">y</span> } <span class="cm-variable">and</span> <span class="cm-atom">new</span> <span class="cm-variable">chromosome2</span> <span class="cm-operator">=</span> []<span class="cm-keyword">int</span> { <span class="cm-variable">y</span>,<span class="cm-variable">y</span>,<span class="cm-variable">x</span>,<span class="cm-variable">x</span>,<span class="cm-variable">x</span>,<span class="cm-variable">x</span> }
+</code></pre>
+<pre style="display: none;"><code class="language-scala"><span class="cm-keyword">new</span> <span class="cm-variable">chromosome1</span> <span class="cm-operator">=</span> <span class="cm-type">List</span>(<span class="cm-variable">x</span>,<span class="cm-variable">x</span>,<span class="cm-variable">y</span>,<span class="cm-variable">y</span>,<span class="cm-variable">y</span>,<span class="cm-variable">y</span>) <span class="cm-variable">and</span> <span class="cm-keyword">new</span> <span class="cm-variable">chromosome2</span> <span class="cm-operator">=</span> <span class="cm-type">List</span>(<span class="cm-variable">y</span>,<span class="cm-variable">y</span>,<span class="cm-variable">x</span>,<span class="cm-variable">x</span>,<span class="cm-variable">x</span>,<span class="cm-variable">x</span>)
+</code></pre>
+<p>A two-point crossover at indices 1 and 3 would give :</p>
+<pre><code class="language-haskell"><span class="cm-variable">new</span> <span class="cm-variable">chromosome1</span> <span class="cm-keyword">=</span> [<span class="cm-variable">x</span>,<span class="cm-variable">y</span>,<span class="cm-variable">y</span>,<span class="cm-variable">x</span>,<span class="cm-variable">x</span>,<span class="cm-variable">x</span>] <span class="cm-builtin">and</span> <span class="cm-variable">new</span> <span class="cm-variable">chromosome2</span> <span class="cm-keyword">=</span> [<span class="cm-variable">y</span>,<span class="cm-variable">x</span>,<span class="cm-variable">x</span>,<span class="cm-variable">y</span>,<span class="cm-variable">y</span>,<span class="cm-variable">y</span>]
+</code></pre>
+<pre style="display: none;"><code class="language-ocaml"><span class="cm-keyword">new</span> <span class="cm-variable">chromosome1</span> <span class="cm-operator">=</span> [<span class="cm-variable">x</span>;<span class="cm-variable">y</span>;<span class="cm-variable">y</span>;<span class="cm-variable">x</span>;<span class="cm-variable">x</span>;<span class="cm-variable">x</span>] <span class="cm-keyword">and</span> <span class="cm-keyword">new</span> <span class="cm-variable">chromosome2</span> <span class="cm-operator">=</span> [<span class="cm-variable">y</span>;<span class="cm-variable">x</span>;<span class="cm-variable">x</span>;<span class="cm-variable">y</span>;<span class="cm-variable">y</span>;<span class="cm-variable">y</span>]
+</code></pre>
+<pre style="display: none;"><code class="language-python"><span class="cm-variable">new</span> <span class="cm-variable">chromosome1</span> <span class="cm-operator">=</span> [<span class="cm-variable">x</span>,<span class="cm-variable">y</span>,<span class="cm-variable">y</span>,<span class="cm-variable">x</span>,<span class="cm-variable">x</span>,<span class="cm-variable">x</span>] <span class="cm-keyword">and</span> <span class="cm-variable">new</span> <span class="cm-variable">chromosome2</span> <span class="cm-operator">=</span> [<span class="cm-variable">y</span>,<span class="cm-variable">x</span>,<span class="cm-variable">x</span>,<span class="cm-variable">y</span>,<span class="cm-variable">y</span>,<span class="cm-variable">y</span>]
+</code></pre>
+<pre style="display: none;"><code class="language-go"><span class="cm-atom">new</span> <span class="cm-variable">chromosome1</span> <span class="cm-operator">=</span> []<span class="cm-keyword">int</span> { <span class="cm-variable">x</span>,<span class="cm-variable">y</span>,<span class="cm-variable">y</span>,<span class="cm-variable">x</span>,<span class="cm-variable">x</span>,<span class="cm-variable">x</span> } <span class="cm-variable">and</span> <span class="cm-atom">new</span> <span class="cm-variable">chromosome2</span> <span class="cm-operator">=</span> []<span class="cm-keyword">int</span> { <span class="cm-variable">y</span>,<span class="cm-variable">x</span>,<span class="cm-variable">x</span>,<span class="cm-variable">y</span>,<span class="cm-variable">y</span>,<span class="cm-variable">y</span> }
+</code></pre>
+<pre style="display: none;"><code class="language-scala"><span class="cm-keyword">new</span> <span class="cm-variable">chromosome1</span> <span class="cm-operator">=</span> <span class="cm-type">List</span>(<span class="cm-variable">x</span>,<span class="cm-variable">y</span>,<span class="cm-variable">y</span>,<span class="cm-variable">x</span>,<span class="cm-variable">x</span>,<span class="cm-variable">x</span>) <span class="cm-variable">and</span> <span class="cm-keyword">new</span> <span class="cm-variable">chromosome2</span> <span class="cm-operator">=</span> <span class="cm-type">List</span>(<span class="cm-variable">y</span>,<span class="cm-variable">x</span>,<span class="cm-variable">x</span>,<span class="cm-variable">y</span>,<span class="cm-variable">y</span>,<span class="cm-variable">y</span>)
+</code></pre>
+<p>We want to generalize this to the notion of n-point crossover, and create a generic function with the following signature :</p>
+<pre><code class="language-haskell"><span class="cm-variable">crossover</span> <span class="cm-keyword">::</span> [<span class="cm-builtin">Int</span>] <span class="cm-keyword">-&gt;</span> [<span class="cm-variable">a</span>] <span class="cm-keyword">-&gt;</span> [<span class="cm-variable">a</span>] <span class="cm-keyword">-&gt;</span> ([<span class="cm-variable">a</span>],[<span class="cm-variable">a</span>])
+<span class="cm-variable">crossover</span> <span class="cm-variable">ns</span> <span class="cm-variable">xs</span> <span class="cm-variable">ys</span> <span class="cm-keyword">=</span> <span class="cm-builtin">undefined</span>
+</code></pre>
+<pre style="display: none;"><code class="language-ocaml"><span class="cm-variable">crossover</span> <span class="cm-operator">:</span> <span class="cm-variable">Int</span> <span class="cm-operator">-</span><span class="cm-operator">&gt;</span> '<span class="cm-variable">a</span> <span class="cm-variable">list</span> <span class="cm-operator">-</span><span class="cm-operator">&gt;</span> '<span class="cm-variable">a</span> <span class="cm-variable">list</span> <span class="cm-operator">-</span><span class="cm-operator">&gt;</span> '<span class="cm-variable">a</span> <span class="cm-variable">list</span> <span class="cm-operator">*</span> '<span class="cm-variable">a</span> <span class="cm-variable">list</span>
+<span class="cm-variable">crossover</span> <span class="cm-variable">ns</span> <span class="cm-variable">xs</span> <span class="cm-variable">ys</span> <span class="cm-operator">=</span> 
+</code></pre>
+<pre style="display: none;"><code class="language-python"><span class="cm-comment"># crossover() takes a list of indices ns (integers) and 2 lists xs and ys</span>
+<span class="cm-comment"># It returns a tuple of lists: ([],[])</span>
+<span class="cm-keyword">def</span> <span class="cm-def">crossover</span>(<span class="cm-variable">ns</span>, <span class="cm-variable">xs</span>, <span class="cm-variable">ys</span>) 
+</code></pre>
+<pre style="display: none;"><code class="language-go"><span class="cm-keyword">func</span> <span class="cm-variable">Crossover</span>(<span class="cm-variable">ns</span> []<span class="cm-keyword">int</span>, <span class="cm-variable">xs</span> []<span class="cm-keyword">int</span>,<span class="cm-variable">ys</span> []<span class="cm-keyword">int</span>) ([]<span class="cm-keyword">int</span>, []<span class="cm-keyword">int</span>) 
+</code></pre>
+<pre style="display: none;"><code class="language-scala"> <span class="cm-keyword">def</span> <span class="cm-def">crossover</span>[<span class="cm-variable">T</span>](<span class="cm-variable">ns</span>: <span class="cm-type">List</span>[<span class="cm-type">Int</span>], <span class="cm-variable">xs</span>: <span class="cm-type">List</span>[<span class="cm-variable">T</span>], <span class="cm-variable">ys</span>: <span class="cm-type">List</span>[<span class="cm-variable">T</span>]): (<span class="cm-type">List</span>[<span class="cm-variable">T</span>],<span class="cm-type">List</span>[<span class="cm-variable">T</span>])
+</code></pre>
+<p>where ns would be a list of cross-point indices.</p>
+<p>We could compute a triple-point crossover of 2 chromosomes xs and ys the following way :</p>
+<pre><code class="language-haskell"><span class="cm-variable">crossover</span> [<span class="cm-number">2</span>,<span class="cm-number">5</span>,<span class="cm-number">21</span>] <span class="cm-variable">xs</span> <span class="cm-variable">ys</span>
+</code></pre>
+<pre style="display: none;"><code class="language-ocaml"><span class="cm-variable">crossover</span> [<span class="cm-number">2</span>;<span class="cm-number">5</span>;<span class="cm-number">21</span>] <span class="cm-variable">xs</span> <span class="cm-variable">ys</span>
+</code></pre>
+<pre style="display: none;"><code class="language-python"><span class="cm-variable">crossover</span>([<span class="cm-number">2</span>,<span class="cm-number">5</span>,<span class="cm-number">21</span>], <span class="cm-variable">xs</span>, <span class="cm-variable">ys</span>) 
+</code></pre>
+<pre style="display: none;"><code class="language-go"><span class="cm-variable">Crossover</span>(<span class="cm-keyword">int</span>[] { <span class="cm-number">2</span>, <span class="cm-number">5</span>, <span class="cm-number">21</span> }, <span class="cm-variable">xs</span>, <span class="cm-variable">ys</span>) 
+</code></pre>
+<pre style="display: none;"><code class="language-scala"><span class="cm-variable">crossover</span>(<span class="cm-type">List</span>(<span class="cm-number">2</span>,<span class="cm-number">5</span>,<span class="cm-number">21</span>), <span class="cm-variable">xs</span>, <span class="cm-variable">ys</span>) 
+</code></pre>
+<p>The transformed first chromosome must appear at the first position of the tuple. the second one at the second position. Therefore :</p>
+<pre><code class="language-haskell">(<span class="cm-variable">crossover</span> [<span class="cm-number">1</span>] [<span class="cm-string">'a'</span>,<span class="cm-string">'b'</span>,<span class="cm-string">'c'</span>] [<span class="cm-string">'x'</span>,<span class="cm-string">'y'</span>,<span class="cm-string">'z'</span>]) `<span class="cm-variable">shouldBe</span>` ([<span class="cm-string">'a'</span>,<span class="cm-string">'y'</span>,<span class="cm-string">'z'</span>],[<span class="cm-string">'x'</span>,<span class="cm-string">'b'</span>,<span class="cm-string">'c'</span>])
+</code></pre>
+<pre style="display: none;"><code class="language-ocaml">(<span class="cm-variable">crossover</span> [<span class="cm-number">1</span>] ['<span class="cm-variable">a</span>';'<span class="cm-variable">b</span>';'<span class="cm-variable">c</span>'] ['<span class="cm-variable">x</span>';'<span class="cm-variable">y</span>';'<span class="cm-variable">z</span>']) <span class="cm-variable">should</span> <span class="cm-variable">be</span> (['<span class="cm-variable">a</span>';'<span class="cm-variable">y</span>';'<span class="cm-variable">z</span>'],['<span class="cm-variable">x</span>';'<span class="cm-variable">b</span>';'<span class="cm-variable">c</span>'])
+</code></pre>
+<pre style="display: none;"><code class="language-python"><span class="cm-variable">crossover</span>([<span class="cm-number">1</span>],[<span class="cm-string">'a'</span>,<span class="cm-string">'b'</span>,<span class="cm-string">'c'</span>],[<span class="cm-string">'x'</span>,<span class="cm-string">'y'</span>,<span class="cm-string">'z'</span>]) <span class="cm-variable">should</span> <span class="cm-variable">be</span> ([<span class="cm-string">'a'</span>,<span class="cm-string">'y'</span>,<span class="cm-string">'z'</span>],[<span class="cm-string">'x'</span>,<span class="cm-string">'b'</span>,<span class="cm-string">'c'</span>])
+</code></pre>
+<pre style="display: none;"><code class="language-go"><span class="cm-variable">Crossover</span>([]<span class="cm-keyword">int</span> { <span class="cm-number">1</span> }, []<span class="cm-keyword">int</span> {<span class="cm-number">1</span>,<span class="cm-number">2</span>,<span class="cm-number">3</span>}, []<span class="cm-keyword">int</span> {<span class="cm-number">10</span>,<span class="cm-number">11</span>,<span class="cm-number">12</span>}) <span class="cm-variable">should</span> <span class="cm-variable">be</span> ([]<span class="cm-keyword">int</span> { <span class="cm-number">1</span>,<span class="cm-number">11</span>,<span class="cm-number">12</span> }, <span class="cm-keyword">int</span>[] { <span class="cm-number">10</span>,<span class="cm-number">2</span>,<span class="cm-number">3</span> })
+</code></pre>
+<pre style="display: none;"><code class="language-scala"><span class="cm-variable">crossover</span>(<span class="cm-type">List</span>(<span class="cm-number">1</span>),<span class="cm-type">List</span>(<span class="cm-atom">'a</span><span class="cm-atom">'</span>,<span class="cm-atom">'b</span><span class="cm-atom">'</span>,<span class="cm-atom">'c</span><span class="cm-atom">'</span>),<span class="cm-type">List</span>(<span class="cm-atom">'x</span><span class="cm-atom">'</span>,<span class="cm-atom">'y</span><span class="cm-atom">'</span>,<span class="cm-atom">'z</span><span class="cm-atom">'</span>)) <span class="cm-variable">should</span> <span class="cm-variable">be</span> (<span class="cm-type">List</span>(<span class="cm-atom">'a</span><span class="cm-atom">'</span>,<span class="cm-atom">'y</span><span class="cm-atom">'</span>,<span class="cm-atom">'z</span><span class="cm-atom">'</span>), <span class="cm-type">List</span>(<span class="cm-atom">'x</span><span class="cm-atom">'</span>,<span class="cm-atom">'b</span><span class="cm-atom">'</span>,<span class="cm-atom">'c</span><span class="cm-atom">'</span>))
+</code></pre>
+<p>If a cross-point index is repeated, it should be considered only once. Indices can also be provided unordered, so your function could be called with the following indices :</p>
+<pre><code class="language-haskell"><span class="cm-variable">crossover</span> [<span class="cm-number">7</span>,<span class="cm-number">5</span>,<span class="cm-number">3</span>,<span class="cm-number">5</span>] <span class="cm-variable">xs</span> <span class="cm-variable">ys</span>
+</code></pre>
+<pre style="display: none;"><code class="language-ocaml"><span class="cm-variable">crossover</span> [<span class="cm-number">7</span>;<span class="cm-number">5</span>;<span class="cm-number">3</span>;<span class="cm-number">5</span>] <span class="cm-variable">xs</span> <span class="cm-variable">ys</span>
+</code></pre>
+<pre style="display: none;"><code class="language-python"><span class="cm-variable">crossover</span>([<span class="cm-number">7</span>,<span class="cm-number">5</span>,<span class="cm-number">3</span>,<span class="cm-number">5</span>], <span class="cm-variable">xs</span>, <span class="cm-variable">ys</span>) 
+</code></pre>
+<pre style="display: none;"><code class="language-go"><span class="cm-variable">Crossover</span>(<span class="cm-keyword">int</span>[] { <span class="cm-number">7</span>,<span class="cm-number">5</span>,<span class="cm-number">3</span>,<span class="cm-number">5</span> }, <span class="cm-variable">xs</span>, <span class="cm-variable">ys</span>) 
+</code></pre>
+<pre style="display: none;"><code class="language-scala"><span class="cm-variable">crossover</span>(<span class="cm-type">List</span>(<span class="cm-number">7</span>,<span class="cm-number">5</span>,<span class="cm-number">3</span>,<span class="cm-number">5</span>), <span class="cm-variable">xs</span>, <span class="cm-variable">ys</span>)
+</code></pre>
+<p>In this case, you would have to consider only indices [7,5,3] and deal with the fact they are unordered.</p>
+<p>Chromosome indices are 0-based and you can also assume that :</p>
+<ol>
+<li> (length xs) == (length ys) </li>
+<li> crossover indices will never exceed the length of xs or ys. </li>
+</ol>
+                        </div>
+                    </div>
+                </div>
+            </main>
+        </div>
+    </div>
+</body>
+</html>

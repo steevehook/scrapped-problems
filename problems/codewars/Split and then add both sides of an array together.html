@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Split and then add both sides of an array together</title>
+    <link rel="stylesheet" media="screen" href="css/style.css">
+</head>
+<body>
+    <div id="app">
+        <div class="w-full" id="shell">
+            <main id="shell_content">
+                <div class="w-full mt-2">
+                    <h2>Split and then add both sides of an array together</h2>
+                    <h2>Points: 6 kyu</h2>
+                    <a href="https://www.codewars.com/kata/5946a0a64a2c5b596500019a"><h2>Kata ID: 5946a0a64a2c5b596500019a</h2></a>
+                    <div class="w-full panel bg-ui-section">
+                        <div class="markdown prose max-w-5xl mx-auto" id="description">
+                            <p><em>Inspired by the <a href="https://www.codewars.com/kata/fold-an-array" target="_blank">Fold an Array</a> kata. This one is sort of similar but a little different.</em></p>
+<hr>
+<h2 id="task">Task</h2>
+<p>You will receive an array as parameter that contains 1 or more integers and a number <code>n</code>.</p>
+<p>Here is a little visualization of the process:</p>
+<ul>
+<li><p>Step 1: Split the array in two:</p>
+<pre><code>[1, 2, 5, 7, 2, 3, 5, 7, 8]
+      /            \
+[1, 2, 5, 7]    [2, 3, 5, 7, 8]
+</code></pre>
+</li>
+<li><p>Step 2: Put the arrays on top of each other:</p>
+<pre><code>   [1, 2, 5, 7]
+[2, 3, 5, 7, 8]
+</code></pre>
+</li>
+<li><p>Step 3: Add them together:</p>
+<pre><code>[2, 4, 7, 12, 15]
+</code></pre>
+</li>
+</ul>
+<p>Repeat the above steps <code>n</code> times or until there is only one number left, and then return the array.</p>
+<h2 id="example">Example</h2>
+<pre><code>Input: arr=[4, 2, 5, 3, 2, 5, 7], n=2
+
+
+Round 1
+-------
+step 1: [4, 2, 5]  [3, 2, 5, 7]
+
+step 2:    [4, 2, 5]
+        [3, 2, 5, 7]
+
+step 3: [3, 6, 7, 12]
+
+
+Round 2
+-------
+step 1: [3, 6]  [7, 12]
+
+step 2:  [3,  6]
+         [7, 12]
+
+step 3: [10, 18]
+
+
+Result: [10, 18]
+</code></pre>
+                        </div>
+                    </div>
+                </div>
+            </main>
+        </div>
+    </div>
+</body>
+</html>

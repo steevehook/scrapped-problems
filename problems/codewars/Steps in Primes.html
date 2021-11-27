@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Steps in Primes</title>
+    <link rel="stylesheet" media="screen" href="css/style.css">
+</head>
+<body>
+    <div id="app">
+        <div class="w-full" id="shell">
+            <main id="shell_content">
+                <div class="w-full mt-2">
+                    <h2>Steps in Primes</h2>
+                    <h2>Points: 6 kyu</h2>
+                    <a href="https://www.codewars.com/kata/5613d06cee1e7da6d5000055"><h2>Kata ID: 5613d06cee1e7da6d5000055</h2></a>
+                    <div class="w-full panel bg-ui-section">
+                        <div class="markdown prose max-w-5xl mx-auto" id="description">
+                            <p>The prime numbers are not regularly spaced. For example from <code>2</code> to <code>3</code> the step is <code>1</code>.
+From <code>3</code> to <code>5</code> the step is <code>2</code>. From <code>7</code> to <code>11</code> it is <code>4</code>.
+Between 2 and 50 we have the following pairs of 2-steps primes:</p>
+<p><code>3, 5 - 5, 7, - 11, 13, - 17, 19, - 29, 31, - 41, 43</code></p>
+<p>We will write a function <code>step</code> with parameters:</p>
+<ul>
+<li><p><code>g</code> (integer &gt;= 2) which indicates the step we are looking for,</p>
+</li>
+<li><p><code>m</code> (integer &gt;= 2) which gives the start of the search (m inclusive),</p>
+</li>
+<li><p><code>n</code> (integer &gt;= m) which gives the end of the search (n inclusive)</p>
+</li>
+</ul>
+<p>In the example above <code>step(2, 2, 50)</code> will return <code>[3, 5]</code> which is the first pair between 2 and 50 with a 2-steps.</p>
+<p>So this function should return the <strong>first</strong> pair of the two prime numbers spaced with a step of <code>g</code>
+between the limits <code>m</code>, <code>n</code> if these g-steps prime numbers exist otherwise <code>nil</code> or <code>null</code> or <code>None</code> or <code>Nothing</code> or <code>[]</code> or <code>"0, 0"</code> or <code>{0, 0}</code> or <code>0 0</code> or "" (depending on the language). </p>
+<h4 id="examples">Examples:</h4>
+<p><code>step(2, 5, 7) --&gt; [5, 7] or (5, 7) or {5, 7} or "5 7"</code></p>
+<p><code>step(2, 5, 5) --&gt; nil or ... or [] in Ocaml or {0, 0} in C++</code></p>
+<p><code>step(4, 130, 200) --&gt; [163, 167] or (163, 167) or {163, 167}</code></p>
+<p>See more examples for your language in "TESTS"</p>
+<h4 id="remarks">Remarks:</h4>
+<p>([193, 197] is also such a 4-steps primes between 130 and 200 but it's not the first pair).</p>
+<p><code>step(6, 100, 110) --&gt; [101, 107]</code> though there is a prime between 101 and 107 which is 103; the pair 101-103 is a 2-step.</p>
+<h4 id="notes">Notes:</h4>
+<p>The idea of "step" is close to that of "gap" but it is not exactly the same. For those interested they can have a look
+at <a href="http://mathworld.wolfram.com/PrimeGaps.html" target="_blank">http://mathworld.wolfram.com/PrimeGaps.html</a>. </p>
+<p>A "gap" is more restrictive: there must be no primes in between 
+(101-107 is a "step" but not a "gap". Next kata will be about "gaps":-).</p>
+<p>For Go: nil slice is expected when there are no <code>step</code> between m and n.
+Example: step(2,4900,4919) --&gt; nil</p>
+                        </div>
+                    </div>
+                </div>
+            </main>
+        </div>
+    </div>
+</body>
+</html>

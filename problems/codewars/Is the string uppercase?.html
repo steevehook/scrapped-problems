@@ -1,0 +1,159 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Is the string uppercase?</title>
+    <link rel="stylesheet" media="screen" href="css/style.css">
+</head>
+<body>
+    <div id="app">
+        <div class="w-full" id="shell">
+            <main id="shell_content">
+                <div class="w-full mt-2">
+                    <h2>Is the string uppercase?</h2>
+                    <h2>Points: 8 kyu</h2>
+                    <a href="https://www.codewars.com/kata/56cd44e1aa4ac7879200010b"><h2>Kata ID: 56cd44e1aa4ac7879200010b</h2></a>
+                    <div class="w-full panel bg-ui-section">
+                        <div class="markdown prose max-w-5xl mx-auto" id="description">
+                            <h1 id="is-the-string-uppercase">Is the string uppercase?</h1>
+<h2 id="task">Task</h2>
+<p>Create a method <code>is_upcase?</code> to see whether the string is ALL CAPS. For example:</p>
+<pre style="display: none;"><code class="language-python"><span class="cm-variable">is_uppercase</span>(<span class="cm-string">"c"</span>) <span class="cm-operator">==</span> <span class="cm-keyword">False</span>
+<span class="cm-variable">is_uppercase</span>(<span class="cm-string">"C"</span>) <span class="cm-operator">==</span> <span class="cm-keyword">True</span>
+<span class="cm-variable">is_uppercase</span>(<span class="cm-string">"hello I AM DONALD"</span>) <span class="cm-operator">==</span> <span class="cm-keyword">False</span>
+<span class="cm-variable">is_uppercase</span>(<span class="cm-string">"HELLO I AM DONALD"</span>) <span class="cm-operator">==</span> <span class="cm-keyword">True</span>
+<span class="cm-variable">is_uppercase</span>(<span class="cm-string">"ACSKLDFJSgSKLDFJSKLDFJ"</span>) <span class="cm-operator">==</span> <span class="cm-keyword">False</span>
+<span class="cm-variable">is_uppercase</span>(<span class="cm-string">"ACSKLDFJSGSKLDFJSKLDFJ"</span>) <span class="cm-operator">==</span> <span class="cm-keyword">True</span>
+</code></pre>
+<pre style="display: none;"><code class="language-haskell"><span class="cm-variable">isUpperCase</span> <span class="cm-string">"c"</span> <span class="cm-builtin">==</span> <span class="cm-builtin">False</span>
+<span class="cm-variable">isUpperCase</span> <span class="cm-string">"C"</span> <span class="cm-builtin">==</span> <span class="cm-builtin">True</span>
+<span class="cm-variable">isUpperCase</span> <span class="cm-string">"hello I AM DONALD"</span> <span class="cm-builtin">==</span> <span class="cm-builtin">False</span>
+<span class="cm-variable">isUpperCase</span> <span class="cm-string">"HELLO I AM DONALD"</span> <span class="cm-builtin">==</span> <span class="cm-builtin">True</span>
+<span class="cm-variable">isUpperCase</span> <span class="cm-string">"ACSKLDFJSgSKLDFJSKLDFJ"</span> <span class="cm-builtin">==</span> <span class="cm-builtin">False</span>
+<span class="cm-variable">isUpperCase</span> <span class="cm-string">"ACSKLDFJSGSKLDFJSKLDFJ"</span> <span class="cm-builtin">==</span> <span class="cm-builtin">True</span>
+</code></pre>
+<pre style="display: none;"><code class="language-csharp"><span class="cm-string">"c"</span>.<span class="cm-variable">IsUpperCase</span>() <span class="cm-operator">==</span> <span class="cm-atom">false</span>
+<span class="cm-string">"C"</span>.<span class="cm-variable">IsUpperCase</span>() <span class="cm-operator">==</span> <span class="cm-atom">true</span>
+<span class="cm-string">"hello I AM DONALD"</span>.<span class="cm-variable">IsUpperCase</span>() <span class="cm-operator">==</span> <span class="cm-atom">false</span>
+<span class="cm-string">"HELLO I AM DONALD"</span>.<span class="cm-variable">IsUpperCase</span>() <span class="cm-operator">==</span> <span class="cm-atom">true</span>
+<span class="cm-string">"ACSKLDFJSgSKLDFJSKLDFJ"</span>.<span class="cm-variable">IsUpperCase</span>() <span class="cm-operator">==</span> <span class="cm-atom">false</span>
+<span class="cm-string">"ACSKLDFJSGSKLDFJSKLDFJ"</span>.<span class="cm-variable">IsUpperCase</span>() <span class="cm-operator">==</span> <span class="cm-atom">true</span>
+</code></pre>
+<pre style="display: none;"><code class="language-dart"><span class="cm-variable">isUpperCase</span>(<span class="cm-string">"c"</span>) <span class="cm-operator">==</span> <span class="cm-atom">false</span>
+<span class="cm-variable">isUpperCase</span>(<span class="cm-string">"C"</span>) <span class="cm-operator">==</span> <span class="cm-atom">true</span>
+<span class="cm-variable">isUpperCase</span>(<span class="cm-string">"hello I AM DONALD"</span>) <span class="cm-operator">==</span> <span class="cm-atom">false</span>
+<span class="cm-variable">isUpperCase</span>(<span class="cm-string">"HELLO I AM DONALD"</span>) <span class="cm-operator">==</span> <span class="cm-atom">true</span>
+<span class="cm-variable">isUpperCase</span>(<span class="cm-string">"ACSKLDFJSgSKLDFJSKLDFJ"</span>) <span class="cm-operator">==</span> <span class="cm-atom">false</span>
+<span class="cm-variable">isUpperCase</span>(<span class="cm-string">"ACSKLDFJSGSKLDFJSKLDFJ"</span>) <span class="cm-operator">==</span> <span class="cm-atom">true</span>
+</code></pre>
+<pre style="display: none;"><code class="language-julia"><span class="cm-variable">isupper</span>(<span class="cm-string">"c</span><span class="cm-string">"</span>) <span class="cm-operator">==</span> <span class="cm-builtin">false</span>
+<span class="cm-variable">isupper</span>(<span class="cm-string">"C</span><span class="cm-string">"</span>) <span class="cm-operator">==</span> <span class="cm-builtin">true</span>
+<span class="cm-variable">isupper</span>(<span class="cm-string">"hello I AM DONALD</span><span class="cm-string">"</span>) <span class="cm-operator">==</span> <span class="cm-builtin">false</span>
+<span class="cm-variable">isupper</span>(<span class="cm-string">"HELLO I AM DONALD</span><span class="cm-string">"</span>) <span class="cm-operator">==</span> <span class="cm-builtin">true</span>
+<span class="cm-variable">isupper</span>(<span class="cm-string">"ACSKLDFJSgSKLDFJSKLDFJ</span><span class="cm-string">"</span>) <span class="cm-operator">==</span> <span class="cm-builtin">false</span>
+<span class="cm-variable">isupper</span>(<span class="cm-string">"ACSKLDFJSGSKLDFJSKLDFJ</span><span class="cm-string">"</span>) <span class="cm-operator">==</span> <span class="cm-builtin">true</span>
+</code></pre>
+<pre style="display: none;"><code class="language-php"><span class="cm-variable">is_uppercase</span>(<span class="cm-string">"</span><span class="cm-string">c"</span>) <span class="cm-operator">==</span> <span class="cm-atom">false</span>
+<span class="cm-variable">is_uppercase</span>(<span class="cm-string">"</span><span class="cm-string">C"</span>) <span class="cm-operator">==</span> <span class="cm-atom">true</span>
+<span class="cm-variable">is_uppercase</span>(<span class="cm-string">"</span><span class="cm-string">hello I AM DONALD"</span>) <span class="cm-operator">==</span> <span class="cm-atom">false</span>
+<span class="cm-variable">is_uppercase</span>(<span class="cm-string">"</span><span class="cm-string">HELLO I AM DONALD"</span>) <span class="cm-operator">==</span> <span class="cm-atom">true</span>
+<span class="cm-variable">is_uppercase</span>(<span class="cm-string">"</span><span class="cm-string">ACSKLDFJSgSKLDFJSKLDFJ"</span>) <span class="cm-operator">==</span> <span class="cm-atom">false</span>
+<span class="cm-variable">is_uppercase</span>(<span class="cm-string">"</span><span class="cm-string">ACSKLDFJSGSKLDFJSKLDFJ"</span>) <span class="cm-operator">==</span> <span class="cm-atom">true</span>
+</code></pre>
+<pre style="display: none;"><code class="language-c"><span class="cm-variable">is_uppercase</span>(<span class="cm-string">"c"</span>) <span class="cm-operator">==</span> <span class="cm-atom">false</span>
+<span class="cm-variable">is_uppercase</span>(<span class="cm-string">"C"</span>) <span class="cm-operator">==</span> <span class="cm-atom">true</span>
+<span class="cm-variable">is_uppercase</span>(<span class="cm-string">"hello I AM DONALD"</span>) <span class="cm-operator">==</span> <span class="cm-atom">false</span>
+<span class="cm-variable">is_uppercase</span>(<span class="cm-string">"HELLO I AM DONALD"</span>) <span class="cm-operator">==</span> <span class="cm-atom">true</span>
+<span class="cm-variable">is_uppercase</span>(<span class="cm-string">"ACSKLDFJSgSKLDFJSKLDFJ"</span>) <span class="cm-operator">==</span> <span class="cm-atom">false</span>
+<span class="cm-variable">is_uppercase</span>(<span class="cm-string">"ACSKLDFJSGSKLDFJSKLDFJ"</span>) <span class="cm-operator">==</span> <span class="cm-atom">true</span>
+</code></pre>
+<pre style="display: none;"><code class="language-cpp"><span class="cm-variable">is_uppercase</span>(<span class="cm-string">"c"</span>) <span class="cm-operator">==</span> <span class="cm-atom">false</span>
+<span class="cm-variable">is_uppercase</span>(<span class="cm-string">"C"</span>) <span class="cm-operator">==</span> <span class="cm-atom">true</span>
+<span class="cm-variable">is_uppercase</span>(<span class="cm-string">"hello I AM DONALD"</span>) <span class="cm-operator">==</span> <span class="cm-atom">false</span>
+<span class="cm-variable">is_uppercase</span>(<span class="cm-string">"HELLO I AM DONALD"</span>) <span class="cm-operator">==</span> <span class="cm-atom">true</span>
+<span class="cm-variable">is_uppercase</span>(<span class="cm-string">"ACSKLDFJSgSKLDFJSKLDFJ"</span>) <span class="cm-operator">==</span> <span class="cm-atom">false</span>
+<span class="cm-variable">is_uppercase</span>(<span class="cm-string">"ACSKLDFJSGSKLDFJSKLDFJ"</span>) <span class="cm-operator">==</span> <span class="cm-atom">true</span>
+</code></pre>
+<pre style="display: none;"><code class="language-javascript"><span class="cm-string">"c"</span>.<span class="cm-property">isUpperCase</span>() <span class="cm-operator">==</span> <span class="cm-atom">false</span>
+<span class="cm-string">"C"</span>.<span class="cm-property">isUpperCase</span>() <span class="cm-operator">==</span> <span class="cm-atom">true</span>
+<span class="cm-string">"hello I AM DONALD"</span>.<span class="cm-property">isUpperCase</span>() <span class="cm-operator">==</span> <span class="cm-atom">false</span>
+<span class="cm-string">"HELLO I AM DONALD"</span>.<span class="cm-property">isUpperCase</span>() <span class="cm-operator">==</span> <span class="cm-atom">true</span>
+<span class="cm-string">"ACSKLDFJSgSKLDFJSKLDFJ"</span>.<span class="cm-property">isUpperCase</span>() <span class="cm-operator">==</span> <span class="cm-atom">false</span>
+<span class="cm-string">"ACSKLDFJSGSKLDFJSKLDFJ"</span>.<span class="cm-property">isUpperCase</span>() <span class="cm-operator">==</span> <span class="cm-atom">true</span>
+</code></pre>
+<pre style="display: none;"><code class="language-coffeescript"><span class="cm-string">"c"</span><span class="cm-punctuation">.</span><span class="cm-property">isUpperCase</span><span class="cm-punctuation">(</span><span class="cm-punctuation">)</span> <span class="cm-operator">==</span> <span class="cm-atom">no</span>
+<span class="cm-string">"C"</span><span class="cm-punctuation">.</span><span class="cm-property">isUpperCase</span><span class="cm-punctuation">(</span><span class="cm-punctuation">)</span> <span class="cm-operator">==</span> <span class="cm-atom">yes</span>
+<span class="cm-string">"hello I AM DONALD"</span><span class="cm-punctuation">.</span><span class="cm-property">isUpperCase</span><span class="cm-punctuation">(</span><span class="cm-punctuation">)</span> <span class="cm-operator">==</span> <span class="cm-atom">no</span>
+<span class="cm-string">"HELLO I AM DONALD"</span><span class="cm-punctuation">.</span><span class="cm-property">isUpperCase</span><span class="cm-punctuation">(</span><span class="cm-punctuation">)</span> <span class="cm-operator">==</span> <span class="cm-atom">yes</span>
+<span class="cm-string">"ACSKLDFJSgSKLDFJSKLDFJ"</span><span class="cm-punctuation">.</span><span class="cm-property">isUpperCase</span><span class="cm-punctuation">(</span><span class="cm-punctuation">)</span> <span class="cm-operator">==</span> <span class="cm-atom">no</span>
+<span class="cm-string">"ACSKLDFJSGSKLDFJSKLDFJ"</span><span class="cm-punctuation">.</span><span class="cm-property">isUpperCase</span><span class="cm-punctuation">(</span><span class="cm-punctuation">)</span> <span class="cm-operator">==</span> <span class="cm-atom">yes</span>
+</code></pre>
+<pre style="display: none;"><code class="language-elixir"><span class="cm-variable">upper_case?</span>(<span class="cm-string">"c"</span>) <span class="cm-operator">=</span><span class="cm-operator">=</span> <span class="cm-keyword">false</span>
+<span class="cm-variable">upper_case?</span>(<span class="cm-string">"C"</span>) <span class="cm-operator">=</span><span class="cm-operator">=</span> <span class="cm-keyword">true</span>
+<span class="cm-variable">upper_case?</span>(<span class="cm-string">"hello I AM DONALD"</span>) <span class="cm-operator">=</span><span class="cm-operator">=</span> <span class="cm-keyword">false</span>
+<span class="cm-variable">upper_case?</span>(<span class="cm-string">"HELLO I AM DONALD"</span>) <span class="cm-operator">=</span><span class="cm-operator">=</span> <span class="cm-keyword">true</span>
+<span class="cm-variable">upper_case?</span>(<span class="cm-string">"ACSKLDFJSgSKLDFJSKLDFJ"</span>) <span class="cm-operator">=</span><span class="cm-operator">=</span> <span class="cm-keyword">false</span>
+<span class="cm-variable">upper_case?</span>(<span class="cm-string">"ACSKLDFJSGSKLDFJSKLDFJ"</span>) <span class="cm-operator">=</span><span class="cm-operator">=</span> <span class="cm-keyword">true</span>
+</code></pre>
+<pre style="display: none;"><code class="language-forth"><span class="cm-atom">s" </span><span class="cm-atom">c" </span><span class="cm-atom">uppercase? </span><span class="cm-atom">-&gt; </span><span class="cm-builtin">false</span>
+<span class="cm-atom">s" </span><span class="cm-string">C" uppercase? -&gt; true</span>
+<span class="cm-atom">s" </span><span class="cm-atom">hello </span><span class="cm-builtin">I </span><span class="cm-atom">AM </span><span class="cm-atom">DONALD" </span><span class="cm-atom">uppercase? </span><span class="cm-atom">-&gt; </span><span class="cm-builtin">false</span>
+<span class="cm-atom">s" </span><span class="cm-atom">HELLO </span><span class="cm-builtin">I </span><span class="cm-atom">AM </span><span class="cm-atom">DONALD" </span><span class="cm-atom">uppercase? </span><span class="cm-atom">-&gt;  </span><span class="cm-builtin">true</span>
+<span class="cm-atom">s" </span><span class="cm-atom">ACSKLDFJSgSKLDFJSKLDFJ" </span><span class="cm-atom">uppercase? </span><span class="cm-atom">-&gt; </span><span class="cm-builtin">false</span>
+<span class="cm-atom">s" </span><span class="cm-atom">ACSKLDFJSGSKLDFJSKLDFJ" </span><span class="cm-atom">uppercase? </span><span class="cm-atom">-&gt; </span><span class="cm-builtin">true</span>
+</code></pre>
+<pre style="display: none;"><code class="language-factor"><span class="cm-string">"</span><span class="cm-string">c"</span> <span class="cm-builtin">uppercase?</span> <span class="cm-builtin">-&gt;</span> <span class="cm-keyword">f</span>
+<span class="cm-string">"</span><span class="cm-string">C"</span> <span class="cm-builtin">uppercase?</span> <span class="cm-builtin">-&gt;</span> <span class="cm-keyword">t</span>
+<span class="cm-string">"</span><span class="cm-string">hello I AM DONALD"</span> <span class="cm-builtin">uppercase?</span> <span class="cm-builtin">-&gt;</span> <span class="cm-keyword">f</span>
+<span class="cm-string">"</span><span class="cm-string">HELLO I AM DONALD"</span> <span class="cm-builtin">uppercase?</span> <span class="cm-builtin">-&gt;</span>  <span class="cm-keyword">t</span>
+<span class="cm-string">"</span><span class="cm-string">ACSKLDFJSgSKLDFJSKLDFJ"</span> <span class="cm-builtin">uppercase?</span> <span class="cm-builtin">-&gt;</span> <span class="cm-keyword">f</span>
+<span class="cm-string">"</span><span class="cm-string">ACSKLDFJSGSKLDFJSKLDFJ"</span> <span class="cm-builtin">uppercase?</span> <span class="cm-builtin">-&gt;</span> <span class="cm-keyword">t</span>
+</code></pre>
+<pre style="display: none;"><code class="language-go"><span class="cm-keyword">type</span> <span class="cm-variable">MyString</span> <span class="cm-keyword">string</span>
+<span class="cm-variable">MyString</span>(<span class="cm-string">"c"</span>)<span class="cm-number">.</span><span class="cm-variable">IsUpperCase</span>() <span class="cm-operator">==</span> <span class="cm-atom">false</span>
+<span class="cm-variable">MyString</span>(<span class="cm-string">"C"</span>)<span class="cm-number">.</span><span class="cm-variable">IsUpperCase</span>() <span class="cm-operator">==</span> <span class="cm-atom">true</span>
+<span class="cm-variable">MyString</span>(<span class="cm-string">"hello I AM DONALD"</span>)<span class="cm-number">.</span><span class="cm-variable">IsUpperCase</span>() <span class="cm-operator">==</span> <span class="cm-atom">false</span>
+<span class="cm-variable">MyString</span>(<span class="cm-string">"HELLO I AM DONALD"</span>)<span class="cm-number">.</span><span class="cm-variable">IsUpperCase</span>() <span class="cm-operator">==</span> <span class="cm-atom">true</span>
+<span class="cm-variable">MyString</span>(<span class="cm-string">"ACSKLDFJSgSKLDFJSKLDFJ"</span>)<span class="cm-number">.</span><span class="cm-variable">IsUpperCase</span>() <span class="cm-operator">==</span> <span class="cm-atom">false</span>
+<span class="cm-variable">MyString</span>(<span class="cm-string">"ACSKLDFJSGSKLDFJSKLDFJ"</span>)<span class="cm-number">.</span><span class="cm-variable">IsUpperCase</span>() <span class="cm-operator">==</span> <span class="cm-atom">true</span>
+</code></pre>
+<pre style="display: none;"><code class="language-racket"><span class="cm-bracket">(</span><span class="cm-variable">upcase?</span> <span class="cm-string">"</span><span class="cm-string">c"</span><span class="cm-bracket">)</span> <span class="cm-comment">; #f</span>
+<span class="cm-bracket">(</span><span class="cm-variable">upcase?</span> <span class="cm-string">"</span><span class="cm-string">C"</span><span class="cm-bracket">)</span> <span class="cm-comment">; #t</span>
+<span class="cm-bracket">(</span><span class="cm-variable">upcase?</span> <span class="cm-string">"</span><span class="cm-string">hello I AM DONALD"</span><span class="cm-bracket">)</span> <span class="cm-comment">; #f</span>
+<span class="cm-bracket">(</span><span class="cm-variable">upcase?</span> <span class="cm-string">"</span><span class="cm-string">HELLO I AM DONALD"</span><span class="cm-bracket">)</span> <span class="cm-comment">; #t </span>
+<span class="cm-bracket">(</span><span class="cm-variable">upcase?</span> <span class="cm-string">"</span><span class="cm-string">ACSKLDFJSgSKLDFJSKLDFJ"</span><span class="cm-bracket">)</span> <span class="cm-comment">; #f</span>
+<span class="cm-bracket">(</span><span class="cm-variable">upcase?</span> <span class="cm-string">"</span><span class="cm-string">ACSKLDFJSGSKLDFJSKLDFJ"</span><span class="cm-bracket">)</span> <span class="cm-comment">; #t</span>
+</code></pre>
+<pre style="display: none;"><code class="language-reason"><span class="cm-variable">isUpperCase</span>(<span class="cm-string">"c"</span>) <span class="cm-operator">==</span> <span class="cm-builtin">false</span>
+<span class="cm-variable">isUpperCase</span>(<span class="cm-string">"C"</span>) <span class="cm-operator">==</span> <span class="cm-builtin">true</span>
+<span class="cm-variable">isUpperCase</span>(<span class="cm-string">"hello I AM DONALD"</span>) <span class="cm-operator">==</span> <span class="cm-builtin">false</span>
+<span class="cm-variable">isUpperCase</span>(<span class="cm-string">"HELLO I AM DONALD"</span>) <span class="cm-operator">==</span> <span class="cm-builtin">true</span>
+<span class="cm-variable">isUpperCase</span>(<span class="cm-string">"ACSKLDFJSgSKLDFJSKLDFJ"</span>) <span class="cm-operator">==</span> <span class="cm-builtin">false</span>
+<span class="cm-variable">isUpperCase</span>(<span class="cm-string">"ACSKLDFJSGSKLDFJSKLDFJ"</span>) <span class="cm-operator">==</span> <span class="cm-builtin">true</span>
+</code></pre>
+<pre style="display: none;"><code class="language-typescript"><span class="cm-variable">isUpperCase</span>(<span class="cm-string">'c'</span>) <span class="cm-operator">==</span> <span class="cm-atom">false</span>
+<span class="cm-variable">isUpperCase</span>(<span class="cm-string">'C'</span>) <span class="cm-operator">==</span> <span class="cm-atom">true</span>
+<span class="cm-variable">isUpperCase</span>(<span class="cm-string">'hello I AM DONALD'</span>) <span class="cm-operator">==</span> <span class="cm-atom">false</span>
+<span class="cm-variable">isUpperCase</span>(<span class="cm-string">'HELLO I AM DONALD'</span>) <span class="cm-operator">==</span> <span class="cm-atom">true</span>
+<span class="cm-variable">isUpperCase</span>(<span class="cm-string">'ACSKLDFJSgSKLDFJSKLDFJ'</span>) <span class="cm-operator">==</span> <span class="cm-atom">false</span>
+<span class="cm-variable">isUpperCase</span>(<span class="cm-string">'ACSKLDFJSGSKLDFJSKLDFJ'</span>) <span class="cm-operator">==</span> <span class="cm-atom">true</span>
+</code></pre>
+<pre><code class="language-ruby"><span class="cm-string">"c"</span><span class="cm-operator">.</span><span class="cm-property">is_upcase?</span> <span class="cm-operator">==</span> <span class="cm-keyword">false</span>
+<span class="cm-string">"C"</span><span class="cm-operator">.</span><span class="cm-property">is_upcase?</span> <span class="cm-operator">==</span> <span class="cm-keyword">true</span>
+<span class="cm-string">"hello I AM DONALD"</span><span class="cm-operator">.</span><span class="cm-property">is_upcase?</span> <span class="cm-operator">==</span> <span class="cm-keyword">false</span>
+<span class="cm-string">"HELLO I AM DONALD"</span><span class="cm-operator">.</span><span class="cm-property">is_upcase?</span> <span class="cm-operator">==</span> <span class="cm-keyword">true</span>
+<span class="cm-string">"ACSKLDFJSgSKLDFJSKLDFJ"</span><span class="cm-operator">.</span><span class="cm-property">is_upcase?</span> <span class="cm-operator">==</span> <span class="cm-keyword">false</span>
+<span class="cm-string">"ACSKLDFJSGSKLDFJSKLDFJ"</span><span class="cm-operator">.</span><span class="cm-property">is_upcase?</span> <span class="cm-operator">==</span> <span class="cm-keyword">true</span>
+</code></pre>
+<p>In this Kata, a string is said to be in ALL CAPS whenever it does not contain any lowercase letter so any string containing no letters at all is trivially considered to be in ALL CAPS.</p>
+                        </div>
+                    </div>
+                </div>
+            </main>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Tank Truck</title>
+    <link rel="stylesheet" media="screen" href="css/style.css">
+</head>
+<body>
+    <div id="app">
+        <div class="w-full" id="shell">
+            <main id="shell_content">
+                <div class="w-full mt-2">
+                    <h2>Tank Truck</h2>
+                    <h2>Points: 6 kyu</h2>
+                    <a href="https://www.codewars.com/kata/55f3da49e83ca1ddae0000ad"><h2>Kata ID: 55f3da49e83ca1ddae0000ad</h2></a>
+                    <div class="w-full panel bg-ui-section">
+                        <div class="markdown prose max-w-5xl mx-auto" id="description">
+                            <p>To introduce the problem think to my neighbor who drives a tanker truck. 
+The level indicator is down and he is worried
+because he does not know if he will be able to make deliveries. 
+We put the truck on a horizontal ground and measured the height of the liquid in the tank.</p>
+<p>Fortunately the tank is a perfect cylinder and the vertical walls on each end are flat.
+The height of the remaining liquid is <code>h</code>, the diameter of the cylinder base is <code>d</code>,
+the total volume is <code>vt</code> (h, d, vt are positive or null integers). 
+You can assume that <code>h</code> &lt;= <code>d</code>.</p>
+<p>Could you calculate the remaining volume of the liquid?
+Your function <code>tankvol(h, d, vt)</code> returns an integer which is the truncated result (e.g floor)
+of your float calculation.</p>
+<h4 id="examples">Examples:</h4>
+<pre><code>tankvol(40,120,3500) should return 1021 (calculation gives about: 1021.26992027)
+
+tankvol(60,120,3500) should return 1750
+
+tankvol(80,120,3500) should return 2478 (calculation gives about: 2478.73007973)
+</code></pre>
+<h4 id="tank-vertical-section">Tank vertical section:</h4>
+<p><img alt="alternative text" src="images/wmt0U43.png"></p>
+                        </div>
+                    </div>
+                </div>
+            </main>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Replace Noun Phrases with Pronouns</title>
+    <link rel="stylesheet" media="screen" href="css/style.css">
+</head>
+<body>
+    <div id="app">
+        <div class="w-full" id="shell">
+            <main id="shell_content">
+                <div class="w-full mt-2">
+                    <h2>Replace Noun Phrases with Pronouns</h2>
+                    <h2>Points: 6 kyu</h2>
+                    <a href="https://www.codewars.com/kata/5c466083a4db1e0f49ddcb30"><h2>Kata ID: 5c466083a4db1e0f49ddcb30</h2></a>
+                    <div class="w-full panel bg-ui-section">
+                        <div class="markdown prose max-w-5xl mx-auto" id="description">
+                            <p>A Noun Phrase is a phrase that can be replaced by a pronoun [he/she/it].</p>
+<p>For example, in the sentence:</p>
+<p><code>a girl ate the cookie</code></p>
+<p>"A girl" is a Noun Phrase, so we can say "<strong>she</strong> ate the cookie." "The cookie" is also a Noun Phrase, so we can even say "<strong>she</strong> ate <strong>it</strong>."</p>
+<p>Both of these Noun Phrases are made up of an auxialliary (aux) [the/a] followed by a Noun (N) [girl/cookie]. </p>
+<p>More complicated Noun Phrases can also include an arbitrary number of adjectives (adj). For example:</p>
+<p><code>a big tall scary girl ate the cookie</code> </p>
+<p>where "big", "tall", and "scary" are all adjectives. </p>
+<p>For our simplified model, we will define a Noun Phrase as an auxiliary, followed by 0 or more adjectives, followed by a Noun. </p>
+<p>Write a function that takes a sentence (as a string of words separated by spaces), a list of pronouns, and a dictionary (maping words to the grammatical categories aux, adj, and N). Return the sentcnce with all Noun Phrases replaced by pronouns, in the order given.</p>
+<p>Assume:</p>
+<ul>
+<li>sentences will contain only lower-case letters and spaces (no puctuation)</li>
+<li>any words not inlcuded in the dictionary are not auxilliaries, adjectives, or nouns</li>
+<li>the number of pronouns provided will be equal to the number of Noun Phrases in the sentence</li>
+</ul>
+                        </div>
+                    </div>
+                </div>
+            </main>
+        </div>
+    </div>
+</body>
+</html>

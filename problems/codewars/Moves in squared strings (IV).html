@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Moves in squared strings (IV)</title>
+    <link rel="stylesheet" media="screen" href="css/style.css">
+</head>
+<body>
+    <div id="app">
+        <div class="w-full" id="shell">
+            <main id="shell_content">
+                <div class="w-full mt-2">
+                    <h2>Moves in squared strings (IV)</h2>
+                    <h2>Points: 6 kyu</h2>
+                    <a href="https://www.codewars.com/kata/56dbf59b0a10feb08c000227"><h2>Kata ID: 56dbf59b0a10feb08c000227</h2></a>
+                    <div class="w-full panel bg-ui-section">
+                        <div class="markdown prose max-w-5xl mx-auto" id="description">
+                            <p>You are given a string of <code>n</code> lines, each substring being <code>n</code> characters long: For example:</p>
+<p><code>s = "abcd\nefgh\nijkl\nmnop"</code></p>
+<p>We will study some transformations of this square of strings.</p>
+<ul>
+<li><p>Symmetry with respect to the main cross diagonal: <code>diag_2_sym</code> (or <code>diag2Sym</code> or <code>diag-2-sym</code>)</p>
+<pre><code>diag_2_sym(s) =&gt; "plhd\nokgc\nnjfb\nmiea"
+</code></pre>
+</li>
+<li><p>Counterclockwise rotation 90 degrees: <code>rot_90_counter</code> (or <code>rot90Counter</code> or <code>rot-90-counter</code>)</p>
+<pre><code>rot_90_counter(s)=&gt; "dhlp\ncgko\nbfjn\naeim"
+</code></pre>
+</li>
+<li><p><code>selfie_diag2_counterclock</code> (or <code>selfieDiag2Counterclock</code> or <code>selfie-diag2-counterclock</code>)
+It is initial string + string obtained by symmetry with respect to the main cross 
+diagonal + counterclockwise rotation 90 degrees .</p>
+<pre><code>s = "abcd\nefgh\nijkl\nmnop" --&gt; 
+"abcd|plhd|dhlp\nefgh|okgc|cgko\nijkl|njfb|bfjn\nmnop|miea|aeim"
+</code></pre>
+<p>or printed for the last:</p>
+<pre><code>selfie_diag2_counterclock
+abcd|plhd|dhlp
+efgh|okgc|cgko
+ijkl|njfb|bfjn
+mnop|miea|aeim
+</code></pre>
+</li>
+</ul>
+<h4 id="task">Task</h4>
+<ul>
+<li>Write these functions <code>diag_2_sym</code>, <code>rot_90_counter</code>, <code>selfie_diag2_counterclock</code></li>
+</ul>
+<p>and</p>
+<ul>
+<li>high-order function <code>oper(fct, s)</code> where <code>fct</code> is the function of one variable <code>f</code> to apply to the string <code>s</code> (<code>fct</code> will be one of <code>diag_2_sym</code>, <code>rot_90_counter</code>, <code>selfie_diag2_counterclock</code>)</li>
+</ul>
+<h4 id="examples">Examples</h4>
+<pre><code>s = "abcd\nefgh\nijkl\nmnop"
+oper(diag_2_sym, s) =&gt; "plhd\nokgc\nnjfb\nmiea"
+oper(rot_90_counter, s) =&gt; "dhlp\ncgko\nbfjn\naeim"
+oper(selfie_diag2_counterclock, s) =&gt; "abcd|plhd|dhlp\nefgh|okgc|cgko\nijkl|njfb|bfjn\nmnop|miea|aeim"
+</code></pre>
+<h4 id="notes">Notes</h4>
+<ul>
+<li>The form of the parameter <code>fct</code> in oper
+changes according to the language. You can see each form according to the language in "Your test cases".</li>
+<li>It could be easier to take these katas from number (I) to number (IV)</li>
+<li>Bash Note: The ouput strings should be separated by \r instead of \n. See "Sample Tests".</li>
+</ul>
+                        </div>
+                    </div>
+                </div>
+            </main>
+        </div>
+    </div>
+</body>
+</html>

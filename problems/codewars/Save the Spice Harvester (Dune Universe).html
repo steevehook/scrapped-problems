@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Save the Spice Harvester (Dune Universe)</title>
+    <link rel="stylesheet" media="screen" href="css/style.css">
+</head>
+<body>
+    <div id="app">
+        <div class="w-full" id="shell">
+            <main id="shell_content">
+                <div class="w-full mt-2">
+                    <h2>Save the Spice Harvester (Dune Universe)</h2>
+                    <h2>Points: 6 kyu</h2>
+                    <a href="https://www.codewars.com/kata/587d7544f1be39c48c000109"><h2>Kata ID: 587d7544f1be39c48c000109</h2></a>
+                    <div class="w-full panel bg-ui-section">
+                        <div class="markdown prose max-w-5xl mx-auto" id="description">
+                            <p><video loop="loop" autoplay="autoplay" style="width:500px;" controls=""><source type="video/mp4" src="https://i.imgur.com/j36Kh64.mp4"></video></p>
+<h1 id="background-story">Background Story:</h1>
+<p>In the <a href="https://en.wikipedia.org/wiki/Dune_(novel)" target="_blank"><em>Dune</em> universe</a>, a <strong>spice harvester</strong> is a large, heavy, mobile factory designed to harvest the spice <em>Melange</em>. It is dropped by carrier ships (known as Carryalls) onto spice fields. Harvesters harvest and process the spice off the top of the desert floor.</p>
+<p>Because of the rhythmic sound they make, harvesters are regularly eaten by sandworms (on the planet <em>Arrakis</em>, sandworms were reported to range from 100 meters to up to 450 meters in length). That's why 2 or 3 ornithopters (called spotters) are deployed to scout from the skies to watch for wormsign. Upon detection of wormsign (ie. worm movement), the spotters then contact the nearest Carryall for pickup of the target harvester.</p>
+<h1 id="goal">Goal:</h1>
+<p>As a spotter pilot, you are responsible for handling dispatch of Carryalls in your vicinity. Your goal is to determine whether a carryall should be sent for rescue, or if it must be forfeited because there is not enough time.</p>
+<p>Each test input will consist of an object <code>data</code>, which has the following properties:</p>
+<p><code>harvester</code>: location of the spice harvester</p>
+<p><code>worm</code>: location and travel speed of the spotted sandworm in the form <code>[location, movement speed]</code>)</p>
+<p><code>carryall</code>: location and travel speed of the nearest carryall in the form <code>[location, movement speed]</code>)</p>
+<h1 id="conditions--restrictions">Conditions / Restrictions:</h1>
+<ul>
+<li>All coordinates (<code>location</code>) are in the form: <code>[x, y]</code> and may be positive or negative. For example: <code>[45,225]</code></li>
+<li>Assume that the sandworm and Carryall each are moving toward the harvester in a straight line at a constant speed.</li>
+<li>A Carryall takes 1 minute to lift the harvester to a safe altitude in order to avoid being devoured by the sandworm. Take this into account when formulating your solution.</li>
+<li>Distance is measured in kilometers (<em>in the 213th century, the metric system is the universal standard</em>)</li>
+<li>Movement speed is measured in km/minute.</li>
+<li>Input argument is always valid.</li>
+<li>Return value should be a <code>String</code> type value.</li>
+<li>Do not mutate the input.</li>
+</ul>
+<h1 id="output">Output:</h1>
+<p>If the harvester can be saved (that is, lifted to a safe altitude <em>before</em> the sandworm reaches the target location), the function should return <code>The spice must flow! Rescue the harvester!</code> otherwise, it should return <code>Damn the spice! I'll rescue the miners!</code></p>
+<h1 id="test-example">Test Example:</h1>
+<pre><code class="language-javascript"><span class="cm-keyword">let</span> <span class="cm-def">data1</span> <span class="cm-operator">=</span> {<span class="cm-property">harvester</span>: [<span class="cm-number">345</span>,<span class="cm-number">600</span>], <span class="cm-property">worm</span>: [[<span class="cm-number">200</span>,<span class="cm-number">100</span>],<span class="cm-number">25</span>], <span class="cm-property">carryall</span>: [[<span class="cm-number">350</span>,<span class="cm-number">200</span>],<span class="cm-number">32</span>]};
+
+<span class="cm-variable">harvesterRescue</span>(<span class="cm-variable">data1</span>); <span class="cm-comment">// returns 'The spice must flow! Rescue the harvester!'</span>
+</code></pre>
+<pre style="display: none;"><code class="language-python"><span class="cm-variable">data1</span> <span class="cm-operator">=</span> {<span class="cm-string">'harvester'</span>: [<span class="cm-number">345</span>,<span class="cm-number">600</span>], <span class="cm-string">'worm'</span>: [[<span class="cm-number">200</span>,<span class="cm-number">100</span>],<span class="cm-number">25</span>], <span class="cm-string">'carryall'</span>: [[<span class="cm-number">350</span>,<span class="cm-number">200</span>],<span class="cm-number">32</span>]}
+
+<span class="cm-variable">harvester_rescue</span>(<span class="cm-variable">data1</span>); <span class="cm-comment"># returns 'The spice must flow! Rescue the harvester!'</span>
+</code></pre>
+<pre style="display: none;"><code class="language-java"><span class="cm-comment">// Harvester Position, Worm Position&amp;Speed, Carryall Position&amp;Speed</span>
+<span class="cm-variable">data</span> <span class="cm-operator">=</span> {{<span class="cm-number">345</span>, <span class="cm-number">600</span>}, {<span class="cm-number">200</span>, <span class="cm-number">100</span>, <span class="cm-number">25</span>}, {<span class="cm-number">350</span>, <span class="cm-number">200</span>, <span class="cm-number">32</span>}}
+
+<span class="cm-variable">harvester_rescue</span>(<span class="cm-variable">data</span>); <span class="cm-comment">// Returns "The spice must flow! Rescue the harvester!"</span>
+</code></pre>
+<pre style="display: none;"><code class="language-elixir"><span class="cm-comment"># in Elixir you will be given a keyword list</span>
+<span class="cm-variable">data1</span> <span class="cm-operator">=</span> [<span class="cm-atom">harvester:</span> [<span class="cm-number">345</span>,<span class="cm-number">600</span>], <span class="cm-atom">worm:</span> [[<span class="cm-number">200</span>,<span class="cm-number">100</span>],<span class="cm-number">25</span>], <span class="cm-atom">carryall:</span> [[<span class="cm-number">350</span>,<span class="cm-number">200</span>],<span class="cm-number">32</span>]]
+
+<span class="cm-tag">Save</span><span class="cm-operator">.</span><span class="cm-property">harvester_rescue</span>(<span class="cm-variable">data1</span>) <span class="cm-comment"># returns "The spice must flow! Rescue the harvester!"</span>
+</code></pre>
+<pre style="display: none;"><code class="language-go"><span class="cm-comment">// For Go, you'll be given a preloaded Data struct:</span>
+
+<span class="cm-keyword">type</span> <span class="cm-variable">Data</span> <span class="cm-keyword">struct</span> {
+    <span class="cm-variable">Harvester</span> [<span class="cm-number">2</span>]<span class="cm-keyword">int</span>
+    <span class="cm-variable">Worm</span> [<span class="cm-number">3</span>]<span class="cm-keyword">int</span>
+    <span class="cm-variable">Carryall</span> [<span class="cm-number">3</span>]<span class="cm-keyword">int</span>
+}
+
+<span class="cm-variable">data1</span> :<span class="cm-operator">=</span> <span class="cm-variable">Data</span>{[<span class="cm-number">2</span>]<span class="cm-keyword">int</span>{<span class="cm-number">345</span>,<span class="cm-number">600</span>}, [<span class="cm-number">3</span>]<span class="cm-keyword">int</span>{<span class="cm-number">200</span>,<span class="cm-number">100</span>,<span class="cm-number">25</span>}, [<span class="cm-number">3</span>]<span class="cm-keyword">int</span>{<span class="cm-number">350</span>,<span class="cm-number">200</span>,<span class="cm-number">32</span>}}
+
+<span class="cm-variable">HarvesterRescue</span>(<span class="cm-variable">data1</span>) <span class="cm-comment">// returns "The spice must flow! Rescue the harvester!"</span>
+</code></pre>
+<p>If you enjoyed this kata, be sure to check out <a href="https://www.codewars.com/users/docgunthrop/authored" target="_blank">my other katas</a>.</p>
+                        </div>
+                    </div>
+                </div>
+            </main>
+        </div>
+    </div>
+</body>
+</html>

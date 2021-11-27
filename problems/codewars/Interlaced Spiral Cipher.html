@@ -1,0 +1,148 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Interlaced Spiral Cipher</title>
+    <link rel="stylesheet" media="screen" href="css/style.css">
+</head>
+<body>
+    <div id="app">
+        <div class="w-full" id="shell">
+            <main id="shell_content">
+                <div class="w-full mt-2">
+                    <h2>Interlaced Spiral Cipher</h2>
+                    <h2>Points: 5 kyu</h2>
+                    <a href="https://www.codewars.com/kata/5a24a35a837545ab04001614"><h2>Kata ID: 5a24a35a837545ab04001614</h2></a>
+                    <div class="w-full panel bg-ui-section">
+                        <div class="markdown prose max-w-5xl mx-auto" id="description">
+                            <p><img alt="Reference Image" src="images/OLFUBvV.png"></p>
+<p>In this kata, your task is to implement what I call <strong>Interlaced Spiral Cipher (ISC)</strong>.</p>
+<p><em>Encoding</em> a string using ISC is achieved with the following steps:</p>
+<ol>
+<li>Form a square large enough to fit all the string characters</li>
+<li>Starting with the top-left corner, place string characters in the corner cells moving in a clockwise direction</li>
+<li>After the first cycle is complete, continue placing characters in the cells following the last one in its respective row/column</li>
+<li>When the outer cells are filled, repeat steps <code>2</code> through <code>4</code> for the remaining inner squares (refer to the example below for further clarification)</li>
+<li>Fill up any unused cells with a space character and return the rows joined together.</li>
+</ol>
+<h2 id="input">Input</h2>
+<p>A string comprised of any combination of alphabetic characters, the space character, and any of the following characters <code>_!@#$%^&amp;()[]{}+-*/="'&lt;&gt;,.?:;</code>.</p>
+<p>Arguments passed to the <code>encode</code> method will never have any trailing spaces.</p>
+<h2 id="output">Output</h2>
+<p>The <code>encode</code> method should return the encoded message as a <code>string</code></p>
+<p>The <code>decode</code> method should return the decoded message as a <code>string</code> with no trailing spaces</p>
+<h2 id="test-examples">Test Examples</h2>
+<pre><code class="language-javascript"><span class="cm-keyword">let</span> <span class="cm-def">phrase1</span> <span class="cm-operator">=</span> <span class="cm-string-2">`Romani ite domum`</span>;
+<span class="cm-variable">InterlacedSpiralCipher</span>.<span class="cm-property">encode</span>(<span class="cm-variable">phrase1</span>); <span class="cm-comment">// `Rntodomiimuea  m`</span>
+
+<span class="cm-keyword">let</span> <span class="cm-def">phrase2</span> <span class="cm-operator">=</span> <span class="cm-string-2">`Stsgiriuar i ninmd l otac`</span>;
+<span class="cm-variable">InterlacedSpiralCipher</span>.<span class="cm-property">decode</span>(<span class="cm-variable">phrase2</span>); <span class="cm-comment">// `Sic transit gloria mundi`</span>
+
+<span class="cm-comment">/* Encoding sequence for a 5 x 5 square:</span>
+<span class="cm-comment">[ 1  5  9 13  2]</span>
+<span class="cm-comment">[16 17 21 18  6]</span>
+<span class="cm-comment">[12 24 25 22 10]</span>
+<span class="cm-comment">[ 8 20 23 19 14]</span>
+<span class="cm-comment">[ 4 15 11  7  3]</span>
+<span class="cm-comment">*/</span>
+</code></pre>
+<pre style="display: none;"><code class="language-python"><span class="cm-variable">phrase1</span> <span class="cm-operator">=</span> <span class="cm-string">'Romani ite domum'</span>
+<span class="cm-variable">InterlacedSpiralCipher</span>[<span class="cm-string">'encode'</span>](<span class="cm-variable">phrase1</span>) <span class="cm-comment">#'Rntodomiimuea  m'</span>
+
+<span class="cm-variable">phrase2</span> <span class="cm-operator">=</span> <span class="cm-string">'Stsgiriuar i ninmd l otac'</span>
+<span class="cm-variable">InterlacedSpiralCipher</span>[<span class="cm-string">'decode'</span>](<span class="cm-variable">phrase2</span>) <span class="cm-comment">#'Sic transit gloria mundi'</span>
+
+<span class="cm-string">'''</span>
+<span class="cm-string">Encoding sequence for a 5 x 5 square:</span>
+<span class="cm-string">[ 1  5  9 13  2]</span>
+<span class="cm-string">[16 17 21 18  6]</span>
+<span class="cm-string">[12 24 25 22 10]</span>
+<span class="cm-string">[ 8 20 23 19 14]</span>
+<span class="cm-string">[ 4 15 11  7  3]</span>
+<span class="cm-string">'''</span>
+</code></pre>
+<pre style="display: none;"><code class="language-go"><span class="cm-variable">phrase1</span> :<span class="cm-operator">=</span> <span class="cm-string">"Romani ite domum"</span>
+<span class="cm-variable">InterlacedSpiralCipher</span>[<span class="cm-string">"encode"</span>](<span class="cm-variable">phrase1</span>) <span class="cm-comment">// "Rntodomiimuea  m"</span>
+
+<span class="cm-variable">phrase2</span> :<span class="cm-operator">=</span> <span class="cm-string">"Stsgiriuar i ninmd l otac"</span>
+<span class="cm-variable">InterlacedSpiralCipher</span>[<span class="cm-string">"decode"</span>](<span class="cm-variable">phrase2</span>) <span class="cm-comment">// "Sic transit gloria mundi"</span>
+
+<span class="cm-comment">/* Encoding sequence for a 5 x 5 square:</span>
+<span class="cm-comment">[ 1  5  9 13  2]</span>
+<span class="cm-comment">[16 17 21 18  6]</span>
+<span class="cm-comment">[12 24 25 22 10]</span>
+<span class="cm-comment">[ 8 20 23 19 14]</span>
+<span class="cm-comment">[ 4 15 11  7  3]</span>
+<span class="cm-comment">*/</span>
+</code></pre>
+<pre style="display: none;"><code class="language-elixir"><span class="cm-variable">phrase1</span> <span class="cm-operator">=</span> <span class="cm-string">"Romani ite domum"</span>
+<span class="cm-tag">InterlacedSpiralCipher</span><span class="cm-operator">.</span><span class="cm-property">encode</span>(<span class="cm-variable">phrase1</span>) <span class="cm-comment"># "Rntodomiimuea  m"</span>
+
+<span class="cm-variable">phrase2</span> <span class="cm-operator">=</span> <span class="cm-string">"Stsgiriuar i ninmd l otac"</span>
+<span class="cm-tag">InterlacedSpiralCipher</span><span class="cm-operator">.</span><span class="cm-property">decode</span>(<span class="cm-variable">phrase2</span>) <span class="cm-comment"># "Sic transit gloria mundi"</span>
+
+<span class="cm-comment"># Encoding sequence for a 5 x 5 square:</span>
+<span class="cm-comment"># [ 1  5  9 13  2]</span>
+<span class="cm-comment"># [16 17 21 18  6]</span>
+<span class="cm-comment"># [12 24 25 22 10]</span>
+<span class="cm-comment"># [ 8 20 23 19 14]</span>
+<span class="cm-comment"># [ 4 15 11  7  3]</span>
+</code></pre>
+<pre style="display: none;"><code class="language-csharp"><span class="cm-type">string</span> <span class="cm-variable">phrase1</span> <span class="cm-operator">=</span> <span class="cm-string">"Romani ite domum"</span>;
+<span class="cm-variable">InterlacedSpiralCipher</span>.<span class="cm-variable">Encode</span>(<span class="cm-variable">phrase1</span>) <span class="cm-comment">// "Rntodomiimuea  m"</span>
+
+<span class="cm-type">string</span> <span class="cm-variable">phrase2</span> <span class="cm-operator">=</span> <span class="cm-string">"Stsgiriuar i ninmd l otac"</span>;
+<span class="cm-variable">InterlacedSpiralCipher</span>.<span class="cm-variable">Decode</span>(<span class="cm-variable">phrase2</span>) <span class="cm-comment">// "Sic transit gloria mundi"</span>
+
+<span class="cm-comment">/* Encoding sequence for a 5 x 5 square:</span>
+<span class="cm-comment">[ 1  5  9 13  2]</span>
+<span class="cm-comment">[16 17 21 18  6]</span>
+<span class="cm-comment">[12 24 25 22 10]</span>
+<span class="cm-comment">[ 8 20 23 19 14]</span>
+<span class="cm-comment">[ 4 15 11  7  3]</span>
+<span class="cm-comment">*/</span>
+</code></pre>
+<pre style="display: none;"><code class="language-kotlin"><span class="cm-keyword">val</span> <span class="cm-def">phrase1</span> <span class="cm-operator">=</span> <span class="cm-string">"Romani ite domum"</span>;
+<span class="cm-variable">InterlacedSpiralCipher</span>.<span class="cm-variable">encode</span>(<span class="cm-variable">phrase1</span>) <span class="cm-comment">// "Rntodomiimuea  m"</span>
+
+<span class="cm-keyword">val</span> <span class="cm-def">phrase2</span> <span class="cm-operator">=</span> <span class="cm-string">"Stsgiriuar i ninmd l otac"</span>;
+<span class="cm-variable">InterlacedSpiralCipher</span>.<span class="cm-variable">decode</span>(<span class="cm-variable">phrase2</span>) <span class="cm-comment">// "Sic transit gloria mundi"</span>
+
+<span class="cm-comment">/* Encoding sequence for a 5 x 5 square:</span>
+<span class="cm-comment">[ 1  5  9 13  2]</span>
+<span class="cm-comment">[16 17 21 18  6]</span>
+<span class="cm-comment">[12 24 25 22 10]</span>
+<span class="cm-comment">[ 8 20 23 19 14]</span>
+<span class="cm-comment">[ 4 15 11  7  3]</span>
+<span class="cm-comment">*/</span>
+</code></pre>
+<pre style="display: none;"><code class="language-rust"><span class="cm-keyword">let</span> <span class="cm-def">phrase1</span> <span class="cm-operator">=</span> <span class="cm-string">"</span><span class="cm-string">Romani ite domum</span><span class="cm-string">"</span>;
+<span class="cm-variable">isc</span>::<span class="cm-variable">encode</span>(<span class="cm-variable">phrase1</span>) <span class="cm-comment">// "Rntodomiimuea  m"</span>
+
+<span class="cm-keyword">let</span> <span class="cm-def">phrase2</span> <span class="cm-operator">=</span> <span class="cm-string">"</span><span class="cm-string">Stsgiriuar i ninmd l otac</span><span class="cm-string">"</span>;
+<span class="cm-variable">isc</span>::<span class="cm-variable">decode</span>(<span class="cm-variable">phrase2</span>) <span class="cm-comment">// "Sic transit gloria mundi"</span>
+
+<span class="cm-comment">/*</span><span class="cm-comment"> Encoding sequence for a 5 x 5 square:</span>
+<span class="cm-comment">[ 1  5  9 13  2]</span>
+<span class="cm-comment">[16 17 21 18  6]</span>
+<span class="cm-comment">[12 24 25 22 10]</span>
+<span class="cm-comment">[ 8 20 23 19 14]</span>
+<span class="cm-comment">[ 4 15 11  7  3]</span>
+<span class="cm-comment">*/</span>
+</code></pre>
+<h2 id="technical-details">Technical Details</h2>
+<ul>
+<li>Input will always be valid.</li>
+</ul>
+<p>If you enjoyed this kata, be sure to check out <a href="https://www.codewars.com/users/docgunthrop/authored" target="_blank">my other katas</a>.</p>
+                        </div>
+                    </div>
+                </div>
+            </main>
+        </div>
+    </div>
+</body>
+</html>

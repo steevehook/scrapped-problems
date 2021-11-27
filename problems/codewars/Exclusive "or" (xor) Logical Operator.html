@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Exclusive "or" (xor) Logical Operator</title>
+    <link rel="stylesheet" media="screen" href="css/style.css">
+</head>
+<body>
+    <div id="app">
+        <div class="w-full" id="shell">
+            <main id="shell_content">
+                <div class="w-full mt-2">
+                    <h2>Exclusive "or" (xor) Logical Operator</h2>
+                    <h2>Points: 8 kyu</h2>
+                    <a href="https://www.codewars.com/kata/56fa3c5ce4d45d2a52001b3c"><h2>Kata ID: 56fa3c5ce4d45d2a52001b3c</h2></a>
+                    <div class="w-full panel bg-ui-section">
+                        <div class="markdown prose max-w-5xl mx-auto" id="description">
+                            <h1 id="exclusive-or-xor-logical-operator">Exclusive "or" (xor) Logical Operator</h1>
+<h2 id="overview">Overview</h2>
+<p>In some scripting languages like PHP, there exists a logical operator (e.g. <code>&amp;&amp;</code>, <code>||</code>, <code>and</code>, <code>or</code>, etc.) called the "Exclusive Or" (hence the name of this Kata).  The exclusive or evaluates two booleans.  It then returns true if <strong>exactly one of the two expressions are true</strong>, false otherwise.  For example:</p>
+<pre><code class="language-php"><span class="cm-atom">false</span> <span class="cm-keyword">xor</span> <span class="cm-atom">false</span> <span class="cm-operator">==</span> <span class="cm-atom">false</span> <span class="cm-comment">// since both are false</span>
+<span class="cm-atom">true</span> <span class="cm-keyword">xor</span> <span class="cm-atom">false</span> <span class="cm-operator">==</span> <span class="cm-atom">true</span> <span class="cm-comment">// exactly one of the two expressions are true</span>
+<span class="cm-atom">false</span> <span class="cm-keyword">xor</span> <span class="cm-atom">true</span> <span class="cm-operator">==</span> <span class="cm-atom">true</span> <span class="cm-comment">// exactly one of the two expressions are true</span>
+<span class="cm-atom">true</span> <span class="cm-keyword">xor</span> <span class="cm-atom">true</span> <span class="cm-operator">==</span> <span class="cm-atom">false</span> <span class="cm-comment">// Both are true.  "xor" only returns true if EXACTLY one of the two expressions evaluate to true.</span>
+</code></pre>
+<h2 id="task">Task</h2>
+<p>Since we cannot define keywords in Javascript (well, at least I don't know how to do it), your task is to define a function <code>xor(a, b)</code> where a and b are the two expressions to be evaluated.  Your <code>xor</code> function should have the behaviour described above, returning true if <strong>exactly one of the two expressions evaluate to true</strong>, false otherwise.</p>
+                        </div>
+                    </div>
+                </div>
+            </main>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>All Inclusive?</title>
+    <link rel="stylesheet" media="screen" href="css/style.css">
+</head>
+<body>
+    <div id="app">
+        <div class="w-full" id="shell">
+            <main id="shell_content">
+                <div class="w-full mt-2">
+                    <h2>All Inclusive?</h2>
+                    <h2>Points: 7 kyu</h2>
+                    <a href="https://www.codewars.com/kata/5700c9acc1555755be00027e"><h2>Kata ID: 5700c9acc1555755be00027e</h2></a>
+                    <div class="w-full panel bg-ui-section">
+                        <div class="markdown prose max-w-5xl mx-auto" id="description">
+                            <p>Input: </p>
+<ul>
+<li>a string <code>strng</code></li>
+<li>an array of strings <code>arr</code></li>
+</ul>
+<p>Output of function <code>contain_all_rots(strng, arr) (or containAllRots or contain-all-rots)</code>:</p>
+<ul>
+<li>a boolean <code>true</code> if all rotations of <code>strng</code> are included in <code>arr</code>
+(C returns 1)</li>
+<li><code>false</code> otherwise
+(C returns 0)</li>
+</ul>
+<h4 id="examples">Examples:</h4>
+<pre><code>contain_all_rots(
+  "bsjq", ["bsjq", "qbsj", "sjqb", "twZNsslC", "jqbs"]) -&gt; true
+
+contain_all_rots(
+  "Ajylvpy", ["Ajylvpy", "ylvpyAj", "jylvpyA", "lvpyAjy", "pyAjylv", "vpyAjyl", "ipywee"]) -&gt; false)
+</code></pre>
+<h4 id="note">Note:</h4>
+<p>Though not correct in a mathematical sense</p>
+<ul>
+<li>we will consider that there are no rotations of <code>strng == ""</code></li>
+<li>and for any array <code>arr</code>: <code>contain_all_rots("", arr) --&gt; true</code></li>
+</ul>
+<p>Ref: <a href="https://en.wikipedia.org/wiki/String_(computer_science)#Rotations" target="_blank">https://en.wikipedia.org/wiki/String_(computer_science)#Rotations</a></p>
+                        </div>
+                    </div>
+                </div>
+            </main>
+        </div>
+    </div>
+</body>
+</html>

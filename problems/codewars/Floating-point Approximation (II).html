@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Floating-point Approximation (II)</title>
+    <link rel="stylesheet" media="screen" href="css/style.css">
+</head>
+<body>
+    <div id="app">
+        <div class="w-full" id="shell">
+            <main id="shell_content">
+                <div class="w-full mt-2">
+                    <h2>Floating-point Approximation (II)</h2>
+                    <h2>Points: 6 kyu</h2>
+                    <a href="https://www.codewars.com/kata/581ee0db1bbdd04e010002fd"><h2>Kata ID: 581ee0db1bbdd04e010002fd</h2></a>
+                    <div class="w-full panel bg-ui-section">
+                        <div class="markdown prose max-w-5xl mx-auto" id="description">
+                            <p>Given </p>
+<ul>
+<li><p>a semi-inclusive interval <code>I = [l, u)</code> (l is in interval I but u is not)
+<code>l</code> and <code>u</code> being floating numbers <code>(0 &lt;= l &lt; u)</code>, </p>
+</li>
+<li><p>an integer <code>n (n &gt; 0)</code></p>
+</li>
+<li><p>a function <code>f: x (float number) -&gt; f(x) (float number)</code> </p>
+</li>
+</ul>
+<p>we want to return as a list the <code>n</code> values:</p>
+<p><code>f(l), f(l + 1 * d), ..., f(u -d)</code> where <code>d = (u - l) / n</code></p>
+<p>or as a string (Bash,  Nim):</p>
+<p><code>"f(l), f(l + 1 * d), ..., f(u -d)"</code> where <code>d = (u - l) / n</code></p>
+<p>Call this function <code>interp</code>:</p>
+<p><code>interp(f, l, u, n) -&gt; [f(l), f(l + 1 * d), ..., f(u - d)]</code></p>
+<p>The <code>n</code> resulting values <code>f(l), f(l + 1 * d), ..., f(u - d)</code> will be <strong>floored</strong> to two decimals (except Shell and Nim: see below). </p>
+<p>For that you can use: <code>floor(y * 100.0) / 100.0</code>.</p>
+<pre><code>Examples:
+interp(x -&gt; x, 0.0, 0.9, 3) -&gt; [0.0; 0.3; 0.6]
+interp(x -&gt; x, 0.0, 0.9, 4) -&gt; [0.0; 0.22; 0.45; 0.67]
+interp(x -&gt; x, 0.0, 1.0, 4) -&gt; [0.0; 0.25; 0.5; 0.75]
+interp(x -&gt; sin x, 0.0, 0.9, 3)  -&gt; [0.0; 0.29; 0.56]
+</code></pre>
+<h4 id="note-for-shell-bash">Note for Shell (bash)</h4>
+<p>To avoid discussions, please do the calculations with <code>bc (scale = 16)</code> and round the result with <code>printf "%.2f"</code>.</p>
+<h4 id="note-for-nim">Note for Nim</h4>
+<p>To avoid discussions, please round the result with something analogous to <code>printf "%.2f"</code>.</p>
+                        </div>
+                    </div>
+                </div>
+            </main>
+        </div>
+    </div>
+</body>
+</html>

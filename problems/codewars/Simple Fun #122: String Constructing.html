@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Simple Fun #122: String Constructing</title>
+    <link rel="stylesheet" media="screen" href="css/style.css">
+</head>
+<body>
+    <div id="app">
+        <div class="w-full" id="shell">
+            <main id="shell_content">
+                <div class="w-full mt-2">
+                    <h2>Simple Fun #122: String Constructing</h2>
+                    <h2>Points: 6 kyu</h2>
+                    <a href="https://www.codewars.com/kata/58a3a735cebc0630830000c0"><h2>Kata ID: 58a3a735cebc0630830000c0</h2></a>
+                    <div class="w-full panel bg-ui-section">
+                        <div class="markdown prose max-w-5xl mx-auto" id="description">
+                            <h1 id="task">Task</h1>
+<p> You are given two string <code>a</code> an <code>s</code>. Starting with an empty string we can do the following two operations:</p>
+<p><code> append the given string a to the end of the current string. erase one symbol of the current string.</code>
+Your task is to find the least number of operations needed to construct the given string s. Assume that all the letters from <code>s</code> appear in <code>a</code> at least once.</p>
+<h1 id="example">Example</h1>
+<p> For <code>a = "aba", s = "abbaab"</code>, the result should be <code>6</code>.</p>
+<p> Coinstruction:</p>
+<p> <code>"" -&gt; "aba" -&gt; "ab" -&gt; "ababa" -&gt; "abba" -&gt; "abbaaba" -&gt; "abbaab".</code></p>
+<p> So, the result is 6.</p>
+<p> For <code>a = "aba", s = "a"</code>, the result should be <code>3</code>.</p>
+<p> Coinstruction:</p>
+<p> <code>"" -&gt; "aba" -&gt; "ab" -&gt; "a".</code></p>
+<p> So, the result is 3.</p>
+<p> For <code>a = "aba", s = "abaa"</code>, the result should be <code>4</code>.</p>
+<p> Coinstruction:</p>
+<p> <code>"" -&gt; "aba" -&gt; "abaaba" -&gt; "abaab" -&gt; "abaa".</code></p>
+<p> So, the result is 4.</p>
+<h1 id="inputoutput">Input/Output</h1>
+<ul>
+<li><code>[input]</code> string <code>a</code></li>
+</ul>
+<p>  string to be appended. Contains only lowercase English letters. </p>
+<p>  1 &lt;= a.length &lt;= 20</p>
+<ul>
+<li><code>[input]</code> string <code>s</code></li>
+</ul>
+<p>  desired string containing only lowercase English letters.</p>
+<p>  1 &lt;= s.length &lt; 1000</p>
+<ul>
+<li><code>[output]</code> an integer</li>
+</ul>
+<p>  minimum number of operations</p>
+                        </div>
+                    </div>
+                </div>
+            </main>
+        </div>
+    </div>
+</body>
+</html>

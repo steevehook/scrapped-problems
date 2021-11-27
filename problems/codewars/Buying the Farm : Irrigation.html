@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Buying the Farm : Irrigation</title>
+    <link rel="stylesheet" media="screen" href="css/style.css">
+</head>
+<body>
+    <div id="app">
+        <div class="w-full" id="shell">
+            <main id="shell_content">
+                <div class="w-full mt-2">
+                    <h2>Buying the Farm : Irrigation</h2>
+                    <h2>Points: 5 kyu</h2>
+                    <a href="https://www.codewars.com/kata/5af4855c68e6449fbf00015c"><h2>Kata ID: 5af4855c68e6449fbf00015c</h2></a>
+                    <div class="w-full panel bg-ui-section">
+                        <div class="markdown prose max-w-5xl mx-auto" id="description">
+                            <h1 id="you-bought-the-farm">You Bought the Farm!</h1>
+<p>Well, actually you just inherited the farm, after your grandfather bought the farm in darker and more figurative sense. The point is, you now have a farm, and you've decided to abandon your life as a programmer in the city and become a farmer instead.</p>
+<p>It's a small farm with only a single field. Your grandfather had bought the equipment to irrigate it, but it was never installed, so that's your first order of business!</p>
+<p>The equipment consists of a single sprinkler gun and a variable-speed pump. When active, the gun will turn, watering a circular area around it. The range of the gun can be controlled by varying the speed of the pump. </p>
+<p>The problem: where do you position it, and what to do you set the range to, to ensure it covers the largest possible circular area within your farm? </p>
+<h1 id="problem-description">Problem Description</h1>
+<p>The field to be irrigated has 4 sides, and is defined by x,y coordinates of the four corners. The field may be any shape, so long as it is <a href="https://www.mathopenref.com/polygonconvex.html" target="_blank">convex</a>.</p>
+<p>Your goal is to find largest circlular area that will fit within that quad.</p>
+<p>Note that your neighbors look unfriendly and all seem to be well-armed, so to be safe, you should be sure not let the circle cross outside the field and into their property!</p>
+<h3 id="function-header-and-arguments">Function Header and Arguments</h3>
+<p>Coordinates are passed to your function as a single array of 8 floats, <code>x</code> and <code>y</code> for corners 0-3, in a clockwise order (on a plane where positive <code>y</code> is up and positive <code>x</code> is right)</p>
+<pre><code class="language-go">[]<span class="cm-keyword">float64</span>{<span class="cm-variable">X1</span>,<span class="cm-variable">Y1</span>,<span class="cm-variable">X2</span>,<span class="cm-variable">Y2</span>,<span class="cm-variable">X3</span>,<span class="cm-variable">Y3</span>,<span class="cm-variable">X4</span>,<span class="cm-variable">Y4</span>}
+</code></pre>
+<p>Your main function prototype should be:</p>
+<pre><code class="language-go"><span class="cm-keyword">func</span> <span class="cm-variable">FitBiggestCircle</span>(<span class="cm-variable">coords</span> []<span class="cm-keyword">float64</span>) []<span class="cm-keyword">float64</span> { <span class="cm-number">.</span><span class="cm-number">.</span><span class="cm-number">.</span> }
+</code></pre>
+<h3 id="return-values">Return values</h3>
+<p>You are expected to return a slice of float64's consisting of the center x, center y, and radius of the circle.</p>
+<p>Only the radius will be tested, but both will be used to display a picture of your solution, like those with the examples below.</p>
+<h1 id="examples">Examples</h1>
+<p>Squares are trivial, with radius being half the length of a side - of course, you'll have to prove the corners define a square, first!</p>
+<table><colgroup><col width="150">
+  </colgroup><tbody><tr>
+    <td><img src="images/yjFaPT5yemcAAAAASUVORK5CYII="></td><td>
+    <b>Square</b><br>
+    Corners: (-3,4), (4,3), (3,-4), (-4,-3)<br>
+    Circle:<br><i>position:</i> (0,0)<br> <i>radius:</i> 5/sqrt(2)
+    </td>
+  </tr>
+  <tr>
+    <td><img src="images/IMkskXZMiDOzaxNZIu2YEGcCGc8SaUdSnJvuTGSJtCMpzgUy1hJpRw4gWMO5ohDP3CfonnQRQU22S7q2ESgMak0cmS4Y1JoQabQdSWxGUINASDtyCcE2aUcuIQrgvVwSiSQH+D88DzMWmQJy7QAAAABJRU5ErkJggg=="></td><td>
+    <b>Trapezoid</b><br>
+    Corners: (0,2), (2,2), (0,-2), (-1,0) <br>
+    Circle:<br><i>position:</i> (0,0)<br> <i>radius:</i> 2/sqrt(5)
+    </td>
+  </tr>  
+  <tr>
+    <td><img src="images/ZXh4xcyFwj54SNW4NAQ1V+Qde5mxuS24MzswJnVjlMyEJoDvTMDb+sY+hrz6d14Hq07qmx54NvT0bgYlSRJkiRxzv8BUk0XfpyB72kAAAAASUVORK5CYII="></td><td>
+    <b>Kite</b><br>
+    Corners: (-1,1), (2,2), (1,-1), (-1,-1)<br>
+    Circle: <br><i>position:</i> (~0.16228, ~0.16228) <br><i>radius:</i> sqrt(10)-2    
+    </td>
+  </tr>
+</tbody></table>
+                        </div>
+                    </div>
+                </div>
+            </main>
+        </div>
+    </div>
+</body>
+</html>

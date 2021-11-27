@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Braking well</title>
+    <link rel="stylesheet" media="screen" href="css/style.css">
+</head>
+<body>
+    <div id="app">
+        <div class="w-full" id="shell">
+            <main id="shell_content">
+                <div class="w-full mt-2">
+                    <h2>Braking well</h2>
+                    <h2>Points: 6 kyu</h2>
+                    <a href="https://www.codewars.com/kata/565c0fa6e3a7d39dee000125"><h2>Kata ID: 565c0fa6e3a7d39dee000125</h2></a>
+                    <div class="w-full panel bg-ui-section">
+                        <div class="markdown prose max-w-5xl mx-auto" id="description">
+                            <p>Braking distance <code>d1</code> is the distance a vehicle will go from the point when it brakes to when it comes to a complete stop. 
+It depends on the original speed <code>v</code> and on the coefficient of friction <code>mu</code> between the tires and the road surface.</p>
+<p>The braking distance is one of two principal components of the total stopping distance. 
+The other component is the reaction distance, which is the product of the speed and the perception-reaction time of the driver.</p>
+<p>The kinetic energy E is <code>0.5*m*v**2</code>, the work W given by braking is <code>mu*m*g*d1</code>. Equalling E and W gives the braking distance:
+<code>d1 = v*v / 2*mu*g</code> where <code>g</code> is the gravity of Earth and <code>m</code> the vehicle's mass. </p>
+<p>We have <code>v</code> in km per hour, <code>g</code> as <code>9.81 m/s/s</code> and in the following we suppose that the reaction time
+is constant and equal to <code>1 s</code>. The coefficient <code>mu</code> is dimensionless.</p>
+<h4 id="tasks">Tasks.</h4>
+<ul>
+<li><p>The first one is to calculate the <strong>total</strong> stopping distance in meters given <code>v</code>, <code>mu</code> 
+(and the reaction time <code>t = 1</code>).</p>
+<p><code>dist(v, mu) -&gt; d = total stopping distance</code></p>
+</li>
+<li><p>The second task is to calculate <code>v</code> in km per hour knowing <code>d</code> in meters and <code>mu</code> 
+with the supposition that the reaction time is still <code>t = 1</code>.</p>
+<p><code>speed(d, mu) -&gt; v such that dist(v, mu) = d</code>.</p>
+</li>
+</ul>
+<h4 id="examples">Examples:</h4>
+<p>  dist(100, 0.7) -&gt; 83.9598760937531</p>
+<p>  speed(83.9598760937531, 0.7) -&gt; 100.0</p>
+<h4 id="notes">Notes:</h4>
+<ul>
+<li>Remember to convert the velocity from km/h to m/s or from m/s in km/h when necessary.</li>
+<li>Don't forget the reaction time t: <code>t = 1</code></li>
+<li>Don't truncate or round your results. See in "RUN SAMPLE TESTS" the function <code>assertFuzzyEquals</code> or <code>dotest or ...</code>.</li>
+</ul>
+<ul>
+<li>Shell: only <code>dist</code> is tested.</li>
+</ul>
+                        </div>
+                    </div>
+                </div>
+            </main>
+        </div>
+    </div>
+</body>
+</html>

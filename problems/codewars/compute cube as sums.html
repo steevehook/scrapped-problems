@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>compute cube as sums</title>
+    <link rel="stylesheet" media="screen" href="css/style.css">
+</head>
+<body>
+    <div id="app">
+        <div class="w-full" id="shell">
+            <main id="shell_content">
+                <div class="w-full mt-2">
+                    <h2>compute cube as sums</h2>
+                    <h2>Points: 6 kyu</h2>
+                    <a href="https://www.codewars.com/kata/58af1bb7ac7e31b192000020"><h2>Kata ID: 58af1bb7ac7e31b192000020</h2></a>
+                    <div class="w-full panel bg-ui-section">
+                        <div class="markdown prose max-w-5xl mx-auto" id="description">
+                            <p>Can you compute a cube as a sum? </p>
+<p>In this Kata, you will be given a number <code>n</code> (where <code>n &gt;= 1</code>) and your task is to find <code>n</code> consecutive odd numbers whose sum is exactly the cube of <code>n</code>.  </p>
+<p>Mathematically:<br>
+  cube = n ** 3 <br>
+  sum = a1 + a2 + a3 + ..... + an<br>
+  sum == cube<br>
+  a2 == a1 + 2, a3 == a2 + 2, .......</p>
+<p>For example:</p>
+<pre><code class="language-javascript"><span class="cm-variable">findSummands</span>(<span class="cm-number">3</span>) <span class="cm-operator">=</span> [<span class="cm-number">7</span>,<span class="cm-number">9</span>,<span class="cm-number">11</span>] <span class="cm-comment">// because 7 + 9 + 11 = 27, the cube of 3. Note that there are only n = 3 elements in the array.</span>
+</code></pre>
+<pre style="display: none;"><code class="language-haskell"><span class="cm-variable">findSummands</span> <span class="cm-number">3</span> <span class="cm-keyword">=</span> [<span class="cm-number">7</span>,<span class="cm-number">9</span>,<span class="cm-number">11</span>]  <span class="cm-comment">-- because 7 + 9 + 11 = 27, the cube of 3. Note that there are only n = 3 elements in the array.</span>
+</code></pre>
+<pre style="display: none;"><code class="language-python"><span class="cm-variable">find_summands</span>(<span class="cm-number">3</span>) <span class="cm-operator">=</span> [<span class="cm-number">7</span>,<span class="cm-number">9</span>,<span class="cm-number">11</span>] <span class="cm-comment"># because 7 + 9 + 11 = 27, the cube of 3. Note that there are only n = 3 elements in the array.</span>
+</code></pre>
+<pre style="display: none;"><code class="language-ruby"><span class="cm-variable">find_summands</span>(<span class="cm-number">3</span>) <span class="cm-operator">=</span> [<span class="cm-number">7</span>,<span class="cm-number">9</span>,<span class="cm-number">11</span>] <span class="cm-comment"># because 7 + 9 + 11 = 27, the cube of 3. Note that there are only n = 3 elements in the array.</span>
+</code></pre>
+<pre style="display: none;"><code class="language-go"><span class="cm-variable">FindSummands</span>(<span class="cm-number">3</span>) <span class="cm-operator">==</span> []<span class="cm-keyword">int</span>{<span class="cm-number">7</span>,<span class="cm-number">9</span>,<span class="cm-number">11</span>} <span class="cm-comment">// because 7 + 9 + 11 = 27, the cube of 3. Note that there are only n = 3 elements in the array.</span>
+</code></pre>
+<p>Write function <code>findSummands(n)</code> which will return an array of n consecutive odd numbers with the sum equal to the cube of n <code>(n*n*n)</code>.</p>
+                        </div>
+                    </div>
+                </div>
+            </main>
+        </div>
+    </div>
+</body>
+</html>

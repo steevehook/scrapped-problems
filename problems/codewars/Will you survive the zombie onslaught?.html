@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Will you survive the zombie onslaught?</title>
+    <link rel="stylesheet" media="screen" href="css/style.css">
+</head>
+<body>
+    <div id="app">
+        <div class="w-full" id="shell">
+            <main id="shell_content">
+                <div class="w-full mt-2">
+                    <h2>Will you survive the zombie onslaught?</h2>
+                    <h2>Points: 7 kyu</h2>
+                    <a href="https://www.codewars.com/kata/5deeb1cc0d5bc9000f70aa74"><h2>Kata ID: 5deeb1cc0d5bc9000f70aa74</h2></a>
+                    <div class="w-full panel bg-ui-section">
+                        <div class="markdown prose max-w-5xl mx-auto" id="description">
+                            <p>I'm afraid you're in a rather unfortunate situation. You've injured your leg, and are unable to walk, and a number of zombies are shuffling towards you, intent on eating your brains. Luckily, you're a crack shot, and have your trusty rifle to hand.</p>
+<p>The zombies start at <code>range</code> metres, and move at <code>0.5</code> metres per second. Each second, you first shoot one zombie, and then the remaining zombies shamble forwards another <code>0.5</code> metres.</p>
+<p>If any zombies manage to get to <code>0</code> metres, you get eaten. If you run out of ammo before shooting all the zombies, you'll also get eaten. To keep things simple, we can ignore any time spent reloading.</p>
+<p>Write a function that accepts the total number of zombies, a range in metres, and the number of bullets you have.</p>
+<p>If you shoot all the zombies, return <code>"You shot all X zombies."</code>
+If you get eaten before killing all the zombies, and before running out of ammo, return <code>"You shot X zombies before being eaten: overwhelmed."</code>
+If you run out of ammo before shooting all the zombies, return <code>"You shot X zombies before being eaten: ran out of ammo."</code></p>
+<p>(If you run out of ammo at the same time as the remaining zombies reach you, return <code>"You shot X zombies before being eaten: overwhelmed."</code>.)</p>
+<p>Good luck! (I think you're going to need it.)</p>
+                        </div>
+                    </div>
+                </div>
+            </main>
+        </div>
+    </div>
+</body>
+</html>

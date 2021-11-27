@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Matching And Substituting</title>
+    <link rel="stylesheet" media="screen" href="css/style.css">
+</head>
+<body>
+    <div id="app">
+        <div class="w-full" id="shell">
+            <main id="shell_content">
+                <div class="w-full mt-2">
+                    <h2>Matching And Substituting</h2>
+                    <h2>Points: 5 kyu</h2>
+                    <a href="https://www.codewars.com/kata/59de1e2fe50813a046000124"><h2>Kata ID: 59de1e2fe50813a046000124</h2></a>
+                    <div class="w-full panel bg-ui-section">
+                        <div class="markdown prose max-w-5xl mx-auto" id="description">
+                            <p>I got lots of files beginning like this:</p>
+<pre><code>Program title: Primes
+Author: Kern
+Corporation: Gold
+Phone: +1-503-555-0091
+Date: Tues April 9, 2005
+Version: 6.7
+Level: Alpha
+</code></pre>
+<p>Here we will work with strings like the string data above and not with files.</p>
+<p>The function <code>change(s, prog, version)</code> given:</p>
+<p><code>s=data, prog="Ladder" , version="1.1"</code> will return:</p>
+<p><code>"Program: Ladder Author: g964 Phone: +1-503-555-0090 Date: 2019-01-01 Version: 1.1"</code></p>
+<p>Rules:</p>
+<ul>
+<li><p>The date should always be <code>"2019-01-01"</code>.</p>
+</li>
+<li><p>The author should always be <code>"g964"</code>.</p>
+</li>
+<li><p>Replace the current <code>"Program Title"</code> with the prog argument supplied to your function. 
+Also remove <code>"Title"</code>, so in the example case <code>"Program Title: Primes"</code> becomes <code>"Program: Ladder"</code>.</p>
+</li>
+<li><p>Remove the lines containing <code>"Corporation"</code> and <code>"Level"</code> completely.</p>
+</li>
+<li><p>Phone numbers and versions must be in valid formats. </p>
+</li>
+</ul>
+<p>A valid version in the <em>input</em> string data is one or more digits followed by a dot, followed by one or more digits. So <code>0.6, 5.4, 14.275 and 1.99</code> are all valid, but versions like <code>.6, 5, 14.2.7 and 1.9.9</code> are invalid. </p>
+<p>A valid <em>input</em> phone format is +1-xxx-xxx-xxxx, where each <code>x</code> is a digit.</p>
+<ul>
+<li><p>If the phone or version format is not valid, return <code>"ERROR: VERSION or PHONE"</code>.</p>
+</li>
+<li><p>If the version format is valid and the version is anything other than <code>2.0</code>, replace it with the version parameter supplied to your function. 
+If it’s <code>2.0</code>, don’t modify it. </p>
+</li>
+<li><p>If the phone number is valid, replace it with <code>"+1-503-555-0090"</code>.</p>
+</li>
+</ul>
+<h4 id="note">Note</h4>
+<ul>
+<li>You can see other examples in the "Sample tests".</li>
+</ul>
+                        </div>
+                    </div>
+                </div>
+            </main>
+        </div>
+    </div>
+</body>
+</html>

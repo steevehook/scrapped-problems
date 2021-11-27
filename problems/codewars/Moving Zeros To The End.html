@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Moving Zeros To The End</title>
+    <link rel="stylesheet" media="screen" href="css/style.css">
+</head>
+<body>
+    <div id="app">
+        <div class="w-full" id="shell">
+            <main id="shell_content">
+                <div class="w-full mt-2">
+                    <h2>Moving Zeros To The End</h2>
+                    <h2>Points: 5 kyu</h2>
+                    <a href="https://www.codewars.com/kata/52597aa56021e91c93000cb0"><h2>Kata ID: 52597aa56021e91c93000cb0</h2></a>
+                    <div class="w-full panel bg-ui-section">
+                        <div class="markdown prose max-w-5xl mx-auto" id="description">
+                            <p>Write an algorithm that takes an array and moves all of the zeros to the end, preserving the order of the other elements.</p>
+<pre style="display: none;"><code class="language-php"><span class="cm-variable">moveZeros</span>([<span class="cm-atom">false</span>,<span class="cm-number">1</span>,<span class="cm-number">0</span>,<span class="cm-number">1</span>,<span class="cm-number">2</span>,<span class="cm-number">0</span>,<span class="cm-number">1</span>,<span class="cm-number">3</span>,<span class="cm-string">"</span><span class="cm-string">a"</span>]) <span class="cm-comment">// returns[false,1,1,2,1,3,"a",0,0]</span>
+</code></pre>
+<pre><code class="language-javascript"><span class="cm-variable">moveZeros</span>([<span class="cm-atom">false</span>,<span class="cm-number">1</span>,<span class="cm-number">0</span>,<span class="cm-number">1</span>,<span class="cm-number">2</span>,<span class="cm-number">0</span>,<span class="cm-number">1</span>,<span class="cm-number">3</span>,<span class="cm-string">"a"</span>]) <span class="cm-comment">// returns[false,1,1,2,1,3,"a",0,0]</span>
+</code></pre>
+<pre style="display: none;"><code class="language-python"><span class="cm-variable">move_zeros</span>([<span class="cm-number">1</span>, <span class="cm-number">0</span>, <span class="cm-number">1</span>, <span class="cm-number">2</span>, <span class="cm-number">0</span>, <span class="cm-number">1</span>, <span class="cm-number">3</span>]) <span class="cm-comment"># returns [1, 1, 2, 1, 3, 0, 0]</span>
+</code></pre>
+<pre style="display: none;"><code class="language-cpp"><span class="cm-variable">move_zeros</span>({<span class="cm-number">1</span>, <span class="cm-number">0</span>, <span class="cm-number">1</span>, <span class="cm-number">2</span>, <span class="cm-number">0</span>, <span class="cm-number">1</span>, <span class="cm-number">3</span>}) <span class="cm-comment">// returns {1, 1, 2, 1, 3, 0, 0}</span>
+</code></pre>
+<pre style="display: none;"><code class="language-coffeescript"><span class="cm-variable">moveZeros</span> <span class="cm-punctuation">[</span><span class="cm-atom">false</span><span class="cm-punctuation">,</span><span class="cm-number">1</span><span class="cm-punctuation">,</span><span class="cm-number">0</span><span class="cm-punctuation">,</span><span class="cm-number">1</span><span class="cm-punctuation">,</span><span class="cm-number">2</span><span class="cm-punctuation">,</span><span class="cm-number">0</span><span class="cm-punctuation">,</span><span class="cm-number">1</span><span class="cm-punctuation">,</span><span class="cm-number">3</span><span class="cm-punctuation">,</span><span class="cm-string">"a"</span><span class="cm-punctuation">]</span> <span class="cm-comment"># returns[false,1,1,2,1,3,"a",0,0]</span>
+</code></pre>
+<pre style="display: none;"><code class="language-csharp"><span class="cm-variable">Kata</span>.<span class="cm-variable">MoveZeroes</span>(<span class="cm-keyword">new</span> <span class="cm-type">int</span>[] {<span class="cm-number">1</span>, <span class="cm-number">2</span>, <span class="cm-number">0</span>, <span class="cm-number">1</span>, <span class="cm-number">0</span>, <span class="cm-number">1</span>, <span class="cm-number">0</span>, <span class="cm-number">3</span>, <span class="cm-number">0</span>, <span class="cm-number">1</span>}) <span class="cm-operator">=&gt;</span> <span class="cm-keyword">new</span> <span class="cm-type">int</span>[] {<span class="cm-number">1</span>, <span class="cm-number">2</span>, <span class="cm-number">1</span>, <span class="cm-number">1</span>, <span class="cm-number">3</span>, <span class="cm-number">1</span>, <span class="cm-number">0</span>, <span class="cm-number">0</span>, <span class="cm-number">0</span>, <span class="cm-number">0</span>}
+</code></pre>
+<pre style="display: none;"><code class="language-go"><span class="cm-variable">MoveZeros</span>([]<span class="cm-keyword">int</span>{<span class="cm-number">1</span>, <span class="cm-number">2</span>, <span class="cm-number">0</span>, <span class="cm-number">1</span>, <span class="cm-number">0</span>, <span class="cm-number">1</span>, <span class="cm-number">0</span>, <span class="cm-number">3</span>, <span class="cm-number">0</span>, <span class="cm-number">1</span>}) <span class="cm-comment">// returns []int{ 1, 2, 1, 1, 3, 1, 0, 0, 0, 0 }</span>
+</code></pre>
+                        </div>
+                    </div>
+                </div>
+            </main>
+        </div>
+    </div>
+</body>
+</html>

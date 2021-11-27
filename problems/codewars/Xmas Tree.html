@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Xmas Tree</title>
+    <link rel="stylesheet" media="screen" href="css/style.css">
+</head>
+<body>
+    <div id="app">
+        <div class="w-full" id="shell">
+            <main id="shell_content">
+                <div class="w-full mt-2">
+                    <h2>Xmas Tree</h2>
+                    <h2>Points: 7 kyu</h2>
+                    <a href="https://www.codewars.com/kata/577c349edf78c178a1000108"><h2>Kata ID: 577c349edf78c178a1000108</h2></a>
+                    <div class="w-full panel bg-ui-section">
+                        <div class="markdown prose max-w-5xl mx-auto" id="description">
+                            <p>Complete the function that returns a christmas tree of the given height. The height is passed through to the function and the function should return a list containing each line of the tree. </p>
+<pre><code>XMasTree(5) should return : ['____#____', '___###___', '__#####__', '_#######_', '#########', '____#____', '____#____']
+XMasTree(3) should return : ['__#__', '_###_', '#####', '__#__', '__#__']
+</code></pre>
+<p>Pad with underscores (<code>_</code>) so each line is the same length. Also remember the trunk/stem of the tree.</p>
+<h2 id="examples">Examples</h2>
+<p>The final idea is for the tree to look like this if you decide to print each element of the list: </p>
+<p><code>n = 5</code> will result in:</p>
+<pre><code>____#____              1
+___###___              2
+__#####__              3
+_#######_              4
+#########       -----&gt; 5 - Height of Tree
+____#____        1      
+____#____        2 - Trunk/Stem of Tree
+</code></pre>
+<p><code>n = 3</code> will result in:</p>
+<pre><code>__#__                  1
+_###_                  2
+#####          -----&gt;  3 - Height of Tree
+__#__           1
+__#__           2 - Trunk/Stem of Tree
+</code></pre>
+                        </div>
+                    </div>
+                </div>
+            </main>
+        </div>
+    </div>
+</body>
+</html>

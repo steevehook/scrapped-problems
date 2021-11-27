@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Subsequence Product Sum</title>
+    <link rel="stylesheet" media="screen" href="css/style.css">
+</head>
+<body>
+    <div id="app">
+        <div class="w-full" id="shell">
+            <main id="shell_content">
+                <div class="w-full mt-2">
+                    <h2>Subsequence Product Sum</h2>
+                    <h2>Points: 5 kyu</h2>
+                    <a href="https://www.codewars.com/kata/5d653190d94b3b0021ec8f2b"><h2>Kata ID: 5d653190d94b3b0021ec8f2b</h2></a>
+                    <div class="w-full panel bg-ui-section">
+                        <div class="markdown prose max-w-5xl mx-auto" id="description">
+                            <p>Given an array of integers and an integer <code>m</code>, return the sum of the product of its subsequences of length <code>m</code>.</p>
+<p>Ex1:</p>
+<pre><code class="language-python"><span class="cm-variable">a</span> <span class="cm-operator">=</span> [<span class="cm-number">1</span>, <span class="cm-number">2</span>, <span class="cm-number">3</span>]
+<span class="cm-variable">m</span> <span class="cm-operator">=</span> <span class="cm-number">2</span>
+</code></pre>
+<pre style="display: none;"><code class="language-javascript"><span class="cm-variable">a</span> <span class="cm-operator">=</span> [<span class="cm-number">1</span>, <span class="cm-number">2</span>, <span class="cm-number">3</span>]
+<span class="cm-variable">m</span> <span class="cm-operator">=</span> <span class="cm-number">2</span>
+</code></pre>
+<pre style="display: none;"><code class="language-haskell"><span class="cm-variable">xs</span> <span class="cm-keyword">=</span> [<span class="cm-number">1</span>, <span class="cm-number">2</span>, <span class="cm-number">3</span>]
+<span class="cm-variable">m</span> <span class="cm-keyword">=</span> <span class="cm-number">2</span>
+</code></pre>
+<pre style="display: none;"><code class="language-go"><span class="cm-variable">a</span> :<span class="cm-operator">=</span> []<span class="cm-keyword">int</span>{<span class="cm-number">1</span>, <span class="cm-number">2</span>, <span class="cm-number">3</span>}
+<span class="cm-variable">m</span> :<span class="cm-operator">=</span> <span class="cm-number">2</span>
+</code></pre>
+<p>the subsequences (of length 2) are <code>(1,2) (1,3) (2,3)</code>, you should multiply the numbers of each subsequence and take their sum</p>
+<pre><code class="language-python"><span class="cm-variable">product_sum</span> <span class="cm-operator">=</span> (<span class="cm-number">1</span><span class="cm-operator">*</span><span class="cm-number">2</span>) <span class="cm-operator">+</span> (<span class="cm-number">1</span><span class="cm-operator">*</span><span class="cm-number">3</span>) <span class="cm-operator">+</span> (<span class="cm-number">2</span><span class="cm-operator">*</span><span class="cm-number">3</span>) <span class="cm-comment">#=&gt; 11</span>
+</code></pre>
+<pre style="display: none;"><code class="language-javascript"><span class="cm-variable">productSum</span> <span class="cm-operator">=</span> (<span class="cm-number">1</span><span class="cm-operator">*</span><span class="cm-number">2</span>) <span class="cm-operator">+</span> (<span class="cm-number">1</span><span class="cm-operator">*</span><span class="cm-number">3</span>) <span class="cm-operator">+</span> (<span class="cm-number">2</span><span class="cm-operator">*</span><span class="cm-number">3</span>) <span class="cm-comment">//=&gt; 11</span>
+</code></pre>
+<pre style="display: none;"><code class="language-haskell"><span class="cm-variable">productSum</span> <span class="cm-keyword">=</span> (<span class="cm-number">1</span><span class="cm-builtin">*</span><span class="cm-number">2</span>) <span class="cm-builtin">+</span> (<span class="cm-number">1</span><span class="cm-builtin">*</span><span class="cm-number">3</span>) <span class="cm-builtin">+</span> (<span class="cm-number">2</span><span class="cm-builtin">*</span><span class="cm-number">3</span>) <span class="cm-comment">-- &gt; 11</span>
+</code></pre>
+<pre style="display: none;"><code class="language-go"><span class="cm-variable">ProductSum</span> <span class="cm-operator">=</span> (<span class="cm-number">1</span><span class="cm-operator">*</span><span class="cm-number">2</span>) <span class="cm-operator">+</span> (<span class="cm-number">1</span><span class="cm-operator">*</span><span class="cm-number">3</span>) <span class="cm-operator">+</span> (<span class="cm-number">2</span><span class="cm-operator">*</span><span class="cm-number">3</span>) <span class="cm-comment">//=&gt; 11</span>
+</code></pre>
+<p>Ex2:</p>
+<pre><code class="language-python"><span class="cm-variable">a</span> <span class="cm-operator">=</span> [<span class="cm-number">2</span>,<span class="cm-number">3</span>,<span class="cm-number">4</span>,<span class="cm-number">5</span>]
+<span class="cm-variable">m</span> <span class="cm-operator">=</span> <span class="cm-number">3</span>
+</code></pre>
+<pre style="display: none;"><code class="language-javascript"><span class="cm-variable">a</span> <span class="cm-operator">=</span> [<span class="cm-number">2</span>,<span class="cm-number">3</span>,<span class="cm-number">4</span>,<span class="cm-number">5</span>]
+<span class="cm-variable">m</span> <span class="cm-operator">=</span> <span class="cm-number">3</span>
+</code></pre>
+<pre style="display: none;"><code class="language-haskell"><span class="cm-variable">xs</span> <span class="cm-keyword">=</span> [<span class="cm-number">2</span>,<span class="cm-number">3</span>,<span class="cm-number">4</span>,<span class="cm-number">5</span>]
+<span class="cm-variable">m</span> <span class="cm-keyword">=</span> <span class="cm-number">3</span>
+</code></pre>
+<pre style="display: none;"><code class="language-go"><span class="cm-variable">a</span> :<span class="cm-operator">=</span> []<span class="cm-keyword">int</span>{<span class="cm-number">2</span>,<span class="cm-number">3</span>,<span class="cm-number">4</span>,<span class="cm-number">5</span>}
+<span class="cm-variable">m</span> :<span class="cm-operator">=</span> <span class="cm-number">3</span>
+</code></pre>
+<p>the subsequences (of length 3) are <code>(2,3,4) (2,4,5) (2,3,5) (3,4,5)</code></p>
+<pre><code class="language-python"><span class="cm-variable">product_sum</span> <span class="cm-operator">=</span> (<span class="cm-number">2</span><span class="cm-operator">*</span><span class="cm-number">3</span><span class="cm-operator">*</span><span class="cm-number">4</span>) <span class="cm-operator">+</span> (<span class="cm-number">2</span><span class="cm-operator">*</span><span class="cm-number">3</span><span class="cm-operator">*</span><span class="cm-number">5</span>) <span class="cm-operator">+</span> (<span class="cm-number">2</span><span class="cm-operator">*</span><span class="cm-number">4</span><span class="cm-operator">*</span><span class="cm-number">5</span>) <span class="cm-operator">+</span> (<span class="cm-number">3</span><span class="cm-operator">*</span><span class="cm-number">4</span><span class="cm-operator">*</span><span class="cm-number">5</span>) <span class="cm-comment">#=&gt; 154</span>
+</code></pre>
+<pre style="display: none;"><code class="language-javascript"><span class="cm-variable">productSum</span> <span class="cm-operator">=</span> (<span class="cm-number">2</span><span class="cm-operator">*</span><span class="cm-number">3</span><span class="cm-operator">*</span><span class="cm-number">4</span>) <span class="cm-operator">+</span> (<span class="cm-number">2</span><span class="cm-operator">*</span><span class="cm-number">3</span><span class="cm-operator">*</span><span class="cm-number">5</span>) <span class="cm-operator">+</span> (<span class="cm-number">2</span><span class="cm-operator">*</span><span class="cm-number">4</span><span class="cm-operator">*</span><span class="cm-number">5</span>) <span class="cm-operator">+</span> (<span class="cm-number">3</span><span class="cm-operator">*</span><span class="cm-number">4</span><span class="cm-operator">*</span><span class="cm-number">5</span>) <span class="cm-comment">//=&gt; 154</span>
+</code></pre>
+<pre style="display: none;"><code class="language-haskell"><span class="cm-variable">productSum</span> <span class="cm-keyword">=</span> (<span class="cm-number">2</span><span class="cm-builtin">*</span><span class="cm-number">3</span><span class="cm-builtin">*</span><span class="cm-number">4</span>) <span class="cm-builtin">+</span> (<span class="cm-number">2</span><span class="cm-builtin">*</span><span class="cm-number">3</span><span class="cm-builtin">*</span><span class="cm-number">5</span>) <span class="cm-builtin">+</span> (<span class="cm-number">2</span><span class="cm-builtin">*</span><span class="cm-number">4</span><span class="cm-builtin">*</span><span class="cm-number">5</span>) <span class="cm-builtin">+</span> (<span class="cm-number">3</span><span class="cm-builtin">*</span><span class="cm-number">4</span><span class="cm-builtin">*</span><span class="cm-number">5</span>) <span class="cm-comment">-- &gt; 154</span>
+</code></pre>
+<pre style="display: none;"><code class="language-go"><span class="cm-variable">ProductSum</span> <span class="cm-operator">=</span> (<span class="cm-number">2</span><span class="cm-operator">*</span><span class="cm-number">3</span><span class="cm-operator">*</span><span class="cm-number">4</span>) <span class="cm-operator">+</span> (<span class="cm-number">2</span><span class="cm-operator">*</span><span class="cm-number">3</span><span class="cm-operator">*</span><span class="cm-number">5</span>) <span class="cm-operator">+</span> (<span class="cm-number">2</span><span class="cm-operator">*</span><span class="cm-number">4</span><span class="cm-operator">*</span><span class="cm-number">5</span>) <span class="cm-operator">+</span> (<span class="cm-number">3</span><span class="cm-operator">*</span><span class="cm-number">4</span><span class="cm-operator">*</span><span class="cm-number">5</span>) <span class="cm-comment">//=&gt; 154</span>
+</code></pre>
+<h2 id="task">Task:</h2>
+<p>Write a function `product_sum(a, m)`` that does as described above</p>
+<p>The sum can be really large, so return the result in modulo <strong>10<sup>9</sup>+7</strong></p>
+<h2 id="constraints">Constraints</h2>
+<p><strong>0 &lt;= A[i] &lt; 1000000</strong></p>
+<pre><code>1 &lt;= m &lt;= 20
+49 random tests |A| &lt;= 10^4
+1 big test |A| = 10^5
+</code></pre>
+<p><strong>m &lt; |A|</strong></p>
+                        </div>
+                    </div>
+                </div>
+            </main>
+        </div>
+    </div>
+</body>
+</html>

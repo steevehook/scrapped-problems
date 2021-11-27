@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Floating-point Approximation (III)</title>
+    <link rel="stylesheet" media="screen" href="css/style.css">
+</head>
+<body>
+    <div id="app">
+        <div class="w-full" id="shell">
+            <main id="shell_content">
+                <div class="w-full mt-2">
+                    <h2>Floating-point Approximation (III)</h2>
+                    <h2>Points: 7 kyu</h2>
+                    <a href="https://www.codewars.com/kata/5b0c0ec907756ffcff00006e"><h2>Kata ID: 5b0c0ec907756ffcff00006e</h2></a>
+                    <div class="w-full panel bg-ui-section">
+                        <div class="markdown prose max-w-5xl mx-auto" id="description">
+                            <p>Professor Chambouliard has just completed an experiment on gravitational waves.
+He measures their effects on small magnetic particles. This effect is very small and negative. In his first experiment the effect satisfies the equation:</p>
+<p><code>x**2 + 1e9 * x + 1 = 0</code>. </p>
+<p>Professor C. knows how to solve equations of the form:</p>
+<p><code>g(x) = a x ** 2 + b x + c = 0 (1)</code> </p>
+<p>using the "discriminant".</p>
+<p>It finds that the roots of <code>x**2 + 1e9 * x + 1 = 0</code> are <code>x1 = -1e9</code> and <code>x2 = 0</code>. The value of <code>x1</code> - good or bad - does not interest him because its absolute value is too big. </p>
+<p>On the other hand, he sees immediately that the value of <code>x2</code> is not suitable!</p>
+<p>He asks our help to solve equations of type (1) 
+with <code>a, b, c strictly positive numbers</code>, and <code>b being large (b &gt;= 10 ** 9)</code>.</p>
+<p>Professor C. will check your result <code>x2</code> (the smaller root in absolute value. Don't return the other root!) by reporting <code>x2</code> in (1) 
+and seeing if <code>abs(g(x2)) &lt; 1e-12</code>.</p>
+<h4 id="task">Task:</h4>
+<p><code>solve(a, b, c)</code> </p>
+<p>that will return the "solution" <code>x2</code> of (1) such as <code>abs(a * x2 ** 2 + b * x2 + c) &lt; 1e-12</code>.</p>
+<h4 id="example">Example:</h4>
+<p>for equation <code>7*x**2 + 0.40E+14 * x + 8 = 0</code> we can find: <code>x2 = -2e-13</code>
+which verifies <code>abs(g(x)) &lt; 1e-12</code>.</p>
+                        </div>
+                    </div>
+                </div>
+            </main>
+        </div>
+    </div>
+</body>
+</html>

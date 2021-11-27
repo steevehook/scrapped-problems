@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Casino chips</title>
+    <link rel="stylesheet" media="screen" href="css/style.css">
+</head>
+<body>
+    <div id="app">
+        <div class="w-full" id="shell">
+            <main id="shell_content">
+                <div class="w-full mt-2">
+                    <h2>Casino chips</h2>
+                    <h2>Points: 6 kyu</h2>
+                    <a href="https://www.codewars.com/kata/5e0b72d2d772160011133654"><h2>Kata ID: 5e0b72d2d772160011133654</h2></a>
+                    <div class="w-full panel bg-ui-section">
+                        <div class="markdown prose max-w-5xl mx-auto" id="description">
+                            <p>You are given three piles of casino chips: white, green and black chips:</p>
+<ul>
+<li>the first pile contains only white chips</li>
+<li>the second pile contains only green chips</li>
+<li>the third pile contains only black chips</li>
+</ul>
+<p>Each day you take exactly two chips of different colors and head to the casino. You can choose any color, but you are not allowed to take two chips of the same color in a day.</p>
+<p>You will be given an array representing the number of chips of each color and your task is to return the maximum number of days you can pick the chips. Each day you need to take exactly two chips.</p>
+<pre style="display: none;"><code class="language-python"><span class="cm-variable">solve</span>([<span class="cm-number">1</span>,<span class="cm-number">1</span>,<span class="cm-number">1</span>]) <span class="cm-operator">=</span> <span class="cm-number">1</span>, <span class="cm-variable">because</span> <span class="cm-variable">after</span> <span class="cm-variable">you</span> <span class="cm-variable">pick</span> <span class="cm-variable">on</span> <span class="cm-variable">day</span> <span class="cm-variable">one</span>, <span class="cm-variable">there</span> <span class="cm-variable">will</span> <span class="cm-variable">be</span> <span class="cm-variable">only</span> <span class="cm-variable">one</span> <span class="cm-variable">chip</span> <span class="cm-variable">left</span>
+<span class="cm-variable">solve</span>([<span class="cm-number">1</span>,<span class="cm-number">2</span>,<span class="cm-number">1</span>] <span class="cm-operator">=</span> <span class="cm-number">2</span>, <span class="cm-variable">you</span> <span class="cm-variable">can</span> <span class="cm-variable">pick</span> <span class="cm-variable">twice</span>; <span class="cm-variable">you</span> <span class="cm-variable">pick</span> <span class="cm-variable">two</span> <span class="cm-variable">chips</span> <span class="cm-variable">on</span> <span class="cm-variable">day</span> <span class="cm-variable">one</span> <span class="cm-variable">then</span> <span class="cm-variable">on</span> <span class="cm-variable">day</span> <span class="cm-variable">two</span>
+<span class="cm-variable">solve</span>([<span class="cm-number">4</span>,<span class="cm-number">1</span>,<span class="cm-number">1</span>]) <span class="cm-operator">=</span> <span class="cm-number">2</span>
+</code></pre>
+<pre style="display: none;"><code class="language-java"><span class="cm-variable">solve</span>([<span class="cm-number">1</span>,<span class="cm-number">1</span>,<span class="cm-number">1</span>]) <span class="cm-comment">// = 1, because after you pick on day one, there will be only one chip left</span>
+<span class="cm-variable">solve</span>([<span class="cm-number">1</span>,<span class="cm-number">2</span>,<span class="cm-number">1</span>]) <span class="cm-comment">// = 2, you can pick twice; you pick two chips on day one then on day two</span>
+<span class="cm-variable">solve</span>([<span class="cm-number">4</span>,<span class="cm-number">1</span>,<span class="cm-number">1</span>]) <span class="cm-comment">// = 2 </span>
+</code></pre>
+<pre><code class="language-javascript"><span class="cm-variable">solve</span>([<span class="cm-number">1</span>,<span class="cm-number">1</span>,<span class="cm-number">1</span>]) <span class="cm-operator">=</span> <span class="cm-number">1</span>, <span class="cm-variable">because</span> <span class="cm-variable">after</span> <span class="cm-variable">you</span> <span class="cm-variable">pick</span> <span class="cm-variable">on</span> <span class="cm-variable">day</span> <span class="cm-variable">one</span>, <span class="cm-variable">there</span> <span class="cm-variable">will</span> <span class="cm-variable">be</span> <span class="cm-variable">only</span> <span class="cm-variable">one</span> <span class="cm-variable">chip</span> <span class="cm-variable">left</span>
+<span class="cm-variable">solve</span>([<span class="cm-number">1</span>,<span class="cm-number">2</span>,<span class="cm-number">1</span>]) <span class="cm-operator">=</span> <span class="cm-number">2</span>, <span class="cm-variable">you</span> <span class="cm-variable">can</span> <span class="cm-variable">pick</span> <span class="cm-variable">twice</span>; <span class="cm-variable">you</span> <span class="cm-variable">pick</span> <span class="cm-variable">two</span> <span class="cm-variable">chips</span> <span class="cm-variable">on</span> <span class="cm-variable">day</span> <span class="cm-variable">one</span> <span class="cm-variable">then</span> <span class="cm-variable">on</span> <span class="cm-variable">day</span> <span class="cm-variable">two</span>
+<span class="cm-variable">solve</span>([<span class="cm-number">4</span>,<span class="cm-number">1</span>,<span class="cm-number">1</span>]) <span class="cm-operator">=</span> <span class="cm-number">2</span>
+</code></pre>
+<pre style="display: none;"><code class="language-go"><span class="cm-variable">solve</span>([<span class="cm-number">1</span>,<span class="cm-number">1</span>,<span class="cm-number">1</span>]) <span class="cm-operator">=</span> <span class="cm-number">1</span>, <span class="cm-variable">because</span> <span class="cm-variable">after</span> <span class="cm-variable">you</span> <span class="cm-variable">pick</span> <span class="cm-variable">on</span> <span class="cm-variable">day</span> <span class="cm-variable">one</span>, <span class="cm-variable">there</span> <span class="cm-variable">will</span> <span class="cm-variable">be</span> <span class="cm-variable">only</span> <span class="cm-variable">one</span> <span class="cm-variable">chip</span> <span class="cm-variable">left</span>
+<span class="cm-variable">solve</span>([<span class="cm-number">1</span>,<span class="cm-number">2</span>,<span class="cm-number">1</span>]) <span class="cm-operator">=</span> <span class="cm-number">2</span>, <span class="cm-variable">you</span> <span class="cm-variable">can</span> <span class="cm-variable">pick</span> <span class="cm-variable">twice</span>; <span class="cm-variable">you</span> <span class="cm-variable">pick</span> <span class="cm-variable">two</span> <span class="cm-variable">chips</span> <span class="cm-variable">on</span> <span class="cm-variable">day</span> <span class="cm-variable">one</span> <span class="cm-variable">then</span> <span class="cm-variable">on</span> <span class="cm-variable">day</span> <span class="cm-variable">two</span>
+<span class="cm-variable">solve</span>([<span class="cm-number">4</span>,<span class="cm-number">1</span>,<span class="cm-number">1</span>]) <span class="cm-operator">=</span> <span class="cm-number">2</span>
+</code></pre>
+<pre style="display: none;"><code class="language-cpp"><span class="cm-variable">solve</span>([<span class="cm-number">1</span>,<span class="cm-number">1</span>,<span class="cm-number">1</span>]) <span class="cm-comment">// = 1, because after you pick on day one, there will be only one chip left</span>
+<span class="cm-variable">solve</span>([<span class="cm-number">1</span>,<span class="cm-number">2</span>,<span class="cm-number">1</span>]) <span class="cm-comment">// = 2, you can pick twice; you pick two chips on day one then on day two</span>
+<span class="cm-variable">solve</span>([<span class="cm-number">4</span>,<span class="cm-number">1</span>,<span class="cm-number">1</span>]) <span class="cm-comment">// = 2 </span>
+</code></pre>
+<pre style="display: none;"><code class="language-rust"><span class="cm-variable">solve</span>(&amp;[<span class="cm-number">1</span>,<span class="cm-number">1</span>,<span class="cm-number">1</span>]) <span class="cm-comment">// = 1, because after you pick on day one, there will be only one chip left</span>
+<span class="cm-variable">solve</span>(&amp;[<span class="cm-number">1</span>,<span class="cm-number">2</span>,<span class="cm-number">1</span>]) <span class="cm-comment">// = 2, you can pick twice; you pick two chips on day one then on day two</span>
+<span class="cm-variable">solve</span>(&amp;[<span class="cm-number">4</span>,<span class="cm-number">1</span>,<span class="cm-number">1</span>]) <span class="cm-comment">// = 2 </span>
+</code></pre>
+<pre style="display: none;"><code class="language-csharp"><span class="cm-variable">solve</span>([<span class="cm-number">1</span>,<span class="cm-number">1</span>,<span class="cm-number">1</span>]) <span class="cm-comment">// = 1, because after you pick on day one, there will be only one chip left</span>
+<span class="cm-variable">solve</span>([<span class="cm-number">1</span>,<span class="cm-number">2</span>,<span class="cm-number">1</span>]) <span class="cm-comment">// = 2, you can pick twice; you pick two chips on day one then on day two</span>
+<span class="cm-variable">solve</span>([<span class="cm-number">4</span>,<span class="cm-number">1</span>,<span class="cm-number">1</span>]) <span class="cm-comment">// = 2 </span>
+</code></pre>
+<pre style="display: none;"><code class="language-ruby"><span class="cm-variable">solve</span>([<span class="cm-number">1</span>,<span class="cm-number">1</span>,<span class="cm-number">1</span>]) <span class="cm-operator">=</span> <span class="cm-number">1</span>, <span class="cm-variable">because</span> <span class="cm-variable">after</span> <span class="cm-variable">you</span> <span class="cm-variable">pick</span> <span class="cm-variable">on</span> <span class="cm-variable">day</span> <span class="cm-variable">one</span>, <span class="cm-variable">there</span> <span class="cm-variable">will</span> <span class="cm-variable">be</span> <span class="cm-variable">only</span> <span class="cm-variable">one</span> <span class="cm-variable">chip</span> <span class="cm-variable">left</span>
+<span class="cm-variable">solve</span>([<span class="cm-number">1</span>,<span class="cm-number">2</span>,<span class="cm-number">1</span>]) <span class="cm-operator">=</span> <span class="cm-number">2</span>, <span class="cm-variable">you</span> <span class="cm-variable">can</span> <span class="cm-variable">pick</span> <span class="cm-variable">twice</span>; <span class="cm-variable">you</span> <span class="cm-variable">pick</span> <span class="cm-variable">two</span> <span class="cm-variable">chips</span> <span class="cm-variable">on</span> <span class="cm-variable">day</span>, <span class="cm-variable">two</span> <span class="cm-variable">chips</span> <span class="cm-variable">on</span> <span class="cm-variable">day</span> <span class="cm-variable">two</span>
+<span class="cm-variable">solve</span>([<span class="cm-number">4</span>,<span class="cm-number">1</span>,<span class="cm-number">1</span>]) <span class="cm-operator">=</span> <span class="cm-number">2</span>
+</code></pre>
+<pre style="display: none;"><code class="language-crystal"><span class="cm-variable">solve</span>([<span class="cm-number">1</span>,<span class="cm-number">1</span>,<span class="cm-number">1</span>]) <span class="cm-operator">=</span> <span class="cm-number">1</span>, <span class="cm-variable">because</span> <span class="cm-variable">after</span> <span class="cm-variable">you</span> <span class="cm-variable">pick</span> <span class="cm-variable">on</span> <span class="cm-variable">day</span> <span class="cm-variable">one</span>, <span class="cm-variable">there</span> <span class="cm-variable">will</span> <span class="cm-variable">be</span> <span class="cm-variable">only</span> <span class="cm-variable">one</span> <span class="cm-variable">chip</span> <span class="cm-variable">left</span>
+<span class="cm-variable">solve</span>([<span class="cm-number">1</span>,<span class="cm-number">2</span>,<span class="cm-number">1</span>] <span class="cm-operator">=</span> <span class="cm-number">2</span>, <span class="cm-variable">you</span> <span class="cm-variable">can</span> <span class="cm-variable">pick</span> <span class="cm-variable">twice</span>; <span class="cm-variable">you</span> <span class="cm-variable">pick</span> <span class="cm-variable">two</span> <span class="cm-variable">chips</span> <span class="cm-variable">on</span> <span class="cm-variable">day</span>, <span class="cm-variable">two</span> <span class="cm-variable">chips</span> <span class="cm-variable">on</span> <span class="cm-variable">day</span> <span class="cm-variable">two</span>
+<span class="cm-variable">solve</span>([<span class="cm-number">4</span>,<span class="cm-number">1</span>,<span class="cm-number">1</span>]) <span class="cm-operator">=</span> <span class="cm-number">2</span>
+</code></pre>
+<pre style="display: none;"><code class="language-haskell"><span class="cm-variable">solve</span> [<span class="cm-number">1</span>,<span class="cm-number">1</span>,<span class="cm-number">1</span>] <span class="cm-keyword">=</span> <span class="cm-number">1</span>, <span class="cm-variable">because</span> <span class="cm-variable">after</span> <span class="cm-variable">you</span> <span class="cm-variable">pick</span> <span class="cm-variable">on</span> <span class="cm-variable">day</span> <span class="cm-variable">one</span>, <span class="cm-variable">there</span> <span class="cm-variable">will</span> <span class="cm-variable">be</span> <span class="cm-variable">only</span> <span class="cm-variable">one</span> <span class="cm-variable">chip</span> <span class="cm-variable">left</span>
+<span class="cm-variable">solve</span> [<span class="cm-number">1</span>,<span class="cm-number">2</span>,<span class="cm-number">1</span>] <span class="cm-keyword">=</span> <span class="cm-number">2</span>, <span class="cm-variable">you</span> <span class="cm-variable">can</span> <span class="cm-variable">pick</span> <span class="cm-variable">twice</span>; <span class="cm-variable">you</span> <span class="cm-variable">pick</span> <span class="cm-variable">two</span> <span class="cm-variable">chips</span> <span class="cm-variable">on</span> <span class="cm-variable">day</span> <span class="cm-variable">one</span> <span class="cm-builtin">and</span> <span class="cm-variable">on</span> <span class="cm-variable">day</span> <span class="cm-variable">two</span>
+<span class="cm-variable">solve</span> [<span class="cm-number">4</span>,<span class="cm-number">1</span>,<span class="cm-number">1</span>] <span class="cm-keyword">=</span> <span class="cm-number">2</span>
+</code></pre>
+<p>More examples in the test cases. Good luck!</p>
+<p>Brute force is not the way to go here. Look for a simplifying mathematical approach.</p>
+                        </div>
+                    </div>
+                </div>
+            </main>
+        </div>
+    </div>
+</body>
+</html>

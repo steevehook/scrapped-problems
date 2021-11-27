@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Find X Ⅱ</title>
+    <link rel="stylesheet" media="screen" href="css/style.css">
+</head>
+<body>
+    <div id="app">
+        <div class="w-full" id="shell">
+            <main id="shell_content">
+                <div class="w-full mt-2">
+                    <h2>Find X Ⅱ</h2>
+                    <h2>Points: 6 kyu</h2>
+                    <a href="https://www.codewars.com/kata/5d339b01496f8d001054887f"><h2>Kata ID: 5d339b01496f8d001054887f</h2></a>
+                    <div class="w-full panel bg-ui-section">
+                        <div class="markdown prose max-w-5xl mx-auto" id="description">
+                            <p>This kata is the part two version of the <a href="https://www.codewars.com/kata/find-x" target="_blank">Find X</a> kata, if you haven't solved it you should try solving it, it's pretty easy.</p>
+<p>In this version you're given the following function</p>
+<pre style="display: none;"><code class="language-python"><span class="cm-keyword">def</span> <span class="cm-def">find_x</span>(<span class="cm-variable">n</span>):
+      <span class="cm-keyword">if</span> <span class="cm-variable">n</span> <span class="cm-operator">==</span> <span class="cm-number">0</span>: <span class="cm-keyword">return</span> <span class="cm-number">0</span>
+      <span class="cm-variable">x</span> <span class="cm-operator">=</span> <span class="cm-number">0</span>
+      <span class="cm-keyword">for</span> <span class="cm-variable">i</span> <span class="cm-keyword">in</span> <span class="cm-builtin">range</span>(<span class="cm-number">1</span>, <span class="cm-variable">n</span><span class="cm-operator">+</span><span class="cm-number">1</span>):
+            <span class="cm-variable">x</span> <span class="cm-operator">+=</span> <span class="cm-variable">find_x</span>(<span class="cm-variable">i</span><span class="cm-operator">-</span><span class="cm-number">1</span>) <span class="cm-operator">+</span> <span class="cm-number">3</span><span class="cm-operator">*</span><span class="cm-variable">i</span>
+      <span class="cm-keyword">return</span> <span class="cm-variable">x</span>
+</code></pre>
+<pre style="display: none;"><code class="language-go"><span class="cm-keyword">func</span> <span class="cm-variable">FindX</span>(<span class="cm-variable">n</span> <span class="cm-keyword">int</span>) <span class="cm-keyword">int</span> {
+  <span class="cm-keyword">if</span> <span class="cm-variable">n</span> <span class="cm-operator">==</span> <span class="cm-number">0</span> {
+    <span class="cm-keyword">return</span> <span class="cm-number">0</span>
+  }
+  <span class="cm-variable">x</span> :<span class="cm-operator">=</span> <span class="cm-number">0</span>
+  <span class="cm-keyword">for</span> <span class="cm-variable">i</span>:<span class="cm-operator">=</span><span class="cm-number">1</span>; <span class="cm-variable">i</span><span class="cm-operator">&lt;=</span><span class="cm-variable">n</span>; <span class="cm-variable">i</span><span class="cm-operator">++</span> {
+    <span class="cm-variable">x</span> <span class="cm-operator">+=</span> <span class="cm-variable">FindX</span>(<span class="cm-variable">i</span><span class="cm-operator">-</span><span class="cm-number">1</span>) <span class="cm-operator">+</span> <span class="cm-number">3</span><span class="cm-operator">*</span><span class="cm-variable">i</span>
+  }
+  <span class="cm-keyword">return</span> <span class="cm-variable">x</span>
+}
+</code></pre>
+<pre><code class="language-javascript"><span class="cm-keyword">function</span> <span class="cm-def">findX</span>(<span class="cm-def">n</span>) {
+      <span class="cm-keyword">if</span> (<span class="cm-variable-2">n</span> <span class="cm-operator">==</span> <span class="cm-number">0</span>) <span class="cm-keyword">return</span> <span class="cm-number">0</span>;
+      <span class="cm-keyword">let</span> <span class="cm-def">x</span> <span class="cm-operator">=</span> <span class="cm-number">0</span>;
+      <span class="cm-keyword">for</span> (<span class="cm-keyword">let</span> <span class="cm-def">i</span><span class="cm-operator">=</span><span class="cm-number">1</span>; <span class="cm-variable-2">i</span><span class="cm-operator">&lt;=</span><span class="cm-variable-2">n</span>; <span class="cm-operator">++</span><span class="cm-variable-2">i</span>)
+            <span class="cm-variable-2">x</span> <span class="cm-operator">+=</span> <span class="cm-variable">findX</span>(<span class="cm-variable-2">i</span><span class="cm-operator">-</span><span class="cm-number">1</span>) <span class="cm-operator">+</span> <span class="cm-number">3</span><span class="cm-operator">*</span><span class="cm-variable-2">i</span>;
+      <span class="cm-keyword">return</span> <span class="cm-variable-2">x</span>;
+}
+</code></pre>
+<pre style="display: none;"><code class="language-haskell"><span class="cm-variable">findX</span> <span class="cm-keyword">::</span> <span class="cm-builtin">Int</span> <span class="cm-keyword">-&gt;</span> <span class="cm-builtin">Int</span>
+<span class="cm-variable">findX</span> <span class="cm-number">0</span> <span class="cm-keyword">=</span> <span class="cm-number">0</span>
+<span class="cm-variable">findX</span> <span class="cm-variable">n</span> <span class="cm-keyword">=</span> <span class="cm-builtin">sum</span> <span class="cm-builtin">$</span> <span class="cm-builtin">map</span> ( <span class="cm-keyword">\</span> <span class="cm-variable">i</span> <span class="cm-keyword">-&gt;</span> <span class="cm-variable">findX</span> (<span class="cm-variable">i</span><span class="cm-builtin">-</span><span class="cm-number">1</span>) <span class="cm-builtin">+</span> <span class="cm-number">3</span> <span class="cm-builtin">*</span> <span class="cm-variable">i</span> ) [<span class="cm-number">1</span><span class="cm-keyword">..</span><span class="cm-variable">n</span>]
+</code></pre>
+<p>Since this computation is exponential, it gets very slow quickly as n increases, your task is to optimize the function so it works well for large numbers.</p>
+<pre style="display: none;"><code class="language-python"><span class="cm-variable">find_x</span>(<span class="cm-number">2</span>) <span class="cm-comment">#=&gt; 12</span>
+<span class="cm-variable">find_x</span>(<span class="cm-number">3</span>) <span class="cm-comment">#=&gt; 33</span>
+<span class="cm-variable">find_x</span>(<span class="cm-number">5</span>) <span class="cm-comment">#=&gt; 171</span>
+</code></pre>
+<pre style="display: none;"><code class="language-go"><span class="cm-variable">FindX</span>(<span class="cm-number">2</span>) <span class="cm-comment">//=&gt; 12</span>
+<span class="cm-variable">FindX</span>(<span class="cm-number">3</span>) <span class="cm-comment">//=&gt; 33</span>
+<span class="cm-variable">FindX</span>(<span class="cm-number">5</span>) <span class="cm-comment">//=&gt; 171</span>
+</code></pre>
+<pre><code class="language-javascript"><span class="cm-variable">findX</span>(<span class="cm-number">2</span>) <span class="cm-comment">//=&gt; 12</span>
+<span class="cm-variable">findX</span>(<span class="cm-number">3</span>) <span class="cm-comment">//=&gt; 33</span>
+<span class="cm-variable">findX</span>(<span class="cm-number">5</span>) <span class="cm-comment">//=&gt; 171</span>
+</code></pre>
+<pre style="display: none;"><code class="language-haskell"><span class="cm-variable">findX</span> <span class="cm-number">2</span> <span class="cm-comment">-- -&gt; 12</span>
+<span class="cm-variable">findX</span> <span class="cm-number">3</span> <span class="cm-comment">-- -&gt; 33</span>
+<span class="cm-variable">findX</span> <span class="cm-number">5</span> <span class="cm-comment">-- -&gt; 171</span>
+</code></pre>
+<p>The result gets pretty large even for small inputs, so you should return the <strong>result % (10<sup>9</sup>+7)</strong></p>
+<h3 id="input-range">Input Range</h3>
+<p><strong>1 &lt;= n &lt;= 10<sup>6</sup></strong></p>
+                        </div>
+                    </div>
+                </div>
+            </main>
+        </div>
+    </div>
+</body>
+</html>

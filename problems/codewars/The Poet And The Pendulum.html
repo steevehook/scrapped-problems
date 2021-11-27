@@ -1,0 +1,110 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>The Poet And The Pendulum</title>
+    <link rel="stylesheet" media="screen" href="css/style.css">
+</head>
+<body>
+    <div id="app">
+        <div class="w-full" id="shell">
+            <main id="shell_content">
+                <div class="w-full mt-2">
+                    <h2>The Poet And The Pendulum</h2>
+                    <h2>Points: 7 kyu</h2>
+                    <a href="https://www.codewars.com/kata/5bd776533a7e2720c40000e5"><h2>Kata ID: 5bd776533a7e2720c40000e5</h2></a>
+                    <div class="w-full panel bg-ui-section">
+                        <div class="markdown prose max-w-5xl mx-auto" id="description">
+                            <h1 id="scenario">Scenario</h1>
+<p><em>the rhythm of beautiful musical notes is drawing a Pendulum</em> </p>
+<p><strong><em>Beautiful musical notes</em></strong> are the <strong><em>Numbers</em></strong>  <img alt="!alt" src="images/mdX8dJP.png"> <img alt="!alt" src="images/mdX8dJP.png"> </p>
+<hr>
+<h1 id="task">Task</h1>
+<p><strong><em>Given</em></strong> an <em>array/list [] of n integers</em> , <strong><em>Arrange</em></strong> <em>them in a way similar to the to-and-fro movement of a Pendulum</em> </p>
+<ul>
+<li><p><strong><em>The Smallest element</em></strong> of the list of integers , must come <em>in center position of array/list</em>.</p>
+<ul>
+<li><strong><em>The Higher than smallest</em></strong> , <em>goes to the right</em> . </li>
+</ul>
+</li>
+<li><p><strong><em>The Next higher</em></strong> number goes <em>to the left of minimum number</em> and So on , in a to-and-fro manner similar to that of a Pendulum.</p>
+</li>
+</ul>
+<p> <img alt="!alt" src="images/xWoPbdq.png"> </p>
+<hr>
+<h1 id="notes">Notes</h1>
+<ul>
+<li><p><strong><em>Array/list</em></strong> size is <em>at least <strong><em>3</em></strong></em> .</p>
+</li>
+<li><p>In <strong><em>Even array size</em></strong> , <em>The minimum element should be moved to (n-1)/2 index</em> (considering that indexes start from 0)</p>
+</li>
+<li><p><strong><em>Repetition</em></strong> of numbers in <em>the array/list could occur</em> , So <strong><em>(duplications are included when Arranging)</em></strong>.</p>
+</li>
+</ul>
+<hr>
+<h1 id="input--output-examples">Input &gt;&gt; Output Examples:</h1>
+<pre><code>pendulum ([6, 6, 8 ,5 ,10]) ==&gt; [10, 6, 5, 6, 8]
+</code></pre>
+<h2 id="explanation"><strong><em>Explanation</em></strong>:</h2>
+<ul>
+<li><p><strong><em>Since</em></strong> , <code>5</code> is the <strong><em>The Smallest element</em></strong> of the list of integers , came <em>in The center position of array/list</em></p>
+</li>
+<li><p><strong><em>The Higher than smallest</em></strong> is <code>6</code>  <em>goes to the right</em> of <code>5</code> .  </p>
+</li>
+<li><p><strong><em>The Next higher</em></strong> number goes <em>to the left of minimum number</em> and So on .</p>
+</li>
+<li><p>Remember , <strong><em>Duplications are included when Arranging</em></strong> , Don't Delete Them .</p>
+</li>
+</ul>
+<hr>
+<pre><code>pendulum ([-9, -2, -10, -6]) ==&gt; [-6, -10, -9, -2]
+</code></pre>
+<h2 id="explanation-1"><strong><em>Explanation</em></strong>:</h2>
+<ul>
+<li><p><strong><em>Since</em></strong> , <code>-10</code> is the <strong><em>The Smallest element</em></strong> of the list of integers , came <em>in The center position of array/list</em></p>
+</li>
+<li><p><strong><em>The Higher than smallest</em></strong> is <code>-9</code>  <em>goes to the right</em> of it .  </p>
+</li>
+<li><p><strong><em>The Next higher</em></strong> number goes <em>to the left of</em> <code>-10</code> , and So on .</p>
+</li>
+<li><p>Remeber , In <strong><em>Even array size</em></strong> , <em>The minimum element moved to (n-1)/2 index</em> (considering that indexes start from 0) .</p>
+</li>
+</ul>
+<hr>
+<pre><code>pendulum ([11, -16, -18, 13, -11, -12, 3, 18 ]) ==&gt; [13, 3, -12, -18, -16, -11, 11, 18]
+</code></pre>
+<h2 id="explanation-2"><strong><em>Explanation</em></strong>:</h2>
+<ul>
+<li><p><strong><em>Since</em></strong> , <code>-18</code> is the <strong><em>The Smallest element</em></strong> of the list of integers , came <em>in The center position of array/list</em></p>
+</li>
+<li><p><strong><em>The Higher than smallest</em></strong> is <code>-16</code>  <em>goes to the right</em> of it .  </p>
+</li>
+<li><p><strong><em>The Next higher</em></strong> number goes <em>to the left of</em>  <code>-18</code> , and So on .</p>
+</li>
+<li><p>Remember , In <strong><em>Even array size</em></strong> , <em>The minimum element moved to (n-1)/2 index</em> (considering that indexes start from 0) .</p>
+</li>
+</ul>
+<hr>
+<h1 id="tune-your-code--there-are-200-assertions--60000-element-for-each-">Tune Your Code , There are 200 Assertions , 60.000 element For Each .</h1>
+<hr>
+<hr>
+<hr>
+<h1 id="playing-with-numbers-series"><a href="https://www.codewars.com/collections/playing-with-numbers" target="_blank">Playing with Numbers Series</a></h1>
+<h1 id="playing-with-listsarrays-series"><a href="https://www.codewars.com/collections/playing-with-lists-slash-arrays" target="_blank">Playing With Lists/Arrays Series</a></h1>
+<h1 id="bizarre-sorting-katas"><a href="https://www.codewars.com/collections/bizarre-sorting-katas" target="_blank">Bizarre Sorting-katas</a></h1>
+<h1 id="for-more-enjoyable-katas"><a href="http://www.codewars.com/users/MrZizoScream/authored" target="_blank">For More Enjoyable Katas</a></h1>
+<hr>
+<h2 id="all-translations-are-welcomed">ALL translations are welcomed</h2>
+<h2 id="enjoy-learning-">Enjoy Learning !!</h2>
+<h1 id="zizou">Zizou</h1>
+                        </div>
+                    </div>
+                </div>
+            </main>
+        </div>
+    </div>
+</body>
+</html>

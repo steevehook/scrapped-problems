@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Sort Numbers</title>
+    <link rel="stylesheet" media="screen" href="css/style.css">
+</head>
+<body>
+    <div id="app">
+        <div class="w-full" id="shell">
+            <main id="shell_content">
+                <div class="w-full mt-2">
+                    <h2>Sort Numbers</h2>
+                    <h2>Points: 7 kyu</h2>
+                    <a href="https://www.codewars.com/kata/5174a4c0f2769dd8b1000003"><h2>Kata ID: 5174a4c0f2769dd8b1000003</h2></a>
+                    <div class="w-full panel bg-ui-section">
+                        <div class="markdown prose max-w-5xl mx-auto" id="description">
+                            <p>Finish the solution so that it sorts the passed in array of numbers. If the function passes in an empty array or null/nil value then it should return an empty array.</p>
+<p>For example:</p>
+<pre style="display: none;"><code class="language-r"><span class="cm-variable">solution</span>(<span class="cm-variable">c</span>(<span class="cm-number">1</span>, <span class="cm-number">2</span>, <span class="cm-number">3</span>, <span class="cm-number">10</span>, <span class="cm-number">5</span>)) <span class="cm-comment"># should return c(1, 2, 3, 5, 10)</span>
+<span class="cm-variable">solution</span>(<span class="cm-atom">NULL</span>)              <span class="cm-comment"># should return NULL</span>
+</code></pre>
+<pre style="display: none;"><code class="language-php"><span class="cm-variable">solution</span>([<span class="cm-number">1</span>, <span class="cm-number">2</span>, <span class="cm-number">10</span>, <span class="cm-number">50</span>, <span class="cm-number">5</span>]); <span class="cm-comment">// should return [1,2,5,10,50]</span>
+<span class="cm-variable">solution</span>(<span class="cm-atom">null</span>); <span class="cm-comment">// should return []</span>
+</code></pre>
+<pre><code class="language-javascript"><span class="cm-variable">solution</span>([<span class="cm-number">1</span>, <span class="cm-number">2</span>, <span class="cm-number">10</span>, <span class="cm-number">50</span>, <span class="cm-number">5</span>]); <span class="cm-comment">// should return [1,2,5,10,50]</span>
+<span class="cm-variable">solution</span>(<span class="cm-atom">null</span>); <span class="cm-comment">// should return []</span>
+</code></pre>
+<pre style="display: none;"><code class="language-typescript"><span class="cm-variable">solution</span>([<span class="cm-number">1</span>, <span class="cm-number">2</span>, <span class="cm-number">10</span>, <span class="cm-number">50</span>, <span class="cm-number">5</span>]); <span class="cm-comment">// should return [1, 2, 5, 10, 50]</span>
+<span class="cm-variable">solution</span>([]); <span class="cm-comment">// should return []</span>
+</code></pre>
+<pre style="display: none;"><code class="language-coffeescript"><span class="cm-variable">solution</span><span class="cm-punctuation">(</span><span class="cm-punctuation">[</span><span class="cm-number">1</span><span class="cm-punctuation">,</span> <span class="cm-number">2</span><span class="cm-punctuation">,</span> <span class="cm-number">10</span><span class="cm-punctuation">,</span> <span class="cm-number">50</span><span class="cm-punctuation">,</span> <span class="cm-number">5</span><span class="cm-punctuation">]</span><span class="cm-punctuation">)</span> <span class="cm-comment"># should return [1,2,5,10,50]</span>
+<span class="cm-variable">solution</span><span class="cm-punctuation">(</span><span class="cm-atom">null</span><span class="cm-punctuation">)</span> <span class="cm-comment"># should return []</span>
+</code></pre>
+<pre style="display: none;"><code class="language-ruby"><span class="cm-variable">solution</span>([<span class="cm-number">1</span>, <span class="cm-number">2</span>, <span class="cm-number">10</span>, <span class="cm-number">50</span>, <span class="cm-number">5</span>]) <span class="cm-comment"># should return [1,2,5,10,50]</span>
+<span class="cm-variable">solution</span>(<span class="cm-keyword">nil</span>) <span class="cm-comment"># should return []</span>
+</code></pre>
+<pre style="display: none;"><code class="language-python"><span class="cm-variable">solution</span>([<span class="cm-number">1</span>,<span class="cm-number">2</span>,<span class="cm-number">3</span>,<span class="cm-number">10</span>,<span class="cm-number">5</span>]) <span class="cm-comment"># should return [1,2,3,5,10]</span>
+<span class="cm-variable">solution</span>(<span class="cm-keyword">None</span>) <span class="cm-comment"># should return []</span>
+</code></pre>
+<pre style="display: none;"><code class="language-julia"><span class="cm-variable">solution</span>([<span class="cm-number">1</span>, <span class="cm-number">2</span>, <span class="cm-number">10</span>, <span class="cm-number">50</span>, <span class="cm-number">5</span>]) <span class="cm-comment"># should return [1,2,5,10,50]</span>
+<span class="cm-variable">solution</span>(<span class="cm-builtin">nothing</span>) <span class="cm-comment"># should return []</span>
+</code></pre>
+<pre style="display: none;"><code class="language-csharp"><span class="cm-variable">SortNumbers</span>(<span class="cm-keyword">new</span> <span class="cm-type">int</span>[] { <span class="cm-number">1</span>, <span class="cm-number">2</span>, <span class="cm-number">10</span>, <span class="cm-number">50</span>, <span class="cm-number">5</span> }); <span class="cm-comment">// should return new int[] { 1, 2, 5, 10, 50 }</span>
+<span class="cm-variable">SortNumbers</span>(<span class="cm-atom">null</span>); <span class="cm-comment">// should return new int[] { }</span>
+</code></pre>
+<pre style="display: none;"><code class="language-rust"><span class="cm-variable">sort_numbers</span>(&amp;<span class="cm-variable-3">vec!</span>[<span class="cm-number">1</span>, <span class="cm-number">2</span>, <span class="cm-number">3</span>, <span class="cm-number">10</span>, <span class="cm-number">5</span>]); <span class="cm-comment">// should return vec![1, 2, 3, 5, 10]</span>
+<span class="cm-variable">sort_numbers</span>(&amp;<span class="cm-variable-3">vec!</span>[]); <span class="cm-comment">// should return !vec[]</span>
+</code></pre>
+<pre style="display: none;"><code class="language-Hakell">sortNumbers [1, 2, 10, 50, 5] = Just [1, 2, 5, 10, 50]
+sortNumbers [] = Nothing
+</code></pre>
+<pre style="display: none;"><code class="language-cpp"><span class="cm-variable">sortNumbers</span>({<span class="cm-number">1</span>, <span class="cm-number">2</span>, <span class="cm-number">10</span>, <span class="cm-number">50</span>, <span class="cm-number">5</span>}) <span class="cm-comment">// sholud return {1, 2, 5, 10, 50}</span>
+<span class="cm-variable">sortNumbers</span>({}) <span class="cm-comment">// should return {}</span>
+</code></pre>
+                        </div>
+                    </div>
+                </div>
+            </main>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Prize Draw</title>
+    <link rel="stylesheet" media="screen" href="css/style.css">
+</head>
+<body>
+    <div id="app">
+        <div class="w-full" id="shell">
+            <main id="shell_content">
+                <div class="w-full mt-2">
+                    <h2>Prize Draw</h2>
+                    <h2>Points: 6 kyu</h2>
+                    <a href="https://www.codewars.com/kata/5616868c81a0f281e500005c"><h2>Kata ID: 5616868c81a0f281e500005c</h2></a>
+                    <div class="w-full panel bg-ui-section">
+                        <div class="markdown prose max-w-5xl mx-auto" id="description">
+                            <p>To participate in a prize draw each one gives his/her firstname. </p>
+<p>Each letter of a firstname
+has a value which is its rank in the English alphabet. <code>A</code> and <code>a</code> have rank <code>1</code>, <code>B</code> and <code>b</code> rank <code>2</code> and so on. </p>
+<p>The <em>length</em> of the firstname is added to the <em>sum</em> of these ranks hence a number <code>som</code>. </p>
+<p>An array of random weights is linked to the firstnames and each <code>som</code> is multiplied by its corresponding weight to get what they call a <code>winning number</code>.</p>
+<h4 id="example">Example:</h4>
+<pre><code>names: "COLIN,AMANDBA,AMANDAB,CAROL,PauL,JOSEPH"
+weights: [1, 4, 4, 5, 2, 1]
+
+PauL -&gt; som = length of firstname + 16 + 1 + 21 + 12 = 4 + 50 -&gt; 54
+The *weight* associated with PauL is 2 so PauL's *winning number* is 54 * 2 = 108.
+</code></pre>
+<p>Now one can sort the firstnames in <em>decreasing</em> order of the <code>winning numbers</code>. When two people have the same <code>winning number</code> sort them <em>alphabetically</em> by their firstnames.</p>
+<h4 id="task">Task:</h4>
+<ul>
+<li><p>parameters: <code>st</code> a string of firstnames, <code>we</code> an array of weights, <code>n</code> a rank </p>
+</li>
+<li><p>return: the firstname of the participant whose rank is <code>n</code> 
+(ranks are numbered from 1)</p>
+</li>
+</ul>
+<h4 id="example-1">Example:</h4>
+<pre><code>names: "COLIN,AMANDBA,AMANDAB,CAROL,PauL,JOSEPH"
+weights: [1, 4, 4, 5, 2, 1]
+n: 4
+
+The function should return: "PauL"
+</code></pre>
+<h4 id="notes">Notes:</h4>
+<ul>
+<li><p>The weight array is at least as long as the number of names, it may be longer.</p>
+</li>
+<li><p>If <code>st</code> is empty return "No participants".</p>
+</li>
+<li><p>If n is greater than the number of participants then return "Not enough participants".</p>
+</li>
+<li><p>See Examples Test Cases for more examples.</p>
+</li>
+</ul>
+                        </div>
+                    </div>
+                </div>
+            </main>
+        </div>
+    </div>
+</body>
+</html>

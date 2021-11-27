@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Simple string indices</title>
+    <link rel="stylesheet" media="screen" href="css/style.css">
+</head>
+<body>
+    <div id="app">
+        <div class="w-full" id="shell">
+            <main id="shell_content">
+                <div class="w-full mt-2">
+                    <h2>Simple string indices</h2>
+                    <h2>Points: 6 kyu</h2>
+                    <a href="https://www.codewars.com/kata/5a24254fe1ce0ec2eb000078"><h2>Kata ID: 5a24254fe1ce0ec2eb000078</h2></a>
+                    <div class="w-full panel bg-ui-section">
+                        <div class="markdown prose max-w-5xl mx-auto" id="description">
+                            <p>In this Kata, you will be given a string with brackets and an index of an opening bracket and your task will be to return the index of the matching closing bracket.  Both the input and returned index are 0-based <strong>except in Fortran where it is 1-based</strong>. An opening brace will always have a closing brace. Return <code>-1</code> if there is no answer (in Haskell, return <code>Nothing</code>; in Fortran, return <code>0</code>; in Go, return an error)</p>
+<h3 id="examples">Examples</h3>
+<pre style="display: none;"><code class="language-c"><span class="cm-variable">solve</span>(<span class="cm-string">"((1)23(45))(aB)"</span>, <span class="cm-number">0</span>) <span class="cm-operator">=</span> <span class="cm-number">10</span> <span class="cm-comment">// the opening brace at index 0 matches the closing brace at index 10</span>
+<span class="cm-variable">solve</span>(<span class="cm-string">"((1)23(45))(aB)"</span>, <span class="cm-number">1</span>) <span class="cm-operator">=</span> <span class="cm-number">3</span> 
+<span class="cm-variable">solve</span>(<span class="cm-string">"((1)23(45))(aB)"</span>, <span class="cm-number">2</span>) <span class="cm-operator">=</span> <span class="cm-operator">-</span><span class="cm-number">1</span> <span class="cm-comment">// there is no opening bracket at index 2, so return -1</span>
+<span class="cm-variable">solve</span>(<span class="cm-string">"((1)23(45))(aB)"</span>, <span class="cm-number">6</span>) <span class="cm-operator">=</span> <span class="cm-number">9</span>
+<span class="cm-variable">solve</span>(<span class="cm-string">"((1)23(45))(aB)"</span>, <span class="cm-number">11</span>) <span class="cm-operator">=</span> <span class="cm-number">14</span>
+<span class="cm-variable">solve</span>(<span class="cm-string">"((&gt;)|?(*'))(yZ)"</span>, <span class="cm-number">11</span>) <span class="cm-operator">=</span> <span class="cm-number">14</span>
+</code></pre>
+<pre><code class="language-python"><span class="cm-variable">solve</span>(<span class="cm-string">"((1)23(45))(aB)"</span>, <span class="cm-number">0</span>) <span class="cm-operator">=</span> <span class="cm-number">10</span> <span class="cm-operator">-</span><span class="cm-operator">-</span> <span class="cm-variable">the</span> <span class="cm-variable">opening</span> <span class="cm-variable">brace</span> <span class="cm-variable">at</span> <span class="cm-variable">index</span> <span class="cm-number">0</span> <span class="cm-variable">matches</span> <span class="cm-variable">the</span> <span class="cm-variable">closing</span> <span class="cm-variable">brace</span> <span class="cm-variable">at</span> <span class="cm-variable">index</span> <span class="cm-number">10</span>
+<span class="cm-variable">solve</span>(<span class="cm-string">"((1)23(45))(aB)"</span>, <span class="cm-number">1</span>) <span class="cm-operator">=</span> <span class="cm-number">3</span> 
+<span class="cm-variable">solve</span>(<span class="cm-string">"((1)23(45))(aB)"</span>, <span class="cm-number">2</span>) <span class="cm-operator">=</span> <span class="cm-operator">-</span><span class="cm-number">1</span> <span class="cm-operator">-</span><span class="cm-operator">-</span> <span class="cm-variable">there</span> <span class="cm-keyword">is</span> <span class="cm-variable">no</span> <span class="cm-variable">opening</span> <span class="cm-variable">bracket</span> <span class="cm-variable">at</span> <span class="cm-variable">index</span> <span class="cm-number">2</span>, <span class="cm-variable">so</span> <span class="cm-keyword">return</span> <span class="cm-operator">-</span><span class="cm-number">1</span>
+<span class="cm-variable">solve</span>(<span class="cm-string">"((1)23(45))(aB)"</span>, <span class="cm-number">6</span>) <span class="cm-operator">=</span> <span class="cm-number">9</span>
+<span class="cm-variable">solve</span>(<span class="cm-string">"((1)23(45))(aB)"</span>, <span class="cm-number">11</span>) <span class="cm-operator">=</span> <span class="cm-number">14</span>
+<span class="cm-variable">solve</span>(<span class="cm-string">"((&gt;)|?(*'))(yZ)"</span>, <span class="cm-number">11</span>) <span class="cm-operator">=</span> <span class="cm-number">14</span>
+</code></pre>
+<pre style="display: none;"><code class="language-haskell"><span class="cm-variable">solve</span>(<span class="cm-string">"((1)23(45))(aB)"</span>, <span class="cm-number">0</span>) <span class="cm-keyword">=</span> <span class="cm-builtin">Just</span> <span class="cm-number">10</span> <span class="cm-comment">-- the opening brace at index 0 matches the closing brace at index 10</span>
+<span class="cm-variable">solve</span>(<span class="cm-string">"((1)23(45))(aB)"</span>, <span class="cm-number">2</span>) <span class="cm-keyword">=</span> <span class="cm-builtin">Nothing</span> <span class="cm-comment">-- there is no opening bracket at index 2, so return "Nothing" instead of -1</span>
+</code></pre>
+<pre style="display: none;"><code class="language-fortran"><span class="cm-variable">solve</span>(<span class="cm-string">"((1)23(45))(aB)"</span>, <span class="cm-number">1</span>) <span class="cm-comment">! =&gt; 11 (the opening brace at index 1 matches the closing brace at index 11)</span>
+<span class="cm-variable">solve</span>(<span class="cm-string">"((1)23(45))(aB)"</span>, <span class="cm-number">2</span>) <span class="cm-comment">! =&gt; 4</span>
+<span class="cm-variable">solve</span>(<span class="cm-string">"((1)23(45))(aB)"</span>, <span class="cm-number">3</span>) <span class="cm-comment">! =&gt; 0 (there is no opening bracket at index 3, so return 0)</span>
+<span class="cm-variable">solve</span>(<span class="cm-string">"((1)23(45))(aB)"</span>, <span class="cm-number">7</span>) <span class="cm-comment">! =&gt; 10</span>
+<span class="cm-variable">solve</span>(<span class="cm-string">"((1)23(45))(aB)"</span>, <span class="cm-number">12</span>) <span class="cm-comment">! =&gt; 15</span>
+<span class="cm-variable">solve</span>(<span class="cm-string">"((&gt;)|?(*'))(yZ)"</span>, <span class="cm-number">12</span>) <span class="cm-comment">! =&gt; 15</span>
+</code></pre>
+<p>Input will consist of letters, numbers and special characters, but no spaces. The only brackets will be <code>(</code> and <code>)</code>. </p>
+<p>More examples in the test cases. </p>
+<p>Good luck!</p>
+                        </div>
+                    </div>
+                </div>
+            </main>
+        </div>
+    </div>
+</body>
+</html>

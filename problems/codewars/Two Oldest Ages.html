@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Two Oldest Ages</title>
+    <link rel="stylesheet" media="screen" href="css/style.css">
+</head>
+<body>
+    <div id="app">
+        <div class="w-full" id="shell">
+            <main id="shell_content">
+                <div class="w-full mt-2">
+                    <h2>Two Oldest Ages</h2>
+                    <h2>Points: 7 kyu</h2>
+                    <a href="https://www.codewars.com/kata/511f11d355fe575d2c000001"><h2>Kata ID: 511f11d355fe575d2c000001</h2></a>
+                    <div class="w-full panel bg-ui-section">
+                        <div class="markdown prose max-w-5xl mx-auto" id="description">
+                            <p>The two oldest ages function/method needs to be completed. It should take an array of numbers as its argument and return the <strong>two highest numbers within the array</strong>. The returned value should be an array in the format <strong>[second oldest age,  oldest age]</strong>. </p>
+<p>The order of the numbers passed in could be any order. The array will always include at least 2 items. If there are two or more oldest age, then return both of them in array format.</p>
+<p>For example:</p>
+<pre style="display: none;"><code class="language-c"><span class="cm-variable">two_oldest_ages</span>( <span class="cm-number">4</span>, {<span class="cm-number">1</span>, <span class="cm-number">2</span>, <span class="cm-number">10</span>, <span class="cm-number">8</span>} ) <span class="cm-comment">// should return {8, 10}</span>
+</code></pre>
+<pre><code class="language-javascript"><span class="cm-variable">twoOldestAges</span>( [<span class="cm-number">1</span>, <span class="cm-number">2</span>, <span class="cm-number">10</span>, <span class="cm-number">8</span>] ) <span class="cm-comment">// should return [8, 10]</span>
+</code></pre>
+<pre style="display: none;"><code class="language-coffeescript"><span class="cm-variable">twoOldestAges</span> <span class="cm-punctuation">[</span><span class="cm-number">34</span><span class="cm-punctuation">,</span> <span class="cm-number">45</span><span class="cm-punctuation">,</span> <span class="cm-number">12</span><span class="cm-punctuation">,</span> <span class="cm-number">98</span><span class="cm-punctuation">,</span> <span class="cm-number">0</span><span class="cm-punctuation">,</span> <span class="cm-number">23</span><span class="cm-punctuation">]</span> <span class="cm-comment"># should return [45, 98]</span>
+</code></pre>
+<pre style="display: none;"><code class="language-ruby"><span class="cm-variable">two_oldest_ages</span>([<span class="cm-number">1</span>, <span class="cm-number">3</span>, <span class="cm-number">10</span>, <span class="cm-number">0</span>]) <span class="cm-comment"># should return [3, 10]</span>
+</code></pre>
+<pre style="display: none;"><code class="language-go"><span class="cm-variable">TwoOldestAges</span>([]<span class="cm-keyword">int</span>{<span class="cm-number">1</span>, <span class="cm-number">5</span>, <span class="cm-number">87</span>, <span class="cm-number">45</span>, <span class="cm-number">8</span>, <span class="cm-number">8</span>}) <span class="cm-comment">// should return [2]int{45, 87}</span>
+</code></pre>
+<pre style="display: none;"><code class="language-lua"><span class="cm-variable">twoOldestAges</span>({<span class="cm-number">1</span>, <span class="cm-number">5</span>, <span class="cm-number">87</span>, <span class="cm-number">45</span>, <span class="cm-number">8</span>, <span class="cm-number">8</span>}) <span class="cm-comment">-- should return {45, 87}</span>
+</code></pre>
+<pre style="display: none;"><code class="language-elixir"><span class="cm-variable">two_oldest_ages</span>([<span class="cm-number">1</span>, <span class="cm-number">5</span>, <span class="cm-number">87</span>, <span class="cm-number">45</span>, <span class="cm-number">8</span>, <span class="cm-number">8</span>]) <span class="cm-comment"># should return [45, 87]</span>
+</code></pre>
+<pre style="display: none;"><code class="language-csharp"><span class="cm-variable">LargestTwo</span>.<span class="cm-variable">TwoOldestAges</span>(<span class="cm-keyword">new</span> <span class="cm-type">int</span>[] {<span class="cm-number">1</span>, <span class="cm-number">2</span>, <span class="cm-number">10</span>, <span class="cm-number">8</span>}) <span class="cm-operator">=&gt;</span> <span class="cm-keyword">new</span> <span class="cm-type">int</span>[] {<span class="cm-number">8</span>, <span class="cm-number">10</span>}
+</code></pre>
+<pre style="display: none;"><code class="language-kotlin"><span class="cm-variable">twoOldestAges</span>(<span class="cm-variable">listOf</span>(<span class="cm-number">1</span>, <span class="cm-number">5</span>, <span class="cm-number">87</span>, <span class="cm-number">45</span>, <span class="cm-number">8</span>, <span class="cm-number">8</span>)) <span class="cm-comment">// should return listOf(45, 87)</span>
+</code></pre>
+<pre style="display: none;"><code class="language-nim"><span class="cm-variable">twoOldestAges</span>(@[<span class="cm-number">1</span>, <span class="cm-number">5</span>, <span class="cm-number">87</span>, <span class="cm-number">45</span>, <span class="cm-number">8</span>, <span class="cm-number">8</span>]) <span class="cm-comment"># should return [45, 87]</span>
+</code></pre>
+<pre style="display: none;"><code class="language-python"><span class="cm-variable">two_oldest_ages</span>([<span class="cm-number">1</span>, <span class="cm-number">3</span>, <span class="cm-number">10</span>, <span class="cm-number">0</span>]) <span class="cm-comment"># should return [3, 10]</span>
+</code></pre>
+<pre style="display: none;"><code class="language-rust"><span class="cm-variable">two_oldest_ages</span>(&amp;[<span class="cm-number">1</span>, <span class="cm-number">3</span>, <span class="cm-number">10</span>, <span class="cm-number">0</span>]) <span class="cm-comment">// should return [3, 10]</span>
+</code></pre>
+<pre style="display: none;"><code class="language-prolog"><span class="cm-atom">two_oldest_ages</span><span class="cm-paren">(</span>[<span class="cm-number">1</span><span class="cm-paren">,</span><span class="cm-comment"> </span><span class="cm-number">5</span><span class="cm-paren">,</span><span class="cm-comment"> </span><span class="cm-number">87</span><span class="cm-paren">,</span><span class="cm-comment"> </span><span class="cm-number">45</span><span class="cm-paren">,</span><span class="cm-comment"> </span><span class="cm-number">8</span><span class="cm-paren">,</span><span class="cm-comment"> </span><span class="cm-number">8</span>]<span class="cm-paren">,</span><span class="cm-comment"> </span>[<span class="cm-number">45</span><span class="cm-paren">,</span><span class="cm-comment"> </span><span class="cm-number">87</span>]<span class="cm-paren">)</span><span class="cm-graphic">.</span>
+</code></pre>
+<pre style="display: none;"><code class="language-cfml"><span class="cm-variable">twoOldestAges</span>( [ <span class="cm-number">1</span>, <span class="cm-number">5</span>, <span class="cm-number">87</span>, <span class="cm-number">45</span>, <span class="cm-number">8</span>, <span class="cm-number">8</span> ] ) <span class="cm-comment">// should return [ 45, 87 ]</span>
+</code></pre>
+<pre style="display: none;"><code class="language-julia"><span class="cm-variable">twooldestages</span>([<span class="cm-number">1</span>, <span class="cm-number">3</span>, <span class="cm-number">10</span>, <span class="cm-number">0</span>]) <span class="cm-comment"># should return [3, 10]</span>
+</code></pre>
+<pre style="display: none;"><code class="language-java"><span class="cm-variable">Kata</span>.<span class="cm-variable">twoOldestAges</span>(<span class="cm-keyword">new</span> <span class="cm-type">int</span>[]{<span class="cm-number">1</span>, <span class="cm-number">2</span>, <span class="cm-number">10</span>, <span class="cm-number">8</span>}) <span class="cm-comment">// should return {8, 10}</span>
+</code></pre>
+<pre style="display: none;"><code class="language-cpp"><span class="cm-variable">two_oldest_ages</span>({<span class="cm-number">1</span>, <span class="cm-number">2</span>, <span class="cm-number">10</span>, <span class="cm-number">8</span>}) <span class="cm-comment">// should return {8, 10}</span>
+</code></pre>
+                        </div>
+                    </div>
+                </div>
+            </main>
+        </div>
+    </div>
+</body>
+</html>

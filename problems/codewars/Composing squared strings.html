@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Composing squared strings</title>
+    <link rel="stylesheet" media="screen" href="css/style.css">
+</head>
+<body>
+    <div id="app">
+        <div class="w-full" id="shell">
+            <main id="shell_content">
+                <div class="w-full mt-2">
+                    <h2>Composing squared strings</h2>
+                    <h2>Points: 7 kyu</h2>
+                    <a href="https://www.codewars.com/kata/56f253dd75e340ff670002ac"><h2>Kata ID: 56f253dd75e340ff670002ac</h2></a>
+                    <div class="w-full panel bg-ui-section">
+                        <div class="markdown prose max-w-5xl mx-auto" id="description">
+                            <p>A squared string is a string of <code>n</code> lines, each substring being <code>n</code> characters long.
+We are given two n-squared strings. 
+For example:</p>
+<p><code>s1 = "abcd\nefgh\nijkl\nmnop"</code>
+<code>s2 = "qrst\nuvwx\nyz12\n3456"</code></p>
+<p>Let us build a new string <code>strng</code> of size <code>(n + 1) x n</code> in the following way:</p>
+<ul>
+<li>The first line of <code>strng</code> has the first char of the first line of s1 plus the chars of the last line of s2.</li>
+<li>The second line of <code>strng</code> has the first two chars of the second line of s1 plus the chars of the penultimate
+line of s2 except the last char </li>
+<li>and so on until the nth line of <code>strng</code> has the n chars of the nth line
+of s1 plus the first char of the first line of s2. </li>
+</ul>
+<p>Calling this function <code>compose(s1, s2)</code> we have:</p>
+<pre><code>compose(s1, s2) -&gt; "a3456\nefyz1\nijkuv\nmnopq"
+or printed:
+abcd    qrst  --&gt;  a3456
+efgh    uvwx       efyz1
+ijkl    yz12       ijkuv
+mnop    3456       mnopq
+</code></pre>
+                        </div>
+                    </div>
+                </div>
+            </main>
+        </div>
+    </div>
+</body>
+</html>

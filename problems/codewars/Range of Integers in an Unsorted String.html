@@ -1,0 +1,117 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Range of Integers in an Unsorted String</title>
+    <link rel="stylesheet" media="screen" href="css/style.css">
+</head>
+<body>
+    <div id="app">
+        <div class="w-full" id="shell">
+            <main id="shell_content">
+                <div class="w-full mt-2">
+                    <h2>Range of Integers in an Unsorted String</h2>
+                    <h2>Points: 5 kyu</h2>
+                    <a href="https://www.codewars.com/kata/5b6b67a5ecd0979e5b00000e"><h2>Kata ID: 5b6b67a5ecd0979e5b00000e</h2></a>
+                    <div class="w-full panel bg-ui-section">
+                        <div class="markdown prose max-w-5xl mx-auto" id="description">
+                            <p>In this kata, your task is to write a function that returns the smallest and largest integers in an unsorted string. In this kata, a range is considered a finite sequence of consecutive integers.</p>
+
+<h2 style="color:#f88">Input</h2>
+Your function will receive two arguments:
+<ul>
+    <li>A <code>string</code> comprised of integers in an unknown range; think of this string as the result when a range of integers is shuffled around in random order then joined together into a string</li>
+    <li>An <code>integer</code> value representing the size of the range</li>
+</ul>
+
+<h2 style="color:#f88">Output</h2>
+<p>Your function should return the starting (minimum) and ending (maximum) numbers of the range in the form of an array/list comprised of two integers.</p>
+
+<h2 style="color:#f88">Test Example</h2>
+
+<pre><code class="language-python"><span class="cm-variable">input_string</span> <span class="cm-operator">=</span> <span class="cm-string">'1568141291110137'</span>
+
+<span class="cm-variable">mystery_range</span>(<span class="cm-variable">input_string</span>, <span class="cm-number">10</span>) <span class="cm-comment"># [6, 15]</span>
+
+<span class="cm-comment"># The 10 numbers in this string are:</span>
+<span class="cm-comment"># 15 6 8 14 12 9 11 10 13 7</span>
+<span class="cm-comment"># Therefore the range of numbers is from 6 to 15</span>
+</code></pre>
+<pre style="display: none;"><code class="language-javascript"><span class="cm-keyword">let</span> <span class="cm-def">inputString</span> <span class="cm-operator">=</span> <span class="cm-string">'1568141291110137'</span>;
+
+<span class="cm-variable">mysteryRange</span>(<span class="cm-variable">inputString</span>, <span class="cm-number">10</span>) <span class="cm-comment">// [6, 15]</span>
+
+<span class="cm-comment">// The 10 numbers in this string are:</span>
+<span class="cm-comment">// 15 6 8 14 12 9 11 10 13 7</span>
+<span class="cm-comment">// Therefore the range of numbers is from 6 to 15</span>
+</code></pre>
+<pre style="display: none;"><code class="language-go"><span class="cm-variable">inputString</span> :<span class="cm-operator">=</span> <span class="cm-string">"1568141291110137"</span>
+<span class="cm-variable">MysteryRange</span>(<span class="cm-variable">inputString</span>, <span class="cm-number">10</span>) <span class="cm-comment">// [6 15]</span>
+
+<span class="cm-comment">// The 10 numbers in this string are:</span>
+<span class="cm-comment">// 15 6 8 14 12 9 11 10 13 7</span>
+<span class="cm-comment">// Therefore the range of numbers is from 6 to 15</span>
+</code></pre>
+<pre style="display: none;"><code class="language-elixir"><span class="cm-comment"># For Elixir, return a tuple</span>
+<span class="cm-variable">input_string</span> <span class="cm-operator">=</span> <span class="cm-string">"1568141291110137"</span>
+
+<span class="cm-tag">KataSolution</span><span class="cm-operator">.</span><span class="cm-property">mystery_range</span>(<span class="cm-variable">input_string</span>, <span class="cm-number">10</span>) <span class="cm-comment"># {6, 15}</span>
+
+<span class="cm-comment"># The 10 numbers in this string are:</span>
+<span class="cm-comment"># 15 6 8 14 12 9 11 10 13 7</span>
+<span class="cm-comment"># Therefore the range of numbers is from 6 to 15</span>
+</code></pre>
+<pre style="display: none;"><code class="language-csharp"><span class="cm-type">string</span> <span class="cm-variable">input_string</span> <span class="cm-operator">=</span> <span class="cm-string">"1568141291110137"</span>;
+<span class="cm-variable">KataSolution</span>.<span class="cm-variable">MysteryRange</span>(<span class="cm-variable">input_string</span>, <span class="cm-number">10</span>); <span class="cm-comment">// [6, 15]</span>
+
+<span class="cm-comment">// The 10 numbers in this string are:</span>
+<span class="cm-comment">// 15 6 8 14 12 9 11 10 13 7</span>
+<span class="cm-comment">// Therefore the range of numbers is from 6 to 15</span>
+</code></pre>
+<pre style="display: none;"><code class="language-ruby"><span class="cm-variable">input_string</span> <span class="cm-operator">=</span> <span class="cm-string">'1568141291110137'</span>
+
+<span class="cm-variable">mystery_range</span>(<span class="cm-variable">input_string</span>, <span class="cm-number">10</span>) <span class="cm-comment"># [6, 15]</span>
+
+<span class="cm-comment"># The 10 numbers in this string are:</span>
+<span class="cm-comment"># 15 6 8 14 12 9 11 10 13 7</span>
+<span class="cm-comment"># Therefore the range of numbers is from 6 to 15</span>
+</code></pre>
+<pre style="display: none;"><code class="language-kotlin"><span class="cm-comment">// return a Pair for Kotlin</span>
+
+<span class="cm-keyword">val</span> <span class="cm-def">inputString</span> <span class="cm-operator">=</span> <span class="cm-string">"1568141291110137"</span>
+<span class="cm-variable">mysteryRange</span>(<span class="cm-variable">inputString</span>, <span class="cm-number">10</span>) <span class="cm-comment">// Pair(6, 15)</span>
+
+<span class="cm-comment">// The 10 numbers in this string are:</span>
+<span class="cm-comment">// 15 6 8 14 12 9 11 10 13 7</span>
+<span class="cm-comment">// Therefore the range of numbers is from 6 to 15</span>
+</code></pre>
+<pre style="display: none;"><code class="language-rust"><span class="cm-keyword">let</span> <span class="cm-def">actual</span> <span class="cm-operator">=</span> <span class="cm-variable">mystery_range</span>(<span class="cm-string">"</span><span class="cm-string">1568141291110137</span><span class="cm-string">"</span>, <span class="cm-number">10</span>);
+
+<span class="cm-variable-3">assert_eq!</span>(<span class="cm-variable">actual</span>, (<span class="cm-number">6</span>,<span class="cm-number">15</span>));<span class="cm-comment">// OK</span>
+
+<span class="cm-comment">// The 10 numbers in this string are:</span>
+<span class="cm-comment">// 15 6 8 14 12 9 11 10 13 7</span>
+<span class="cm-comment">// Therefore the range of numbers is from 6 to 15</span>
+</code></pre>
+<h2 style="color:#f88">Technical Details</h2>
+<ul>
+    <li>The maximum size of a range will be <code>100</code> integers</li>
+    <li>The starting number of a range will be: <code>0 &lt; n &lt; 100</code></li>
+    <li>Full Test Suite: <code>21</code> fixed tests, <code>100</code> random tests</li>
+    <li>Use Python 3+ for the Python translation</li>
+    <li>For JavaScript, <code>require</code> has been disabled and most built-in prototypes have been frozen (prototype methods can be added to <code>Array</code> and <code>Function</code>)</li>
+    <li>All test cases will be valid</li>
+</ul>
+
+<p>If you enjoyed this kata, be sure to check out <a style="color:#9f9;text-decoration:none" href="https://www.codewars.com/users/docgunthrop/authored" target="_blank">my other katas</a></p>
+                        </div>
+                    </div>
+                </div>
+            </main>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Reducing by steps</title>
+    <link rel="stylesheet" media="screen" href="css/style.css">
+</head>
+<body>
+    <div id="app">
+        <div class="w-full" id="shell">
+            <main id="shell_content">
+                <div class="w-full mt-2">
+                    <h2>Reducing by steps</h2>
+                    <h2>Points: 6 kyu</h2>
+                    <a href="https://www.codewars.com/kata/56efab15740d301ab40002ee"><h2>Kata ID: 56efab15740d301ab40002ee</h2></a>
+                    <div class="w-full panel bg-ui-section">
+                        <div class="markdown prose max-w-5xl mx-auto" id="description">
+                            <p>Data: an array of integers, a function f of two variables and an init value.</p>
+<p><code>Example: a = [2, 4, 6, 8, 10, 20], f(x, y) = x + y; init = 0</code></p>
+<p>Output: an array of integers, say r, such that</p>
+<p><code>r = [r[0] = f(init, a[0]), r[1] = f(r[0], a[1]), r[2] = f(r[1], a[2]), ...]</code></p>
+<p>With our example: <code>r = [2, 6, 12, 20, 30, 50]</code></p>
+<h4 id="task">Task:</h4>
+<p>Write the following functions of two variables</p>
+<ul>
+<li>som  : (x, y) -&gt; x + y</li>
+<li>mini : (x, y) -&gt; min(x, y)</li>
+<li>maxi : (x, y) -&gt; max(x, y)</li>
+<li>lcmu : (x, y) -&gt; lcm(abs(x), abs(y) (see note for lcm)</li>
+<li>gcdi : (x, y) -&gt; gcd(abs(x), abs(y) (see note for gcd)</li>
+</ul>
+<p>and</p>
+<ul>
+<li><p>function <code>oper_array(fct, arr, init)</code> (or operArray or oper-array) where</p>
+</li>
+<li><p><code>fct</code> is the function of two variables to apply to the array <code>arr</code>
+(fct will be one of <code>som, mini, maxi, lcmu or gcdi</code>)</p>
+</li>
+<li><p><code>init</code> is the initial value</p>
+</li>
+</ul>
+<h4 id="examples">Examples:</h4>
+<pre><code>a = [18, 69, -90, -78, 65, 40]
+oper_array(gcd, a, a[0]) =&gt; [18, 3, 3, 3, 1, 1]
+oper_array(lcm, a, a[0]) =&gt; [18, 414, 2070, 26910, 26910, 107640]
+oper_array(sum, a, 0) =&gt; [18, 87, -3, -81, -16, 24]
+oper_array(min, a, a[0]) =&gt; [18, 18, -90, -90, -90, -90]
+oper_array(max, a, a[0]) =&gt; [18, 69, 69, 69, 69, 69]
+</code></pre>
+<h4 id="notes">Notes:</h4>
+<ul>
+<li><p>The form of the parameter <code>fct</code> in oper_array (or operArray or oper-array) 
+changes according to the language. You can see each form according to the language in "Your test cases".</p>
+</li>
+<li><p>AFAIK there are no corner cases, everything is as nice as possible.</p>
+</li>
+<li><p>lcm and gcd see: 
+<a href="https://en.wikipedia.org/wiki/Least_common_multiple" target="_blank">https://en.wikipedia.org/wiki/Least_common_multiple</a>
+<a href="https://en.wikipedia.org/wiki/Greatest_common_divisor" target="_blank">https://en.wikipedia.org/wiki/Greatest_common_divisor</a></p>
+</li>
+<li><p>you could google "reduce function (your language)" to have a general view about the reduce functions.</p>
+</li>
+<li><p>In Shell bash, arrays are replaced by strings.</p>
+</li>
+<li><p>In OCaml arrays are replaced by lists.</p>
+</li>
+</ul>
+                        </div>
+                    </div>
+                </div>
+            </main>
+        </div>
+    </div>
+</body>
+</html>

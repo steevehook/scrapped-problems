@@ -1,0 +1,122 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Amidakuji</title>
+    <link rel="stylesheet" media="screen" href="css/style.css">
+</head>
+<body>
+    <div id="app">
+        <div class="w-full" id="shell">
+            <main id="shell_content">
+                <div class="w-full mt-2">
+                    <h2>Amidakuji</h2>
+                    <h2>Points: 6 kyu</h2>
+                    <a href="https://www.codewars.com/kata/5af4119888214326b4000019"><h2>Kata ID: 5af4119888214326b4000019</h2></a>
+                    <div class="w-full panel bg-ui-section">
+                        <div class="markdown prose max-w-5xl mx-auto" id="description">
+                            <p><span style="color:#8df"><a style="color:#9f9;text-decoration:none" href="https://en.wikipedia.org/wiki/Ghost_Leg" target="_blank">Amidakuji</a></span> is a method of lottery designed to create random pairings between two sets comprised of an equal number of elements.</p>
+<p>Your task is to write a function <code>amidakuji</code> that returns the final positions of each element. Note that the elements are an ascending sequence of consecutive integers starting with <code>0</code> (from left to right).</p>
+
+<h2 style="color:#f88">Input</h2>
+<p>Your function will receive an array/list of equal-length strings consisting of <code>0</code> and <code>1</code> characters; this represents the "ladder" structure. The <code>1</code>s represent the rungs of the ladder and the <code>0</code>s represent empty space.<br><br>
+Each element begins at the top of its corresponding vertical rail, as illustrated in the diagram below.<br>During the descent of the ladder, whenever a vertical rail intersects a horizontal rung, it swaps values with the adjacent connecting vertical rail.</p>
+
+<h2 style="color:#f88">Output</h2>
+<p>Your function should return an array of integers, with each integer in its final position.</p>
+
+<h2 style="color:#f88">Test Example</h2>
+<img src="images/6pJ87vP.png">
+<p>The diagram above is a visual representation of the test example below. The yellow highlighted path shows the path taken by the <code>2</code> value. Each time it encounters a crosspiece, it shifts position.</p>
+
+<pre><code class="language-javascript"><span class="cm-keyword">let</span> <span class="cm-def">ladder</span> <span class="cm-operator">=</span> [
+    <span class="cm-string">'001001'</span>,
+    <span class="cm-string">'010000'</span>,
+    <span class="cm-string">'100100'</span>,
+    <span class="cm-string">'001000'</span>,
+    <span class="cm-string">'100101'</span>,
+    <span class="cm-string">'010010'</span>,
+    <span class="cm-string">'101001'</span>,
+    <span class="cm-string">'010100'</span>
+];
+
+<span class="cm-variable">amidakuji</span>(<span class="cm-variable">ladder</span>); <span class="cm-comment">// [4, 2, 0, 5, 3, 6, 1]</span>
+</code></pre>
+<pre style="display: none;"><code class="language-python"><span class="cm-variable">ladder</span> <span class="cm-operator">=</span> [
+    <span class="cm-string">'001001'</span>,
+    <span class="cm-string">'010000'</span>,
+    <span class="cm-string">'100100'</span>,
+    <span class="cm-string">'001000'</span>,
+    <span class="cm-string">'100101'</span>,
+    <span class="cm-string">'010010'</span>,
+    <span class="cm-string">'101001'</span>,
+    <span class="cm-string">'010100'</span>
+]
+
+<span class="cm-variable">amidakuji</span>(<span class="cm-variable">ladder</span>) <span class="cm-comment"># [4, 2, 0, 5, 3, 6, 1]</span>
+</code></pre>
+<pre style="display: none;"><code class="language-elixir"><span class="cm-variable">ladder</span> <span class="cm-operator">=</span> [
+    <span class="cm-string">"001001"</span>,
+    <span class="cm-string">"010000"</span>,
+    <span class="cm-string">"100100"</span>,
+    <span class="cm-string">"001000"</span>,
+    <span class="cm-string">"100101"</span>,
+    <span class="cm-string">"010010"</span>,
+    <span class="cm-string">"101001"</span>,
+    <span class="cm-string">"010100"</span>
+]
+
+<span class="cm-tag">Banzai</span><span class="cm-operator">.</span><span class="cm-property">amidakuji</span>(<span class="cm-variable">ladder</span>) <span class="cm-comment"># [4, 2, 0, 5, 3, 6, 1]</span>
+</code></pre>
+<pre style="display: none;"><code class="language-go"><span class="cm-variable">ladder</span> :<span class="cm-operator">=</span> []<span class="cm-keyword">string</span>{
+    <span class="cm-string">"001001"</span>,
+    <span class="cm-string">"010000"</span>,
+    <span class="cm-string">"100100"</span>,
+    <span class="cm-string">"001000"</span>,
+    <span class="cm-string">"100101"</span>,
+    <span class="cm-string">"010010"</span>,
+    <span class="cm-string">"101001"</span>,
+    <span class="cm-string">"010100"</span>,
+}
+
+<span class="cm-variable">Amidakuji</span>(<span class="cm-variable">ladder</span>) <span class="cm-comment">// [4 2 0 5 3 6 1]</span>
+</code></pre>
+<pre style="display: none;"><code class="language-csharp"><span class="cm-keyword">var</span> <span class="cm-def">ladder</span> <span class="cm-operator">=</span> <span class="cm-keyword">new</span> <span class="cm-type">string</span>[]{
+    <span class="cm-string">"001001"</span>,
+    <span class="cm-string">"010000"</span>,
+    <span class="cm-string">"100100"</span>,
+    <span class="cm-string">"001000"</span>,
+    <span class="cm-string">"100101"</span>,
+    <span class="cm-string">"010010"</span>,
+    <span class="cm-string">"101001"</span>,
+    <span class="cm-string">"010100"</span>
+};
+
+<span class="cm-variable">Banzai</span>.<span class="cm-variable">Amidakuji</span>(<span class="cm-variable">ladder</span>) <span class="cm-operator">==</span> <span class="cm-keyword">new</span> <span class="cm-type">int</span>[]{<span class="cm-number">4</span>,<span class="cm-number">2</span>,<span class="cm-number">0</span>,<span class="cm-number">5</span>,<span class="cm-number">3</span>,<span class="cm-number">6</span>,<span class="cm-number">1</span>}; <span class="cm-comment">// true</span>
+</code></pre>
+<h2 style="color:#f88">Other Technical Details</h2>
+<ul>
+    <li>A function <code>visualizer</code> is preloaded to help illustrate the structure of the ladder; you can call this function with test inputs</li>
+    <li>No two rungs will ever be adjacent (so there is no ambiguity about directional path)</li>
+    <li>Full Test Suite: <code>10</code> fixed tests and <code>100</code> randomly-generated tests</li>
+    <li>Test input dimension upper bounds:<br>
+        <ul>
+            <li>maximum width: <code>20</code></li>
+            <li>maximum height: <code>50</code></li>
+        </ul>
+    </li>
+    <li>Inputs will always be valid</li>
+</ul>
+
+<p>If you enjoyed this kata, be sure to check out <a style="color:#9f9;text-decoration:none" href="https://www.codewars.com/users/docgunthrop/authored" target="_blank">my other katas</a></p>
+                        </div>
+                    </div>
+                </div>
+            </main>
+        </div>
+    </div>
+</body>
+</html>

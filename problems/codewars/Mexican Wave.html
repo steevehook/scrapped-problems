@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Mexican Wave</title>
+    <link rel="stylesheet" media="screen" href="css/style.css">
+</head>
+<body>
+    <div id="app">
+        <div class="w-full" id="shell">
+            <main id="shell_content">
+                <div class="w-full mt-2">
+                    <h2>Mexican Wave</h2>
+                    <h2>Points: 6 kyu</h2>
+                    <a href="https://www.codewars.com/kata/58f5c63f1e26ecda7e000029"><h2>Kata ID: 58f5c63f1e26ecda7e000029</h2></a>
+                    <div class="w-full panel bg-ui-section">
+                        <div class="markdown prose max-w-5xl mx-auto" id="description">
+                            <h1 id="introduction">Introduction</h1>
+<pre style="white-space: pre-wrap;white-space: -moz-pre-wrap;white-space: -pre-wrap;white-space: -o-pre-wrap;word-wrap: break-word;">The wave (known as the Mexican wave in the English-speaking world outside North America) is an example of metachronal rhythm achieved in a packed stadium when successive groups of spectators briefly stand, yell, and raise their arms. Immediately upon stretching to full height, the spectator returns to the usual seated position.
+
+The result is a wave of standing spectators that travels through the crowd, even though individual spectators never move away from their seats. In many large arenas the crowd is seated in a contiguous circuit all the way around the sport field, and so the wave is able to travel continuously around the arena; in discontiguous seating arrangements, the wave can instead reflect back and forth through the crowd. When the gap in seating is narrow, the wave can sometimes pass through it. Usually only one wave crest will be present at any given time in an arena, although simultaneous, counter-rotating waves have been produced. (Source <a href="https://en.wikipedia.org/wiki/Wave_(audience)" target="_blank">Wikipedia</a>)
+</pre>
+
+<h1 id="task">Task</h1>
+<pre style="white-space: pre-wrap;white-space: -moz-pre-wrap;white-space: -pre-wrap;white-space: -o-pre-wrap;word-wrap: break-word;">In this simple Kata your task is to create a function that turns a string into a Mexican Wave. You will be passed a string and you must return that string in an array where an uppercase letter is a person standing up. 
+</pre>
+
+<h1 id="rules">Rules</h1>
+<pre style="white-space: pre-wrap;white-space: -moz-pre-wrap;white-space: -pre-wrap;white-space: -o-pre-wrap;word-wrap: break-word;"> 1.&nbsp; The input string will always be lower case but maybe empty.<br>
+ 2.&nbsp; If the character in the string is whitespace then pass over it as if it was an empty seat
+</pre>
+
+<h1 id="example">Example</h1>
+<pre style="display: none;"><code class="language-go"><span class="cm-variable">wave</span>(<span class="cm-string">"hello"</span>) <span class="cm-operator">=&gt;</span> []<span class="cm-keyword">string</span>{<span class="cm-string">"Hello"</span>, <span class="cm-string">"hEllo"</span>, <span class="cm-string">"heLlo"</span>, <span class="cm-string">"helLo"</span>, <span class="cm-string">"hellO"</span>}
+</code></pre>
+<pre style="display: none;"><code class="language-racket"><span class="cm-bracket">(</span><span class="cm-variable">wave</span> <span class="cm-string">"</span><span class="cm-string">hello"</span><span class="cm-bracket">)</span> <span class="cm-comment">; returns '("Hello" "hEllo" "heLlo" "helLo" "hellO")</span>
+</code></pre>
+<pre style="display: none;"><code class="language-javascript"><span class="cm-variable">wave</span>(<span class="cm-string">"hello"</span>) <span class="cm-operator">=&gt;</span> [<span class="cm-string">"Hello"</span>, <span class="cm-string">"hEllo"</span>, <span class="cm-string">"heLlo"</span>, <span class="cm-string">"helLo"</span>, <span class="cm-string">"hellO"</span>]
+</code></pre>
+<pre><code class="language-ruby"><span class="cm-variable">wave</span>(<span class="cm-string">"hello"</span>) <span class="cm-operator">=&gt;</span> [<span class="cm-string">"Hello"</span>, <span class="cm-string">"hEllo"</span>, <span class="cm-string">"heLlo"</span>, <span class="cm-string">"helLo"</span>, <span class="cm-string">"hellO"</span>]
+</code></pre>
+<pre style="display: none;"><code class="language-python"><span class="cm-variable">wave</span>(<span class="cm-string">"hello"</span>) <span class="cm-operator">=&gt;</span> [<span class="cm-string">"Hello"</span>, <span class="cm-string">"hEllo"</span>, <span class="cm-string">"heLlo"</span>, <span class="cm-string">"helLo"</span>, <span class="cm-string">"hellO"</span>]
+</code></pre>
+<pre style="display: none;"><code class="language-rust"><span class="cm-variable">wave</span>(<span class="cm-string">"</span><span class="cm-string">hello</span><span class="cm-string">"</span>) <span class="cm-operator">=&gt;</span> [<span class="cm-string">"</span><span class="cm-string">Hello</span><span class="cm-string">"</span>, <span class="cm-string">"</span><span class="cm-string">hEllo</span><span class="cm-string">"</span>, <span class="cm-string">"</span><span class="cm-string">heLlo</span><span class="cm-string">"</span>, <span class="cm-string">"</span><span class="cm-string">helLo</span><span class="cm-string">"</span>, <span class="cm-string">"</span><span class="cm-string">hellO</span><span class="cm-string">"</span>]
+</code></pre>
+<p>Good luck and enjoy!</p>
+<h1 id="kata-series">Kata Series</h1>
+<p>If you enjoyed this, then please try one of my other Katas. Any feedback, translations and grading of beta Katas are greatly appreciated. Thank you.</p>
+<p><span style="display: flex !important;"><img alt="Rank" src="images/6KYU.png" style="margin:0px;">&nbsp;<a href="https://www.codewars.com/kata/58663693b359c4a6560001d6" target="_blank">Maze Runner</a></span></p>
+<p><span style="display: flex !important;"><img alt="Rank" src="images/6KYU.png" style="margin:0px;">&nbsp;<a href="https://www.codewars.com/kata/58693bbfd7da144164000d05" target="_blank">Scooby Doo Puzzle</a></span></p>
+<p><span style="display: flex !important;"><img alt="Rank" src="images/7KYU.png" style="margin:0px;">&nbsp;<a href="https://www.codewars.com/kata/586a1af1c66d18ad81000134" target="_blank">Driving License</a></span></p>
+<p><span style="display: flex !important;"><img alt="Rank" src="images/6KYU.png" style="margin:0px;">&nbsp;<a href="https://www.codewars.com/kata/586c0909c1923fdb89002031" target="_blank">Connect 4</a></span></p>
+<p><span style="display: flex !important;"><img alt="Rank" src="images/6KYU.png" style="margin:0px;">&nbsp;<a href="https://www.codewars.com/kata/586e6d4cb98de09e3800014f" target="_blank">Vending Machine</a></span></p>
+<p><span style="display: flex !important;"><img alt="Rank" src="images/6KYU.png" style="margin:0px;">&nbsp;<a href="https://www.codewars.com/kata/587136ba2eefcb92a9000027" target="_blank">Snakes and Ladders</a></span></p>
+<p><span style="display: flex !important;"><img alt="Rank" src="images/6KYU.png" style="margin:0px;">&nbsp;<a href="https://www.codewars.com/kata/58a848258a6909dd35000003" target="_blank">Mastermind</a></span></p>
+<p><span style="display: flex !important;"><img alt="Rank" src="images/6KYU.png" style="margin:0px;">&nbsp;<a href="https://www.codewars.com/kata/58b2c5de4cf8b90723000051" target="_blank">Guess Who?</a></span></p>
+<p><span style="display: flex !important;"><img alt="Rank" src="images/6KYU.png" style="margin:0px;">&nbsp;<a href="https://www.codewars.com/kata/58f5c63f1e26ecda7e000029" target="_blank">Am I safe to drive?</a></span></p>
+<p><span style="display: flex !important;"><img alt="Rank" src="images/6KYU.png" style="margin:0px;">&nbsp;<a href="https://www.codewars.com/kata/58f5c63f1e26ecda7e000029" target="_blank">Mexican Wave</a></span></p>
+<p><span style="display: flex !important;"><img alt="Rank" src="images/6KYU.png" style="margin:0px;">&nbsp;<a href="https://www.codewars.com/kata/58fdcc51b4f81a0b1e00003e" target="_blank">Pigs in a Pen</a></span></p>
+<p><span style="display: flex !important;"><img alt="Rank" src="images/6KYU.png" style="margin:0px;">&nbsp;<a href="https://www.codewars.com/kata/590300eb378a9282ba000095" target="_blank">Hungry Hippos</a></span></p>
+<p><span style="display: flex !important;"><img alt="Rank" src="images/6KYU.png" style="margin:0px;">&nbsp;<a href="https://www.codewars.com/kata/5904be220881cb68be00007d" target="_blank">Plenty of Fish in the Pond</a></span></p>
+<p><span style="display: flex !important;"><img alt="Rank" src="images/6KYU.png" style="margin:0px;">&nbsp;<a href="https://www.codewars.com/kata/590adadea658017d90000039" target="_blank">Fruit Machine</a></span></p>
+<p><span style="display: flex !important;"><img alt="Rank" src="images/6KYU.png" style="margin:0px;">&nbsp;<a href="https://www.codewars.com/kata/591eab1d192fe0435e000014" target="_blank">Car Park Escape</a></span></p>
+                        </div>
+                    </div>
+                </div>
+            </main>
+        </div>
+    </div>
+</body>
+</html>

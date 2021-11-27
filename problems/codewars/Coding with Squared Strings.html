@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Coding with Squared Strings</title>
+    <link rel="stylesheet" media="screen" href="css/style.css">
+</head>
+<body>
+    <div id="app">
+        <div class="w-full" id="shell">
+            <main id="shell_content">
+                <div class="w-full mt-2">
+                    <h2>Coding with Squared Strings</h2>
+                    <h2>Points: 5 kyu</h2>
+                    <a href="https://www.codewars.com/kata/56fcc393c5957c666900024d"><h2>Kata ID: 56fcc393c5957c666900024d</h2></a>
+                    <div class="w-full panel bg-ui-section">
+                        <div class="markdown prose max-w-5xl mx-auto" id="description">
+                            <p>A squared string has n lines, each substring being n characters long: For example:</p>
+<p><code>s = "abcd\nefgh\nijkl\nmnop"</code> is a squared string of size <code>4</code>.</p>
+<p>We will use squared strings to code and decode texts. To make things easier
+we suppose that our original text doesn't include the character '\n'.</p>
+<h4 id="coding">Coding</h4>
+<p>Input: </p>
+<ul>
+<li>a text <code>t</code> of length <code>l</code>. </li>
+<li>Consider the smallest integer <code>n</code> such that <code>n * n</code> be greater or equal to <code>l</code>.</li>
+<li>Complete <code>t</code> with the char of ascii code <code>11</code> (we suppose that this char is not in our original text) until the length of <code>t</code> is <code>n * n</code>. </li>
+<li>From now on we can transform the new <code>t</code> in a squared string <code>s</code> of size <code>n</code> by inserting <code>'\n'</code> where needed.</li>
+<li>Apply a clockwise rotation of 90 degrees to <code>s</code>: that's it for the coding part.</li>
+</ul>
+<h4 id="decoding">Decoding</h4>
+<p>Input: </p>
+<ul>
+<li>a squared string <code>s</code> resulting from the coding</li>
+<li>Apply a counter-clockwise rotation of 90 degrees to <code>s</code></li>
+<li>Do some cleaning to have the original text <code>t</code></li>
+</ul>
+<p>You can see clockwise rotation of 90 degrees: 
+<a href="http://www.codewars.com/kata/56dbeec613c2f63be4000be6" target="_blank">http://www.codewars.com/kata/56dbeec613c2f63be4000be6</a>
+You can see counter-clockwise rotation of 90 degrees: <a href="http://www.codewars.com/kata/56dbf59b0a10feb08c000227" target="_blank">http://www.codewars.com/kata/56dbf59b0a10feb08c000227</a></p>
+<h4 id="example">Example:</h4>
+<p>t = "I.was.going.fishing.that.morning.at.ten.o'clock"</p>
+<p>code(t) -&gt; <code>"c.nhsoI\nltiahi.\noentinw\ncng.nga\nk..mg.s\n\voao.f.\n\v'trtig"</code></p>
+<p>decode(code(t)) == <code>"I.was.going.fishing.that.morning.at.ten.o'clock"</code></p>
+<p>(Dots indicate spaces since they are quite invisible).</p>
+<h4 id="notes">Notes:</h4>
+<ul>
+<li>Swift : character <code>11</code> is replaced by <code>"\u{F7}"</code> (ie <code>"÷"</code> - <code>alt 246</code> -)</li>
+<li>Ocaml : character <code>11</code> is replaced by '&amp;'</li>
+<li>Perl : character <code>11</code> is replaced by '&amp;'</li>
+</ul>
+<ul>
+<li><p>Fortran: Your returned string for both functions are <strong>not</strong> permitted to contain <em>redundant</em> leading/trailing whitespace.  In return, you <em>may</em> safely assume that all input strings passed into your function(s) will <em>not</em> contain <strong>redundant</strong> leading/trailing whitespace, i.e. you do not and should <strong>not</strong> trim the input string before operating on it</p>
+</li>
+<li><p>Don't use this coding to keep your secrets:-)</p>
+</li>
+</ul>
+                        </div>
+                    </div>
+                </div>
+            </main>
+        </div>
+    </div>
+</body>
+</html>

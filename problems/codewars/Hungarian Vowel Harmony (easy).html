@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Hungarian Vowel Harmony (easy)</title>
+    <link rel="stylesheet" media="screen" href="css/style.css">
+</head>
+<body>
+    <div id="app">
+        <div class="w-full" id="shell">
+            <main id="shell_content">
+                <div class="w-full mt-2">
+                    <h2>Hungarian Vowel Harmony (easy)</h2>
+                    <h2>Points: 7 kyu</h2>
+                    <a href="https://www.codewars.com/kata/57fd696e26b06857eb0011e7"><h2>Kata ID: 57fd696e26b06857eb0011e7</h2></a>
+                    <div class="w-full panel bg-ui-section">
+                        <div class="markdown prose max-w-5xl mx-auto" id="description">
+                            <p><a href="https://en.wikipedia.org/wiki/Vowel_harmony" target="_blank">Vowel harmony</a> is a phenomenon in some languages. It means that "A vowel or vowels in a word are changed to sound the same (thus "in harmony.")" (<a href="https://en.wikipedia.org/wiki/Vowel_harmony#Hungarian" target="_blank">wikipedia</a>). This kata is based on <a href="https://en.wikipedia.org/wiki/Vowel_harmony#Hungarian" target="_blank">vowel harmony in Hungarian</a>. </p>
+<h3 id="task">Task:</h3>
+<p>Your goal is to create a function <code>dative()</code> (<code>Dative()</code> in C#) which returns the valid form of a valid Hungarian word <code>w</code> in <a href="http://www.hungarianreference.com/Nouns/nak-nek-dative.aspx" target="_blank">dative case</a> i. e. append the correct suffix <code>nek</code> or <code>nak</code> to the word <code>w</code> based on vowel harmony rules.</p>
+<h3 id="vowel-harmony-rules-simplified">Vowel Harmony Rules (simplified)</h3>
+<p>When the last vowel in the word is</p>
+<ol>
+<li>a <em>front vowel</em> (<code>e, é, i, í, ö, ő, ü, ű</code>) the suffix is <code>-nek</code></li>
+<li>a <em>back vowel</em> (<code>a, á, o, ó, u, ú</code>) the suffix is <code>-nak</code></li>
+</ol>
+<h3 id="examples">Examples:</h3>
+<pre style="display: none;"><code class="language-javascript"><span class="cm-variable">dative</span>(<span class="cm-string">"ablak"</span>) <span class="cm-operator">==</span> <span class="cm-string">"ablaknak"</span>
+<span class="cm-variable">dative</span>(<span class="cm-string">"szék"</span>) <span class="cm-operator">==</span> <span class="cm-string">"széknek"</span>
+<span class="cm-variable">dative</span>(<span class="cm-string">"otthon"</span>) <span class="cm-operator">==</span> <span class="cm-string">"otthonnak"</span>
+</code></pre>
+<pre><code class="language-python"><span class="cm-variable">dative</span>(<span class="cm-string">"ablak"</span>) <span class="cm-operator">==</span> <span class="cm-string">"ablaknak"</span>
+<span class="cm-variable">dative</span>(<span class="cm-string">"szék"</span>) <span class="cm-operator">==</span> <span class="cm-string">"széknek"</span>
+<span class="cm-variable">dative</span>(<span class="cm-string">"otthon"</span>) <span class="cm-operator">==</span> <span class="cm-string">"otthonnak"</span>
+</code></pre>
+<pre style="display: none;"><code class="language-php"><span class="cm-variable">dative</span>(<span class="cm-string">"</span><span class="cm-string">ablak"</span>); <span class="cm-comment">// "ablaknak"</span>
+<span class="cm-variable">dative</span>(<span class="cm-string">"</span><span class="cm-string">szék"</span>); <span class="cm-comment">// "széknek"</span>
+<span class="cm-variable">dative</span>(<span class="cm-string">"</span><span class="cm-string">otthon"</span>); <span class="cm-comment">// "otthonnak"</span>
+</code></pre>
+<pre style="display: none;"><code class="language-haskell"><span class="cm-variable">dative</span> <span class="cm-string">"ablak"</span>   <span class="cm-comment">-- "ablaknak"</span>
+<span class="cm-variable">dative</span> <span class="cm-string">"szék"</span>    <span class="cm-comment">-- "széknek"</span>
+<span class="cm-variable">dative</span> <span class="cm-string">"otthon"</span>  <span class="cm-comment">-- "otthonnak"</span>
+</code></pre>
+<pre style="display: none;"><code class="language-groovy"><span class="cm-variable">Kata</span>.<span class="cm-property">dative</span>(<span class="cm-string">"ablak"</span>) <span class="cm-operator">==</span> <span class="cm-string">"ablaknak"</span>
+<span class="cm-variable">Kata</span>.<span class="cm-property">dative</span>(<span class="cm-string">"szék"</span>) <span class="cm-operator">==</span> <span class="cm-string">"széknek"</span>
+<span class="cm-variable">Kata</span>.<span class="cm-property">dative</span>(<span class="cm-string">"otthon"</span>) <span class="cm-operator">==</span> <span class="cm-string">"otthonnak"</span>
+</code></pre>
+<pre style="display: none;"><code class="language-csharp"><span class="cm-variable">Kata</span>.<span class="cm-variable">Dative</span>(<span class="cm-string">"ablak"</span>) <span class="cm-operator">==</span> <span class="cm-string">"ablaknak"</span>
+<span class="cm-variable">Kata</span>.<span class="cm-variable">Dative</span>(<span class="cm-string">"szék"</span>) <span class="cm-operator">==</span> <span class="cm-string">"széknek"</span>
+<span class="cm-variable">Kata</span>.<span class="cm-variable">Dative</span>(<span class="cm-string">"otthon"</span>) <span class="cm-operator">==</span> <span class="cm-string">"otthonnak"</span>
+</code></pre>
+<pre style="display: none;"><code class="language-scala"><span class="cm-variable">Kata</span>.<span class="cm-variable">dative</span>(<span class="cm-string">"ablak"</span>) <span class="cm-operator">==</span> <span class="cm-string">"ablaknak"</span>
+<span class="cm-variable">Kata</span>.<span class="cm-variable">dative</span>(<span class="cm-string">"szék"</span>) <span class="cm-operator">==</span> <span class="cm-string">"széknek"</span>
+<span class="cm-variable">Kata</span>.<span class="cm-variable">dative</span>(<span class="cm-string">"otthon"</span>) <span class="cm-operator">==</span> <span class="cm-string">"otthonnak"</span>
+</code></pre>
+<pre style="display: none;"><code class="language-java"><span class="cm-variable">Kata</span>.<span class="cm-variable">dative</span>(<span class="cm-string">"ablak"</span>) <span class="cm-operator">==</span> <span class="cm-string">"ablaknak"</span>
+<span class="cm-variable">Kata</span>.<span class="cm-variable">dative</span>(<span class="cm-string">"szék"</span>) <span class="cm-operator">==</span> <span class="cm-string">"széknek"</span>
+<span class="cm-variable">Kata</span>.<span class="cm-variable">dative</span>(<span class="cm-string">"otthon"</span>) <span class="cm-operator">==</span> <span class="cm-string">"otthonnak"</span>
+</code></pre>
+<pre style="display: none;"><code class="language-go"><span class="cm-variable">Dative</span>(<span class="cm-string">"ablak"</span>) <span class="cm-operator">==&gt;</span> <span class="cm-string">"ablaknak"</span>, <span class="cm-atom">nil</span>
+<span class="cm-variable">Dative</span>(<span class="cm-string">"szék"</span>) <span class="cm-operator">==&gt;</span> <span class="cm-string">"széknek"</span>, <span class="cm-atom">nil</span>
+<span class="cm-variable">Dative</span>(<span class="cm-string">"otthon"</span>) <span class="cm-operator">==&gt;</span> <span class="cm-string">"otthonnak"</span>, <span class="cm-atom">nil</span>
+</code></pre>
+<pre style="display: none;"><code class="language-rust"><span class="cm-variable">dative</span>(<span class="cm-string">"</span><span class="cm-string">ablak</span><span class="cm-string">"</span>) <span class="cm-comment">// "ablaknak"</span>
+<span class="cm-variable">dative</span>(<span class="cm-string">"</span><span class="cm-string">szék</span><span class="cm-string">"</span>) <span class="cm-comment">// "széknek"</span>
+<span class="cm-variable">dative</span>(<span class="cm-string">"</span><span class="cm-string">otthon</span><span class="cm-string">"</span>) <span class="cm-comment">// "otthonnak"</span>
+</code></pre>
+<h3 id="preconditions">Preconditions:</h3>
+<ol>
+<li>To keep it simple: All words end with a consonant :)</li>
+<li>All strings are unicode strings.</li>
+<li>There are no grammatical exceptions in the tests.</li>
+</ol>
+                        </div>
+                    </div>
+                </div>
+            </main>
+        </div>
+    </div>
+</body>
+</html>

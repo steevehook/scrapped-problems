@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Esolang Interpreters #4 - Boolfuck Interpreter</title>
+    <link rel="stylesheet" media="screen" href="css/style.css">
+</head>
+<body>
+    <div id="app">
+        <div class="w-full" id="shell">
+            <main id="shell_content">
+                <div class="w-full mt-2">
+                    <h2>Esolang Interpreters #4 - Boolfuck Interpreter</h2>
+                    <h2>Points: 3 kyu</h2>
+                    <a href="https://www.codewars.com/kata/5861487fdb20cff3ab000030"><h2>Kata ID: 5861487fdb20cff3ab000030</h2></a>
+                    <div class="w-full panel bg-ui-section">
+                        <div class="markdown prose max-w-5xl mx-auto" id="description">
+                            <h1 id="esolang-interpreters-4---boolfuck-interpreter">Esolang Interpreters #4 - Boolfuck Interpreter</h1>
+<h2 id="about-this-kata-series">About this Kata Series</h2>
+<p>"Esolang Interpreters" is a Kata Series that originally began as three separate, independent esolang interpreter Kata authored by <a href="http://codewars.com/users/donaldsebleung" target="_blank">@donaldsebleung</a> which all shared a similar format and were all somewhat inter-related.  Under the influence of <a href="https://www.codewars.com/users/nickkwest" target="_blank">a fellow Codewarrior</a>, these three high-level inter-related Kata gradually evolved into what is known today as the "Esolang Interpreters" series.</p>
+<p>This series is a high-level Kata Series designed to challenge the minds of bright and daring programmers by implementing interpreters for various <a href="http://esolangs.org" target="_blank">esoteric programming languages/Esolangs</a>, mainly <a href="http://esolangs.org/wiki/Brainfuck" target="_blank">Brainfuck</a> derivatives but not limited to them, given a certain specification for a certain Esolang.  Perhaps the only exception to this rule is the very first Kata in this Series which is intended as an introduction/taster to the world of esoteric programming languages and writing interpreters for them.</p>
+<h2 id="the-language">The Language</h2>
+<p>Boolfuck is an <a href="http://esolangs.org/wiki/Esoteric_programming_language" target="_blank">esoteric programming language (Esolang)</a> based on the famous <a href="http://esolangs.org/wiki/Brainfuck" target="_blank">Brainfuck</a> (also an Esolang) which was invented in 2004 or 2005 according to <a href="http://samuelhughes.com/boof/index.html" target="_blank">the official website</a>.  It is very similar to Brainfuck except for a few key differences:</p>
+<ul>
+<li>Boolfuck works with bits as opposed to bytes</li>
+<li>The tape for Brainfuck contains exactly 30,000 cells with the pointer starting from the very left; Boolfuck contains an infinitely long tape with the pointer starting at the "middle" (since the tape can be extended indefinitely either direction)</li>
+<li>Each cell in Boolfuck can only contain the values <code>0</code> or <code>1</code> (i.e. bits not bytes) as opposed to Brainfuck which has cells containing values ranging from <code>0</code> to <code>255</code> inclusive.</li>
+<li>The output command in Boolfuck is <code>;</code> NOT <code>.</code></li>
+<li>The <code>-</code> command does <strong>not</strong> exist in Boolfuck since either <code>+</code> or <code>-</code> would flip a bit anyway</li>
+</ul>
+<p>Anyway, here is a list of commands and their descriptions:</p>
+<ul>
+<li><code>+</code> - Flips the value of the bit under the pointer</li>
+<li><code>,</code> - Reads a bit from the input stream, storing it under the pointer. The end-user types information using characters, though. Bytes are read in little-endian order—the first bit read from the character <code>a</code>, for instance, is 1, followed by 0, 0, 0, 0, 1, 1, and finally 0. If the end-of-file has been reached, outputs a zero to the bit under the pointer.</li>
+<li><code>;</code> - Outputs the bit under the pointer to the output stream. The bits get output in little-endian order, the same order in which they would be input. If the total number of bits output is not a multiple of eight at the end of the program, the last character of output gets padded with zeros on the more significant end.</li>
+<li><code>&lt;</code> - Moves the pointer left by 1 bit</li>
+<li><code>&gt;</code> - Moves the pointer right by 1 bit</li>
+<li><code>[</code> - If the value under the pointer is <code>0</code> then skip to the corresponding <code>]</code></li>
+<li><code>]</code> - Jumps back to the matching <code>[</code> character, if the value under the pointer is <code>1</code></li>
+</ul>
+<p>If you haven't written an interpreter for Brainfuck yet I recommend you to complete <a href="https://www.codewars.com/kata/my-smallest-code-interpreter-aka-brainf-star-star-k" target="_blank">this Kata</a> first.</p>
+<h2 id="the-task">The Task</h2>
+<p>Write a Boolfuck interpreter which accepts up to two arguments.  The first (required) argument is the Boolfuck code in the form of a string.  The second (optional) argument is the input passed in by the <strong>end-user</strong> (i.e. as actual characters not bits) which should default to <code>""</code> if not provided.  Your interpreter should return the output as actual characters (not bits!) as a string.</p>
+<pre><code class="language-javascript"><span class="cm-keyword">function</span> <span class="cm-def">boolfuck</span> (<span class="cm-def">code</span>, <span class="cm-def">input</span> <span class="cm-operator">=</span> <span class="cm-string">""</span>)
+</code></pre>
+<pre style="display: none;"><code class="language-c"><span class="cm-type">char</span><span class="cm-type">*</span> <span class="cm-def">boolfuck</span> (<span class="cm-type">char</span> <span class="cm-type">*</span><span class="cm-variable">code</span>, <span class="cm-type">char</span> <span class="cm-type">*</span><span class="cm-variable">in</span>)
+</code></pre>
+<pre style="display: none;"><code class="language-cpp"><span class="cm-type">char</span><span class="cm-type">*</span> <span class="cm-def">boolfuck</span> (<span class="cm-keyword">const</span> <span class="cm-type">char</span> <span class="cm-type">*</span><span class="cm-variable">code</span>, <span class="cm-keyword">const</span> <span class="cm-type">char</span> <span class="cm-type">*</span><span class="cm-variable">in</span>)
+</code></pre>
+<pre style="display: none;"><code class="language-java"><span class="cm-keyword">public</span> <span class="cm-keyword">static</span> <span class="cm-type">String</span> <span class="cm-def">interpret</span> (<span class="cm-type">String</span> <span class="cm-variable">code</span>, <span class="cm-type">String</span> <span class="cm-variable">input</span>)
+</code></pre>
+<pre style="display: none;"><code class="language-fsharp"><span class="cm-keyword">let</span> <span class="cm-variable">interpret</span> (<span class="cm-variable">code</span><span class="cm-operator">:</span> <span class="cm-builtin">string</span>) (<span class="cm-variable">input</span><span class="cm-operator">:</span> <span class="cm-builtin">string</span>) <span class="cm-operator">:</span> <span class="cm-builtin">string</span>
+</code></pre>
+<pre style="display: none;"><code class="language-python"><span class="cm-keyword">def</span> <span class="cm-def">boolfuck</span>(<span class="cm-variable">code</span>, <span class="cm-builtin">input</span>)
+</code></pre>
+<pre style="display: none;"><code class="language-go"><span class="cm-keyword">func</span> <span class="cm-variable">Boolfuck</span>(<span class="cm-variable">code</span>, <span class="cm-variable">input</span> <span class="cm-keyword">string</span>) <span class="cm-keyword">string</span>
+</code></pre>
+<pre style="display: none;"><code class="language-rust"><span class="cm-keyword">fn</span> <span class="cm-def">boolfuck</span>(<span class="cm-variable">code</span>: &amp;<span class="cm-atom">str</span>, <span class="cm-variable">input</span>: <span class="cm-variable">Vec</span><span class="cm-operator">&lt;</span><span class="cm-atom">u8</span><span class="cm-operator">&gt;</span>) <span class="cm-operator">-&gt;</span> <span class="cm-variable">Vec</span><span class="cm-operator">&lt;</span><span class="cm-atom">u8</span><span class="cm-operator">&gt;</span>
+</code></pre>
+<pre style="display: none;"><code class="language-haskell"><span class="cm-variable">boolfuck</span> <span class="cm-keyword">::</span> <span class="cm-builtin">String</span> <span class="cm-keyword">-&gt;</span> <span class="cm-builtin">String</span> <span class="cm-keyword">-&gt;</span> <span class="cm-builtin">String</span>
+</code></pre>
+<p>Preloaded for you is a function <code>brainfuckToBoolfuck()</code>/<code>brainfuck_to_boolfuck()</code>/<code>BrainfuckToBoolfuck()</code> which accepts 1 required argument (the Brainfuck code) and returns its Boolfuck equivalent should you find it useful.</p>
+<p>Please note that your interpreter should simply ignore any non-command characters.  <strong>This will be tested in the test cases.</strong></p>
+<p>If in doubt, feel free to refer to the official website (link at top).</p>
+<p>Good luck :D</p>
+<h2 id="kata-in-this-series">Kata in this Series</h2>
+<ol>
+<li><a href="https://www.codewars.com/kata/esolang-interpreters-number-1-introduction-to-esolangs-and-my-first-interpreter-ministringfuck" target="_blank">Esolang Interpreters #1 - Introduction to Esolangs and My First Interpreter (MiniStringFuck)</a></li>
+<li><a href="http://codewars.com/kata/esolang-interpreters-number-2-custom-smallfuck-interpreter" target="_blank">Esolang Interpreters #2 - Custom Smallfuck Interpreter</a></li>
+<li><a href="http://codewars.com/kata/esolang-interpreters-number-3-custom-paintf-star-star-k-interpreter" target="_blank">Esolang Interpreters #3 - Custom Paintfuck Interpreter</a></li>
+<li><strong>Esolang Interpreters #4 - Boolfuck Interpreter</strong></li>
+</ol>
+                        </div>
+                    </div>
+                </div>
+            </main>
+        </div>
+    </div>
+</body>
+</html>

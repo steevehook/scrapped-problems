@@ -1,0 +1,124 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Financing a purchase</title>
+    <link rel="stylesheet" media="screen" href="css/style.css">
+</head>
+<body>
+    <div id="app">
+        <div class="w-full" id="shell">
+            <main id="shell_content">
+                <div class="w-full mt-2">
+                    <h2>Financing a purchase</h2>
+                    <h2>Points: 6 kyu</h2>
+                    <a href="https://www.codewars.com/kata/59c68ea2aeb2843e18000109"><h2>Kata ID: 59c68ea2aeb2843e18000109</h2></a>
+                    <div class="w-full panel bg-ui-section">
+                        <div class="markdown prose max-w-5xl mx-auto" id="description">
+                            <p>The description is rather long but it tries to explain what a financing plan is. </p>
+<p>The fixed monthly payment for a fixed rate mortgage is the amount paid by the borrower every month that ensures 
+that the loan is paid off in full with interest at the end of its term. </p>
+<p>The monthly payment formula is based on the annuity formula. 
+The monthly payment <code>c</code> depends upon:</p>
+<ul>
+<li><p><code>rate</code> - the monthly interest rate is expressed as a decimal, not a percentage. 
+The monthly rate is simply the <strong>given</strong> yearly percentage rate divided by 100 and then by 12.</p>
+</li>
+<li><p><code>term</code> - the number of monthly payments, called the loan's <code>term</code>.</p>
+</li>
+<li><p><code>principal</code> - the amount borrowed, known as the loan's principal (or <code>balance</code>).</p>
+</li>
+</ul>
+<p>First we have to determine <code>c</code>.</p>
+<p>We have: <code>c = n /d</code> with <code>n = r * balance</code> and <code>d = 1 - (1 + r)**(-term)</code> where <code>**</code> is the <code>power</code> function (you can look at the reference below).</p>
+<p>The payment <code>c</code> is composed of two parts. The first part pays the interest (let us call it <code>int</code>)
+due for the balance of the given month, the second part repays the balance (let us call this part <code>princ</code>) hence for the following month we get a <code>new balance = old balance - princ</code> with <code>c = int + princ</code>. </p>
+<p>Loans are structured so that the amount of principal returned to the borrower starts out small and increases with each mortgage payment. 
+While the mortgage payments in the first years consist primarily of interest payments, the payments in the final years consist primarily of principal repayment.</p>
+<p>A mortgage's amortization schedule provides a detailed look at precisely what portion of each mortgage payment is dedicated to each component.</p>
+<p>In an example of a $100,000, 30-year mortgage with a rate of 6 percents the amortization schedule consists of 360 monthly payments.
+The partial amortization schedule below shows with 2 decimal floats
+the balance between principal and interest payments.</p>
+<table>
+<thead>
+<tr>
+<th>--</th>
+<th>num_payment</th>
+<th>c</th>
+<th>princ</th>
+<th>int</th>
+<th>Balance</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>--</td>
+<td>1</td>
+<td>599.55</td>
+<td>99.55</td>
+<td>500.00</td>
+<td>99900.45</td>
+</tr>
+<tr>
+<td>--</td>
+<td>...</td>
+<td>599.55</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+</tr>
+<tr>
+<td>--</td>
+<td>12</td>
+<td>599.55</td>
+<td>105.16</td>
+<td>494.39</td>
+<td>98,771.99</td>
+</tr>
+<tr>
+<td>--</td>
+<td>...</td>
+<td>599.55</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+</tr>
+<tr>
+<td>--</td>
+<td>360</td>
+<td>599.55</td>
+<td>596.57</td>
+<td>2.98</td>
+<td>0.00</td>
+</tr>
+</tbody></table>
+<h4 id="task">Task:</h4>
+<p>Given parameters </p>
+<pre><code>rate: annual rate as percent (don't forgent to divide by 100*12)
+bal: original balance (borrowed amount) 
+term: number of monthly payments
+num_payment: rank of considered month (from 1 to term)
+</code></pre>
+<p>the function <code>amort</code> will return a formatted string (for example):</p>
+<p><code>"num_payment %d c %.0f princ %.0f int %.0f balance %.0f" (with arguments num_payment, c, princ, int, balance</code>)</p>
+<p><em><strong>In Common Lisp:</strong></em>
+return a list with num-payment, c, princ, int, balance each rounded.</p>
+<h4 id="examples">Examples:</h4>
+<pre><code>amort(6, 100000, 360, 1) -&gt;
+"num_payment 1 c 600 princ 100 int 500 balance 99900"
+
+amort(6, 100000, 360, 12) -&gt;
+"num_payment 12 c 600 princ 105 int 494 balance 98772"
+</code></pre>
+<h4 id="ref">Ref</h4>
+<p><a href="https://en.wikipedia.org/wiki/Mortgage_calculator" target="_blank">https://en.wikipedia.org/wiki/Mortgage_calculator</a></p>
+                        </div>
+                    </div>
+                </div>
+            </main>
+        </div>
+    </div>
+</body>
+</html>

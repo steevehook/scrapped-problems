@@ -1,0 +1,140 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Functions of Integers on Cartesian Plane</title>
+    <link rel="stylesheet" media="screen" href="css/style.css">
+</head>
+<body>
+    <div id="app">
+        <div class="w-full" id="shell">
+            <main id="shell_content">
+                <div class="w-full mt-2">
+                    <h2>Functions of Integers on Cartesian Plane</h2>
+                    <h2>Points: 7 kyu</h2>
+                    <a href="https://www.codewars.com/kata/559e3224324a2b6e66000046"><h2>Kata ID: 559e3224324a2b6e66000046</h2></a>
+                    <div class="w-full panel bg-ui-section">
+                        <div class="markdown prose max-w-5xl mx-auto" id="description">
+                            <p>Consider integer coordinates x, y in the Cartesian plan and three functions f, g, h
+defined by:</p>
+<pre><code>f: 1 &lt;= x &lt;= n, 1 &lt;= y &lt;= n --&gt; f(x, y) = min(x, y)
+g: 1 &lt;= x &lt;= n, 1 &lt;= y &lt;= n --&gt; g(x, y) = max(x, y)
+h: 1 &lt;= x &lt;= n, 1 &lt;= y &lt;= n --&gt; h(x, y) = x + y
+</code></pre>
+<p>where n is a given integer (n &gt;= 1, guaranteed) and x, y are integers.</p>
+<p>In the table below you can see the value of the function f with n = 6.</p>
+<table>
+<thead>
+<tr>
+<th>---</th>
+<th><em>0</em></th>
+<th><em>1</em></th>
+<th><em>2</em></th>
+<th><em>3</em></th>
+<th><em>4</em></th>
+<th><em>5</em></th>
+<th><em>6</em></th>
+</tr>
+</thead>
+<tbody><tr>
+<td><em>6</em></td>
+<td>-</td>
+<td>1</td>
+<td>2</td>
+<td>3</td>
+<td>4</td>
+<td>5</td>
+<td>6</td>
+</tr>
+<tr>
+<td><em>5</em></td>
+<td>-</td>
+<td>1</td>
+<td>2</td>
+<td>3</td>
+<td>4</td>
+<td>5</td>
+<td>5</td>
+</tr>
+<tr>
+<td><em>4</em></td>
+<td>-</td>
+<td>1</td>
+<td>2</td>
+<td>3</td>
+<td>4</td>
+<td>4</td>
+<td>4</td>
+</tr>
+<tr>
+<td><em>3</em></td>
+<td>-</td>
+<td>1</td>
+<td>2</td>
+<td>3</td>
+<td>3</td>
+<td>3</td>
+<td>3</td>
+</tr>
+<tr>
+<td><em>2</em></td>
+<td>-</td>
+<td>1</td>
+<td>2</td>
+<td>2</td>
+<td>2</td>
+<td>2</td>
+<td>2</td>
+</tr>
+<tr>
+<td><em>1</em></td>
+<td>-</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+</tr>
+<tr>
+<td><em>0</em></td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+</tr>
+</tbody></table>
+<p>The task is to calculate the sum of f(x, y), g(x, y) and h(x, y) for all integers x and y such that (1 &lt;= x &lt;= n, 1 &lt;= y &lt;= n).</p>
+<p>The function sumin (sum of f) will take n as a parameter and return the sum of min(x, y) in the domain 1 &lt;= x &lt;= n, 1 &lt;= y &lt;= n.
+The function sumax (sum of g) will take n as a parameter and return the sum of max(x, y) in the same domain.
+The function sumsum (sum of h) will take n as a parameter and return the sum of x + y in the same domain.</p>
+<h4 id="examples">Examples:</h4>
+<pre><code>sumin(6) --&gt; 91
+sumin(45) --&gt; 31395
+sumin(999) --&gt; 332833500
+sumin(5000) --&gt; 41679167500
+
+sumax(6) --&gt; 161
+sumax(45) --&gt; 61755
+sumax(999) --&gt; 665167500
+sumax(5000) --&gt; 83345832500
+
+sumsum(6) --&gt; 252
+sumsum(45) --&gt; 93150
+sumsum(999) --&gt; 998001000
+sumsum(5000) --&gt; 125025000000
+</code></pre>
+                        </div>
+                    </div>
+                </div>
+            </main>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Errors : histogram</title>
+    <link rel="stylesheet" media="screen" href="css/style.css">
+</head>
+<body>
+    <div id="app">
+        <div class="w-full" id="shell">
+            <main id="shell_content">
+                <div class="w-full mt-2">
+                    <h2>Errors : histogram</h2>
+                    <h2>Points: 6 kyu</h2>
+                    <a href="https://www.codewars.com/kata/59f44c7bd4b36946fd000052"><h2>Kata ID: 59f44c7bd4b36946fd000052</h2></a>
+                    <div class="w-full panel bg-ui-section">
+                        <div class="markdown prose max-w-5xl mx-auto" id="description">
+                            <p>In a factory a printer prints labels for boxes. The printer uses colors which, for the sake of simplicity, are named with letters from a to z (except letters <code>u</code>, <code>w</code>, <code>x</code> or <code>z</code> that are for errors).</p>
+<p>The colors used by the printer are recorded in a control string. For example a control string would be <code>aaabbbbhaijjjm</code> meaning that the printer used three times color a, four times color b, one time color h then one time color a... and so on.</p>
+<p>Sometimes there are problems: lack of colors, technical malfunction and a control string is produced e.g. <code>uuaaaxbbbbyyhwawiwjjjwwxym</code> where errors are reported with letters <code>u</code>, <code>w</code>, <code>x</code> or <code>z</code>.</p>
+<p>You have to write a function <code>hist</code> which given a string will output the errors as a string representing a histogram of the encountered errors.</p>
+<p>Format of the output string:</p>
+<p>letter (error letters are sorted in alphabetical order) in a field of 2 characters, a white space, number of error for that letter in a field of 6, as many "*" as the number of errors for that letter and "\r" (or "\n" depending on the langauge).</p>
+<p>The string has a length greater or equal to one and contains only letters from <code>a</code> to <code>z</code>.</p>
+<h4 id="examples">Examples</h4>
+<pre><code>s="uuaaaxbbbbyyhwawiwjjjwwxym"
+hist(s) =&gt; "u  2     **\rw  5     *****\rx  2     **"
+</code></pre>
+<p><em>or with dots to see white spaces:</em></p>
+<pre><code>hist(s) =&gt; "u..2.....**\rw..5.....*****\rx..2.....**"
+s="uuaaaxbbbbyyhwawiwjjjwwxymzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzz"
+hist(s) =&gt; "u..2.....**\rw..5.....*****\rx..2.....**\rz..31....*******************************"
+</code></pre>
+<h4 id="notes">Notes</h4>
+<ul>
+<li>Unfortunately most often Codewars compresses all white spaces into one.</li>
+<li>See other examples in the "Sample tests".</li>
+</ul>
+                        </div>
+                    </div>
+                </div>
+            </main>
+        </div>
+    </div>
+</body>
+</html>

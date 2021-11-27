@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Consecutive letters</title>
+    <link rel="stylesheet" media="screen" href="css/style.css">
+</head>
+<body>
+    <div id="app">
+        <div class="w-full" id="shell">
+            <main id="shell_content">
+                <div class="w-full mt-2">
+                    <h2>Consecutive letters</h2>
+                    <h2>Points: 7 kyu</h2>
+                    <a href="https://www.codewars.com/kata/5ce6728c939bf80029988b57"><h2>Kata ID: 5ce6728c939bf80029988b57</h2></a>
+                    <div class="w-full panel bg-ui-section">
+                        <div class="markdown prose max-w-5xl mx-auto" id="description">
+                            <p>In this Kata, we will check if a string contains consecutive letters as they appear in the English alphabet and if each letter occurs only once. </p>
+<pre><code class="language-haskell"><span class="cm-variable-2">Rules</span> <span class="cm-variable">are</span><span class="cm-keyword">:</span> (<span class="cm-number">1</span>) <span class="cm-variable">the</span> <span class="cm-variable">letters</span> <span class="cm-variable">are</span> <span class="cm-variable">adjacent</span> <span class="cm-keyword">in</span> <span class="cm-variable">the</span> <span class="cm-variable-2">English</span> <span class="cm-variable">alphabet</span>, <span class="cm-builtin">and</span> (<span class="cm-number">2</span>) <span class="cm-variable">each</span> <span class="cm-variable">letter</span> <span class="cm-variable">occurs</span> <span class="cm-variable">only</span> <span class="cm-variable">once</span><span class="cm-builtin">.</span>
+
+<span class="cm-variable-2">For</span> <span class="cm-variable">example</span><span class="cm-keyword">:</span> 
+<span class="cm-variable">solve</span>(<span class="cm-string">"abc"</span>) <span class="cm-keyword">=</span> <span class="cm-builtin">True</span>, <span class="cm-variable">because</span> <span class="cm-variable">it</span> <span class="cm-variable">contains</span> <span class="cm-variable">a</span>,<span class="cm-variable">b</span>,<span class="cm-variable">c</span>
+<span class="cm-variable">solve</span>(<span class="cm-string">"abd"</span>) <span class="cm-keyword">=</span> <span class="cm-builtin">False</span>, <span class="cm-variable">because</span> <span class="cm-variable">a</span>, <span class="cm-variable">b</span>, <span class="cm-variable">d</span> <span class="cm-variable">are</span> <span class="cm-builtin">not</span> <span class="cm-variable">consecutive</span><span class="cm-builtin">/</span><span class="cm-variable">adjacent</span> <span class="cm-keyword">in</span> <span class="cm-variable">the</span> <span class="cm-variable">alphabet</span>, <span class="cm-builtin">and</span> <span class="cm-variable">c</span> <span class="cm-variable">is</span> <span class="cm-variable">missing</span><span class="cm-builtin">.</span>
+<span class="cm-variable">solve</span>(<span class="cm-string">"dabc"</span>) <span class="cm-keyword">=</span> <span class="cm-builtin">True</span>, <span class="cm-variable">because</span> <span class="cm-variable">it</span> <span class="cm-variable">contains</span> <span class="cm-variable">a</span>, <span class="cm-variable">b</span>, <span class="cm-variable">c</span>, <span class="cm-variable">d</span>
+<span class="cm-variable">solve</span>(<span class="cm-string">"abbc"</span>) <span class="cm-keyword">=</span> <span class="cm-builtin">False</span>, <span class="cm-variable">because</span> <span class="cm-variable">b</span> <span class="cm-variable">does</span> <span class="cm-builtin">not</span> <span class="cm-variable">occur</span> <span class="cm-variable">once</span><span class="cm-builtin">.</span>
+<span class="cm-variable">solve</span>(<span class="cm-string">"v"</span>) <span class="cm-keyword">=</span> <span class="cm-builtin">True</span>
+</code></pre>
+<p>All inputs will be lowercase letters. </p>
+<p>More examples in test cases. Good luck!</p>
+                        </div>
+                    </div>
+                </div>
+            </main>
+        </div>
+    </div>
+</body>
+</html>

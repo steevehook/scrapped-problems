@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Some Egyptian fractions</title>
+    <link rel="stylesheet" media="screen" href="css/style.css">
+</head>
+<body>
+    <div id="app">
+        <div class="w-full" id="shell">
+            <main id="shell_content">
+                <div class="w-full mt-2">
+                    <h2>Some Egyptian fractions</h2>
+                    <h2>Points: 5 kyu</h2>
+                    <a href="https://www.codewars.com/kata/54f8693ea58bce689100065f"><h2>Kata ID: 54f8693ea58bce689100065f</h2></a>
+                    <div class="w-full panel bg-ui-section">
+                        <div class="markdown prose max-w-5xl mx-auto" id="description">
+                            <p>Given a rational number n</p>
+<p><code> n &gt;= 0, with denominator strictly positive</code>  </p>
+<ul>
+<li>as a string (example: "2/3" in Ruby, Python, Clojure, JS, CS, Go) </li>
+<li>or as two strings (example: "2" "3" in Haskell, Java, CSharp, C++, Swift, Dart) </li>
+<li>or as a rational or decimal number (example: 3/4, 0.67 in R) </li>
+<li>or two integers (Fortran)</li>
+</ul>
+<p>decompose this number as a sum of rationals with numerators equal to one and without repetitions
+(2/3 = 1/2 + 1/6 is correct but not 2/3 = 1/3 + 1/3, 1/3 is repeated).</p>
+<p>The algorithm must be "greedy", so at each stage the new rational obtained in the decomposition must have a denominator as small as possible. 
+In this manner the sum of a few fractions in the decomposition gives a rather good approximation of the rational to decompose.</p>
+<p>2/3 = 1/3 + 1/3 doesn't fit because of the repetition but also because the first 1/3 has a denominator bigger than the one in 1/2 
+in the decomposition 2/3 = 1/2 + 1/6.</p>
+<h4 id="example">Example:</h4>
+<p>(You can see other examples in "Sample Tests:")</p>
+<pre><code>decompose("21/23") or "21" "23" or 21/23 should return 
+
+["1/2", "1/3", "1/13", "1/359", "1/644046"] in Ruby, Python, Clojure, JS, CS, Haskell, Go
+
+"[1/2, 1/3, 1/13, 1/359, 1/644046]" in Java, CSharp, C++, Dart
+
+"1/2,1/3,1/13,1/359,1/644046" in C, Swift, R
+</code></pre>
+<h4 id="notes">Notes</h4>
+<ol>
+<li><p>The decomposition of 21/23 as</p>
+<pre><code>21/23 = 1/2 + 1/3 + 1/13 + 1/598 + 1/897
+</code></pre>
+<p>is exact but don't fulfill our requirement because 598 is bigger than 359.
+Same for </p>
+<pre><code>21/23 = 1/2 + 1/3 + 1/23 + 1/46 + 1/69 (23 is bigger than 13)
+or 
+21/23 = 1/2 + 1/3 + 1/15 + 1/110 + 1/253 (15 is bigger than 13).
+</code></pre>
+</li>
+<li><p>The rational given to decompose could be greater than one or equal to one, in which case the first "fraction" will be an integer (with an implicit denominator of 1). </p>
+</li>
+<li><p>If the numerator parses to zero the function "decompose" returns [] (or "",, or "[]").</p>
+</li>
+<li><p>The number could also be a decimal which can be expressed as a rational. </p>
+</li>
+</ol>
+<h4 id="example-1">Example:</h4>
+<p><code>0.6</code> in Ruby, Python, Clojure,JS, CS, Julia, Go</p>
+<p><code>"66" "100"</code> in Haskell, Java, CSharp, C++, C, Swift, Scala, Kotlin, Dart, ...</p>
+<p><code>0.67</code> in R.</p>
+<p><strong>Ref:</strong>
+<a href="http://en.wikipedia.org/wiki/Egyptian_fraction" target="_blank">http://en.wikipedia.org/wiki/Egyptian_fraction</a></p>
+                        </div>
+                    </div>
+                </div>
+            </main>
+        </div>
+    </div>
+</body>
+</html>

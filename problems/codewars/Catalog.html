@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Catalog</title>
+    <link rel="stylesheet" media="screen" href="css/style.css">
+</head>
+<body>
+    <div id="app">
+        <div class="w-full" id="shell">
+            <main id="shell_content">
+                <div class="w-full mt-2">
+                    <h2>Catalog</h2>
+                    <h2>Points: 6 kyu</h2>
+                    <a href="https://www.codewars.com/kata/59d9d8cb27ee005972000045"><h2>Kata ID: 59d9d8cb27ee005972000045</h2></a>
+                    <div class="w-full panel bg-ui-section">
+                        <div class="markdown prose max-w-5xl mx-auto" id="description">
+                            <p>You are given a <em>small</em> extract of a catalog:</p>
+<pre><code>s = "&lt;prod&gt;&lt;name&gt;drill&lt;/name&gt;&lt;prx&gt;99&lt;/prx&gt;&lt;qty&gt;5&lt;/qty&gt;&lt;/prod&gt;
+
+&lt;prod&gt;&lt;name&gt;hammer&lt;/name&gt;&lt;prx&gt;10&lt;/prx&gt;&lt;qty&gt;50&lt;/qty&gt;&lt;/prod&gt;
+
+&lt;prod&gt;&lt;name&gt;screwdriver&lt;/name&gt;&lt;prx&gt;5&lt;/prx&gt;&lt;qty&gt;51&lt;/qty&gt;&lt;/prod&gt;
+
+&lt;prod&gt;&lt;name&gt;table saw&lt;/name&gt;&lt;prx&gt;1099.99&lt;/prx&gt;&lt;qty&gt;5&lt;/qty&gt;&lt;/prod&gt;
+
+&lt;prod&gt;&lt;name&gt;saw&lt;/name&gt;&lt;prx&gt;9&lt;/prx&gt;&lt;qty&gt;10&lt;/qty&gt;&lt;/prod&gt;
+
+...
+</code></pre>
+<p>(<code>prx</code> stands for <code>price</code>, <code>qty</code> for <code>quantity</code>) and an article i.e "saw".</p>
+<p>The <code>function catalog(s, "saw")</code> returns the line(s) corresponding to the article
+with <code>$</code> before the prices:</p>
+<pre><code>"table saw &gt; prx: $1099.99 qty: 5\nsaw &gt; prx: $9 qty: 10\n..."
+</code></pre>
+<p>If the article is not in the catalog return "Nothing".</p>
+<h4 id="notes">Notes</h4>
+<ul>
+<li>There is a blank line between two lines of the catalog.</li>
+<li>The same article may appear more than once. If that happens return all the lines concerned by the article (in the same order as in the catalog).</li>
+<li>The line separator of results may depend on the language <code>\n</code>or <code>\r\n</code>.
+In <strong>Pascal</strong> <code>\n</code> is replaced by <code>LineEnding</code>.</li>
+<li>in Perl use "£" instead of "$" before the prices.</li>
+<li> You can see examples in the "Sample tests".</li>
+</ul>
+                        </div>
+                    </div>
+                </div>
+            </main>
+        </div>
+    </div>
+</body>
+</html>

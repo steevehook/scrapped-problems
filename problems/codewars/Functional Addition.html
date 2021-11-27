@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Functional Addition</title>
+    <link rel="stylesheet" media="screen" href="css/style.css">
+</head>
+<body>
+    <div id="app">
+        <div class="w-full" id="shell">
+            <main id="shell_content">
+                <div class="w-full mt-2">
+                    <h2>Functional Addition</h2>
+                    <h2>Points: 7 kyu</h2>
+                    <a href="https://www.codewars.com/kata/538835ae443aae6e03000547"><h2>Kata ID: 538835ae443aae6e03000547</h2></a>
+                    <div class="w-full panel bg-ui-section">
+                        <div class="markdown prose max-w-5xl mx-auto" id="description">
+                            <p>Create a function <code>add(n)</code>/<code>Add(n)</code> which returns a function that always adds n to any number</p>
+<p>Note for Java: the return type and methods have not been provided to make it a bit more challenging.</p>
+<pre><code class="language-javascript"><span class="cm-keyword">var</span> <span class="cm-def">addOne</span> <span class="cm-operator">=</span> <span class="cm-variable">add</span>(<span class="cm-number">1</span>);
+<span class="cm-variable">addOne</span>(<span class="cm-number">3</span>); <span class="cm-comment">// 4</span>
+
+<span class="cm-keyword">var</span> <span class="cm-def">addThree</span> <span class="cm-operator">=</span> <span class="cm-variable">add</span>(<span class="cm-number">3</span>);
+<span class="cm-variable">addThree</span>(<span class="cm-number">3</span>); <span class="cm-comment">// 6</span>
+</code></pre>
+<pre style="display: none;"><code class="language-python"><span class="cm-variable">add_one</span> <span class="cm-operator">=</span> <span class="cm-variable">add</span>(<span class="cm-number">1</span>)
+<span class="cm-variable">add_one</span>(<span class="cm-number">3</span>)  <span class="cm-comment"># 4</span>
+
+<span class="cm-variable">add_three</span> <span class="cm-operator">=</span> <span class="cm-variable">add</span>(<span class="cm-number">3</span>)
+<span class="cm-variable">add_three</span>(<span class="cm-number">3</span>) <span class="cm-comment"># 6</span>
+</code></pre>
+<pre style="display: none;"><code class="language-haskell"><span class="cm-variable">addOne</span> <span class="cm-keyword">=</span> <span class="cm-variable">add</span> <span class="cm-number">1</span>
+<span class="cm-variable">addOne</span> <span class="cm-number">3</span> `<span class="cm-variable">shouldBe</span>` <span class="cm-number">4</span>
+</code></pre>
+<pre style="display: none;"><code class="language-fsharp"><span class="cm-variable">addOne</span> <span class="cm-operator">=</span> <span class="cm-variable">add</span> <span class="cm-number">1</span>
+<span class="cm-variable">addOne</span> <span class="cm-number">3</span> # <span class="cm-number">4</span>
+</code></pre>
+<pre style="display: none;"><code class="language-swift"><span class="cm-variable">addOne</span> <span class="cm-operator">=</span> <span class="cm-variable">add</span><span class="cm-punctuation">(</span><span class="cm-number">1</span><span class="cm-punctuation">)</span>
+<span class="cm-variable">addOne</span><span class="cm-punctuation">(</span><span class="cm-number">3</span><span class="cm-punctuation">)</span> <span class="cm-comment">// 4</span>
+</code></pre>
+<pre style="display: none;"><code class="language-csharp"><span class="cm-type">Func</span><span class="cm-operator">&lt;</span><span class="cm-type">double</span>, <span class="cm-type">double</span><span class="cm-operator">&gt;</span> <span class="cm-variable">AddOne</span> <span class="cm-operator">=</span> <span class="cm-variable">Kata</span>.<span class="cm-variable">Add</span>(<span class="cm-number">1</span>);
+<span class="cm-variable">AddOne</span>(<span class="cm-number">3</span>) <span class="cm-operator">=&gt;</span> <span class="cm-number">4</span>
+</code></pre>
+<pre style="display: none;"><code class="language-java">...<span class="cm-variable">returnType</span> <span class="cm-variable">addOne</span> <span class="cm-operator">=</span> <span class="cm-variable">Kata</span>.<span class="cm-variable">add</span>(<span class="cm-number">1</span>);
+<span class="cm-variable">addOne</span>.<span class="cm-variable">method</span>(<span class="cm-number">3</span>) <span class="cm-operator">=&gt;</span> <span class="cm-number">4</span>
+</code></pre>
+<pre style="display: none;"><code class="language-go"><span class="cm-keyword">var</span> <span class="cm-variable">addOne</span> <span class="cm-operator">=</span> <span class="cm-variable">Add</span>(<span class="cm-number">1</span>)
+<span class="cm-variable">addOne</span>(<span class="cm-number">3</span>) <span class="cm-comment">// 4</span>
+</code></pre>
+<pre style="display: none;"><code class="language-elixir"><span class="cm-variable">add_one</span> <span class="cm-operator">=</span> <span class="cm-tag">Kata</span><span class="cm-operator">.</span><span class="cm-property">add</span>(<span class="cm-number">1</span>)
+<span class="cm-variable">add_one</span><span class="cm-operator">.</span>(<span class="cm-number">3</span>) <span class="cm-comment"># 4</span>
+</code></pre>
+                        </div>
+                    </div>
+                </div>
+            </main>
+        </div>
+    </div>
+</body>
+</html>

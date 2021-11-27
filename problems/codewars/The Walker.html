@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>The Walker</title>
+    <link rel="stylesheet" media="screen" href="css/style.css">
+</head>
+<body>
+    <div id="app">
+        <div class="w-full" id="shell">
+            <main id="shell_content">
+                <div class="w-full mt-2">
+                    <h2>The Walker</h2>
+                    <h2>Points: 6 kyu</h2>
+                    <a href="https://www.codewars.com/kata/5b40b666dfb4291ad9000049"><h2>Kata ID: 5b40b666dfb4291ad9000049</h2></a>
+                    <div class="w-full panel bg-ui-section">
+                        <div class="markdown prose max-w-5xl mx-auto" id="description">
+                            <p><img alt="alternative text" src="images/5YNemou.png?1"></p>
+<p>The walker</p>
+<p>The walker starts from point O, walks along OA, AB and BC. When he is in C (C will be in the upper half-plane), what is the distance <code>CO</code>? What is the angle <code>tOC</code> in positive degrees, minutes, seconds?</p>
+<p>Angle <code>tOA</code> is <code>alpha</code> (here 45 degrees), angle <code>hAB</code> is <code>beta</code> (here 30 degrees), angle <code>uBC</code> is <code>gamma</code>(here 60 degrees).</p>
+<h4 id="task">Task</h4>
+<p><code>function solve(a, b, c, alpha, beta, gamma)</code> with parameters</p>
+<ul>
+<li>a, b, c: positive integers in units of distance (stand for OA, AB, BC)</li>
+<li>alpha, beta, gamma: positive integers in degrees (positive angles are anticlockwise)</li>
+</ul>
+<p>returns an array:</p>
+<ul>
+<li>first element: distance CO (rounded to the nearest integer)</li>
+<li>then angle tOC with the third following elements:</li>
+<li>second element of the array: number of degrees in angle tOC (truncated positive integer) </li>
+<li>third element of the array: number of minutes in angle tOC (truncated positive integer)</li>
+<li>fourth element of the array: number of seconds in angle tOC (truncated positive integer)</li>
+</ul>
+<h4 id="example">Example:</h4>
+<pre><code>print(solve(12, 20, 18, 45, 30, 60)) -&gt; [15, 135, 49, 18]
+- CO is 14.661... rounded to 15
+- angle tOC is 135.821...
+so
+- degrees = 135
+- minutes = 49.308...
+- seconds = 18.518...
+
+hence [15, 135, 49, 18]
+</code></pre>
+<h4 id="note">Note</h4>
+<p>If you need the constant <code>pi</code> you can use <code>pi = 3.14159265358979323846</code></p>
+                        </div>
+                    </div>
+                </div>
+            </main>
+        </div>
+    </div>
+</body>
+</html>

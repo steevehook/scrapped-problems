@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>String repeat</title>
+    <link rel="stylesheet" media="screen" href="css/style.css">
+</head>
+<body>
+    <div id="app">
+        <div class="w-full" id="shell">
+            <main id="shell_content">
+                <div class="w-full mt-2">
+                    <h2>String repeat</h2>
+                    <h2>Points: 8 kyu</h2>
+                    <a href="https://www.codewars.com/kata/57a0e5c372292dd76d000d7e"><h2>Kata ID: 57a0e5c372292dd76d000d7e</h2></a>
+                    <div class="w-full panel bg-ui-section">
+                        <div class="markdown prose max-w-5xl mx-auto" id="description">
+                            <p>Write a function called <code>repeatStr</code> which repeats the given string <code>string</code> exactly <code>n</code> times.</p>
+<pre><code class="language-c"><span class="cm-variable">repeatStr</span>(<span class="cm-number">6</span>, <span class="cm-string">"I"</span>) <span class="cm-comment">// "IIIIII"</span>
+<span class="cm-variable">repeatStr</span>(<span class="cm-number">5</span>, <span class="cm-string">"Hello"</span>) <span class="cm-comment">// "HelloHelloHelloHelloHello"</span>
+</code></pre>
+<pre style="display: none;"><code class="language-cpp"><span class="cm-variable">repeat_str</span>(<span class="cm-number">6</span>, <span class="cm-string">"I"</span>) <span class="cm-comment">// "IIIIII"</span>
+<span class="cm-variable">repeat_str</span>(<span class="cm-number">5</span>, <span class="cm-string">"Hello"</span>) <span class="cm-comment">// "HelloHelloHelloHelloHello"</span>
+</code></pre>
+<pre style="display: none;"><code class="language-dart"><span class="cm-variable">repeatStr</span>(<span class="cm-number">6</span>, <span class="cm-string">"I"</span>) <span class="cm-comment">// "IIIIII"</span>
+<span class="cm-variable">repeatStr</span>(<span class="cm-number">5</span>, <span class="cm-string">"Hello"</span>) <span class="cm-comment">// "HelloHelloHelloHelloHello"</span>
+</code></pre>
+<pre style="display: none;"><code class="language-reason"><span class="cm-variable">repeatStr</span>(<span class="cm-number">6</span>, <span class="cm-string">"I"</span>) <span class="cm-comment">/* "IIIIII" */</span>
+<span class="cm-variable">repeatStr</span>(<span class="cm-number">5</span>, <span class="cm-string">"Hello"</span>) <span class="cm-comment">//*"HelloHelloHelloHelloHello" */</span>
+</code></pre>
+<pre style="display: none;"><code class="language-factor"><span class="cm-number">6</span> <span class="cm-string">"</span><span class="cm-string">I"</span> <span class="cm-variable">repeat-str</span> <span class="cm-comment">! "IIIIII"</span>
+<span class="cm-number">5</span> <span class="cm-string">"</span><span class="cm-string">Hello"</span> <span class="cm-variable">repeat-str</span> <span class="cm-comment">! "HelloHelloHelloHelloHello"</span>
+</code></pre>
+<pre style="display: none;"><code class="language-lua"><span class="cm-variable">repeatStr</span>(<span class="cm-number">6</span>, <span class="cm-string">"I"</span>) <span class="cm-comment">-- "IIIIII"</span>
+<span class="cm-variable">repeatStr</span>(<span class="cm-number">5</span>, <span class="cm-string">"Hello"</span>) <span class="cm-comment">-- "HelloHelloHelloHelloHello"</span>
+</code></pre>
+<pre style="display: none;"><code class="language-elixir"><span class="cm-variable">repeat_str</span>(<span class="cm-number">6</span>, <span class="cm-string">"I"</span>) <span class="cm-comment"># "IIIIII"</span>
+<span class="cm-variable">repeat_str</span>(<span class="cm-number">5</span>, <span class="cm-string">"Hello"</span>) <span class="cm-comment"># "HelloHelloHelloHelloHello"</span>
+</code></pre>
+<pre style="display: none;"><code class="language-scala"><span class="cm-variable">StringRepeat</span>.<span class="cm-variable">repeatStr</span>(<span class="cm-number">6</span>, <span class="cm-string">"I"</span>) <span class="cm-operator">#</span> <span class="cm-string">"IIIIII"</span>
+<span class="cm-variable">StringRepeat</span>.<span class="cm-variable">repeatStr</span>(<span class="cm-number">5</span>, <span class="cm-string">"Hello"</span>) <span class="cm-operator">#</span> <span class="cm-string">"HelloHelloHelloHelloHello"</span>
+</code></pre>
+<pre style="display: none;"><code class="language-nim"><span class="cm-variable">repeatStr</span>(<span class="cm-number">6</span>, <span class="cm-string">"I"</span>) <span class="cm-comment"># "IIIIII"</span>
+<span class="cm-variable">repeatStr</span>(<span class="cm-number">5</span>, <span class="cm-string">"Hello"</span>) <span class="cm-comment"># "HelloHelloHelloHelloHello"</span>
+</code></pre>
+<pre style="display: none;"><code class="language-julia"><span class="cm-variable">repeatstr</span>(<span class="cm-number">6</span>, <span class="cm-string">"I</span><span class="cm-string">"</span>) <span class="cm-comment"># "IIIIII"</span>
+<span class="cm-variable">repeatstr</span>(<span class="cm-number">5</span>, <span class="cm-string">"Hello</span><span class="cm-string">"</span>) <span class="cm-comment"># "HelloHelloHelloHelloHello"</span>
+</code></pre>
+<pre style="display: none;"><code class="language-kotlin"><span class="cm-variable">repeatstr</span>(<span class="cm-number">6</span>, <span class="cm-string">"I"</span>) <span class="cm-comment">// "IIIIII"</span>
+<span class="cm-variable">repeatstr</span>(<span class="cm-number">5</span>, <span class="cm-string">"Hello"</span>) <span class="cm-comment">// "HelloHelloHelloHelloHello"</span>
+</code></pre>
+<pre style="display: none;"><code class="language-dart"><span class="cm-variable">repeatString</span>(<span class="cm-number">6</span>, <span class="cm-string">"I"</span>) <span class="cm-comment">// "IIIIII"</span>
+<span class="cm-variable">repeatString</span>(<span class="cm-number">5</span>, <span class="cm-string">"Hello"</span>) <span class="cm-comment">// "HelloHelloHelloHelloHello"</span>
+</code></pre>
+<pre style="display: none;"><code class="language-racket"><span class="cm-bracket">(</span><span class="cm-variable">repeat-string</span> <span class="cm-number">6</span> <span class="cm-string">"</span><span class="cm-string">I"</span><span class="cm-bracket">)</span> <span class="cm-comment">; "IIIIII"</span>
+<span class="cm-bracket">(</span><span class="cm-variable">repeat-string</span> <span class="cm-number">5</span> <span class="cm-string">"</span><span class="cm-string">Hello"</span><span class="cm-bracket">)</span> <span class="cm-comment">; "HelloHelloHelloHelloHello"</span>
+</code></pre>
+<pre style="display: none;"><code class="language-perl"><span class="cm-meta">Kata</span><span class="cm-operator">::</span><span class="cm-meta">repeat_str</span>(<span class="cm-number">6</span>, <span class="cm-string">"I"</span>) <span class="cm-comment"># "IIIIII"</span>
+<span class="cm-meta">Kata</span><span class="cm-operator">::</span><span class="cm-meta">repeat_str</span>(<span class="cm-number">5</span>, <span class="cm-string">"Hello"</span>) <span class="cm-comment"># "HelloHelloHelloHelloHello"</span>
+</code></pre>
+                        </div>
+                    </div>
+                </div>
+            </main>
+        </div>
+    </div>
+</body>
+</html>

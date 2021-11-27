@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>All Star Code Challenge #1</title>
+    <link rel="stylesheet" media="screen" href="css/style.css">
+</head>
+<body>
+    <div id="app">
+        <div class="w-full" id="shell">
+            <main id="shell_content">
+                <div class="w-full mt-2">
+                    <h2>All Star Code Challenge #1</h2>
+                    <h2>Points: 7 kyu</h2>
+                    <a href="https://www.codewars.com/kata/5863f97fb3a675d9a700003f"><h2>Kata ID: 5863f97fb3a675d9a700003f</h2></a>
+                    <div class="w-full panel bg-ui-section">
+                        <div class="markdown prose max-w-5xl mx-auto" id="description">
+                            <p><strong>This Kata is intended as a small challenge for my students</strong></p>
+<p>All Star Code Challenge #1</p>
+<p>Write a function, called <code>sumPPG</code>, that takes two NBA player objects/struct/Hash/Dict/Class and sums their PPG</p>
+<h3 id="examples">Examples:</h3>
+<pre style="display: none;"><code class="language-haskell"><span class="cm-comment">-- Player is defined as:</span>
+<span class="cm-keyword">data</span> <span class="cm-variable-2">Player</span> <span class="cm-keyword">=</span> <span class="cm-variable-2">Player</span> { <span class="cm-variable">team</span> <span class="cm-keyword">::</span> <span class="cm-builtin">String</span>, <span class="cm-variable">ppg</span> <span class="cm-keyword">::</span> <span class="cm-builtin">Double</span> } <span class="cm-keyword">deriving</span> (<span class="cm-builtin">Show</span>)
+
+<span class="cm-variable">iverson</span> <span class="cm-keyword">=</span> <span class="cm-variable-2">Player</span> { <span class="cm-variable">team</span> <span class="cm-keyword">=</span> <span class="cm-string">"76ers"</span>, <span class="cm-variable">ppg</span> <span class="cm-keyword">=</span> <span class="cm-number">11.2</span> }
+<span class="cm-variable">jordan</span>  <span class="cm-keyword">=</span> <span class="cm-variable-2">Player</span> { <span class="cm-variable">team</span> <span class="cm-keyword">=</span> <span class="cm-string">"bulls"</span>, <span class="cm-variable">ppg</span> <span class="cm-keyword">=</span> <span class="cm-number">20.2</span> }
+
+<span class="cm-variable">sumPpg</span> <span class="cm-variable">iverson</span> <span class="cm-variable">jordan</span> <span class="cm-builtin">==</span> <span class="cm-number">31.4</span>
+</code></pre>
+<pre><code class="language-javascript"><span class="cm-keyword">function</span> <span class="cm-def">NBAplayer</span>(<span class="cm-def">name</span>, <span class="cm-def">team</span>, <span class="cm-def">ppg</span>){
+  <span class="cm-keyword">this</span>.<span class="cm-property">name</span><span class="cm-operator">=</span><span class="cm-variable-2">name</span>;
+  <span class="cm-keyword">this</span>.<span class="cm-property">team</span><span class="cm-operator">=</span><span class="cm-variable-2">team</span>;
+  <span class="cm-keyword">this</span>.<span class="cm-property">ppg</span><span class="cm-operator">=</span><span class="cm-variable-2">ppg</span>;
+}
+
+<span class="cm-keyword">var</span> <span class="cm-def">iverson</span> <span class="cm-operator">=</span> <span class="cm-keyword">new</span> <span class="cm-variable">NBAplayer</span>(<span class="cm-string">"Iverson"</span>, <span class="cm-string">"76ers"</span>, <span class="cm-number">11.2</span>);
+<span class="cm-keyword">var</span> <span class="cm-def">jordan</span> <span class="cm-operator">=</span> <span class="cm-keyword">new</span> <span class="cm-variable">NBAplaer</span>(<span class="cm-string">"Jordan"</span>, <span class="cm-string">"bulls"</span>, <span class="cm-number">20.2</span>);
+<span class="cm-variable">sumPPG</span>(<span class="cm-variable">iverson</span>, <span class="cm-variable">jordan</span>); <span class="cm-comment">// =&gt; 31.4</span>
+</code></pre>
+<pre style="display: none;"><code class="language-python"><span class="cm-variable">iverson</span> <span class="cm-operator">=</span> { <span class="cm-string">'team'</span>: <span class="cm-string">'76ers'</span>, <span class="cm-string">'ppg'</span>: <span class="cm-number">11.2</span> }
+<span class="cm-variable">jordan</span> <span class="cm-operator">=</span>  { <span class="cm-string">'team'</span>: <span class="cm-string">'bulls'</span>, <span class="cm-string">'ppg'</span>: <span class="cm-number">20.2</span> }
+<span class="cm-variable">sum_ppg</span>(<span class="cm-variable">iverson</span>, <span class="cm-variable">jordan</span>) <span class="cm-comment"># =&gt; 31.4</span>
+</code></pre>
+<pre style="display: none;"><code class="language-ruby"><span class="cm-variable">iverson</span> <span class="cm-operator">=</span> { <span class="cm-string">"team"</span><span class="cm-operator">=&gt;</span><span class="cm-string">"76ers"</span>, <span class="cm-string">"ppg"</span><span class="cm-operator">=&gt;</span> <span class="cm-number">11.2</span> }
+<span class="cm-variable">jordan</span> <span class="cm-operator">=</span>  { <span class="cm-string">"team"</span><span class="cm-operator">=&gt;</span><span class="cm-string">"bulls"</span>, <span class="cm-string">"ppg"</span><span class="cm-operator">=&gt;</span> <span class="cm-number">20.2</span> }
+<span class="cm-variable">sum_ppg</span>(<span class="cm-variable">iverson</span>, <span class="cm-variable">jordan</span>) <span class="cm-comment"># =&gt; 31.4</span>
+</code></pre>
+<pre style="display: none;"><code class="language-crystal"><span class="cm-variable">iverson</span> <span class="cm-operator">=</span> { <span class="cm-string">"team"</span><span class="cm-operator">=</span><span class="cm-operator">&gt;</span><span class="cm-string">"76ers"</span>, <span class="cm-string">"ppg"</span><span class="cm-operator">=</span><span class="cm-operator">&gt;</span> <span class="cm-number">11.2</span> }
+<span class="cm-variable">jordan</span> <span class="cm-operator">=</span>  { <span class="cm-string">"team"</span><span class="cm-operator">=</span><span class="cm-operator">&gt;</span><span class="cm-string">"bulls"</span>, <span class="cm-string">"ppg"</span><span class="cm-operator">=</span><span class="cm-operator">&gt;</span> <span class="cm-number">20.2</span> }
+<span class="cm-variable">sum_ppg</span>(<span class="cm-variable">iverson</span>, <span class="cm-variable">jordan</span>) <span class="cm-comment"># =&gt; 31.4</span>
+</code></pre>
+<pre style="display: none;"><code class="language-csharp"> <span class="cm-variable">Player</span> <span class="cm-variable">iverson</span> <span class="cm-operator">=</span> <span class="cm-keyword">new</span> <span class="cm-variable">Player</span>(<span class="cm-variable">team</span>: <span class="cm-string">"76ers"</span>, <span class="cm-variable">ppg</span>: <span class="cm-number">11.2</span>);
+ <span class="cm-variable">Player</span> <span class="cm-variable">jordan</span>  <span class="cm-operator">=</span> <span class="cm-keyword">new</span> <span class="cm-variable">Player</span>(<span class="cm-variable">team</span>: <span class="cm-string">"bulls"</span>, <span class="cm-variable">ppg</span>: <span class="cm-number">20.2</span>);
+ <span class="cm-variable">AllStars</span>.<span class="cm-variable">SumPPG</span>(<span class="cm-variable">iverson</span>, <span class="cm-variable">jordan</span>) <span class="cm-comment">// =&gt; 31.4</span>
+</code></pre>
+<pre style="display: none;"><code class="language-go"><span class="cm-variable">iverson</span> :<span class="cm-operator">=</span> <span class="cm-variable">NBAPlayer</span>{ <span class="cm-variable">Team</span>: <span class="cm-string">"76ers"</span>, <span class="cm-variable">Ppg</span>: <span class="cm-number">11.2</span> }
+<span class="cm-variable">jordan</span>  :<span class="cm-operator">=</span> <span class="cm-variable">NBAPlayer</span>{ <span class="cm-variable">Team</span>: <span class="cm-string">"bulls"</span>, <span class="cm-variable">Ppg</span>: <span class="cm-number">20.2</span> }
+<span class="cm-variable">SumPpg</span>(<span class="cm-variable">iverson</span>,<span class="cm-variable">jordan</span>) <span class="cm-comment">// =&gt; 31.4</span>
+</code></pre>
+<pre style="display: none;"><code class="language-php"><span class="cm-variable-2">$iverson</span> <span class="cm-operator">=</span> [ <span class="cm-string">'team'</span> <span class="cm-operator">=&gt;</span> <span class="cm-string">'76ers'</span>, <span class="cm-string">'ppg'</span> <span class="cm-operator">=&gt;</span> <span class="cm-number">11.2</span> ];
+<span class="cm-variable-2">$jordan</span>  <span class="cm-operator">=</span> [ <span class="cm-string">'team'</span> <span class="cm-operator">=&gt;</span> <span class="cm-string">'bulls'</span>, <span class="cm-string">'ppg'</span> <span class="cm-operator">=&gt;</span> <span class="cm-number">20.2</span> ];
+<span class="cm-variable">sumPPG</span>(<span class="cm-variable-2">$iverson</span>, <span class="cm-variable-2">$jordan</span>); <span class="cm-comment"># =&gt; 31.4</span>
+</code></pre>
+                        </div>
+                    </div>
+                </div>
+            </main>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Cartesian neighbors distance</title>
+    <link rel="stylesheet" media="screen" href="css/style.css">
+</head>
+<body>
+    <div id="app">
+        <div class="w-full" id="shell">
+            <main id="shell_content">
+                <div class="w-full mt-2">
+                    <h2>Cartesian neighbors distance</h2>
+                    <h2>Points: 6 kyu</h2>
+                    <a href="https://www.codewars.com/kata/59cd39a7a25c8c117d00020c"><h2>Kata ID: 59cd39a7a25c8c117d00020c</h2></a>
+                    <div class="w-full panel bg-ui-section">
+                        <div class="markdown prose max-w-5xl mx-auto" id="description">
+                            <blockquote>
+<h2 id="previous-cartesian-neighbors-kata">Previous <a href="https://www.codewars.com/kata/cartesian-neighbors" target="_blank">Cartesian neighbors</a> kata</h2>
+</blockquote>
+<p>In previous kata we have been searching for all the neighboring points in a Cartesian coordinate system.  As we know each point in a coordinate system has eight neighboring points when we search it by range equal to 1, but now we will change range by third argument of our function (range is always greater than zero). For example if range <code>= 2</code>, count of neighboring points <code>= 24</code>. In this kata grid step is the same (<code>= 1</code>).</p>
+<p>It is necessary to write a function that returns array of <code>unique</code> distances between given point and all neighboring points. You can round up the distance to <code>10</code> decimal places (as shown in the example). Distances inside list don't have to been sorted (any order is valid).</p>
+<p>For Example:</p>
+<pre><code class="language-java"><span class="cm-variable">cartesianNeighborsDistance</span>(<span class="cm-number">3</span>, <span class="cm-number">2</span>, <span class="cm-number">1</span>) <span class="cm-operator">-&gt;</span> {<span class="cm-number">1.4142135624</span>, <span class="cm-number">1.0</span>}
+<span class="cm-variable">cartesianNeighborsDistance</span>(<span class="cm-number">0</span>, <span class="cm-number">0</span>, <span class="cm-number">2</span>) <span class="cm-operator">-&gt;</span> {<span class="cm-number">1.0</span>, <span class="cm-number">1.4142135624</span>, <span class="cm-number">2.0</span>, <span class="cm-number">2.2360679775</span>, <span class="cm-number">2.8284271247</span>}
+</code></pre>
+<pre style="display: none;"><code class="language-cpp"><span class="cm-variable">cartesianNeighborsDistance</span>(<span class="cm-number">3</span>, <span class="cm-number">2</span>, <span class="cm-number">1</span>) <span class="cm-operator">-&gt;</span> {<span class="cm-number">1.4142135624</span>, <span class="cm-number">1.0</span>}
+<span class="cm-variable">cartesianNeighborsDistance</span>(<span class="cm-number">0</span>, <span class="cm-number">0</span>, <span class="cm-number">2</span>) <span class="cm-operator">-&gt;</span> {<span class="cm-number">1.0</span>, <span class="cm-number">1.4142135624</span>, <span class="cm-number">2.0</span>, <span class="cm-number">2.2360679775</span>, <span class="cm-number">2.8284271247</span>}
+</code></pre>
+<pre style="display: none;"><code class="language-c"><span class="cm-comment">// please remember the length of the array in this variable</span>
+<span class="cm-type">int</span> <span class="cm-variable">array_size</span> <span class="cm-operator">=</span> <span class="cm-number">0</span>;
+<span class="cm-variable">cartesianNeighborsDistance</span>(<span class="cm-number">3</span>, <span class="cm-number">2</span>, <span class="cm-number">1</span>, <span class="cm-operator">&amp;</span><span class="cm-variable">array_size</span>) <span class="cm-operator">-&gt;</span> {<span class="cm-number">1.4142135624</span>, <span class="cm-number">1.0</span>}
+<span class="cm-variable">cartesianNeighborsDistance</span>(<span class="cm-number">0</span>, <span class="cm-number">0</span>, <span class="cm-number">2</span>, <span class="cm-operator">&amp;</span><span class="cm-variable">array_size</span>) <span class="cm-operator">-&gt;</span> {<span class="cm-number">1.0</span>, <span class="cm-number">1.4142135624</span>, <span class="cm-number">2.0</span>, <span class="cm-number">2.2360679775</span>, <span class="cm-number">2.8284271247</span>}
+</code></pre>
+<pre style="display: none;"><code class="language-csharp"><span class="cm-variable">cartesianNeighborsDistance</span>(<span class="cm-number">3</span>, <span class="cm-number">2</span>, <span class="cm-number">1</span>) <span class="cm-operator">-&gt;</span> {<span class="cm-number">1.4142135624</span>, <span class="cm-number">1.0</span>}
+<span class="cm-variable">cartesianNeighborsDistance</span>(<span class="cm-number">0</span>, <span class="cm-number">0</span>, <span class="cm-number">2</span>) <span class="cm-operator">-&gt;</span> {<span class="cm-number">1.0</span>, <span class="cm-number">1.4142135624</span>, <span class="cm-number">2.0</span>, <span class="cm-number">2.2360679775</span>, <span class="cm-number">2.8284271247</span>}
+</code></pre>
+<pre style="display: none;"><code class="language-go"><span class="cm-variable">CartesianNeighborsDistance</span>(<span class="cm-number">3</span>, <span class="cm-number">2</span>, <span class="cm-number">1</span>) <span class="cm-operator">-&gt;</span> {<span class="cm-number">1.4142135624</span>, <span class="cm-number">1.0</span>}
+<span class="cm-variable">CartesianNeighborsDistance</span>(<span class="cm-number">0</span>, <span class="cm-number">0</span>, <span class="cm-number">2</span>) <span class="cm-operator">-&gt;</span> {<span class="cm-number">1.0</span>, <span class="cm-number">1.4142135624</span>, <span class="cm-number">2.0</span>, <span class="cm-number">2.2360679775</span>, <span class="cm-number">2.8284271247</span>}
+</code></pre>
+<pre style="display: none;"><code class="language-javascript"><span class="cm-variable">cartesianNeighborsDistance</span>(<span class="cm-number">3</span>, <span class="cm-number">2</span>, <span class="cm-number">1</span>) <span class="cm-operator">-</span><span class="cm-operator">&gt;</span> [<span class="cm-number">1.4142135624</span>, <span class="cm-number">1.0</span>]
+<span class="cm-variable">cartesianNeighborsDistance</span>(<span class="cm-number">0</span>, <span class="cm-number">0</span>, <span class="cm-number">2</span>) <span class="cm-operator">-</span><span class="cm-operator">&gt;</span> [<span class="cm-number">1.0</span>, <span class="cm-number">1.4142135624</span>, <span class="cm-number">2.0</span>, <span class="cm-number">2.2360679775</span>, <span class="cm-number">2.8284271247</span>]
+</code></pre>
+<pre style="display: none;"><code class="language-typescript"><span class="cm-variable">cartesianNeighborsDistance</span>(<span class="cm-number">3</span>, <span class="cm-number">2</span>, <span class="cm-number">1</span>) <span class="cm-operator">-</span><span class="cm-operator">&gt;</span> [<span class="cm-number">1.4142135624</span>, <span class="cm-number">1.0</span>]
+<span class="cm-variable">cartesianNeighborsDistance</span>(<span class="cm-number">0</span>, <span class="cm-number">0</span>, <span class="cm-number">2</span>) <span class="cm-operator">-</span><span class="cm-operator">&gt;</span> [<span class="cm-number">1.0</span>, <span class="cm-number">1.4142135624</span>, <span class="cm-number">2.0</span>, <span class="cm-number">2.2360679775</span>, <span class="cm-number">2.8284271247</span>]
+</code></pre>
+<pre style="display: none;"><code class="language-python"><span class="cm-variable">cartesian_neighbors_distance</span>(<span class="cm-number">3</span>, <span class="cm-number">2</span>, <span class="cm-number">1</span>) <span class="cm-operator">-</span><span class="cm-operator">&gt;</span> [<span class="cm-number">1.4142135624</span>, <span class="cm-number">1.0</span>]
+<span class="cm-variable">cartesian_neighbors_distance</span>(<span class="cm-number">0</span>, <span class="cm-number">0</span>, <span class="cm-number">2</span>) <span class="cm-operator">-</span><span class="cm-operator">&gt;</span> [<span class="cm-number">1.0</span>, <span class="cm-number">1.4142135624</span>, <span class="cm-number">2.0</span>, <span class="cm-number">2.2360679775</span>, <span class="cm-number">2.8284271247</span>]
+</code></pre>
+                        </div>
+                    </div>
+                </div>
+            </main>
+        </div>
+    </div>
+</body>
+</html>

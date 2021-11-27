@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Parabolic Arc Length</title>
+    <link rel="stylesheet" media="screen" href="css/style.css">
+</head>
+<body>
+    <div id="app">
+        <div class="w-full" id="shell">
+            <main id="shell_content">
+                <div class="w-full mt-2">
+                    <h2>Parabolic Arc Length</h2>
+                    <h2>Points: 6 kyu</h2>
+                    <a href="https://www.codewars.com/kata/562e274ceca15ca6e70000d3"><h2>Kata ID: 562e274ceca15ca6e70000d3</h2></a>
+                    <div class="w-full panel bg-ui-section">
+                        <div class="markdown prose max-w-5xl mx-auto" id="description">
+                            <p>We want to approximate the length of a curve representing a function <code>y = f(x)</code> with  <code> a &lt;= x &lt;= b</code>.
+First, we split the interval <code>[a, b]</code> into n sub-intervals with widths 
+<code>h<sub>1</sub>, h<sub>2</sub>, ... , h<sub>n</sub></code> 
+by defining points 
+<code>x<sub>1</sub>, x<sub>2</sub> , ... , x<sub>n-1</sub></code> between a and b. 
+This defines points 
+<code>P<sub>0</sub>, P<sub>1</sub>, P<sub>2</sub>, ... , P<sub>n</sub></code> on the curve 
+whose x-coordinates are <code>a, x<sub>1</sub>, x<sub>2</sub> , ... , x<sub>n-1</sub>, b</code> 
+and y-coordinates <code>f(a), f(x<sub>1</sub>), ..., f(x<sub>n-1</sub>), f(b) </code>. 
+By connecting these points, we obtain a polygonal path approximating the curve.</p>
+<p>Our task is to approximate the length of a parabolic arc representing the curve <code>y = x * x</code> with <code>x</code> in the interval <code>[0, 1]</code>. 
+We will take a common step <code>h</code> between the points <code>x<sub>i</sub>: h<sub>1</sub>, h<sub>2</sub>, ... , h<sub>n</sub> = h = 1/n</code>
+and we will consider the points 
+<code>P<sub>0</sub>, P<sub>1</sub>, P<sub>2</sub>, ... , P<sub>n</sub></code> on the curve. 
+The coordinates of each <code>P<sub>i</sub></code> are <code>(x<sub>i</sub>, y<sub>i</sub> = x<sub>i</sub> * x<sub>i</sub>)</code>.</p>
+<p>The function <code>len_curve</code> (or similar in other languages) takes <code>n</code> as parameter (number of sub-intervals) and returns the length of the curve.</p>
+<p><img alt="alternative text" src="images/kyjJcE4.png"></p>
+<h4 id="note">Note:</h4>
+<p>When you "Attempt" tests are done with a tolerance of 1e-06 (except in PureScript where you must truncate your result to 9 decimal places).</p>
+                        </div>
+                    </div>
+                </div>
+            </main>
+        </div>
+    </div>
+</body>
+</html>

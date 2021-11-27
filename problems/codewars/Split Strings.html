@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Split Strings</title>
+    <link rel="stylesheet" media="screen" href="css/style.css">
+</head>
+<body>
+    <div id="app">
+        <div class="w-full" id="shell">
+            <main id="shell_content">
+                <div class="w-full mt-2">
+                    <h2>Split Strings</h2>
+                    <h2>Points: 6 kyu</h2>
+                    <a href="https://www.codewars.com/kata/515de9ae9dcfc28eb6000001"><h2>Kata ID: 515de9ae9dcfc28eb6000001</h2></a>
+                    <div class="w-full panel bg-ui-section">
+                        <div class="markdown prose max-w-5xl mx-auto" id="description">
+                            <p>Complete the solution so that it splits the string into pairs of two characters.  If the string contains an odd number of characters then it should replace the missing second character of the final pair with an underscore ('_').</p>
+<p>Examples:</p>
+<pre><code class="language-javascript"><span class="cm-variable">solution</span>(<span class="cm-string">'abc'</span>) <span class="cm-comment">// should return ['ab', 'c_']</span>
+<span class="cm-variable">solution</span>(<span class="cm-string">'abcdef'</span>) <span class="cm-comment">// should return ['ab', 'cd', 'ef']</span>
+</code></pre>
+<pre style="display: none;"><code class="language-php"><span class="cm-variable">solution</span>(<span class="cm-string">'abc'</span>) <span class="cm-comment">// should return ['ab', 'c_']</span>
+<span class="cm-variable">solution</span>(<span class="cm-string">'abcdef'</span>) <span class="cm-comment">// should return ['ab', 'cd', 'ef']</span>
+</code></pre>
+<pre style="display: none;"><code class="language-csharp"><span class="cm-variable">SplitString</span>.<span class="cm-variable">Solution</span>(<span class="cm-string">"abc"</span>); <span class="cm-comment">// should return ["ab", "c_"]</span>
+<span class="cm-variable">SplitString</span>.<span class="cm-variable">Solution</span>(<span class="cm-string">"abcdef"</span>); <span class="cm-comment">// should return ["ab", "cd", "ef"]</span>
+</code></pre>
+<pre style="display: none;"><code class="language-coffeescript"><span class="cm-variable">solution</span><span class="cm-punctuation">(</span><span class="cm-string">'abc'</span><span class="cm-punctuation">)</span> <span class="cm-comment"># should return ['ab', 'c_']</span>
+<span class="cm-variable">solution</span><span class="cm-punctuation">(</span><span class="cm-string">'abcdef'</span><span class="cm-punctuation">)</span> <span class="cm-comment"># should return ['ab', 'cd', 'ef']</span>
+</code></pre>
+<pre style="display: none;"><code class="language-ruby"><span class="cm-variable">solution</span>(<span class="cm-string">'abc'</span>) <span class="cm-comment"># should return ['ab', 'c_']</span>
+<span class="cm-variable">solution</span>(<span class="cm-string">'abcdef'</span>) <span class="cm-comment"># should return ['ab', 'cd', 'ef']</span>
+</code></pre>
+<pre style="display: none;"><code class="language-elixir"><span class="cm-variable">solution</span>(<span class="cm-string">"abc"</span>) <span class="cm-comment"># should return ["ab", "c_"]</span>
+<span class="cm-variable">solution</span>(<span class="cm-string">"abcdef"</span>) <span class="cm-comment"># should return ["ab", "cd", "ef"]</span>
+</code></pre>
+<pre style="display: none;"><code class="language-julia"><span class="cm-variable">solution</span>(<span class="cm-string">"abc</span><span class="cm-string">"</span>) <span class="cm-comment"># should return ["ab", "c_"]</span>
+<span class="cm-variable">solution</span>(<span class="cm-string">"abcdef</span><span class="cm-string">"</span>) <span class="cm-comment"># should return ["ab", "cd", "ef"]</span>
+</code></pre>
+<pre style="display: none;"><code class="language-python"><span class="cm-variable">solution</span>(<span class="cm-string">'abc'</span>) <span class="cm-comment"># should return ['ab', 'c_']</span>
+<span class="cm-variable">solution</span>(<span class="cm-string">'abcdef'</span>) <span class="cm-comment"># should return ['ab', 'cd', 'ef']</span>
+</code></pre>
+<pre style="display: none;"><code class="language-haskell"><span class="cm-variable">solution</span> <span class="cm-string">"abc"</span> `<span class="cm-variable">shouldBe</span>` [<span class="cm-string">"ab"</span>, <span class="cm-string">"c_"</span>]
+<span class="cm-variable">solution</span> <span class="cm-string">"abcdef"</span> `<span class="cm-variable">shouldBe</span>` [<span class="cm-string">"ab"</span>, <span class="cm-string">"cd"</span>, <span class="cm-string">"ef"</span>]
+</code></pre>
+<pre style="display: none;"><code class="language-go"><span class="cm-variable">Solution</span>(<span class="cm-string">"abc"</span>) <span class="cm-comment">//should return ["ab", "c_"]</span>
+<span class="cm-variable">Solution</span>(<span class="cm-string">"abcdef"</span>) <span class="cm-comment">//should return ["ab", "cd", "ef"]</span>
+</code></pre>
+<pre style="display: none;"><code class="language-scala"><span class="cm-variable">solution</span>(<span class="cm-atom">'abc</span><span class="cm-atom">'</span>)    <span class="cm-comment">// should return List("ab", "c_")</span>
+<span class="cm-variable">solution</span>(<span class="cm-atom">'abcdef</span><span class="cm-atom">'</span>) <span class="cm-comment">// should return List("ab", "cd", "ef")</span>
+</code></pre>
+<pre style="display: none;"><code class="language-clojure"><span class="cm-bracket">(</span><span class="cm-builtin">solution</span> <span class="cm-string">"abc"</span><span class="cm-bracket">)</span> <span class="cm-comment">; =&gt; ["ab" "c_"]</span>
+<span class="cm-bracket">(</span><span class="cm-builtin">solution</span> <span class="cm-string">"abcd"</span><span class="cm-bracket">)</span> <span class="cm-comment">; =&gt; ["ab" "cd"]</span>
+</code></pre>
+<pre style="display: none;"><code class="language-java"><span class="cm-variable">StringSplit</span>.<span class="cm-variable">solution</span>(<span class="cm-string">"abc"</span>) <span class="cm-comment">// should return {"ab", "c_"}</span>
+<span class="cm-variable">StringSplit</span>.<span class="cm-variable">solution</span>(<span class="cm-string">"abcdef"</span>) <span class="cm-comment">// should return {"ab", "cd", "ef"}</span>
+</code></pre>
+<pre style="display: none;"><code class="language-c"><span class="cm-variable">solution</span>(<span class="cm-string">"abc"</span>, <span class="cm-operator">&amp;</span><span class="cm-variable">count</span>) <span class="cm-comment">// should return {"ab", "c_"} with count == 2</span>
+<span class="cm-variable">solution</span>(<span class="cm-string">"abcdef"</span>, <span class="cm-operator">&amp;</span><span class="cm-variable">count</span>) <span class="cm-comment">// should return {"ab", "cd", "ef"} with count == 3</span>
+
+<span class="cm-variable">The</span> <span class="cm-variable">returned</span> <span class="cm-variable">array</span> <span class="cm-variable">and</span> <span class="cm-variable">strings</span> <span class="cm-variable">will</span> <span class="cm-variable">be</span> <span class="cm-variable">free</span><span class="cm-string">'d.</span>
+</code></pre>
+<pre style="display: none;"><code class="language-cpp"><span class="cm-variable">solution</span>(<span class="cm-string">"abc"</span>) <span class="cm-comment">// should return {"ab", "c_"}</span>
+<span class="cm-variable">solution</span>(<span class="cm-string">"abcdef"</span>) <span class="cm-comment">// should return {"ab", "cd", "ef"}</span>
+</code></pre>
+<pre style="display: none;"><code class="language-prolog"><span class="cm-atom">solution</span><span class="cm-paren">(</span><span class="cm-string">"</span><span class="cm-string">a</span><span class="cm-string">b</span><span class="cm-string">c</span><span class="cm-string">"</span><span class="cm-paren">,</span><span class="cm-comment">  </span>[<span class="cm-string">"</span><span class="cm-string">a</span><span class="cm-string">b</span><span class="cm-string">"</span><span class="cm-paren">,</span><span class="cm-comment"> </span><span class="cm-string">"</span><span class="cm-string">c</span><span class="cm-string">_</span><span class="cm-string">"</span>]<span class="cm-paren">)</span><span class="cm-graphic">.</span>
+<span class="cm-atom">solution</span><span class="cm-paren">(</span><span class="cm-string">"</span><span class="cm-string">a</span><span class="cm-string">b</span><span class="cm-string">c</span><span class="cm-string">d</span><span class="cm-string">"</span><span class="cm-paren">,</span><span class="cm-comment"> </span>[<span class="cm-string">"</span><span class="cm-string">a</span><span class="cm-string">b</span><span class="cm-string">"</span><span class="cm-paren">,</span><span class="cm-comment"> </span><span class="cm-string">"</span><span class="cm-string">c</span><span class="cm-string">d</span><span class="cm-string">"</span>]<span class="cm-paren">)</span><span class="cm-graphic">.</span>
+</code></pre>
+<pre style="display: none;"><code class="language-groovy"><span class="cm-variable">solution</span>(<span class="cm-string">"abc"</span>) <span class="cm-operator">==</span> [<span class="cm-string">"ab"</span>, <span class="cm-string">"c_"</span>]
+<span class="cm-variable">solution</span>(<span class="cm-string">"abcdef"</span>) <span class="cm-operator">==</span> [<span class="cm-string">"ab"</span>, <span class="cm-string">"cd"</span>, <span class="cm-string">"ef"</span>]
+</code></pre>
+<pre style="display: none;"><code class="language-rust"><span class="cm-variable">solution</span>(<span class="cm-string">"</span><span class="cm-string">abcdef</span><span class="cm-string">"</span>) <span class="cm-comment">// should return ["ab", "cd", "ef"]</span>
+<span class="cm-variable">solution</span>(<span class="cm-string">"</span><span class="cm-string">abcdefg</span><span class="cm-string">"</span>) <span class="cm-comment">// should return ["ab", "cd", "ef", "g_"]</span>
+</code></pre>
+                        </div>
+                    </div>
+                </div>
+            </main>
+        </div>
+    </div>
+</body>
+</html>

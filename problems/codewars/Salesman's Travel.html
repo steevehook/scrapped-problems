@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Salesman's Travel</title>
+    <link rel="stylesheet" media="screen" href="css/style.css">
+</head>
+<body>
+    <div id="app">
+        <div class="w-full" id="shell">
+            <main id="shell_content">
+                <div class="w-full mt-2">
+                    <h2>Salesman's Travel</h2>
+                    <h2>Points: 6 kyu</h2>
+                    <a href="https://www.codewars.com/kata/56af1a20509ce5b9b000001e"><h2>Kata ID: 56af1a20509ce5b9b000001e</h2></a>
+                    <div class="w-full panel bg-ui-section">
+                        <div class="markdown prose max-w-5xl mx-auto" id="description">
+                            <p>A traveling salesman has to visit clients. He got each client's address e.g. <code>"432 Main Long Road St. Louisville OH 43071"</code> as a list.</p>
+<p>The basic zipcode format usually consists of two capital letters followed by a white space and five digits.
+The list of clients to visit was given as a string of all addresses, each separated from the others by a comma, e.g. :</p>
+<p><code>"123 Main Street St. Louisville OH 43071,432 Main Long Road St. Louisville OH 43071,786 High Street Pollocksville NY 56432"</code>.</p>
+<p>To ease his travel he wants to group the list by zipcode.</p>
+<h4 id="task">Task</h4>
+<p>The function <code>travel</code> will take two parameters <code>r</code> (addresses' list of all clients' as a string) and <code>zipcode</code> and returns a string in the following format:</p>
+<p><code>zipcode:street and town,street and town,.../house number,house number,...</code> </p>
+<p>The street numbers must be in the same order as the streets where they belong.</p>
+<p>If a given zipcode doesn't exist in the list of clients' addresses return <code>"zipcode:/"</code></p>
+<h4 id="examples">Examples</h4>
+<pre><code>r = "123 Main Street St. Louisville OH 43071,432 Main Long Road St. Louisville OH 43071,786 High Street Pollocksville NY 56432"
+
+travel(r, "OH 43071") --&gt; "OH 43071:Main Street St. Louisville,Main Long Road St. Louisville/123,432"
+
+travel(r, "NY 56432") --&gt; "NY 56432:High Street Pollocksville/786"
+
+travel(r, "NY 5643") --&gt; "NY 5643:/"
+</code></pre>
+<h4 id="note-for-elixir">Note for Elixir:</h4>
+<p>In Elixir the empty addresses' input is an empty <em>list</em>, not an empty string.</p>
+<h4 id="note">Note:</h4>
+<p>You can see a few addresses and zipcodes in the test cases.</p>
+                        </div>
+                    </div>
+                </div>
+            </main>
+        </div>
+    </div>
+</body>
+</html>

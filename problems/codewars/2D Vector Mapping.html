@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>2D Vector Mapping</title>
+    <link rel="stylesheet" media="screen" href="css/style.css">
+</head>
+<body>
+    <div id="app">
+        <div class="w-full" id="shell">
+            <main id="shell_content">
+                <div class="w-full mt-2">
+                    <h2>2D Vector Mapping</h2>
+                    <h2>Points: 7 kyu</h2>
+                    <a href="https://www.codewars.com/kata/5da995d583326300293ce4cb"><h2>Kata ID: 5da995d583326300293ce4cb</h2></a>
+                    <div class="w-full panel bg-ui-section">
+                        <div class="markdown prose max-w-5xl mx-auto" id="description">
+                            <h3>Introduction</h3>
+
+<p>Imagine a function that maps a number from a given range, to another, desired one. If this is too vague - let me explain a little bit further: let's take an arbitrary number - <code>2</code> for instance - and map it with this function from range <code>0-5</code> to, let's say - <code>10-20</code>. Our number lies in <code>2/5</code> of the way in it's original range, so in order to map it to the desired one we need to find a number that lies exactly in the same place, but in our new range. This number, in this case, is <code>14</code>. You can visualize this as taking a 5cm piece of rubber, putting it next to the ruler, marking the dot on the second centimeter, then stretching the rubber between 10th and 20th centimeter and reading the value next to the dot.</p>
+<h3>Task</h3>
+
+<p>The task in this kata is, unfortunately, a little bit more complex. We will take the same idea, but apply it to the 2-dimensional plane, so instead of single numbers, we will consider vectors with their x-position and y-position, instead of ranges, we will look at the circles with given centers and radii.</p>
+<p>You need to write a function called <code>map_vector</code> (or <code>mapVector</code>) that takes 3 arguments - <code>vector</code>, <code>circle1</code>, <code>circle2</code> and returns a tuple/array/slice of x, y positions of the mapped vector. All three arguments will be tuples (arrays), the first one with x, y positions of a base vector, the second and third with x, y positions of the center of a circle and it's radius. The base vector will always be within the first circle and you need to map it from the first circle to the second. The coordinates should be precise up to second decimal place.</p>
+<h3>Examples</h3>
+
+<p>Let's take a look at a simple example:</p>
+<pre><code>vector = 5, 5
+circle1 = 10, 20, 42
+circle2 = -100, -42, 69
+</code></pre>
+<p>As we see, the vector's cartesian coordinates are x=5, y=5, first's circle's center is in x=10, y=20, it's radius is 42, and so on. Let's visualize it:<br>
+<img src="images/ex1.png"><br>
+The red dot is our given vector. After running our function we should get our new, mapped vector with coordinates x=-108.21, y=-66.64. Take a look at the light-blue dot here:<br>
+<img src="images/ex2.png"><br>
+So, to represent this with code:</p>
+<pre><code class="language-python"><span class="cm-variable">map_vector</span>((<span class="cm-number">5</span>, <span class="cm-number">5</span>), (<span class="cm-number">10</span>, <span class="cm-number">20</span>, <span class="cm-number">42</span>), (<span class="cm-operator">-</span><span class="cm-number">100</span>, <span class="cm-operator">-</span><span class="cm-number">42</span>, <span class="cm-number">69</span>)) <span class="cm-operator">==</span> (<span class="cm-operator">-</span><span class="cm-number">108.21</span>, <span class="cm-operator">-</span><span class="cm-number">66.64</span>)
+</code></pre>
+<pre style="display: none;"><code class="language-java"><span class="cm-variable">mapVector</span>([<span class="cm-number">5</span>, <span class="cm-number">5</span>], [<span class="cm-number">10</span>, <span class="cm-number">20</span>, <span class="cm-number">42</span>], [<span class="cm-operator">-</span><span class="cm-number">100</span>, <span class="cm-operator">-</span><span class="cm-number">42</span>, <span class="cm-number">69</span>]) <span class="cm-operator">==</span> [<span class="cm-operator">-</span><span class="cm-number">108.21</span>, <span class="cm-operator">-</span><span class="cm-number">66.64</span>]
+</code></pre>
+<pre style="display: none;"><code class="language-javascript"><span class="cm-variable">mapVector</span>([<span class="cm-number">5</span>, <span class="cm-number">5</span>], [<span class="cm-number">10</span>, <span class="cm-number">20</span>, <span class="cm-number">42</span>], [<span class="cm-operator">-</span><span class="cm-number">100</span>, <span class="cm-operator">-</span><span class="cm-number">42</span>, <span class="cm-number">69</span>]) <span class="cm-operator">===</span> [<span class="cm-operator">-</span><span class="cm-number">108.21</span>, <span class="cm-operator">-</span><span class="cm-number">66.64</span>]
+</code></pre>
+<pre style="display: none;"><code class="language-typescript"><span class="cm-variable">mapVector</span>([<span class="cm-number">5</span>, <span class="cm-number">5</span>], [<span class="cm-number">10</span>, <span class="cm-number">20</span>, <span class="cm-number">42</span>], [<span class="cm-operator">-</span><span class="cm-number">100</span>, <span class="cm-operator">-</span><span class="cm-number">42</span>, <span class="cm-number">69</span>]) <span class="cm-operator">===</span> [<span class="cm-operator">-</span><span class="cm-number">108.21</span>, <span class="cm-operator">-</span><span class="cm-number">66.64</span>]
+</code></pre>
+<pre style="display: none;"><code class="language-julia"><span class="cm-variable">mapvector</span>([<span class="cm-number">5</span>, <span class="cm-number">5</span>], [<span class="cm-number">10</span>, <span class="cm-number">20</span>, <span class="cm-number">42</span>], [<span class="cm-operator">-</span><span class="cm-number">100</span>, <span class="cm-operator">-</span><span class="cm-number">42</span>, <span class="cm-number">69</span>]) <span class="cm-operator">==</span> [<span class="cm-operator">-</span><span class="cm-number">108.21</span>, <span class="cm-operator">-</span><span class="cm-number">66.64</span>] 
+</code></pre>
+<pre style="display: none;"><code class="language-go"><span class="cm-variable">MapVector</span>([<span class="cm-number">5</span>, <span class="cm-number">5</span>], [<span class="cm-number">10</span>, <span class="cm-number">20</span>, <span class="cm-number">42</span>], [<span class="cm-operator">-</span><span class="cm-number">100</span>, <span class="cm-operator">-</span><span class="cm-number">42</span>, <span class="cm-number">69</span>]) <span class="cm-operator">==</span> [<span class="cm-operator">-</span><span class="cm-number">108.21</span>, <span class="cm-operator">-</span><span class="cm-number">66.64</span>] 
+</code></pre>
+<p>Two, very important things to notice here are:</p>
+<ul>
+<li>The distance between a vector and a circle's center is scaled accordingly to the second circle's radius</li>
+<li>The angle between the vector and the line x=c1.x is preserved (c1.x == first circle's center's x position)</li>
+</ul>
+
+<p>It is also worth to mention, that when both circles' radii are equal, this is equivalent of just translating the vector by the distance between them, and when the circles are concentric this is roughly equivalent to the mapping function mentioned in the introduction.</p>
+<h3>Notes</h3>
+
+<p>Although it is not really a problem, but for simplicity the given vector will always be contained within the first circle. The plane in random tests is a square with sides ranging between <code>-400</code> to <code>400</code>.</p>
+<h3>Tip</h3>
+
+<p>It may not be necessary, but if you're stuck, think about the most iconic animal that pops to mind when thinking about the negative influence of the climate changes on our planet's habitat.</p>
+<p>Enjoy, and don't hesitate to comment on any mistakes or problems with this kata.</p>
+                        </div>
+                    </div>
+                </div>
+            </main>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,103 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Simple square numbers</title>
+    <link rel="stylesheet" media="screen" href="css/style.css">
+</head>
+<body>
+    <div id="app">
+        <div class="w-full" id="shell">
+            <main id="shell_content">
+                <div class="w-full mt-2">
+                    <h2>Simple square numbers</h2>
+                    <h2>Points: 6 kyu</h2>
+                    <a href="https://www.codewars.com/kata/5edc8c53d7cede0032eb6029"><h2>Kata ID: 5edc8c53d7cede0032eb6029</h2></a>
+                    <div class="w-full panel bg-ui-section">
+                        <div class="markdown prose max-w-5xl mx-auto" id="description">
+                            <p>In this Kata, you will be given a number <code>n</code> (<code>n &gt; 0</code>) and your task will be to return the smallest square number <code>N</code> (<code>N &gt; 0</code>) such that <code>n + N</code> is also a perfect square. If there is no answer, return <code>-1</code> (<code>nil</code> in Clojure, <code>Nothing</code> in Haskell, <code>None</code> in Rust). </p>
+<pre><code class="language-clojure"><span class="cm-variable">solve</span> <span class="cm-number">13</span> <span class="cm-keyword">=</span> <span class="cm-number">36</span>
+<span class="cm-comment">; because 36 is the smallest perfect square that can be added to 13 to form a perfect square =&gt; 13 + 36 = 49</span>
+
+<span class="cm-variable">solve</span> <span class="cm-number">3</span> <span class="cm-keyword">=</span> <span class="cm-number">1</span> <span class="cm-comment">; 3 + 1 = 4, a perfect square</span>
+<span class="cm-variable">solve</span> <span class="cm-number">12</span> <span class="cm-keyword">=</span> <span class="cm-number">4</span> <span class="cm-comment">; 12 + 4 = 16, a perfect square</span>
+<span class="cm-variable">solve</span> <span class="cm-number">9</span> <span class="cm-keyword">=</span> <span class="cm-number">16</span> 
+<span class="cm-variable">solve</span> <span class="cm-number">4</span> <span class="cm-keyword">=</span> <span class="cm-atom">nil</span>
+</code></pre>
+<pre style="display: none;"><code class="language-csharp"><span class="cm-variable">solve</span>(<span class="cm-number">13</span>) <span class="cm-operator">=</span> <span class="cm-number">36</span>
+<span class="cm-comment">//because 36 is the smallest perfect square that can be added to 13 to form a perfect square =&gt; 13 + 36 = 49</span>
+
+<span class="cm-variable">solve</span>(<span class="cm-number">3</span>) <span class="cm-operator">=</span> <span class="cm-number">1</span> <span class="cm-comment">// 3 + 1 = 4, a perfect square</span>
+<span class="cm-variable">solve</span>(<span class="cm-number">12</span>) <span class="cm-operator">=</span> <span class="cm-number">4</span> <span class="cm-comment">// 12 + 4 = 16, a perfect square</span>
+<span class="cm-variable">solve</span>(<span class="cm-number">9</span>) <span class="cm-operator">=</span> <span class="cm-number">16</span> 
+<span class="cm-variable">solve</span>(<span class="cm-number">4</span>) <span class="cm-operator">=</span> <span class="cm-operator">-</span><span class="cm-number">1</span>
+</code></pre>
+<pre style="display: none;"><code class="language-cpp"><span class="cm-variable">solve</span>(<span class="cm-number">13</span>) <span class="cm-operator">=</span> <span class="cm-number">36</span>
+<span class="cm-comment">//because 36 is the smallest perfect square that can be added to 13 to form a perfect square =&gt; 13 + 36 = 49</span>
+
+<span class="cm-variable">solve</span>(<span class="cm-number">3</span>) <span class="cm-operator">=</span> <span class="cm-number">1</span> <span class="cm-comment">// 3 + 1 = 4, a perfect square</span>
+<span class="cm-variable">solve</span>(<span class="cm-number">12</span>) <span class="cm-operator">=</span> <span class="cm-number">4</span> <span class="cm-comment">// 12 + 4 = 16, a perfect square</span>
+<span class="cm-variable">solve</span>(<span class="cm-number">9</span>) <span class="cm-operator">=</span> <span class="cm-number">16</span> 
+<span class="cm-variable">solve</span>(<span class="cm-number">4</span>) <span class="cm-operator">=</span> <span class="cm-operator">-</span><span class="cm-number">1</span>
+</code></pre>
+<pre style="display: none;"><code class="language-rust"><span class="cm-variable">solve</span>(<span class="cm-number">13</span>) <span class="cm-operator">=</span> <span class="cm-number">36</span>
+<span class="cm-comment">//because 36 is the smallest perfect square that can be added to 13 to form a perfect square =&gt; 13 + 36 = 49</span>
+
+<span class="cm-variable">solve</span>(<span class="cm-number">3</span>) <span class="cm-operator">=</span> <span class="cm-builtin">Some</span>(<span class="cm-number">1</span>) <span class="cm-comment">// 3 + 1 = 4, a perfect square</span>
+<span class="cm-variable">solve</span>(<span class="cm-number">12</span>) <span class="cm-operator">=</span> <span class="cm-builtin">Some</span>(<span class="cm-number">4</span>) <span class="cm-comment">// 12 + 4 = 16, a perfect square</span>
+<span class="cm-variable">solve</span>(<span class="cm-number">9</span>) <span class="cm-operator">=</span> <span class="cm-builtin">Some</span>(<span class="cm-number">16</span>) 
+<span class="cm-variable">solve</span>(<span class="cm-number">4</span>) <span class="cm-operator">=</span> <span class="cm-builtin">None</span>
+</code></pre>
+<pre style="display: none;"><code class="language-haskell"><span class="cm-variable">solve</span> <span class="cm-number">13</span> <span class="cm-keyword">=</span> <span class="cm-builtin">Just</span> <span class="cm-number">36</span>
+<span class="cm-comment">-- because 36 is the smallest perfect square that can be added to 13 to form a perfect square =&gt; 13 + 36 = 49</span>
+
+<span class="cm-variable">solve</span> <span class="cm-number">3</span> <span class="cm-keyword">=</span> <span class="cm-builtin">Just</span> <span class="cm-number">1</span> <span class="cm-comment">-- 3 + 1 = 4, a perfect square</span>
+<span class="cm-variable">solve</span> <span class="cm-number">12</span> <span class="cm-keyword">=</span> <span class="cm-builtin">Just</span> <span class="cm-number">4</span> <span class="cm-comment">-- 12 + 4 = 16, a perfect square</span>
+<span class="cm-variable">solve</span> <span class="cm-number">9</span> <span class="cm-keyword">=</span> <span class="cm-builtin">Just</span> <span class="cm-number">16</span> 
+<span class="cm-variable">solve</span> <span class="cm-number">4</span> <span class="cm-keyword">=</span> <span class="cm-builtin">Nothing</span>
+</code></pre>
+<pre style="display: none;"><code class="language-elixir"><span class="cm-variable">solve</span>(<span class="cm-number">13</span>) <span class="cm-operator">=</span> <span class="cm-number">36</span>
+<span class="cm-comment"># because 36 is the smallest perfect square that can be added to 13 to form a perfect square =&gt; 13 + 36 = 49</span>
+
+<span class="cm-variable">solve</span>(<span class="cm-number">3</span>) <span class="cm-operator">=</span> <span class="cm-number">1</span> <span class="cm-comment"># 3 + 1 = 4, a perfect square</span>
+<span class="cm-variable">solve</span>(<span class="cm-number">12</span>) <span class="cm-operator">=</span> <span class="cm-number">4</span> <span class="cm-comment"># 12 + 4 = 16, a perfect square</span>
+<span class="cm-variable">solve</span>(<span class="cm-number">9</span>) <span class="cm-operator">=</span> <span class="cm-number">16</span> 
+<span class="cm-variable">solve</span>(<span class="cm-number">4</span>) <span class="cm-operator">=</span> <span class="cm-operator">-</span><span class="cm-number">1</span>
+</code></pre>
+<pre style="display: none;"><code class="language-python"><span class="cm-variable">solve</span>(<span class="cm-number">13</span>) <span class="cm-operator">=</span> <span class="cm-number">36</span>
+<span class="cm-comment"># because 36 is the smallest perfect square that can be added to 13 to form a perfect square =&gt; 13 + 36 = 49</span>
+
+<span class="cm-variable">solve</span>(<span class="cm-number">3</span>) <span class="cm-operator">=</span> <span class="cm-number">1</span> <span class="cm-comment"># 3 + 1 = 4, a perfect square</span>
+<span class="cm-variable">solve</span>(<span class="cm-number">12</span>) <span class="cm-operator">=</span> <span class="cm-number">4</span> <span class="cm-comment"># 12 + 4 = 16, a perfect square</span>
+<span class="cm-variable">solve</span>(<span class="cm-number">9</span>) <span class="cm-operator">=</span> <span class="cm-number">16</span> 
+<span class="cm-variable">solve</span>(<span class="cm-number">4</span>) <span class="cm-operator">=</span> <span class="cm-operator">-</span><span class="cm-number">1</span>
+</code></pre>
+<pre style="display: none;"><code class="language-ruby"><span class="cm-variable">solve</span>(<span class="cm-number">13</span>) <span class="cm-operator">=</span> <span class="cm-number">36</span>
+<span class="cm-comment"># because 36 is the smallest perfect square that can be added to 13 to form a perfect square =&gt; 13 + 36 = 49</span>
+
+<span class="cm-variable">solve</span>(<span class="cm-number">3</span>) <span class="cm-operator">=</span> <span class="cm-number">1</span> <span class="cm-comment"># 3 + 1 = 4, a perfect square</span>
+<span class="cm-variable">solve</span>(<span class="cm-number">12</span>) <span class="cm-operator">=</span> <span class="cm-number">4</span> <span class="cm-comment"># 12 + 4 = 16, a perfect square</span>
+<span class="cm-variable">solve</span>(<span class="cm-number">9</span>) <span class="cm-operator">=</span> <span class="cm-number">16</span> 
+<span class="cm-variable">solve</span>(<span class="cm-number">4</span>) <span class="cm-operator">=</span> <span class="cm-operator">-</span><span class="cm-number">1</span>
+</code></pre>
+<pre style="display: none;"><code class="language-javascript"><span class="cm-variable">solve</span>(<span class="cm-number">13</span>) <span class="cm-operator">=</span> <span class="cm-number">36</span>
+<span class="cm-comment">//because 36 is the smallest perfect square that can be added to 13 to form a perfect square =&gt; 13 + 36 = 49</span>
+
+<span class="cm-variable">solve</span>(<span class="cm-number">3</span>) <span class="cm-operator">=</span> <span class="cm-number">1</span> <span class="cm-comment">// 3 + 1 = 4, a perfect square</span>
+<span class="cm-variable">solve</span>(<span class="cm-number">12</span>) <span class="cm-operator">=</span> <span class="cm-number">4</span> <span class="cm-comment">// 12 + 4 = 16, a perfect square</span>
+<span class="cm-variable">solve</span>(<span class="cm-number">9</span>) <span class="cm-operator">=</span> <span class="cm-number">16</span> 
+<span class="cm-variable">solve</span>(<span class="cm-number">4</span>) <span class="cm-operator">=</span> <span class="cm-operator">-</span><span class="cm-number">1</span>
+</code></pre>
+<p>More examples in test cases. </p>
+<p>Good luck! </p>
+                        </div>
+                    </div>
+                </div>
+            </main>
+        </div>
+    </div>
+</body>
+</html>

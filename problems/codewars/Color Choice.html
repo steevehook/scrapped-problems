@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Color Choice</title>
+    <link rel="stylesheet" media="screen" href="css/style.css">
+</head>
+<body>
+    <div id="app">
+        <div class="w-full" id="shell">
+            <main id="shell_content">
+                <div class="w-full mt-2">
+                    <h2>Color Choice</h2>
+                    <h2>Points: 6 kyu</h2>
+                    <a href="https://www.codewars.com/kata/55be10de92aad5ef28000023"><h2>Kata ID: 55be10de92aad5ef28000023</h2></a>
+                    <div class="w-full panel bg-ui-section">
+                        <div class="markdown prose max-w-5xl mx-auto" id="description">
+                            <p>You know combinations: for example, 
+if you take 5 cards from a 52 cards deck you have 2,598,960 different combinations.</p>
+<p>In mathematics the number of x combinations you can take from a set of n elements
+is called the binomial coefficient of n and x, or more often <code>n choose x</code>.
+The formula to compute <code>m = n choose x</code> is: <code>m = n! / (x! * (n - x)!)</code>
+where ! is the factorial operator.</p>
+<p>You are a renowned poster designer and painter. You are asked to provide 6 posters 
+all having the same design each in 2 colors. Posters must all have a different color combination and you have the choice of 4 colors: red, blue, yellow, green. 
+How many colors can you choose for each poster?</p>
+<p>The answer is two since <code>4 choose 2 = 6</code>. The combinations will be:
+{red, blue}, {red, yellow}, {red, green}, {blue, yellow}, {blue, green}, {yellow, green}.</p>
+<p>Now same question but you have 35 posters to provide and 7 colors available. How many colors for each poster?
+If you take combinations <code>7 choose 2</code> you will get 21 with the above formula.
+But 21 schemes aren't enough for 35 posters. If you take <code>7 choose 5</code> combinations you will get 21 too.
+Fortunately if you take <code>7 choose 3</code> or <code>7 choose 4</code> combinations you get 35 and so each poster will have a different combination of
+3 colors or 5 colors. You will take 3 colors because it's less expensive.</p>
+<h4 id="hence-the-problem">Hence the problem:</h4>
+<p>knowing <code>m</code> (number of posters to design), 
+knowing <code>n</code> (total number of available colors), 
+let us 
+search <code>x</code> (number of colors for each poster so that each poster has a unique combination of colors and the number of combinations is exactly the same as the number of posters).</p>
+<p><em>In other words</em> we must find <strong>x</strong> such as </p>
+<p><code>n choose x = m (1)</code> </p>
+<p>for a given m and a given n;
+<code>m &gt;= 0 and n &gt; 0</code>. If many x are solutions give as result the smallest x.
+It can happen that when m is given at random there are no x satisfying <code>equation (1)</code> then
+return -1.</p>
+<h4 id="examples">Examples:</h4>
+<pre><code>checkchoose(6, 4) --&gt; 2
+checkchoose(4, 4) --&gt; 1
+checkchoose(4, 2) --&gt; -1
+checkchoose(35, 7) --&gt; 3
+checkchoose(36, 7) --&gt; -1
+
+a = 47129212243960
+checkchoose(a, 50) --&gt; 20
+checkchoose(a + 1, 50) --&gt; -1
+</code></pre>
+                        </div>
+                    </div>
+                </div>
+            </main>
+        </div>
+    </div>
+</body>
+</html>

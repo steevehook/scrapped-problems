@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Bouncing Balls</title>
+    <link rel="stylesheet" media="screen" href="css/style.css">
+</head>
+<body>
+    <div id="app">
+        <div class="w-full" id="shell">
+            <main id="shell_content">
+                <div class="w-full mt-2">
+                    <h2>Bouncing Balls</h2>
+                    <h2>Points: 6 kyu</h2>
+                    <a href="https://www.codewars.com/kata/5544c7a5cb454edb3c000047"><h2>Kata ID: 5544c7a5cb454edb3c000047</h2></a>
+                    <div class="w-full panel bg-ui-section">
+                        <div class="markdown prose max-w-5xl mx-auto" id="description">
+                            <p>A child is playing with a ball on the nth floor of a tall building.
+The height of this floor, <em>h</em>, is known. </p>
+<p>He drops the ball out of the window. The ball bounces (for example), to two-thirds of its height (a bounce of 0.66).</p>
+<p>His mother looks out of a window 1.5 meters from the ground.</p>
+<p>How many times will the mother see the ball pass in front of her window (including when it's falling <em>and</em> bouncing?</p>
+<h4 id="three-conditions-must-be-met-for-a-valid-experiment">Three conditions must be met for a valid experiment:</h4>
+<ul>
+<li> Float parameter "h" in meters must be greater than 0</li>
+<li> Float parameter "bounce" must be greater than 0 and less than 1</li>
+<li> Float parameter "window" must be less than h.</li>
+</ul>
+<p><strong>If all three conditions above are fulfilled, return a positive integer, otherwise return -1.</strong></p>
+<h4 id="note">Note:</h4>
+<p>The ball can only be seen if the height of the rebounding ball is strictly <em>greater</em> than the window parameter.</p>
+<h4 id="examples">Examples:</h4>
+<pre><code>- h = 3, bounce = 0.66, window = 1.5, result is 3
+
+- h = 3, bounce = 1, window = 1.5, result is -1 
+
+(Condition 2) not fulfilled).
+</code></pre>
+                        </div>
+                    </div>
+                </div>
+            </main>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,116 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Easy Cyclist's Training</title>
+    <link rel="stylesheet" media="screen" href="css/style.css">
+</head>
+<body>
+    <div id="app">
+        <div class="w-full" id="shell">
+            <main id="shell_content">
+                <div class="w-full mt-2">
+                    <h2>Easy Cyclist's Training</h2>
+                    <h2>Points: 5 kyu</h2>
+                    <a href="https://www.codewars.com/kata/5879f95892074d769f000272"><h2>Kata ID: 5879f95892074d769f000272</h2></a>
+                    <div class="w-full panel bg-ui-section">
+                        <div class="markdown prose max-w-5xl mx-auto" id="description">
+                            <p>The description is rather long but you are given all needed formulas (almost:-)</p>
+<p>John has bought a bike but before going moutain biking he wants us to do a few simulations.</p>
+<p>He gathered information:</p>
+<ul>
+<li>His trip will consist of an ascent of <code>dTot</code> kilometers with an average slope of <code>slope</code> <em>percent</em> </li>
+<li>We suppose that: there is no wind, John's mass is constant <code>MASS = 80 (kg)</code>, his power (generated at time <code>t</code> by pedaling and measured in watts)
+at the start of the trip is <code>WATTS0 = 225 (watts)</code></li>
+<li>We don't take account of the rolling resistance</li>
+<li>When he starts climbing at t = 0 his initial speed (pushed start) is <code>v0 (km/h)</code></li>
+<li>His initial acceleration <code>gamma</code> is 0.
+<code>gamma</code> is in <code>km/h/min</code> at time <code>t</code>. It is the number of kilometers per hour he gains or loses in the next <em>minute</em>. </li>
+<li>Our time step is <code>DELTA_T = 1.0 / 60.0</code> (in minutes)</li>
+</ul>
+<p>Furthermore (constants in uppercase are given below):</p>
+<ul>
+<li>Because of tiredness, he <em>loses</em> D_WATTS * DELTA_T of power at each DELTA_T. </li>
+<li>calcul of acceleration:</li>
+</ul>
+<p>  Acceleration has three components:
+    - 1) on an ascent where the slope is <code>slope</code> the effect of earth gravity is given by:</p>
+<p>  <code>- GRAVITY_ACC * function(slope)</code></p>
+<p>  (Beware: here the <code>slope</code>is a percentage, it is not an angle. You have to determine <code>function(slope)</code>).</p>
+<p>  Some help for <code>function(slope)</code>:</p>
+<p>  a) Slope: 
+  <a href="https://en.wikipedia.org/wiki/Grade_(slope)" target="_blank">https://en.wikipedia.org/wiki/Grade_(slope)</a></p>
+<p>  b) Earth gravity: 
+  <a href="https://en.wikipedia.org/wiki/Gravity_of_Earth" target="_blank">https://en.wikipedia.org/wiki/Gravity_of_Earth</a></p>
+<ul>
+<li><ol start="2">
+<li>air drag is </li>
+</ol>
+</li>
+</ul>
+<p>  <code>- DRAG * abs(v) * abs(v) / MASS</code> where <code>v</code> is his current speed</p>
+<ul>
+<li><ol start="3">
+<li>if his power and his speed are both strictly positive we add the thrust (by pedaling) which is: </li>
+</ol>
+</li>
+</ul>
+<p>  <code>+ G_THRUST * watts / (v * MASS)</code> where <code>watts</code> is his current power</p>
+<ul>
+<li><ol start="4">
+<li>if his total <code>acceleration is &lt;= 1e-5</code> we set acceleration to 0</li>
+</ol>
+</li>
+<li>If <code>v - 3.0 &lt;= 1e-2</code> John gives up</li>
+</ul>
+<pre><code>Constants:
+GRAVITY_ACC = 9.81 * 3.6 * 60.0                        // gravity acceleration
+DRAG        = 60.0 * 0.3 / 3.6                         // force applied by air on the cyclist
+DELTA_T     = 1.0 / 60.0                               // in minutes
+G_THRUST    = 60 * 3.6 * 3.6                           // pedaling thrust
+MASS        = 80.0                                     // biker's mass
+WATTS0      = 225.0                                    // initial biker's power
+D_WATTS     = 0.5                                      // loss of power in W/mn
+(Note: watts at time t + DELTA_T is watts at time t minus D_WATTS * DELTA_T)
+
+Parameters:
+double dTot                                            // distance to travel in km
+double v0                                              // initial speed km/h
+double slope                                           // ascent in percentage (don't forget to divide by 100 when needed)
+
+Variables that can be used:
+t                                                      // time
+gamma                                                  // total acceleration with its 3 components
+v                                                      // speed
+d                                                      // distance travelled
+watts                                                  // biker's power 
+</code></pre>
+<h3 id="task">Task:</h3>
+<p>Write function
+<code>temps(v0, slope, dTot)</code> which returns as a <em>rounded</em> integer the time <code>t</code> in minutes needed to travel <code>dTot</code>. 
+If John gives up return <code>-1</code>.</p>
+<p>As a reminder:</p>
+<ol>
+<li><p>speed at (t + DELTA_T) = (speed at t) + gamma * DELTA_T</p>
+</li>
+<li><p>distance at (t + DELTA_T) can be taken as (distance at t) + speed * DELTA_T / 60.0 where speed is calculated with 1).</p>
+</li>
+</ol>
+<pre><code>Examples:
+temps(30, 5, 30) -&gt; 114
+temps(30, 20, 30) -&gt; -1
+temps(30, 8, 20) -&gt; 110
+</code></pre>
+<p>Reference:
+<a href="https://en.wikipedia.org/wiki/Bicycle_performance" target="_blank">https://en.wikipedia.org/wiki/Bicycle_performance</a></p>
+                        </div>
+                    </div>
+                </div>
+            </main>
+        </div>
+    </div>
+</body>
+</html>

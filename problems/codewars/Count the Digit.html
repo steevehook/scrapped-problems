@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Count the Digit</title>
+    <link rel="stylesheet" media="screen" href="css/style.css">
+</head>
+<body>
+    <div id="app">
+        <div class="w-full" id="shell">
+            <main id="shell_content">
+                <div class="w-full mt-2">
+                    <h2>Count the Digit</h2>
+                    <h2>Points: 7 kyu</h2>
+                    <a href="https://www.codewars.com/kata/566fc12495810954b1000030"><h2>Kata ID: 566fc12495810954b1000030</h2></a>
+                    <div class="w-full panel bg-ui-section">
+                        <div class="markdown prose max-w-5xl mx-auto" id="description">
+                            <p>Take an integer <code>n (n &gt;= 0)</code> and a digit <code>d (0 &lt;= d &lt;= 9)</code> as an integer. </p>
+<p>Square all numbers <code>k (0 &lt;= k &lt;= n)</code> between 0 and n. </p>
+<p>Count the numbers of digits <code>d</code> used in the writing of all the <code>k**2</code>. </p>
+<p>Call <code>nb_dig</code> (or nbDig or ...) the function taking <code>n</code> and <code>d</code> as parameters and returning this count.</p>
+<h4 id="examples">Examples:</h4>
+<pre><code>n = 10, d = 1 
+the k*k are 0, 1, 4, 9, 16, 25, 36, 49, 64, 81, 100
+We are using the digit 1 in: 1, 16, 81, 100. The total count is then 4.
+
+nb_dig(25, 1) returns 11 since
+the k*k that contain the digit 1 are:
+1, 16, 81, 100, 121, 144, 169, 196, 361, 441.
+So there are 11 digits 1 for the squares of numbers between 0 and 25.
+</code></pre>
+<p>Note that <code>121</code> has twice the digit 1.</p>
+                        </div>
+                    </div>
+                </div>
+            </main>
+        </div>
+    </div>
+</body>
+</html>

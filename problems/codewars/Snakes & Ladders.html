@@ -1,0 +1,96 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Snakes & Ladders</title>
+    <link rel="stylesheet" media="screen" href="css/style.css">
+</head>
+<body>
+    <div id="app">
+        <div class="w-full" id="shell">
+            <main id="shell_content">
+                <div class="w-full mt-2">
+                    <h2>Snakes & Ladders</h2>
+                    <h2>Points: 6 kyu</h2>
+                    <a href="https://www.codewars.com/kata/5821cd4770ca285b1f0001d5"><h2>Kata ID: 5821cd4770ca285b1f0001d5</h2></a>
+                    <div class="w-full panel bg-ui-section">
+                        <div class="markdown prose max-w-5xl mx-auto" id="description">
+                            <p>This Kata is like the game of <span style="font-weight:bold;color:red">Snakes &amp; Ladders</span></p>
+<p>There is an array representing the squares on the game board.</p>
+<p>The starting square is at array element 0. The final square is the last array element.</p>
+<p>At each "turn" you move forward a number of places (according to the next dice throw). </p>
+<p>The value at the square you end up on determines what happens next:</p>
+<ul>
+<li><code>0</code> Stay where you are (until next turn)</li>
+<li><code>+n</code> This is a "ladder". Go forward n places</li>
+<li><code>-n</code> This is a "snake". Go back n places</li>
+</ul>
+<p>Each snake or ladder will always end on a square with a 0, so you will only go up or down one at a time.</p>
+<h1 id="rules">Rules</h1>
+<ul>
+<li>You are given a number of dice throws. The game continues until either:</li>
+</ul>
+<ul>
+<li>You have no throws left, OR</li>
+<li>You end up exactly on the final square</li>
+</ul>
+<ul>
+<li>At each turn, make your move, then go up the "ladders" and down the "snakes" as appropriate.</li>
+</ul>
+<ul>
+<li>If the dice roll overshoots the final square then you cannot move. Roll the dice again.</li>
+</ul>
+<h1 id="task">Task</h1>
+<p>Return the index of the array element that you ended up on at the end of the game.</p>
+<h1 id="example">Example</h1>
+<p>Start</p>
+<pre>Dice: [2, 1, 5, 1, 5, 4]
+Board: [<span style="color:red">0</span>, 0, 3, 0, 0, 0, 0, -2, 0, 0, 0]
+</pre>
+<hr>
+
+<p>Roll a <code>2</code>. Move forward 2 squares, then go up the ladder (+3)</p>
+<pre>Dice: [<span style="color:yellow">2</span>, 1, 5, 1, 5, 4]
+Board: [0, 0, <span style="color:red">3</span>, 0, 0, 0, 0, -2, 0, 0, 0]              
+Board: [0, 0, 3, 0, 0, <span style="color:red">0</span>, 0, -2, 0, 0, 0]              
+</pre>
+<hr>
+
+<p>Roll a <code>1</code>. Move forward 1 square</p>
+<pre>Dice: [2, <span style="color:yellow">1</span>, 5, 1, 5, 4]
+Board: [0, 0, 3, 0, 0, 0, <span style="color:red">0</span>, -2, 0, 0, 0]              
+</pre>
+<hr>
+
+<p>Roll a <code>5</code>. Can't move</p>
+<pre>Dice: [2, 1, <span style="color:yellow">5</span>, 1, 5, 4]
+Board: [0, 0, 3, 0, 0, 0, <span style="color:red">0</span>, -2, 0, 0, 0]              
+</pre>
+<hr>
+
+<p>Roll a <code>1</code>. Move forward 1 square, then go down the snake (-2)</p>
+<pre>Dice: [2, 1, 5, <span style="color:yellow">1</span>, 5, 4]
+Board: [0, 0, 3, 0, 0, 0, 0, <span style="color:red">-2</span>, 0, 0, 0]              
+Board: [0, 0, 3, 0, 0, <span style="color:red">0</span>, 0, -2, 0, 0, 0]              
+</pre>
+<hr>
+
+<p>Roll a <code>5</code>. Move forward 5 squares</p>
+<pre>Dice: [2, 1, 5, 1, <span style="color:yellow">5</span>, 4]            
+Board: [0, 0, 3, 0, 0, 0, 0, -2, 0, 0, <span style="color:red">0</span>]              
+</pre>
+<hr>
+
+<p>You are on the final square so the game ends. Return <code>10</code></p>
+<p>:-)</p>
+                        </div>
+                    </div>
+                </div>
+            </main>
+        </div>
+    </div>
+</body>
+</html>

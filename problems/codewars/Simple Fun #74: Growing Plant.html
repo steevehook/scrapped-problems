@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Simple Fun #74: Growing Plant</title>
+    <link rel="stylesheet" media="screen" href="css/style.css">
+</head>
+<body>
+    <div id="app">
+        <div class="w-full" id="shell">
+            <main id="shell_content">
+                <div class="w-full mt-2">
+                    <h2>Simple Fun #74: Growing Plant</h2>
+                    <h2>Points: 7 kyu</h2>
+                    <a href="https://www.codewars.com/kata/58941fec8afa3618c9000184"><h2>Kata ID: 58941fec8afa3618c9000184</h2></a>
+                    <div class="w-full panel bg-ui-section">
+                        <div class="markdown prose max-w-5xl mx-auto" id="description">
+                            <h3 id="task">Task</h3>
+<p> Each day a plant is growing by <code>upSpeed</code> meters. Each night that plant's height decreases by <code>downSpeed</code> meters due to the lack of sun heat. Initially, plant is 0 meters tall. We plant the seed at the beginning of a day. We want to know when the height of the plant will reach a certain level.</p>
+<h3 id="example">Example</h3>
+<p> For <code>upSpeed = 100, downSpeed = 10 and desiredHeight = 910</code>, the output should be <code>10</code>.</p>
+<pre><code>After day 1 --&gt; 100
+After night 1 --&gt; 90
+After day 2 --&gt; 190
+After night 2 --&gt; 180
+After day 3 --&gt; 280
+After night 3 --&gt; 270
+After day 4 --&gt; 370
+After night 4 --&gt; 360
+After day 5 --&gt; 460
+After night 5 --&gt; 450
+After day 6 --&gt; 550
+After night 6 --&gt; 540
+After day 7 --&gt; 640
+After night 7 --&gt; 630
+After day 8 --&gt; 730
+After night 8 --&gt; 720
+After day 9 --&gt; 820
+After night 9 --&gt; 810
+After day 10 --&gt; 910 
+</code></pre>
+<p> For <code>upSpeed = 10, downSpeed = 9 and desiredHeight = 4</code>, the output should be <code>1</code>.</p>
+<p> Because the plant reach to the desired height at day 1(10 meters).</p>
+<pre><code>After day 1 --&gt; 10
+</code></pre>
+<h3 id="inputoutput">Input/Output</h3>
+<ul>
+<li><p><code>[input]</code> integer <code>upSpeed</code></p>
+<p> A positive integer representing the daily growth.</p>
+<p> Constraints: <code>5 ≤ upSpeed ≤ 100.</code></p>
+</li>
+</ul>
+<ul>
+<li><p><code>[input]</code> integer <code>downSpeed</code></p>
+<p> A positive integer representing the nightly decline.</p>
+<p> Constraints: <code>2 ≤ downSpeed &lt; upSpeed.</code></p>
+</li>
+</ul>
+<ul>
+<li><p><code>[input]</code> integer <code>desiredHeight</code></p>
+<p> A positive integer representing the threshold.</p>
+<p> Constraints: <code>4 ≤ desiredHeight ≤ 1000.</code></p>
+</li>
+<li><p><code>[output]</code> an integer</p>
+<p> The number of days that it will take for the plant to reach/pass desiredHeight (including the last day in the total count).</p>
+</li>
+</ul>
+                        </div>
+                    </div>
+                </div>
+            </main>
+        </div>
+    </div>
+</body>
+</html>

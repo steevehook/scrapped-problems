@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Function iteration</title>
+    <link rel="stylesheet" media="screen" href="css/style.css">
+</head>
+<body>
+    <div id="app">
+        <div class="w-full" id="shell">
+            <main id="shell_content">
+                <div class="w-full mt-2">
+                    <h2>Function iteration</h2>
+                    <h2>Points: 6 kyu</h2>
+                    <a href="https://www.codewars.com/kata/54b679eaac3d54e6ca0008c9"><h2>Kata ID: 54b679eaac3d54e6ca0008c9</h2></a>
+                    <div class="w-full panel bg-ui-section">
+                        <div class="markdown prose max-w-5xl mx-auto" id="description">
+                            <p>The purpose of this kata is to write a higher-order function returning a new function that iterates on a specified function a given number of times. This new function takes in an argument as a seed to start the computation from.</p>
+<p>For instance, consider the function <code>getDouble</code>.
+When run twice on value <code>3</code>, yields <code>12</code> as shown below.</p>
+<pre><code>getDouble(3) =&gt; 6
+getDouble(6) =&gt; 12
+</code></pre>
+<p>Let us name the new function <code>createIterator</code> and we should be able to obtain the same result using <code>createIterator</code> as shown below:</p>
+<pre><code>var doubleIterator = createIterator(getDouble, 2); // This means, it runs *getDouble* twice
+doubleIterator(3) =&gt; 12
+</code></pre>
+<p>For the sake of simplicity, all function inputs to <code>createIterator</code> would be functions returning a small number and number of iterations would always be integers.</p>
+                        </div>
+                    </div>
+                </div>
+            </main>
+        </div>
+    </div>
+</body>
+</html>

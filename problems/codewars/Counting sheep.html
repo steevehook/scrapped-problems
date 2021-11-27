@@ -1,0 +1,112 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Counting sheep</title>
+    <link rel="stylesheet" media="screen" href="css/style.css">
+</head>
+<body>
+    <div id="app">
+        <div class="w-full" id="shell">
+            <main id="shell_content">
+                <div class="w-full mt-2">
+                    <h2>Counting sheep</h2>
+                    <h2>Points: 8 kyu</h2>
+                    <a href="https://www.codewars.com/kata/54edbc7200b811e956000556"><h2>Kata ID: 54edbc7200b811e956000556</h2></a>
+                    <div class="w-full panel bg-ui-section">
+                        <div class="markdown prose max-w-5xl mx-auto" id="description">
+                            <p>Consider an array/list of sheep where some sheep may be missing from their place. We need a function that counts the number of sheep present in the array (true means present).</p>
+<p>For example,</p>
+<pre><code class="language-javascript">[<span class="cm-atom">true</span>,  <span class="cm-atom">true</span>,  <span class="cm-atom">true</span>,  <span class="cm-atom">false</span>,
+  <span class="cm-atom">true</span>,  <span class="cm-atom">true</span>,  <span class="cm-atom">true</span>,  <span class="cm-atom">true</span> ,
+  <span class="cm-atom">true</span>,  <span class="cm-atom">false</span>, <span class="cm-atom">true</span>,  <span class="cm-atom">false</span>,
+  <span class="cm-atom">true</span>,  <span class="cm-atom">false</span>, <span class="cm-atom">false</span>, <span class="cm-atom">true</span> ,
+  <span class="cm-atom">true</span>,  <span class="cm-atom">true</span>,  <span class="cm-atom">true</span>,  <span class="cm-atom">true</span> ,
+  <span class="cm-atom">false</span>, <span class="cm-atom">false</span>, <span class="cm-atom">true</span>,  <span class="cm-atom">true</span>]
+</code></pre>
+<pre style="display: none;"><code class="language-crystal">[<span class="cm-atom">true</span>,  <span class="cm-atom">true</span>,  <span class="cm-atom">true</span>,  <span class="cm-atom">false</span>,
+  <span class="cm-atom">true</span>,  <span class="cm-atom">true</span>,  <span class="cm-atom">true</span>,  <span class="cm-atom">true</span> ,
+  <span class="cm-atom">true</span>,  <span class="cm-atom">false</span>, <span class="cm-atom">true</span>,  <span class="cm-atom">false</span>,
+  <span class="cm-atom">true</span>,  <span class="cm-atom">false</span>, <span class="cm-atom">false</span>, <span class="cm-atom">true</span> ,
+  <span class="cm-atom">true</span>,  <span class="cm-atom">true</span>,  <span class="cm-atom">true</span>,  <span class="cm-atom">true</span> ,
+  <span class="cm-atom">false</span>, <span class="cm-atom">false</span>, <span class="cm-atom">true</span>,  <span class="cm-atom">true</span>]
+</code></pre>
+<pre style="display: none;"><code class="language-python">[<span class="cm-keyword">True</span>,  <span class="cm-keyword">True</span>,  <span class="cm-keyword">True</span>,  <span class="cm-keyword">False</span>,
+  <span class="cm-keyword">True</span>,  <span class="cm-keyword">True</span>,  <span class="cm-keyword">True</span>,  <span class="cm-keyword">True</span> ,
+  <span class="cm-keyword">True</span>,  <span class="cm-keyword">False</span>, <span class="cm-keyword">True</span>,  <span class="cm-keyword">False</span>,
+  <span class="cm-keyword">True</span>,  <span class="cm-keyword">False</span>, <span class="cm-keyword">False</span>, <span class="cm-keyword">True</span> ,
+  <span class="cm-keyword">True</span>,  <span class="cm-keyword">True</span>,  <span class="cm-keyword">True</span>,  <span class="cm-keyword">True</span> ,
+  <span class="cm-keyword">False</span>, <span class="cm-keyword">False</span>, <span class="cm-keyword">True</span>,  <span class="cm-keyword">True</span>]
+</code></pre>
+<pre style="display: none;"><code class="language-csharp">[<span class="cm-atom">true</span>,  <span class="cm-atom">true</span>,  <span class="cm-atom">true</span>,  <span class="cm-atom">false</span>,
+  <span class="cm-atom">true</span>,  <span class="cm-atom">true</span>,  <span class="cm-atom">true</span>,  <span class="cm-atom">true</span> ,
+  <span class="cm-atom">true</span>,  <span class="cm-atom">false</span>, <span class="cm-atom">true</span>,  <span class="cm-atom">false</span>,
+  <span class="cm-atom">true</span>,  <span class="cm-atom">false</span>, <span class="cm-atom">false</span>, <span class="cm-atom">true</span> ,
+  <span class="cm-atom">true</span>,  <span class="cm-atom">true</span>,  <span class="cm-atom">true</span>,  <span class="cm-atom">true</span> ,
+  <span class="cm-atom">false</span>, <span class="cm-atom">false</span>, <span class="cm-atom">true</span>,  <span class="cm-atom">true</span>]
+</code></pre>
+<pre style="display: none;"><code class="language-c">{ <span class="cm-atom">true</span>,  <span class="cm-atom">true</span>,  <span class="cm-atom">true</span>,  <span class="cm-atom">false</span>,
+  <span class="cm-atom">true</span>,  <span class="cm-atom">true</span>,  <span class="cm-atom">true</span>,  <span class="cm-atom">true</span>,
+  <span class="cm-atom">true</span>,  <span class="cm-atom">false</span>, <span class="cm-atom">true</span>,  <span class="cm-atom">false</span>,
+  <span class="cm-atom">true</span>,  <span class="cm-atom">false</span>, <span class="cm-atom">false</span>, <span class="cm-atom">true</span>,
+  <span class="cm-atom">true</span>,  <span class="cm-atom">true</span>,  <span class="cm-atom">true</span>,  <span class="cm-atom">true</span>,
+  <span class="cm-atom">false</span>, <span class="cm-atom">false</span>, <span class="cm-atom">true</span>,  <span class="cm-atom">true</span> }
+</code></pre>
+<pre style="display: none;"><code class="language-cpp">[<span class="cm-atom">true</span>,  <span class="cm-atom">true</span>,  <span class="cm-atom">true</span>,  <span class="cm-atom">false</span>,
+  <span class="cm-atom">true</span>,  <span class="cm-atom">true</span>,  <span class="cm-atom">true</span>,  <span class="cm-atom">true</span> ,
+  <span class="cm-atom">true</span>,  <span class="cm-atom">false</span>, <span class="cm-atom">true</span>,  <span class="cm-atom">false</span>,
+  <span class="cm-atom">true</span>,  <span class="cm-atom">false</span>, <span class="cm-atom">false</span>, <span class="cm-atom">true</span> ,
+  <span class="cm-atom">true</span>,  <span class="cm-atom">true</span>,  <span class="cm-atom">true</span>,  <span class="cm-atom">true</span> ,
+  <span class="cm-atom">false</span>, <span class="cm-atom">false</span>, <span class="cm-atom">true</span>,  <span class="cm-atom">true</span>]
+</code></pre>
+<pre style="display: none;"><code class="language-haskell">[<span class="cm-builtin">True</span>,  <span class="cm-builtin">True</span>,  <span class="cm-builtin">True</span>,  <span class="cm-builtin">False</span>,
+  <span class="cm-builtin">True</span>,  <span class="cm-builtin">True</span>,  <span class="cm-builtin">True</span>,  <span class="cm-builtin">True</span> ,
+  <span class="cm-builtin">True</span>,  <span class="cm-builtin">False</span>, <span class="cm-builtin">True</span>,  <span class="cm-builtin">False</span>,
+  <span class="cm-builtin">True</span>,  <span class="cm-builtin">False</span>, <span class="cm-builtin">False</span>, <span class="cm-builtin">True</span> ,
+  <span class="cm-builtin">True</span>,  <span class="cm-builtin">True</span>,  <span class="cm-builtin">True</span>,  <span class="cm-builtin">True</span> ,
+  <span class="cm-builtin">False</span>, <span class="cm-builtin">False</span>, <span class="cm-builtin">True</span>,  <span class="cm-builtin">True</span>]
+</code></pre>
+<pre style="display: none;"><code class="language-elixir">[<span class="cm-keyword">true</span>,  <span class="cm-keyword">true</span>,  <span class="cm-keyword">true</span>,  <span class="cm-keyword">false</span>,
+  <span class="cm-keyword">true</span>,  <span class="cm-keyword">true</span>,  <span class="cm-keyword">true</span>,  <span class="cm-keyword">true</span> ,
+  <span class="cm-keyword">true</span>,  <span class="cm-keyword">false</span>, <span class="cm-keyword">true</span>,  <span class="cm-keyword">false</span>,
+  <span class="cm-keyword">true</span>,  <span class="cm-keyword">false</span>, <span class="cm-keyword">false</span>, <span class="cm-keyword">true</span> ,
+  <span class="cm-keyword">true</span>,  <span class="cm-keyword">true</span>,  <span class="cm-keyword">true</span>,  <span class="cm-keyword">true</span> ,
+  <span class="cm-keyword">false</span>, <span class="cm-keyword">false</span>, <span class="cm-keyword">true</span>,  <span class="cm-keyword">true</span>]
+</code></pre>
+<pre style="display: none;"><code class="language-rust">&amp;[<span class="cm-builtin">true</span>,  <span class="cm-builtin">true</span>,  <span class="cm-builtin">true</span>,  <span class="cm-builtin">false</span>,
+  <span class="cm-builtin">true</span>,  <span class="cm-builtin">true</span>,  <span class="cm-builtin">true</span>,  <span class="cm-builtin">true</span> ,
+  <span class="cm-builtin">true</span>,  <span class="cm-builtin">false</span>, <span class="cm-builtin">true</span>,  <span class="cm-builtin">false</span>,
+  <span class="cm-builtin">true</span>,  <span class="cm-builtin">false</span>, <span class="cm-builtin">false</span>, <span class="cm-builtin">true</span> ,
+  <span class="cm-builtin">true</span>,  <span class="cm-builtin">true</span>,  <span class="cm-builtin">true</span>,  <span class="cm-builtin">true</span> ,
+  <span class="cm-builtin">false</span>, <span class="cm-builtin">false</span>, <span class="cm-builtin">true</span>,  <span class="cm-builtin">true</span>]
+</code></pre>
+<pre style="display: none;"><code class="language-scala"><span class="cm-type">Array</span>(
+  <span class="cm-atom">true</span>,  <span class="cm-atom">true</span>,  <span class="cm-atom">true</span>,  <span class="cm-atom">false</span>,
+  <span class="cm-atom">true</span>,  <span class="cm-atom">true</span>,  <span class="cm-atom">true</span>,  <span class="cm-atom">true</span>,
+  <span class="cm-atom">true</span>,  <span class="cm-atom">false</span>, <span class="cm-atom">true</span>,  <span class="cm-atom">false</span>,
+  <span class="cm-atom">true</span>,  <span class="cm-atom">false</span>, <span class="cm-atom">false</span>, <span class="cm-atom">true</span>,
+  <span class="cm-atom">true</span>,  <span class="cm-atom">true</span>,  <span class="cm-atom">true</span>,  <span class="cm-atom">true</span>,
+  <span class="cm-atom">false</span>, <span class="cm-atom">false</span>, <span class="cm-atom">true</span>,  <span class="cm-atom">true</span>
+)
+</code></pre>
+<pre style="display: none;"><code class="language-racket"><span class="cm-comment">;for racket in this kata, </span>
+<span class="cm-comment">;only values that are exactly #t count as sheep. </span>
+<span class="cm-comment">;any other value is not a sheep.</span>
+<span class="cm-bracket">(</span><span class="cm-variable">count-sheeps</span> <span class="cm-atom">'</span><span class="cm-atom">(</span><span class="cm-atom">#t</span> <span class="cm-atom">#t</span> <span class="cm-atom">#t</span> <span class="cm-atom">#f</span> <span class="cm-atom">#t</span> <span class="cm-atom">#t</span> <span class="cm-atom">1</span>
+                <span class="cm-atom">#t</span> <span class="cm-atom">#f</span> <span class="cm-atom">#f</span> <span class="cm-atom">#f</span> <span class="cm-atom">#f</span> <span class="cm-atom">#f</span> <span class="cm-atom">#f</span>
+                <span class="cm-atom">#t</span> <span class="cm-atom">#f</span> <span class="cm-atom">#t</span> <span class="cm-atom">#t</span> <span class="cm-atom">#t</span> <span class="cm-atom">#t</span> <span class="cm-atom">#t</span>
+                <span class="cm-atom">#t</span> <span class="cm-atom">#t</span> <span class="cm-atom">#f</span> <span class="cm-atom">#t</span> <span class="cm-atom">#t</span> <span class="cm-atom">#t</span> <span class="cm-atom">5</span><span class="cm-atom">)</span><span class="cm-bracket">)</span>
+</code></pre>
+<p>The correct answer would be <code>17</code>.</p>
+<p>Hint: Don't forget to check for bad values like <code>null</code>/<code>undefined</code></p>
+                        </div>
+                    </div>
+                </div>
+            </main>
+        </div>
+    </div>
+</body>
+</html>

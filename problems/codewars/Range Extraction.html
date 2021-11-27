@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Range Extraction</title>
+    <link rel="stylesheet" media="screen" href="css/style.css">
+</head>
+<body>
+    <div id="app">
+        <div class="w-full" id="shell">
+            <main id="shell_content">
+                <div class="w-full mt-2">
+                    <h2>Range Extraction</h2>
+                    <h2>Points: 4 kyu</h2>
+                    <a href="https://www.codewars.com/kata/51ba717bb08c1cd60f00002f"><h2>Kata ID: 51ba717bb08c1cd60f00002f</h2></a>
+                    <div class="w-full panel bg-ui-section">
+                        <div class="markdown prose max-w-5xl mx-auto" id="description">
+                            <p>A format for expressing an ordered list of integers is to use a comma separated list of either</p>
+<ul>
+<li>individual integers</li>
+<li>or a range of integers denoted by the starting integer separated from the end integer in the range by a dash, '-'. The range includes all integers in the interval including both endpoints.  It is not considered a range unless it spans at least 3 numbers. For example "12,13,15-17"</li>
+</ul>
+<p>Complete the solution  so that it takes a list of integers in increasing order and returns a correctly formatted string in the range format. </p>
+<p><strong>Example:</strong></p>
+<pre><code class="language-javascript"><span class="cm-variable">solution</span>([<span class="cm-operator">-</span><span class="cm-number">6</span>, <span class="cm-operator">-</span><span class="cm-number">3</span>, <span class="cm-operator">-</span><span class="cm-number">2</span>, <span class="cm-operator">-</span><span class="cm-number">1</span>, <span class="cm-number">0</span>, <span class="cm-number">1</span>, <span class="cm-number">3</span>, <span class="cm-number">4</span>, <span class="cm-number">5</span>, <span class="cm-number">7</span>, <span class="cm-number">8</span>, <span class="cm-number">9</span>, <span class="cm-number">10</span>, <span class="cm-number">11</span>, <span class="cm-number">14</span>, <span class="cm-number">15</span>, <span class="cm-number">17</span>, <span class="cm-number">18</span>, <span class="cm-number">19</span>, <span class="cm-number">20</span>]);
+<span class="cm-comment">// returns "-6,-3-1,3-5,7-11,14,15,17-20"</span>
+</code></pre>
+<pre style="display: none;"><code class="language-coffeescript"><span class="cm-variable">solution</span><span class="cm-punctuation">(</span><span class="cm-punctuation">[</span><span class="cm-number">-6</span><span class="cm-punctuation">,</span> <span class="cm-number">-3</span><span class="cm-punctuation">,</span> <span class="cm-number">-2</span><span class="cm-punctuation">,</span> <span class="cm-number">-1</span><span class="cm-punctuation">,</span> <span class="cm-number">0</span><span class="cm-punctuation">,</span> <span class="cm-number">1</span><span class="cm-punctuation">,</span> <span class="cm-number">3</span><span class="cm-punctuation">,</span> <span class="cm-number">4</span><span class="cm-punctuation">,</span> <span class="cm-number">5</span><span class="cm-punctuation">,</span> <span class="cm-number">7</span><span class="cm-punctuation">,</span> <span class="cm-number">8</span><span class="cm-punctuation">,</span> <span class="cm-number">9</span><span class="cm-punctuation">,</span> <span class="cm-number">10</span><span class="cm-punctuation">,</span> <span class="cm-number">11</span><span class="cm-punctuation">,</span> <span class="cm-number">14</span><span class="cm-punctuation">,</span> <span class="cm-number">15</span><span class="cm-punctuation">,</span> <span class="cm-number">17</span><span class="cm-punctuation">,</span> <span class="cm-number">18</span><span class="cm-punctuation">,</span> <span class="cm-number">19</span><span class="cm-punctuation">,</span> <span class="cm-number">20</span><span class="cm-punctuation">]</span><span class="cm-punctuation">)</span>
+<span class="cm-comment"># returns "-6,-3-1,3-5,7-11,14,15,17-20"</span>
+</code></pre>
+<pre style="display: none;"><code class="language-ruby"><span class="cm-variable">solution</span>([<span class="cm-operator">-</span><span class="cm-number">6</span>, <span class="cm-operator">-</span><span class="cm-number">3</span>, <span class="cm-operator">-</span><span class="cm-number">2</span>, <span class="cm-operator">-</span><span class="cm-number">1</span>, <span class="cm-number">0</span>, <span class="cm-number">1</span>, <span class="cm-number">3</span>, <span class="cm-number">4</span>, <span class="cm-number">5</span>, <span class="cm-number">7</span>, <span class="cm-number">8</span>, <span class="cm-number">9</span>, <span class="cm-number">10</span>, <span class="cm-number">11</span>, <span class="cm-number">14</span>, <span class="cm-number">15</span>, <span class="cm-number">17</span>, <span class="cm-number">18</span>, <span class="cm-number">19</span>, <span class="cm-number">20</span>])
+<span class="cm-comment"># returns "-6,-3-1,3-5,7-11,14,15,17-20"</span>
+</code></pre>
+<pre style="display: none;"><code class="language-python"><span class="cm-variable">solution</span>([<span class="cm-operator">-</span><span class="cm-number">6</span>, <span class="cm-operator">-</span><span class="cm-number">3</span>, <span class="cm-operator">-</span><span class="cm-number">2</span>, <span class="cm-operator">-</span><span class="cm-number">1</span>, <span class="cm-number">0</span>, <span class="cm-number">1</span>, <span class="cm-number">3</span>, <span class="cm-number">4</span>, <span class="cm-number">5</span>, <span class="cm-number">7</span>, <span class="cm-number">8</span>, <span class="cm-number">9</span>, <span class="cm-number">10</span>, <span class="cm-number">11</span>, <span class="cm-number">14</span>, <span class="cm-number">15</span>, <span class="cm-number">17</span>, <span class="cm-number">18</span>, <span class="cm-number">19</span>, <span class="cm-number">20</span>])
+<span class="cm-comment"># returns "-6,-3-1,3-5,7-11,14,15,17-20"</span>
+</code></pre>
+<pre style="display: none;"><code class="language-java"><span class="cm-variable">Solution</span>.<span class="cm-variable">rangeExtraction</span>(<span class="cm-keyword">new</span> <span class="cm-type">int</span>[] {<span class="cm-operator">-</span><span class="cm-number">6</span>, <span class="cm-operator">-</span><span class="cm-number">3</span>, <span class="cm-operator">-</span><span class="cm-number">2</span>, <span class="cm-operator">-</span><span class="cm-number">1</span>, <span class="cm-number">0</span>, <span class="cm-number">1</span>, <span class="cm-number">3</span>, <span class="cm-number">4</span>, <span class="cm-number">5</span>, <span class="cm-number">7</span>, <span class="cm-number">8</span>, <span class="cm-number">9</span>, <span class="cm-number">10</span>, <span class="cm-number">11</span>, <span class="cm-number">14</span>, <span class="cm-number">15</span>, <span class="cm-number">17</span>, <span class="cm-number">18</span>, <span class="cm-number">19</span>, <span class="cm-number">20</span>})
+<span class="cm-variable">#</span> <span class="cm-variable">returns</span> <span class="cm-string">"-6,-3-1,3-5,7-11,14,15,17-20"</span>
+</code></pre>
+<pre style="display: none;"><code class="language-C#">RangeExtraction.Extract(new[] {-6, -3, -2, -1, 0, 1, 3, 4, 5, 7, 8, 9, 10, 11, 14, 15, 17, 18, 19, 20});
+# returns "-6,-3-1,3-5,7-11,14,15,17-20"
+</code></pre>
+<pre style="display: none;"><code class="language-cpp"><span class="cm-variable">range_extraction</span>({<span class="cm-operator">-</span><span class="cm-number">6</span>, <span class="cm-operator">-</span><span class="cm-number">3</span>, <span class="cm-operator">-</span><span class="cm-number">2</span>, <span class="cm-operator">-</span><span class="cm-number">1</span>, <span class="cm-number">0</span>, <span class="cm-number">1</span>, <span class="cm-number">3</span>, <span class="cm-number">4</span>, <span class="cm-number">5</span>, <span class="cm-number">7</span>, <span class="cm-number">8</span>, <span class="cm-number">9</span>, <span class="cm-number">10</span>, <span class="cm-number">11</span>, <span class="cm-number">14</span>, <span class="cm-number">15</span>, <span class="cm-number">17</span>, <span class="cm-number">18</span>, <span class="cm-number">19</span>, <span class="cm-number">20</span>});
+<span class="cm-comment">// returns "-6,-3-1,3-5,7-11,14,15,17-20"</span>
+</code></pre>
+<pre style="display: none;"><code class="language-c"><span class="cm-variable">range_extraction</span>((<span class="cm-keyword">const</span> []){<span class="cm-operator">-</span><span class="cm-number">6</span>, <span class="cm-operator">-</span><span class="cm-number">3</span>, <span class="cm-operator">-</span><span class="cm-number">2</span>, <span class="cm-operator">-</span><span class="cm-number">1</span>, <span class="cm-number">0</span>, <span class="cm-number">1</span>, <span class="cm-number">3</span>, <span class="cm-number">4</span>, <span class="cm-number">5</span>, <span class="cm-number">7</span>, <span class="cm-number">8</span>, <span class="cm-number">9</span>, <span class="cm-number">10</span>, <span class="cm-number">11</span>, <span class="cm-number">14</span>, <span class="cm-number">15</span>, <span class="cm-number">17</span>, <span class="cm-number">18</span>, <span class="cm-number">19</span>, <span class="cm-number">20</span>}, <span class="cm-number">20</span>);
+<span class="cm-comment">/* returns "-6,-3-1,3-5,7-11,14,15,17-20" */</span>
+</code></pre>
+<pre style="display: none;"><code class="language-nasm"><span class="cm-tag">nums:</span>  <span class="cm-tag">dd</span>  -<span class="cm-number">6</span>, -<span class="cm-number">3</span>, -<span class="cm-number">2</span>, -<span class="cm-number">1</span>, <span class="cm-number">0</span>, <span class="cm-number">1</span>, <span class="cm-number">3</span>, <span class="cm-number">4</span>, <span class="cm-number">5</span>, <span class="cm-number">7</span>, <span class="cm-number">8</span>, <span class="cm-number">9</span>, <span class="cm-number">10</span>, <span class="cm-number">11</span>, <span class="cm-number">14</span>, <span class="cm-number">15</span>, <span class="cm-number">17</span>, <span class="cm-number">18</span>, <span class="cm-number">19</span>, <span class="cm-number">20</span>
+
+<span class="cm-keyword">mov</span> <span class="cm-builtin">rdi</span>, nums
+<span class="cm-keyword">mov</span> <span class="cm-builtin">rsi</span>, <span class="cm-number">20</span>
+<span class="cm-keyword">call</span> range_extraction
+<span class="cm-comment">; RAX &lt;- `-6,-3-1,3-5,7-11,14,15,17-20\0`</span>
+</code></pre>
+<pre style="display: none;"><code class="language-julia"><span class="cm-variable">rangeextraction</span>([<span class="cm-operator">-</span><span class="cm-number">6</span> <span class="cm-operator">-</span><span class="cm-number">3</span> <span class="cm-operator">-</span><span class="cm-number">2</span> <span class="cm-operator">-</span><span class="cm-number">1</span> <span class="cm-number">0</span> <span class="cm-number">1</span> <span class="cm-number">3</span> <span class="cm-number">4</span> <span class="cm-number">5</span> <span class="cm-number">7</span> <span class="cm-number">8</span> <span class="cm-number">9</span> <span class="cm-number">10</span> <span class="cm-number">11</span> <span class="cm-number">14</span> <span class="cm-number">15</span> <span class="cm-number">17</span> <span class="cm-number">18</span> <span class="cm-number">19</span> <span class="cm-number">20</span>])
+<span class="cm-comment"># returns "-6,-3-1,3-5,7-11,14,15,17-20"</span>
+</code></pre>
+<pre style="display: none;"><code class="language-scala"><span class="cm-variable">solution</span>(<span class="cm-type">List</span>(<span class="cm-operator">-</span><span class="cm-number">6</span>, <span class="cm-operator">-</span><span class="cm-number">3</span>, <span class="cm-operator">-</span><span class="cm-number">2</span>, <span class="cm-operator">-</span><span class="cm-number">1</span>, <span class="cm-number">0</span>, <span class="cm-number">1</span>, <span class="cm-number">3</span>, <span class="cm-number">4</span>, <span class="cm-number">5</span>, <span class="cm-number">7</span>, <span class="cm-number">8</span>, <span class="cm-number">9</span>, <span class="cm-number">10</span>, <span class="cm-number">11</span>, <span class="cm-number">14</span>, <span class="cm-number">15</span>, <span class="cm-number">17</span>, <span class="cm-number">18</span>, <span class="cm-number">19</span>, <span class="cm-number">20</span>))
+<span class="cm-comment">// "-6,-3-1,3-5,7-11,14,15,17-20"</span>
+</code></pre>
+<pre style="display: none;"><code class="language-racket"><span class="cm-bracket">(</span><span class="cm-variable">solution</span> <span class="cm-atom">'</span><span class="cm-atom">(</span><span class="cm-atom">-6</span> <span class="cm-atom">-3</span> <span class="cm-atom">-2</span> <span class="cm-atom">-1</span> <span class="cm-atom">0</span> <span class="cm-atom">1</span> <span class="cm-atom">3</span> <span class="cm-atom">4</span> <span class="cm-atom">5</span> <span class="cm-atom">7</span> <span class="cm-atom">8</span> <span class="cm-atom">9</span> <span class="cm-atom">10</span> <span class="cm-atom">11</span> <span class="cm-atom">14</span> <span class="cm-atom">15</span> <span class="cm-atom">17</span> <span class="cm-atom">18</span> <span class="cm-atom">19</span> <span class="cm-atom">20</span><span class="cm-atom">)</span><span class="cm-bracket">)</span>
+<span class="cm-comment">; returns "-6,-3-1,3-5,7-11,14,15,17-20"</span>
+</code></pre>
+<pre style="display: none;"><code class="language-php"><span class="cm-variable">solution</span>([<span class="cm-operator">-</span><span class="cm-number">6</span>, <span class="cm-operator">-</span><span class="cm-number">3</span>, <span class="cm-operator">-</span><span class="cm-number">2</span>, <span class="cm-operator">-</span><span class="cm-number">1</span>, <span class="cm-number">0</span>, <span class="cm-number">1</span>, <span class="cm-number">3</span>, <span class="cm-number">4</span>, <span class="cm-number">5</span>, <span class="cm-number">7</span>, <span class="cm-number">8</span>, <span class="cm-number">9</span>, <span class="cm-number">10</span>, <span class="cm-number">11</span>, <span class="cm-number">14</span>, <span class="cm-number">15</span>, <span class="cm-number">17</span>, <span class="cm-number">18</span>, <span class="cm-number">19</span>, <span class="cm-number">20</span>])
+<span class="cm-comment">// returns '-6,-3-1,3-5,7-11,14,15,17-20'</span>
+</code></pre>
+<p><em>Courtesy of rosettacode.org</em></p>
+                        </div>
+                    </div>
+                </div>
+            </main>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Buying a car</title>
+    <link rel="stylesheet" media="screen" href="css/style.css">
+</head>
+<body>
+    <div id="app">
+        <div class="w-full" id="shell">
+            <main id="shell_content">
+                <div class="w-full mt-2">
+                    <h2>Buying a car</h2>
+                    <h2>Points: 6 kyu</h2>
+                    <a href="https://www.codewars.com/kata/554a44516729e4d80b000012"><h2>Kata ID: 554a44516729e4d80b000012</h2></a>
+                    <div class="w-full panel bg-ui-section">
+                        <div class="markdown prose max-w-5xl mx-auto" id="description">
+                            <p>Let us begin with an example:</p>
+<p>A man has a rather old car being worth $2000. 
+He saw a secondhand car being worth $8000. He wants to keep his old car until he can buy the secondhand one.</p>
+<p>He thinks he can save $1000 each month but the prices of his old 
+car and of the new one decrease of 1.5 percent per month.
+Furthermore this percent of loss increases of <code>0.5</code> percent 
+at the end of every two months.
+Our man finds it difficult to make all these calculations.</p>
+<p><strong>Can you help him?</strong></p>
+<p>How many months will it take him to save up enough money to buy the car he wants, and how much money will he have left over?</p>
+<p><strong>Parameters and return of function:</strong></p>
+<pre><code>parameter (positive int or float, guaranteed) startPriceOld (Old car price)
+parameter (positive int or float, guaranteed) startPriceNew (New car price)
+parameter (positive int or float, guaranteed) savingperMonth 
+parameter (positive float or int, guaranteed) percentLossByMonth
+
+nbMonths(2000, 8000, 1000, 1.5) should return [6, 766] or (6, 766)
+</code></pre>
+<h4 id="detail-of-the-above-example">Detail of the above example:</h4>
+<pre><code>end month 1: percentLoss 1.5 available -4910.0
+end month 2: percentLoss 2.0 available -3791.7999...
+end month 3: percentLoss 2.0 available -2675.964
+end month 4: percentLoss 2.5 available -1534.06489...
+end month 5: percentLoss 2.5 available -395.71327...
+end month 6: percentLoss 3.0 available 766.158120825...
+return [6, 766] or (6, 766)
+</code></pre>
+<p>where <code>6</code> is the number of months at <strong>the end of which</strong> he can buy the new car and <code>766</code> is the nearest integer to <code>766.158...</code> (rounding <code>766.158</code> gives <code>766</code>).</p>
+<p><strong>Note:</strong> </p>
+<p>Selling, buying and saving are normally done at end of month.
+Calculations are processed at the end of each considered month
+but if, by chance from the start, the value of the old car is bigger than the value of the new one or equal there is no saving to be made, no need to wait so he can at the beginning of the month buy the new car:</p>
+<pre><code>nbMonths(12000, 8000, 1000, 1.5) should return [0, 4000]
+nbMonths(8000, 8000, 1000, 1.5) should return [0, 0]
+</code></pre>
+<p>We don't take care of a deposit of savings in a bank:-)</p>
+                        </div>
+                    </div>
+                </div>
+            </main>
+        </div>
+    </div>
+</body>
+</html>

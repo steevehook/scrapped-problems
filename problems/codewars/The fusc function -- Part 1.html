@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>The fusc function -- Part 1</title>
+    <link rel="stylesheet" media="screen" href="css/style.css">
+</head>
+<body>
+    <div id="app">
+        <div class="w-full" id="shell">
+            <main id="shell_content">
+                <div class="w-full mt-2">
+                    <h2>The fusc function -- Part 1</h2>
+                    <h2>Points: 7 kyu</h2>
+                    <a href="https://www.codewars.com/kata/570409d3d80ec699af001bf9"><h2>Kata ID: 570409d3d80ec699af001bf9</h2></a>
+                    <div class="w-full panel bg-ui-section">
+                        <div class="markdown prose max-w-5xl mx-auto" id="description">
+                            <p>The fusc function is defined recursively as follows:</p>
+<pre><code>1. fusc(0) = 0
+2. fusc(1) = 1
+3. fusc(2 * n) = fusc(n)
+4. fusc(2 * n + 1) = fusc(n) + fusc(n + 1)
+</code></pre>
+<p>The 4 rules above are sufficient to determine the value of <code>fusc</code> for any non-negative input <code>n</code>. For example, let's say you want to compute <code>fusc(10)</code>. </p>
+<ol>
+<li><code>fusc(10) = fusc(5)</code>, by rule 3.</li>
+<li><code>fusc(5) = fusc(2) + fusc(3)</code>, by rule 4.</li>
+<li><code>fusc(2) = fusc(1)</code>, by rule 3.</li>
+<li><code>fusc(1) = 1</code>, by rule 2.</li>
+<li><code>fusc(3) = fusc(1) + fusc(2)</code> by rule 4.</li>
+<li><code>fusc(1)</code> and <code>fusc(2)</code> have already been computed are both equal to <code>1</code>.</li>
+</ol>
+<p>Putting these results together <code>fusc(10) = fusc(5) = fusc(2) + fusc(3) = 1 + 2 = 3</code></p>
+<p>Your job is to produce the code for the <code>fusc</code> function. In this kata, your function will be tested with small values of <code>n</code>, so you should not need to be concerned about stack overflow or timeouts. </p>
+<p>Hint: Use recursion.</p>
+<p>When done, move on to <a href="http://www.codewars.com/kata/the-fusc-function-part-2" target="_blank">Part 2</a>.</p>
+                        </div>
+                    </div>
+                </div>
+            </main>
+        </div>
+    </div>
+</body>
+</html>

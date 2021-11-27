@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Rotate for a Max</title>
+    <link rel="stylesheet" media="screen" href="css/style.css">
+</head>
+<body>
+    <div id="app">
+        <div class="w-full" id="shell">
+            <main id="shell_content">
+                <div class="w-full mt-2">
+                    <h2>Rotate for a Max</h2>
+                    <h2>Points: 7 kyu</h2>
+                    <a href="https://www.codewars.com/kata/56a4872cbb65f3a610000026"><h2>Kata ID: 56a4872cbb65f3a610000026</h2></a>
+                    <div class="w-full panel bg-ui-section">
+                        <div class="markdown prose max-w-5xl mx-auto" id="description">
+                            <p>Let us begin with an example:</p>
+<p>Take a number: <code>56789</code>. Rotate left, you get <code>67895</code>. </p>
+<p>Keep the first digit in place and rotate left the other digits: <code>68957</code>. </p>
+<p>Keep the first two digits in place and rotate the other ones: <code>68579</code>. </p>
+<p>Keep the first three digits and rotate left the rest:
+<code>68597</code>. 
+Now it is over since keeping the first four it remains only one digit which
+rotated is itself.</p>
+<p>You have the following sequence of numbers:</p>
+<p><code>56789 -&gt; 67895 -&gt; 68957 -&gt; 68579 -&gt; 68597</code></p>
+<p>and you must return the greatest: <code>68957</code>.</p>
+<h4 id="task">Task</h4>
+<p>Write <code>function max_rot(n)</code> which given a positive integer <code>n</code> returns the maximum number you got doing rotations similar to the above example.</p>
+<p>So <code>max_rot</code> (or <code>maxRot</code> or ... depending on the language) is such as:</p>
+<ul>
+<li><p><code>max_rot(56789) should return 68957</code></p>
+</li>
+<li><p><code>max_rot(38458215) should return 85821534</code></p>
+</li>
+</ul>
+                        </div>
+                    </div>
+                </div>
+            </main>
+        </div>
+    </div>
+</body>
+</html>

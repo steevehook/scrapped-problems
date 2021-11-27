@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Hungarian Cardinal Numerals</title>
+    <link rel="stylesheet" media="screen" href="css/style.css">
+</head>
+<body>
+    <div id="app">
+        <div class="w-full" id="shell">
+            <main id="shell_content">
+                <div class="w-full mt-2">
+                    <h2>Hungarian Cardinal Numerals</h2>
+                    <h2>Points: 6 kyu</h2>
+                    <a href="https://www.codewars.com/kata/58008f9897917feeec000a3e"><h2>Kata ID: 58008f9897917feeec000a3e</h2></a>
+                    <div class="w-full panel bg-ui-section">
+                        <div class="markdown prose max-w-5xl mx-auto" id="description">
+                            <h2 id="task">Task</h2>
+<p>Write a function called <code>hungarian_numeral()</code> which takes a non-negative integer <code>n</code> and returns the corresponding Hungarian numeral  to it.</p>
+<h2 id="precondition">Precondition</h2>
+<ol>
+<li><code>n</code> is always an <strong>int</strong></li>
+<li><code>0 &lt;= n &lt; 1000000</code></li>
+</ol>
+<h2 id="rules-for-hungarian-cardinal-numerals-simplified">Rules for Hungarian cardinal numerals (simplified)</h2>
+<p>General rules for constructing numerals is similar to that in English: you simply attach the numerals in a decreasing order, indicating thousands and hundreds:</p>
+<pre><code class="language-python"><span class="cm-number">12345</span> <span class="cm-operator">=</span> <span class="cm-string">'twelve thousand three hundred forty five'</span>
+      <span class="cm-string">''' 12      1000     3     100     40    5 '''</span>
+</code></pre>
+<p>Obviously, there are some "tricks", that's what this kata is about :-)</p>
+<h3 id="numbers-0-to-9">Numbers 0 to 9</h3>
+<p>The numerals for the units in Hungarian are the following (available preloaded):</p>
+<pre><code class="language-python"><span class="cm-variable">UNITS</span> <span class="cm-operator">=</span> [ <span class="cm-string">u'nulla'</span>, <span class="cm-string">u'egy'</span>, <span class="cm-string">u'kettő'</span>, <span class="cm-string">u'három'</span>, <span class="cm-string">u'négy'</span>, <span class="cm-string">u'öt'</span>, <span class="cm-string">u'hat'</span>, <span class="cm-string">u'hét'</span>, <span class="cm-string">u'nyolc'</span>, <span class="cm-string">u'kilenc'</span> ]
+        <span class="cm-string">'''   0        1        2         3        4        5      6       7        8         9   '''</span>
+</code></pre>
+<pre style="display: none;"><code class="language-go"><span class="cm-keyword">var</span> <span class="cm-variable">Units</span> <span class="cm-operator">=</span> []<span class="cm-keyword">string</span>{<span class="cm-string">"nulla"</span>, <span class="cm-string">"egy"</span>, <span class="cm-string">"kettő"</span>, <span class="cm-string">"három"</span>, <span class="cm-string">"négy"</span>, <span class="cm-string">"öt"</span>, <span class="cm-string">"hat"</span>, <span class="cm-string">"hét"</span>, <span class="cm-string">"nyolc"</span>, <span class="cm-string">"kilenc"</span>}
+        <span class="cm-string">"             0        1      2        3        4       5     6      7      8         9   "</span>
+</code></pre>
+<p>NOTE: the word <code>'kettő'</code> (2) is used <strong><u>only</u></strong> when it's in the last decimal place (<code>xxx2</code>); in all other places use <code>'két'</code> instead.</p>
+<h3 id="numbers-10-to-99">Numbers 10 to 99</h3>
+<p>Take the numeral of the tens and append the numeral of the unit to it. The tens in Hungarian are (available preloaded):</p>
+<pre><code class="language-python"><span class="cm-variable">TENS</span> <span class="cm-operator">=</span> [ <span class="cm-string">u'tíz'</span>, <span class="cm-string">u'húsz'</span>, <span class="cm-string">u'harminc'</span>, <span class="cm-string">u'negyven'</span>, <span class="cm-string">u'ötven'</span>, <span class="cm-string">u'hatvan'</span>, <span class="cm-string">u'hetven'</span>, <span class="cm-string">u'nyolcvan'</span>, <span class="cm-string">u'kilencven'</span> ]
+        <span class="cm-string">''' 10      20        30          40         50         60         70          80           90    '''</span>
+</code></pre>
+<pre style="display: none;"><code class="language-go"><span class="cm-keyword">var</span> <span class="cm-variable">Tens</span> :<span class="cm-operator">=</span> []<span class="cm-keyword">string</span>{<span class="cm-string">'tíz'</span>, <span class="cm-string">'húsz'</span>, <span class="cm-string">'harminc'</span>, <span class="cm-string">'negyven'</span>, <span class="cm-string">'ötven'</span>, <span class="cm-string">'hatvan'</span>, <span class="cm-string">'hetven'</span>, <span class="cm-string">'nyolcvan'</span>, <span class="cm-string">'kilencven'</span> ]
+                   <span class="cm-string">"  10     20      30         40         50       60        70          80           90    "</span>
+</code></pre>
+<p>NOTE: the words <code>'tíz'</code> (10) and <code>'húsz'</code> (20) are used <strong><u>only</u></strong> when the number ends exactly with them (<code>xx10</code>, <code>xx20</code>); otherwise use <code>'tizen'</code> (<code>xx1x</code>) and <code>'huszon'</code> (<code>xx2x</code>) instead.</p>
+<p><em>Examples:</em></p>
+<pre><code class="language-python"><span class="cm-number">44</span>  <span class="cm-operator">=</span>  <span class="cm-string">'negyvennégy'</span>   <span class="cm-comment">#  'negyven' (40) + 'négy' (4)</span>
+<span class="cm-number">25</span>  <span class="cm-operator">=</span>  <span class="cm-string">'huszonöt'</span>      <span class="cm-comment">#  'huszon'  (2x) +  'öt'  (5)                #  REMINDER: 'huszon', not 'húsz'</span>
+</code></pre>
+<h2 id="hundreds">Hundreds</h2>
+<p>Take the digit of the hundreds, append the word <code>'száz'</code> (hundred) to it, then append the numeral for the part under hundred.</p>
+<p><em>Examples:</em></p>
+<pre><code class="language-python"><span class="cm-number">200</span>  <span class="cm-operator">=</span>  <span class="cm-string">'kétszáz'</span>            <span class="cm-comment">#  'két' (2) + 'száz' (100)              #  REMINDER: 'két', not 'kettő'</span>
+<span class="cm-number">645</span>  <span class="cm-operator">=</span>  <span class="cm-string">'hatszáznegyvenöt'</span>   <span class="cm-comment">#  'hat' (6) + 'száz' (100) + 'negyvenöt' (45)</span>
+</code></pre>
+<p>NOTE: for <code>100</code> the word <code>'száz'</code> is used, <strong><u>not</u></strong> <code>'egyszáz'</code></p>
+<h2 id="thousands">Thousands</h2>
+<p>Treat the thousands part as number below 1000 and append the word <code>'ezer'</code> (thousand) to it. If there is a part under 1000 <strong><u>and</u></strong> <code>n</code> &gt; 2000, append that part with a dash (<code>-</code>).</p>
+<p><strong>NOTE:</strong> for <code>1000</code> the word <code>'ezer'</code> is used, <strong><u>not</u></strong> <code>'egyezer'</code>. From this follows that for numbers <code>1000</code> to <code>1999</code> you need to drop <code>egy</code> (e.g. <code>1200</code> is <s>egy</s><strong>ezerkétszáz</strong>).</p>
+<p><em>Examples:</em></p>
+<pre><code class="language-python"><span class="cm-number">1056</span>    <span class="cm-operator">=</span>  <span class="cm-string">'ezerötvenhat'</span>             <span class="cm-comment">#  'ezer' (1000) + 'ötvenhat' (56)           #  REMINDER: 'ezer', not 'egyezer' and no dash (n &lt; 2000)</span>
+<span class="cm-number">17501</span>   <span class="cm-operator">=</span>  <span class="cm-string">'tizenhétezer-ötszázegy'</span>   <span class="cm-comment">#  'tizenhét' (17) + 'ezer' (1000) + '-' + 'ötszázegy' (501)</span>
+                                      <span class="cm-string">''' thousands part                   dash   part under thousand '''</span>
+</code></pre>
+<h2 id="general-note">General Note</h2>
+<p>You may use <a href="http://helyesiras.mta.hu/helyesiras/default/numerals" target="_blank">this site</a> to create or verify test cases. Write the number in the grey input field after the question mark, then click the <code>'Mehet'</code> button. See the result in the green rectangle(s) below.</p>
+                        </div>
+                    </div>
+                </div>
+            </main>
+        </div>
+    </div>
+</body>
+</html>

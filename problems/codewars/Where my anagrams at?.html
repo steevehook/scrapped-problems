@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Where my anagrams at?</title>
+    <link rel="stylesheet" media="screen" href="css/style.css">
+</head>
+<body>
+    <div id="app">
+        <div class="w-full" id="shell">
+            <main id="shell_content">
+                <div class="w-full mt-2">
+                    <h2>Where my anagrams at?</h2>
+                    <h2>Points: 5 kyu</h2>
+                    <a href="https://www.codewars.com/kata/523a86aa4230ebb5420001e1"><h2>Kata ID: 523a86aa4230ebb5420001e1</h2></a>
+                    <div class="w-full panel bg-ui-section">
+                        <div class="markdown prose max-w-5xl mx-auto" id="description">
+                            <p>What is an anagram? Well, two words are anagrams of each other if they both contain the same letters. For example:</p>
+<pre><code>'abba' &amp; 'baab' == true
+
+'abba' &amp; 'bbaa' == true
+
+'abba' &amp; 'abbba' == false
+
+'abba' &amp; 'abca' == false
+</code></pre>
+<p>Write a function that will find all the anagrams of a word from a list. You will be given two inputs a word and an array with words. You should return an array of all the anagrams or an empty array if there are none. For example:</p>
+<pre><code class="language-javascript"><span class="cm-variable">anagrams</span>(<span class="cm-string">'abba'</span>, [<span class="cm-string">'aabb'</span>, <span class="cm-string">'abcd'</span>, <span class="cm-string">'bbaa'</span>, <span class="cm-string">'dada'</span>]) <span class="cm-operator">=&gt;</span> [<span class="cm-string">'aabb'</span>, <span class="cm-string">'bbaa'</span>]
+
+<span class="cm-variable">anagrams</span>(<span class="cm-string">'racer'</span>, [<span class="cm-string">'crazer'</span>, <span class="cm-string">'carer'</span>, <span class="cm-string">'racar'</span>, <span class="cm-string">'caers'</span>, <span class="cm-string">'racer'</span>]) <span class="cm-operator">=&gt;</span> [<span class="cm-string">'carer'</span>, <span class="cm-string">'racer'</span>]
+
+<span class="cm-variable">anagrams</span>(<span class="cm-string">'laser'</span>, [<span class="cm-string">'lazing'</span>, <span class="cm-string">'lazy'</span>,  <span class="cm-string">'lacer'</span>]) <span class="cm-operator">=&gt;</span> []
+</code></pre>
+<p><strong>Note for Go</strong><br>For Go: Empty string slice is expected when there are no anagrams found.</p>
+                        </div>
+                    </div>
+                </div>
+            </main>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Error correction #1 - Hamming Code</title>
+    <link rel="stylesheet" media="screen" href="css/style.css">
+</head>
+<body>
+    <div id="app">
+        <div class="w-full" id="shell">
+            <main id="shell_content">
+                <div class="w-full mt-2">
+                    <h2>Error correction #1 - Hamming Code</h2>
+                    <h2>Points: 6 kyu</h2>
+                    <a href="https://www.codewars.com/kata/5ef9ca8b76be6d001d5e1c3e"><h2>Kata ID: 5ef9ca8b76be6d001d5e1c3e</h2></a>
+                    <div class="w-full panel bg-ui-section">
+                        <div class="markdown prose max-w-5xl mx-auto" id="description">
+                            <p><em>Translations appreciated</em></p>
+<h2 id="background-information">Background information</h2>
+<p>The Hamming Code is used to correct errors, so-called bit flips, in data transmissions. Later in the description follows a detailed explanation of how it works. <br>
+In this Kata we will implement the Hamming Code with bit length 3; this has some advantages and disadvantages:</p>
+<ul>
+<li><strong>[ + ]</strong> It's simple to implement</li>
+<li><strong>[ + ]</strong> Compared to other versions of hamming code, we can correct more mistakes</li>
+<li><strong>[ - ]</strong> The size of the input triples</li>
+</ul>
+<h2 id="task-1-encode-function">Task 1: Encode function</h2>
+<p>Implement the encode function, using the following steps:</p>
+<ul>
+<li>convert every letter of the text to its ASCII value;</li>
+<li>convert ASCII values to 8-bit binary;</li>
+<li>triple every bit;</li>
+<li>concatenate the result;</li>
+</ul>
+<p>For example:</p>
+<pre><code class="language-c"><span class="cm-variable">input</span>: <span class="cm-string">"hey"</span>
+<span class="cm-operator">--&gt;</span> <span class="cm-number">104</span>, <span class="cm-number">101</span>, <span class="cm-number">121</span>                  <span class="cm-comment">// ASCII values</span>
+<span class="cm-operator">--&gt;</span> <span class="cm-number">01101000</span>, <span class="cm-number">01100101</span>, <span class="cm-number">01111001</span>   <span class="cm-comment">// binary</span>
+<span class="cm-operator">--&gt;</span> <span class="cm-number">000111111000111000000000</span> <span class="cm-number">000111111000000111000111</span> <span class="cm-number">000111111111111000000111</span>  <span class="cm-comment">// tripled</span>
+<span class="cm-operator">--&gt;</span> <span class="cm-string">"000111111000111000000000000111111000000111000111000111111111111000000111"</span>  <span class="cm-comment">// concatenated</span>
+</code></pre>
+<h2 id="task-2-decode-function">Task 2: Decode function:</h2>
+<p>Check if any errors happened and correct them. Errors will be only bit flips, and not a loss of bits:</p>
+<ul>
+<li><code>111</code> --&gt; <code>101</code> : this can and will happen</li>
+<li><code>111</code> --&gt; <code>11</code> : this cannot happen</li>
+</ul>
+<p><strong>Note</strong>: the length of the input string is also always divisible by 24 so that you can convert it to an ASCII value.</p>
+<p>Steps:</p>
+<ul>
+<li>Split the input into groups of three characters;</li>
+<li>Check if an error occurred: replace each group with the character that occurs most often, e.g. <code>010</code> --&gt; <code>0</code>, <code>110</code> --&gt; <code>1</code>, etc;</li>
+<li>Take each group of 8 characters and convert that binary number;</li>
+<li>Convert the binary values to decimal (ASCII);</li>
+<li>Convert the ASCII values to characters and concatenate the result</li>
+</ul>
+<p>For example:</p>
+<pre><code class="language-c"><span class="cm-variable">input</span>: <span class="cm-string">"100111111000111001000010000111111000000111001111000111110110111000010111"</span>
+<span class="cm-operator">--&gt;</span> <span class="cm-number">100</span>, <span class="cm-number">111</span>, <span class="cm-number">111</span>, <span class="cm-number">000</span>, <span class="cm-number">111</span>, <span class="cm-number">001</span>, ...  <span class="cm-comment">// triples</span>
+<span class="cm-operator">--&gt;</span>  <span class="cm-number">0</span>,   <span class="cm-number">1</span>,   <span class="cm-number">1</span>,   <span class="cm-number">0</span>,   <span class="cm-number">1</span>,   <span class="cm-number">0</span>,  ...  <span class="cm-comment">// corrected bits</span>
+<span class="cm-operator">--&gt;</span> <span class="cm-number">01101000</span>, <span class="cm-number">01100101</span>, <span class="cm-number">01111001</span>       <span class="cm-comment">// bytes</span>
+<span class="cm-operator">--&gt;</span> <span class="cm-number">104</span>, <span class="cm-number">101</span>, <span class="cm-number">121</span>                      <span class="cm-comment">// ASCII values</span>
+<span class="cm-operator">--&gt;</span> <span class="cm-string">"hey"</span>
+</code></pre>
+<p>If you liked this kata, please try out some of my other katas:
+<br>
+<a href="https://www.codewars.com/kata/5efae11e2d12df00331f91a6" target="_blank">Crack the PIN</a>
+<br>
+<a href="https://www.codewars.com/kata/5ef9c85dc41b4e000f9a645f" target="_blank">Decode the QR-Code</a>
+<br>
+<a href="https://www.codewars.com/kata/5f0795c6e45bc600247ab794" target="_blank">Hack the NSA</a></p>
+                        </div>
+                    </div>
+                </div>
+            </main>
+        </div>
+    </div>
+</body>
+</html>

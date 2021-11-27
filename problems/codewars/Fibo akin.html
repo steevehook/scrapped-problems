@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Fibo akin</title>
+    <link rel="stylesheet" media="screen" href="css/style.css">
+</head>
+<body>
+    <div id="app">
+        <div class="w-full" id="shell">
+            <main id="shell_content">
+                <div class="w-full mt-2">
+                    <h2>Fibo akin</h2>
+                    <h2>Points: 5 kyu</h2>
+                    <a href="https://www.codewars.com/kata/5772382d509c65de7e000982"><h2>Kata ID: 5772382d509c65de7e000982</h2></a>
+                    <div class="w-full panel bg-ui-section">
+                        <div class="markdown prose max-w-5xl mx-auto" id="description">
+                            <p>Be u(n) a sequence beginning with:</p>
+<pre><code>u[1]  = 1,  u[2]  = 1,  u[3]  = 2,  u[4]  = 3,  u[5]  = 3,  u[6] = 4,
+
+u[7]  = 5,  u[8]  = 5,  u[9]  = 6,  u[10] = 6,  u[11] = 6,  u[12] = 8,
+
+u[13] = 8,  u[14] = 8,  u[15] = 10, u[16] = 9,  u[17] = 10, u[18] = 11,
+
+u[19] = 11, u[20] = 12, u[21] = 12, u[22] = 12, u[23] = 12 etc...
+</code></pre>
+<ul>
+<li>How is<code>u[8]</code> calculated?</li>
+</ul>
+<p>We have <code>u[7] = 5</code> and <code>u[6] = 4</code>. These numbers tell us that we have to go backwards from index <code>8</code> to index <code>8 - 5 = 3</code> and to index <code>8 - 4 = 4</code> so to index <code>3</code> and <code>4</code>.</p>
+<p><code> u[3] = 2</code> and <code>u[4] = 3</code>  hence <code>u[8] = u[3] + u[4] = 2 + 3 = 5</code>.</p>
+<ul>
+<li>Another example: let us calculate <code>u[13]</code>. At indexes <code>12</code> and <code>11</code> we have <code>8</code> and <code>6</code>. Going backwards of <code>8</code> and <code>6</code> from <code>13</code> we get indexes <code>13 - 8 = 5</code> and <code>13 - 6 = 7</code>. </li>
+</ul>
+<p><code> u[5] = 3</code>  and <code> u[7] = 5</code>  so <code> u[13] = u[5] + u[7] = 3 + 5 = 8</code> .</p>
+<h4 id="task">Task</h4>
+<ul>
+<li><ol start="0">
+<li>Express u(n) as a function of n, u[n - 1], u[n - 2]. (not tested).</li>
+</ol>
+</li>
+</ul>
+<ul>
+<li><ol>
+<li>Given two numbers <code>n, k (integers &gt; 2)</code> write the function <code>length_sup_u_k(n, k) or lengthSupUK or length-sup-u-k</code> returning the number of terms <code>u[i] &gt;= k</code> with <code>1 &lt;= i &lt;= n</code>. 
+If we look above we can see that between <code>u[1]</code> and <code>u[23]</code> we have four <code>u[i]</code> greater or equal to <code>12</code>: <code>length_sup_u_k(23, 12) =&gt; 4</code></li>
+</ol>
+</li>
+</ul>
+<ul>
+<li><ol start="2">
+<li>Given <code>n (integer &gt; 2)</code> write the function <code>comp(n)</code> returning the number of times where a term of <code>u</code> is less than its <strong>predecessor</strong> up to and including u[n]. </li>
+</ol>
+</li>
+</ul>
+<h4 id="examples">Examples:</h4>
+<pre><code>u(900) =&gt; 455 (not tested)
+u(90000) =&gt; 44337 (not tested)
+
+length_sup_u_k(23, 12) =&gt; 4
+length_sup_u_k(50, 10) =&gt; 35
+length_sup_u_k(500, 100) =&gt; 304
+
+comp(23) =&gt; 1 (since only u(16) &lt; u(15))
+comp(100) =&gt; 22
+comp(200) =&gt; 63
+</code></pre>
+<h4 id="note-shell">Note: Shell</h4>
+<p>Shell tests only <code>lengthSupUk</code></p>
+                        </div>
+                    </div>
+                </div>
+            </main>
+        </div>
+    </div>
+</body>
+</html>

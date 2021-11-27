@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Speed Control</title>
+    <link rel="stylesheet" media="screen" href="css/style.css">
+</head>
+<body>
+    <div id="app">
+        <div class="w-full" id="shell">
+            <main id="shell_content">
+                <div class="w-full mt-2">
+                    <h2>Speed Control</h2>
+                    <h2>Points: 7 kyu</h2>
+                    <a href="https://www.codewars.com/kata/56484848ba95170a8000004d"><h2>Kata ID: 56484848ba95170a8000004d</h2></a>
+                    <div class="w-full panel bg-ui-section">
+                        <div class="markdown prose max-w-5xl mx-auto" id="description">
+                            <p>In John's car the GPS records every <code>s</code> seconds the distance travelled from an origin (distances are measured in an arbitrary but consistent unit).
+For example, below is part of a record with <code>s = 15</code>:</p>
+<pre><code>x = [0.0, 0.19, 0.5, 0.75, 1.0, 1.25, 1.5, 1.75, 2.0, 2.25]
+</code></pre>
+<p>The sections are:</p>
+<pre><code>0.0-0.19, 0.19-0.5, 0.5-0.75, 0.75-1.0, 1.0-1.25, 1.25-1.50, 1.5-1.75, 1.75-2.0, 2.0-2.25
+</code></pre>
+<p>We can calculate John's average hourly speed on every section and we get:</p>
+<pre><code>[45.6, 74.4, 60.0, 60.0, 60.0, 60.0, 60.0, 60.0, 60.0]
+</code></pre>
+<p>Given <code>s</code> and <code>x</code> the task is to return as an integer the <code>*floor*</code> of the maximum average speed per hour obtained on the sections of <code>x</code>. 
+If x length is less than or equal to 1 return <code>0</code> since the car didn't move.</p>
+<h4 id="example">Example:</h4>
+<p>with the above data your function <code>gps(s, x)</code>should return <code>74</code></p>
+<h4 id="note">Note</h4>
+<p>With floats it can happen that results depends on the operations order. To calculate hourly speed you can use: </p>
+<p><code> (3600 * delta_distance) / s</code>.</p>
+                        </div>
+                    </div>
+                </div>
+            </main>
+        </div>
+    </div>
+</body>
+</html>

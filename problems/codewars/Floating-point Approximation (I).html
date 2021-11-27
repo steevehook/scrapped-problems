@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Floating-point Approximation (I)</title>
+    <link rel="stylesheet" media="screen" href="css/style.css">
+</head>
+<body>
+    <div id="app">
+        <div class="w-full" id="shell">
+            <main id="shell_content">
+                <div class="w-full mt-2">
+                    <h2>Floating-point Approximation (I)</h2>
+                    <h2>Points: 6 kyu</h2>
+                    <a href="https://www.codewars.com/kata/58184387d14fc32f2b0012b2"><h2>Kata ID: 58184387d14fc32f2b0012b2</h2></a>
+                    <div class="w-full panel bg-ui-section">
+                        <div class="markdown prose max-w-5xl mx-auto" id="description">
+                            <p>Consider the function </p>
+<p><code>f: x -&gt; sqrt(1 + x) - 1</code> at <code>x = 1e-15</code>. </p>
+<p>We get:
+<code>f(x) = 4.44089209850062616e-16</code> </p>
+<p>or something around that, depending on the language.</p>
+<p>This function involves the subtraction of a pair of similar numbers when x is near 0
+and the results are significantly erroneous in this region. Using <code>pow</code> instead of <code>sqrt</code>
+doesn't give better results.</p>
+<p>A "good" answer is <code>4.99999999999999875... * 1e-16</code>. </p>
+<p>Can you modify f(x) to give a good approximation of f(x) in the neighborhood of 0?</p>
+<h4 id="note">Note:</h4>
+<p>Don't round or truncate your results. See the testing function in <code>Sample Tests:</code>.</p>
+                        </div>
+                    </div>
+                </div>
+            </main>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Next bigger number with the same digits</title>
+    <link rel="stylesheet" media="screen" href="css/style.css">
+</head>
+<body>
+    <div id="app">
+        <div class="w-full" id="shell">
+            <main id="shell_content">
+                <div class="w-full mt-2">
+                    <h2>Next bigger number with the same digits</h2>
+                    <h2>Points: 4 kyu</h2>
+                    <a href="https://www.codewars.com/kata/55983863da40caa2c900004e"><h2>Kata ID: 55983863da40caa2c900004e</h2></a>
+                    <div class="w-full panel bg-ui-section">
+                        <div class="markdown prose max-w-5xl mx-auto" id="description">
+                            <p>Create a function that takes a positive integer and returns the next bigger number that can be formed by rearranging its digits. For example:</p>
+<pre><code>12 ==&gt; 21
+513 ==&gt; 531
+2017 ==&gt; 2071
+</code></pre>
+<pre><code class="language-swift"><span class="cm-variable">nextBigger</span><span class="cm-punctuation">(</span><span class="cm-variable">num</span><span class="cm-punctuation">:</span> <span class="cm-number">12</span><span class="cm-punctuation">)</span>   <span class="cm-comment">// returns 21</span>
+<span class="cm-variable">nextBigger</span><span class="cm-punctuation">(</span><span class="cm-variable">num</span><span class="cm-punctuation">:</span> <span class="cm-number">513</span><span class="cm-punctuation">)</span>  <span class="cm-comment">// returns 531</span>
+<span class="cm-variable">nextBigger</span><span class="cm-punctuation">(</span><span class="cm-variable">num</span><span class="cm-punctuation">:</span> <span class="cm-number">2017</span><span class="cm-punctuation">)</span> <span class="cm-comment">// returns 2071</span>
+</code></pre>
+<p>If the digits can't be rearranged to form a bigger number, return <code>-1</code> (or <code>nil</code> in Swift):</p>
+<pre><code>9 ==&gt; -1
+111 ==&gt; -1
+531 ==&gt; -1
+</code></pre>
+<pre><code class="language-swift"><span class="cm-variable">nextBigger</span><span class="cm-punctuation">(</span><span class="cm-variable">num</span><span class="cm-punctuation">:</span> <span class="cm-number">9</span><span class="cm-punctuation">)</span>   <span class="cm-comment">// returns nil</span>
+<span class="cm-variable">nextBigger</span><span class="cm-punctuation">(</span><span class="cm-variable">num</span><span class="cm-punctuation">:</span> <span class="cm-number">111</span><span class="cm-punctuation">)</span> <span class="cm-comment">// returns nil</span>
+<span class="cm-variable">nextBigger</span><span class="cm-punctuation">(</span><span class="cm-variable">num</span><span class="cm-punctuation">:</span> <span class="cm-number">531</span><span class="cm-punctuation">)</span> <span class="cm-comment">// returns nil</span>
+</code></pre>
+                        </div>
+                    </div>
+                </div>
+            </main>
+        </div>
+    </div>
+</body>
+</html>

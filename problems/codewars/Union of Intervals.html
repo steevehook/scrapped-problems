@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Union of Intervals</title>
+    <link rel="stylesheet" media="screen" href="css/style.css">
+</head>
+<body>
+    <div id="app">
+        <div class="w-full" id="shell">
+            <main id="shell_content">
+                <div class="w-full mt-2">
+                    <h2>Union of Intervals</h2>
+                    <h2>Points: 6 kyu</h2>
+                    <a href="https://www.codewars.com/kata/5495bfa82eced2146100002f"><h2>Kata ID: 5495bfa82eced2146100002f</h2></a>
+                    <div class="w-full panel bg-ui-section">
+                        <div class="markdown prose max-w-5xl mx-auto" id="description">
+                            <h1 id="union-of-closed-disjoint-intervals">Union of closed disjoint intervals</h1>
+<p>Write a function <code>interval_insert</code> which takes as input</p>
+<ul>
+<li>a list <code>myl</code> of disjoint closed intervals with integer endpoints, sorted by increasing order of left endpoints</li>
+<li>an interval <code>interval</code></li>
+</ul>
+<p>and returns the union of <code>interval</code> with the intervals in <code>myl</code>, as an array of disjoint closed intervals.</p>
+<hr>
+<h2 id="terminology">Terminology</h2>
+<p>A <code>closed</code> interval includes its endpoints. For example <code>[0,5]</code> means greater than or equal to <code>0</code> and less than or equal to <code>5</code>. For more, refer to <a href="http://bit.ly/disjointInterval" target="_blank">Wikipedia</a>.</p>
+<p>Two intervals are said to be <code>disjoint</code> if they have no element in common. Equivalently, disjoint intervals are intervals whose intersection is the empty interval. For example,<br><code>[1,3]</code> and <code>[4,6]</code> are disjoint<br><code>[1,3]</code> and <code>[3,5]</code> are not.</p>
+<hr>
+<h2 id="examples">Examples:</h2>
+<pre><code class="language-c">                         [(<span class="cm-number">1</span>, <span class="cm-number">2</span>)], (<span class="cm-number">3</span>, <span class="cm-number">4</span>) <span class="cm-operator">-&gt;</span> [(<span class="cm-number">1</span>, <span class="cm-number">2</span>), (<span class="cm-number">3</span>, <span class="cm-number">4</span>)]
+                         [(<span class="cm-number">3</span>, <span class="cm-number">4</span>)], (<span class="cm-number">1</span>, <span class="cm-number">2</span>) <span class="cm-operator">-&gt;</span> [(<span class="cm-number">1</span>, <span class="cm-number">2</span>), (<span class="cm-number">3</span>, <span class="cm-number">4</span>)]
+                 [(<span class="cm-number">1</span>, <span class="cm-number">2</span>), (<span class="cm-number">4</span>, <span class="cm-number">6</span>)], (<span class="cm-number">1</span>, <span class="cm-number">4</span>) <span class="cm-operator">-&gt;</span> [(<span class="cm-number">1</span>, <span class="cm-number">6</span>)]
+[(<span class="cm-number">0</span>, <span class="cm-number">2</span>), (<span class="cm-number">3</span>, <span class="cm-number">6</span>), (<span class="cm-number">7</span>, <span class="cm-number">7</span>), (<span class="cm-number">9</span>, <span class="cm-number">12</span>)], (<span class="cm-number">1</span>, <span class="cm-number">8</span>) <span class="cm-operator">-&gt;</span> [(<span class="cm-number">0</span>, <span class="cm-number">8</span>), (<span class="cm-number">9</span>, <span class="cm-number">12</span>)]
+</code></pre>
+                        </div>
+                    </div>
+                </div>
+            </main>
+        </div>
+    </div>
+</body>
+</html>

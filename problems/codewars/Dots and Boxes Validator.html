@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Dots and Boxes Validator</title>
+    <link rel="stylesheet" media="screen" href="css/style.css">
+</head>
+<body>
+    <div id="app">
+        <div class="w-full" id="shell">
+            <main id="shell_content">
+                <div class="w-full mt-2">
+                    <h2>Dots and Boxes Validator</h2>
+                    <h2>Points: 5 kyu</h2>
+                    <a href="https://www.codewars.com/kata/5d81d8571c6411001a40ba66"><h2>Kata ID: 5d81d8571c6411001a40ba66</h2></a>
+                    <div class="w-full panel bg-ui-section">
+                        <div class="markdown prose max-w-5xl mx-auto" id="description">
+                            <p><span style="color:#8df"><a style="color:#9f9;text-decoration:none" href="https://en.wikipedia.org/wiki/Dots_and_Boxes" target="_blank">Dots and Boxes</a></span> is a game typically played by two players. It starts with an empty square grid of equally-spaced dots. Two players take turns adding a single horizontal or vertical line between two unjoined adjacent dots. A player who completes the fourth side of a <code>1 x 1</code> box earns one point and takes another turn. The game ends when no more lines can be placed.</p>
+
+<p>Your task is to return the scores of the two players of a finished game.</p>
+
+<h2 style="color:#f88">Input</h2>
+
+<p>Your function will receive an array/tuple of integer pairs, each representing a link between two dots. Dots are denoted by a sequence of integers that increases left to right and top to bottom, like shown below.</p>
+<pre><code>for a 3 x 3 square
+
+0  1  2
+
+3  4  5
+
+6  7  8
+</code></pre>
+<h2 style="color:#f88">Output</h2>
+
+<p>Your function should return an array/tuple consisting of two non-negative integers representing the scores of both players.</p>
+<h2 style="color:#f88">Test Example</h2>
+<img src="images/kwS3rDy.png"><br>
+
+
+<pre><code class="language-python"><span class="cm-variable">moves</span> <span class="cm-operator">=</span> ((<span class="cm-number">0</span>,<span class="cm-number">1</span>),(<span class="cm-number">7</span>,<span class="cm-number">8</span>),(<span class="cm-number">1</span>,<span class="cm-number">2</span>),(<span class="cm-number">6</span>,<span class="cm-number">7</span>),(<span class="cm-number">0</span>,<span class="cm-number">3</span>),(<span class="cm-number">8</span>,<span class="cm-number">5</span>),(<span class="cm-number">3</span>,<span class="cm-number">4</span>),(<span class="cm-number">4</span>,<span class="cm-number">1</span>),(<span class="cm-number">4</span>,<span class="cm-number">5</span>),(<span class="cm-number">2</span>,<span class="cm-number">5</span>),(<span class="cm-number">7</span>,<span class="cm-number">4</span>),(<span class="cm-number">3</span>,<span class="cm-number">6</span>))
+<span class="cm-variable">dots_and_boxes</span>(<span class="cm-variable">moves</span>) <span class="cm-comment"># should return (3,1)</span>
+</code></pre>
+<pre style="display: none;"><code class="language-javascript"><span class="cm-keyword">let</span> <span class="cm-def">moves</span> <span class="cm-operator">=</span> [[<span class="cm-number">0</span>,<span class="cm-number">1</span>],[<span class="cm-number">7</span>,<span class="cm-number">8</span>],[<span class="cm-number">1</span>,<span class="cm-number">2</span>],[<span class="cm-number">6</span>,<span class="cm-number">7</span>],[<span class="cm-number">0</span>,<span class="cm-number">3</span>],[<span class="cm-number">8</span>,<span class="cm-number">5</span>],[<span class="cm-number">3</span>,<span class="cm-number">4</span>],[<span class="cm-number">4</span>,<span class="cm-number">1</span>],[<span class="cm-number">4</span>,<span class="cm-number">5</span>],[<span class="cm-number">2</span>,<span class="cm-number">5</span>],[<span class="cm-number">7</span>,<span class="cm-number">4</span>],[<span class="cm-number">3</span>,<span class="cm-number">6</span>]];
+<span class="cm-variable">dotsAndBoxes</span>(<span class="cm-variable">moves</span>) <span class="cm-comment">// should return [3,1]</span>
+</code></pre>
+<pre style="display: none;"><code class="language-go"><span class="cm-keyword">var</span> <span class="cm-variable">moves</span> <span class="cm-operator">=</span> [][<span class="cm-number">2</span>]<span class="cm-keyword">int</span>{{<span class="cm-number">0</span>,<span class="cm-number">1</span>},{<span class="cm-number">7</span>,<span class="cm-number">8</span>},{<span class="cm-number">1</span>,<span class="cm-number">2</span>},{<span class="cm-number">6</span>,<span class="cm-number">7</span>},{<span class="cm-number">0</span>,<span class="cm-number">3</span>},{<span class="cm-number">8</span>,<span class="cm-number">5</span>},{<span class="cm-number">3</span>,<span class="cm-number">4</span>},{<span class="cm-number">4</span>,<span class="cm-number">1</span>},{<span class="cm-number">4</span>,<span class="cm-number">5</span>},{<span class="cm-number">2</span>,<span class="cm-number">5</span>},{<span class="cm-number">7</span>,<span class="cm-number">4</span>},{<span class="cm-number">3</span>,<span class="cm-number">6</span>}}
+<span class="cm-variable">DotsAndBoxes</span>(<span class="cm-variable">moves</span>) <span class="cm-comment">// should return [3 1]</span>
+</code></pre>
+<pre style="display: none;"><code class="language-haskell"><span class="cm-variable">moves</span> <span class="cm-keyword">=</span> [(<span class="cm-number">0</span>,<span class="cm-number">1</span>),(<span class="cm-number">7</span>,<span class="cm-number">8</span>),(<span class="cm-number">1</span>,<span class="cm-number">2</span>),(<span class="cm-number">6</span>,<span class="cm-number">7</span>),(<span class="cm-number">0</span>,<span class="cm-number">3</span>),(<span class="cm-number">8</span>,<span class="cm-number">5</span>),(<span class="cm-number">3</span>,<span class="cm-number">4</span>),(<span class="cm-number">4</span>,<span class="cm-number">1</span>),(<span class="cm-number">4</span>,<span class="cm-number">5</span>),(<span class="cm-number">2</span>,<span class="cm-number">5</span>),(<span class="cm-number">7</span>,<span class="cm-number">4</span>),(<span class="cm-number">3</span>,<span class="cm-number">6</span>)]
+<span class="cm-variable">dotsAndBoxes</span> <span class="cm-variable">moves</span> <span class="cm-comment">-- should return (3,1)</span>
+</code></pre>
+<pre style="display: none;"><code class="language-elixir"><span class="cm-variable">moves</span> <span class="cm-operator">=</span> [{<span class="cm-number">0</span>,<span class="cm-number">1</span>},{<span class="cm-number">7</span>,<span class="cm-number">8</span>},{<span class="cm-number">1</span>,<span class="cm-number">2</span>},{<span class="cm-number">6</span>,<span class="cm-number">7</span>},{<span class="cm-number">0</span>,<span class="cm-number">3</span>},{<span class="cm-number">8</span>,<span class="cm-number">5</span>},{<span class="cm-number">3</span>,<span class="cm-number">4</span>},{<span class="cm-number">4</span>,<span class="cm-number">1</span>},{<span class="cm-number">4</span>,<span class="cm-number">5</span>},{<span class="cm-number">2</span>,<span class="cm-number">5</span>},{<span class="cm-number">7</span>,<span class="cm-number">4</span>},{<span class="cm-number">3</span>,<span class="cm-number">6</span>}]
+<span class="cm-tag">DnB</span><span class="cm-operator">.</span><span class="cm-property">dots_and_boxes</span>(<span class="cm-variable">moves</span>) <span class="cm-comment"># should return {3,1}</span>
+</code></pre>
+<pre style="display: none;"><code class="language-csharp"><span class="cm-keyword">var</span> <span class="cm-def">moves</span> <span class="cm-operator">=</span> <span class="cm-keyword">new</span> <span class="cm-type">int</span>[][]{<span class="cm-keyword">new</span>[]{<span class="cm-number">0</span>,<span class="cm-number">1</span>}, <span class="cm-keyword">new</span>[]{<span class="cm-number">7</span>,<span class="cm-number">8</span>}, <span class="cm-keyword">new</span>[]{<span class="cm-number">1</span>,<span class="cm-number">2</span>}, <span class="cm-keyword">new</span>[]{<span class="cm-number">6</span>,<span class="cm-number">7</span>}, <span class="cm-keyword">new</span>[]{<span class="cm-number">0</span>,<span class="cm-number">3</span>} ,<span class="cm-keyword">new</span>[]{<span class="cm-number">8</span>,<span class="cm-number">5</span>}, <span class="cm-keyword">new</span>[]{<span class="cm-number">3</span>,<span class="cm-number">4</span>}, <span class="cm-keyword">new</span>[]{<span class="cm-number">4</span>,<span class="cm-number">1</span>}, <span class="cm-keyword">new</span>[]{<span class="cm-number">4</span>,<span class="cm-number">5</span>}, <span class="cm-keyword">new</span>[]{<span class="cm-number">2</span>,<span class="cm-number">5</span>}, <span class="cm-keyword">new</span>[]{<span class="cm-number">7</span>,<span class="cm-number">4</span>}, <span class="cm-keyword">new</span>[]{<span class="cm-number">3</span>,<span class="cm-number">6</span>}};
+<span class="cm-variable">DnB</span>.<span class="cm-variable">DotsAndBoxes</span>(<span class="cm-variable">moves</span>) <span class="cm-comment">// should return int[2]{3,1}</span>
+</code></pre>
+<pre style="display: none;"><code class="language-kotlin"><span class="cm-keyword">val</span> <span class="cm-def">moves</span> <span class="cm-operator">=</span> <span class="cm-variable">arrayOf</span>(<span class="cm-type">Pair</span>(<span class="cm-number">0</span>,<span class="cm-number">1</span>),<span class="cm-type">Pair</span>(<span class="cm-number">7</span>,<span class="cm-number">8</span>),<span class="cm-type">Pair</span>(<span class="cm-number">1</span>,<span class="cm-number">2</span>),<span class="cm-type">Pair</span>(<span class="cm-number">6</span>,<span class="cm-number">7</span>),<span class="cm-type">Pair</span>(<span class="cm-number">0</span>,<span class="cm-number">3</span>),<span class="cm-type">Pair</span>(<span class="cm-number">8</span>,<span class="cm-number">5</span>),<span class="cm-type">Pair</span>(<span class="cm-number">3</span>,<span class="cm-number">4</span>),<span class="cm-type">Pair</span>(<span class="cm-number">4</span>,<span class="cm-number">1</span>),<span class="cm-type">Pair</span>(<span class="cm-number">4</span>,<span class="cm-number">5</span>),<span class="cm-type">Pair</span>(<span class="cm-number">2</span>,<span class="cm-number">5</span>),<span class="cm-type">Pair</span>(<span class="cm-number">7</span>,<span class="cm-number">4</span>),<span class="cm-type">Pair</span>(<span class="cm-number">3</span>,<span class="cm-number">6</span>))
+<span class="cm-variable">DnB</span>.<span class="cm-variable">dotsAndBoxes</span>(<span class="cm-variable">moves</span>) <span class="cm-comment">// should return Pair(3,1)</span>
+</code></pre>
+<pre style="display: none;"><code class="language-rust"><span class="cm-keyword">let</span> <span class="cm-def">moves</span> <span class="cm-operator">=</span> <span class="cm-variable-3">vec!</span>[(<span class="cm-number">0</span>,<span class="cm-number">1</span>),(<span class="cm-number">7</span>,<span class="cm-number">8</span>),(<span class="cm-number">1</span>,<span class="cm-number">2</span>),(<span class="cm-number">6</span>,<span class="cm-number">7</span>),(<span class="cm-number">0</span>,<span class="cm-number">3</span>),(<span class="cm-number">8</span>,<span class="cm-number">5</span>),(<span class="cm-number">3</span>,<span class="cm-number">4</span>),(<span class="cm-number">4</span>,<span class="cm-number">1</span>),(<span class="cm-number">4</span>,<span class="cm-number">5</span>),(<span class="cm-number">2</span>,<span class="cm-number">5</span>),(<span class="cm-number">7</span>,<span class="cm-number">4</span>),(<span class="cm-number">3</span>,<span class="cm-number">6</span>)];
+<span class="cm-variable">dnb</span>::<span class="cm-variable">dots_and_boxes</span>(<span class="cm-variable">moves</span>) <span class="cm-comment">// should return (3,1)</span>
+</code></pre>
+<h2 style="color:#f88">Additional Details</h2>
+
+<ul>
+<li>All inputs will be valid</li>
+<li><code>n x n</code> board size range: <code>3 &lt;= n &lt;= 12</code></li>
+<li>Full Test Suite: <code>10</code> fixed tests and <code>100</code> random tests</li>
+<li>Use Python 3+ for the Python translation</li>
+<li>For JavaScript, <code>module</code> and <code>require</code> are disabled</li>
+</ul>
+<p>If you enjoyed this kata, be sure to check out <a style="color:#9f9;text-decoration:none" href="https://www.codewars.com/users/docgunthrop/authored" target="_blank">my other katas</a></p>
+                        </div>
+                    </div>
+                </div>
+            </main>
+        </div>
+    </div>
+</body>
+</html>

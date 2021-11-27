@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>String prefix and suffix</title>
+    <link rel="stylesheet" media="screen" href="css/style.css">
+</head>
+<body>
+    <div id="app">
+        <div class="w-full" id="shell">
+            <main id="shell_content">
+                <div class="w-full mt-2">
+                    <h2>String prefix and suffix</h2>
+                    <h2>Points: 7 kyu</h2>
+                    <a href="https://www.codewars.com/kata/5ce969ab07d4b7002dcaa7a1"><h2>Kata ID: 5ce969ab07d4b7002dcaa7a1</h2></a>
+                    <div class="w-full panel bg-ui-section">
+                        <div class="markdown prose max-w-5xl mx-auto" id="description">
+                            <p>In this Kata, you will be given a string and your task will be to return the length of the longest prefix that is also a suffix. A prefix is the start of a string while the suffix is the end of a string.  For instance, the prefixes of the string <code>"abcd"</code> are <code>["a","ab","abc"]</code>. The suffixes are <code>["bcd", "cd", "d"]</code>. You should not overlap the prefix and suffix.</p>
+<pre><code class="language-Haskell">for example:
+solve("abcd") = 0, because no prefix == suffix. 
+solve("abcda") = 1, because the longest prefix which == suffix is "a".
+solve("abcdabc") = 3. Longest prefix which == suffix is "abc".
+solve("aaaa") = 2. Longest prefix which == suffix is "aa". You should not overlap the prefix and suffix
+solve("aa") = 1. You should not overlap the prefix and suffix.
+solve("a") = 0. You should not overlap the prefix and suffix.
+</code></pre>
+<p>All strings will be lowercase and string lengths are <code>1 &lt;= length &lt;= 500</code></p>
+<p>More examples in test cases. Good luck!</p>
+                        </div>
+                    </div>
+                </div>
+            </main>
+        </div>
+    </div>
+</body>
+</html>

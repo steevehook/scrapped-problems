@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>7×7 Skyscrapers</title>
+    <link rel="stylesheet" media="screen" href="css/style.css">
+</head>
+<body>
+    <div id="app">
+        <div class="w-full" id="shell">
+            <main id="shell_content">
+                <div class="w-full mt-2">
+                    <h2>7×7 Skyscrapers</h2>
+                    <h2>Points: 1 kyu</h2>
+                    <a href="https://www.codewars.com/kata/5917a2205ffc30ec3a0000a8"><h2>Kata ID: 5917a2205ffc30ec3a0000a8</h2></a>
+                    <div class="w-full panel bg-ui-section">
+                        <div class="markdown prose max-w-5xl mx-auto" id="description">
+                            <p>In a grid of 7 by 7 squares you want to place a skyscraper in each square with only some clues:</p>
+<ul>
+<li>The height of the skyscrapers is between 1 and 7</li>
+<li>No two skyscrapers in a row or column may have the same number of floors</li>
+<li>A clue is the number of skyscrapers that you can see in a row or column from the outside</li>
+<li>Higher skyscrapers block the view of lower skyscrapers located behind them</li>
+</ul>
+<p>Can you write a program that can solve this puzzle in time?</p>
+<p>This kata is based on <a href="https://www.codewars.com/kata/4-by-4-skyscrapers/" target="_blank">4 By 4 Skyscrapers</a> and <a href="https://www.codewars.com/kata/6-by-6-skyscrapers/" target="_blank">6 By 6 Skyscrapers</a> by <a href="https://www.codewars.com/users/FrankK" target="_blank">FrankK</a>. By now, examples should be superfluous; you should really solve Frank's kata first, and then probably optimise some more. A naive solution that solved a 4×4 puzzle within 12 seconds might need time somewhere beyond the Heat Death of the Universe for this size. It's quite bad.</p>
+<h1 id="task">Task</h1>
+<p>Create</p>
+<pre style="display: none;"><code class="language-go"><span class="cm-keyword">func</span> <span class="cm-variable">SolvePuzzle</span>(<span class="cm-variable">clues</span> []<span class="cm-keyword">int</span>) [][]<span class="cm-keyword">int</span> {}
+</code></pre>
+<pre><code class="language-javascript"><span class="cm-keyword">function</span> <span class="cm-def">solvePuzzle</span>(<span class="cm-def">clues</span>)
+</code></pre>
+<pre style="display: none;"><code class="language-coffeescript"><span class="cm-variable">solvePuzzle</span> <span class="cm-punctuation">=</span> <span class="cm-punctuation">(</span><span class="cm-variable">clues</span><span class="cm-punctuation">)</span> <span class="cm-operator">-&gt;</span>
+</code></pre>
+<pre style="display: none;"><code class="language-python"><span class="cm-keyword">def</span> <span class="cm-def">solve_puzzle</span>(<span class="cm-variable">clues</span>)
+</code></pre>
+<pre style="display: none;"><code class="language-c"><span class="cm-type">int</span> <span class="cm-type">*</span><span class="cm-type">*</span><span class="cm-def">SolvePuzzle</span>(<span class="cm-type">int</span> <span class="cm-type">*</span><span class="cm-variable">clues</span>);
+</code></pre>
+<pre style="display: none;"><code class="language-cpp"><span class="cm-variable">std::vector</span><span class="cm-operator">&lt;</span><span class="cm-variable">std::vector</span><span class="cm-operator">&lt;</span><span class="cm-type">int</span><span class="cm-operator">&gt;&gt;</span> <span class="cm-def">SolvePuzzle</span>(<span class="cm-keyword">const</span> <span class="cm-variable">std::vector</span><span class="cm-operator">&lt;</span><span class="cm-type">int</span><span class="cm-operator">&gt;</span> <span class="cm-operator">&amp;</span><span class="cm-variable">clues</span>);
+</code></pre>
+<pre style="display: none;"><code class="language-csharp"><span class="cm-keyword">public</span> <span class="cm-keyword">static</span> <span class="cm-type">int</span>[][] <span class="cm-def">SolvePuzzle</span>(<span class="cm-type">int</span>[] <span class="cm-variable">clues</span>)
+</code></pre>
+<pre style="display: none;"><code class="language-ruby"><span class="cm-keyword">def</span> <span class="cm-def">solve_puzzle</span>(<span class="cm-variable">clues</span>)
+</code></pre>
+<pre style="display: none;"><code class="language-java"><span class="cm-variable">Skyscrapers</span>.<span class="cm-variable">solvePuzzle</span>(<span class="cm-type">int</span>[] <span class="cm-variable">clues</span>)
+</code></pre>
+<pre style="display: none;"><code class="language-clojure"><span class="cm-bracket">(</span><span class="cm-keyword">defn</span> <span class="cm-variable">solve-puzzle</span> <span class="cm-bracket">[</span><span class="cm-variable">clues</span><span class="cm-bracket">]</span> <span class="cm-bracket">)</span>
+</code></pre>
+<pre style="display: none;"><code class="language-fsharp"><span class="cm-variable">solvePuzzle</span> (<span class="cm-variable">clues</span> <span class="cm-operator">:</span><span class="cm-builtin">int</span>[]) <span class="cm-operator">:</span> <span class="cm-builtin">int</span>[][]
+</code></pre>
+<pre style="display: none;"><code class="language-erlang"><span class="cm-tag">solvePuzzle</span>(<span class="cm-variable">Clues</span>)
+</code></pre>
+<pre style="display: none;"><code class="language-kotlin"><span class="cm-variable">Skyscrapers</span>.<span class="cm-variable">solvePuzzle</span>(<span class="cm-type">IntArray</span> <span class="cm-variable">clues</span>): <span class="cm-variable">Array</span><span class="cm-operator">&lt;</span><span class="cm-type">IntArray</span><span class="cm-operator">&gt;</span>
+</code></pre>
+<pre style="display: none;"><code class="language-elixir"><span class="cm-tag">PuzzleSolver</span><span class="cm-operator">.</span><span class="cm-property">solve</span>(<span class="cm-variable">clues</span>)
+</code></pre>
+<p>Clues are passed in as an <code>Array(28)</code> of <code>integers</code>.<br>The return value is an <code>Array(7)</code> of <code>Array(7)</code> of <code>integers</code>.</p>
+<p>All puzzles have one possible solution.<br>All this is the same as with the earlier kata.</p>
+<p>Caveat: The tests for this kata have been tailored to run in ~10 seconds with the JavaScript reference solution. You'll need to do <em>better</em> than that! Please note the <code>optimization</code> tag.</p>
+<p><a href="http://www.conceptispuzzles.com/" target="_blank">Conceptis Puzzles</a> have <a href="http://www.conceptispuzzles.com/index.aspx?uri=puzzle/skyscrapers" target="_blank">heaps of these puzzles</a>, from 4×4 up to 7×7 and unsolvable within CodeWars time constraints. Old puzzles from there were used for the tests. They also have lots of other logic, numbers and mathematical puzzles, and their puzzle user interface is generally nice, very nice.</p>
+                        </div>
+                    </div>
+                </div>
+            </main>
+        </div>
+    </div>
+</body>
+</html>

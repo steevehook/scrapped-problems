@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>The PaperFold sequence</title>
+    <link rel="stylesheet" media="screen" href="css/style.css">
+</head>
+<body>
+    <div id="app">
+        <div class="w-full" id="shell">
+            <main id="shell_content">
+                <div class="w-full mt-2">
+                    <h2>The PaperFold sequence</h2>
+                    <h2>Points: 6 kyu</h2>
+                    <a href="https://www.codewars.com/kata/5d26721d48430e0016914faa"><h2>Kata ID: 5d26721d48430e0016914faa</h2></a>
+                    <div class="w-full panel bg-ui-section">
+                        <div class="markdown prose max-w-5xl mx-auto" id="description">
+                            <p><a href="https://en.wikipedia.org/wiki/Regular_paperfolding_sequence" target="_blank">Wikipedia</a>: The <strong>regular paperfolding sequence</strong>, also known as the <strong>dragon curve sequence</strong>, is an infinite automatic sequence of <code>0</code>s and <code>1</code>s defined as the <strong>limit</strong> of inserting an alternating sequence of <code>1</code>s and <code>0</code>s around and between the terms of the previous sequence:</p>
+<p><span style="color:red">1</span></p>
+<p><span style="color:gold">1</span>
+<span style="color:red">1</span>
+<span style="color:gold">0</span></p>
+<p><span style="color:lime">1</span>
+<span style="color:gold">1</span>
+<span style="color:lime">0</span>
+<span style="color:red">1</span>
+<span style="color:lime">1</span>
+<span style="color:gold">0</span>
+<span style="color:lime">0</span></p>
+<p><span style="color:deepskyblue">1</span>
+<span style="color:lime">1</span>
+<span style="color:deepskyblue">0</span>
+<span style="color:gold">1</span>
+<span style="color:deepskyblue">1</span>
+<span style="color:lime">0</span>
+<span style="color:deepskyblue">0</span>
+<span style="color:red">1</span>
+<span style="color:deepskyblue">1</span>
+<span style="color:lime">1</span>
+<span style="color:deepskyblue">0</span>
+<span style="color:gold">0</span>
+<span style="color:deepskyblue">1</span>
+<span style="color:lime">0</span>
+<span style="color:deepskyblue">0</span></p>
+<p>...</p>
+<p>Note how each intermediate sequence is a prefix of the next.</p>
+<p>Define a generator function <code>paperFold</code> that sequentially generates the values of this sequence:</p>
+<p><span style="color:mediumorchid">1</span>
+<span style="color:deepskyblue">1</span>
+<span style="color:mediumorchid">0</span>
+<span style="color:lime">1</span>
+<span style="color:mediumorchid">1</span>
+<span style="color:deepskyblue">0</span>
+<span style="color:mediumorchid">0</span>
+<span style="color:gold">1</span>
+<span style="color:mediumorchid">1</span>
+<span style="color:deepskyblue">1</span>
+<span style="color:mediumorchid">0</span>
+<span style="color:lime">0</span>
+<span style="color:mediumorchid">1</span>
+<span style="color:deepskyblue">0</span>
+<span style="color:mediumorchid">0</span>
+<span style="color:red">1</span>
+<span style="color:mediumorchid">1</span>
+<span style="color:deepskyblue">1</span>
+<span style="color:mediumorchid">0</span>
+<span style="color:lime">1</span>
+<span style="color:mediumorchid">1</span>
+<span style="color:deepskyblue">0</span>
+<span style="color:mediumorchid">0</span>
+<span style="color:gold">0</span>
+<span style="color:mediumorchid">1</span>
+<span style="color:deepskyblue">1</span>
+<span style="color:mediumorchid">0</span>
+<span style="color:lime">0</span>
+<span style="color:mediumorchid">1</span>
+<span style="color:deepskyblue">0</span>
+<span style="color:mediumorchid">0</span>
+...</p>
+<p>It will be tested for up to <code>1 000 000</code> values.</p>
+                        </div>
+                    </div>
+                </div>
+            </main>
+        </div>
+    </div>
+</body>
+</html>

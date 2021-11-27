@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Which x for that sum?</title>
+    <link rel="stylesheet" media="screen" href="css/style.css">
+</head>
+<body>
+    <div id="app">
+        <div class="w-full" id="shell">
+            <main id="shell_content">
+                <div class="w-full mt-2">
+                    <h2>Which x for that sum?</h2>
+                    <h2>Points: 5 kyu</h2>
+                    <a href="https://www.codewars.com/kata/5b1cd19fcd206af728000056"><h2>Kata ID: 5b1cd19fcd206af728000056</h2></a>
+                    <div class="w-full panel bg-ui-section">
+                        <div class="markdown prose max-w-5xl mx-auto" id="description">
+                            <p>Consider the sequence <code>U(n, x) = x + 2x**2 + 3x**3 + .. + nx**n</code> where x is a real number and n a positive integer.</p>
+<p>When <code>n</code> goes to infinity and <code>x</code> has a correct value (ie <code>x</code> is in its domain of convergence <code>D</code>), <code>U(n, x)</code> goes to a finite limit <code>m</code> depending on <code>x</code>.</p>
+<p>Usually given <code>x</code> we try to find <code>m</code>. Here we will try to find <code>x</code> (x real, 0 &lt; x &lt; 1) when <code>m</code> is given (m real, m &gt; 0).</p>
+<p>Let us call <code>solve</code> the function <code>solve(m)</code> which returns <code>x</code> such as U(n, x) goes to <code>m</code> when <code>n</code> goes to infinity.</p>
+<h4 id="examples">Examples:</h4>
+<p><code>solve(2.0) returns 0.5</code> since <code>U(n, 0.5)</code> goes to <code>2</code> when <code>n</code> goes to infinity.</p>
+<p><code>solve(8.0) returns 0.7034648345913732</code> since <code>U(n, 0.7034648345913732)</code> goes to <code>8</code> when <code>n</code> goes to infinity.</p>
+<h4 id="note">Note:</h4>
+<p>You pass the tests if <code>abs(actual - expected) &lt;= 1e-12</code></p>
+                        </div>
+                    </div>
+                </div>
+            </main>
+        </div>
+    </div>
+</body>
+</html>

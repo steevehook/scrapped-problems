@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Mixbonacci</title>
+    <link rel="stylesheet" media="screen" href="css/style.css">
+</head>
+<body>
+    <div id="app">
+        <div class="w-full" id="shell">
+            <main id="shell_content">
+                <div class="w-full mt-2">
+                    <h2>Mixbonacci</h2>
+                    <h2>Points: 5 kyu</h2>
+                    <a href="https://www.codewars.com/kata/5811aef3acdf4dab5e000251"><h2>Kata ID: 5811aef3acdf4dab5e000251</h2></a>
+                    <div class="w-full panel bg-ui-section">
+                        <div class="markdown prose max-w-5xl mx-auto" id="description">
+                            <p>This is the first of my "-nacci" series. If you like this kata, check out the <a href="https://www.codewars.com/kata/5b7c80094a6aca207000004d" target="_blank">zozonacci</a> sequence too.</p>
+<h1 id="task">Task</h1>
+<ol>
+<li>Mix <code>-nacci</code> sequences using a given pattern <code>p</code>.</li>
+<li>Return the first <code>n</code> elements of the mixed sequence.</li>
+</ol>
+<h3 id="rules">Rules</h3>
+<ol>
+<li>The pattern <code>p</code> is given as a list of strings (or array of symbols in Ruby) using the pattern mapping below (e. g. <code>['fib', 'pad', 'pel']</code> means take the next fibonacci, then the next padovan, then the next pell number and so on). </li>
+<li>When <code>n</code> is 0 or <code>p</code> is empty return an empty list.</li>
+<li>If <code>n</code> is more than the length of <code>p</code> repeat the pattern.</li>
+</ol>
+<h3 id="examples">Examples</h3>
+<pre><code>            0  1  2  3  4  
+----------+------------------
+fibonacci:| 0, 1, 1, 2, 3 ...
+padovan:  | 1, 0, 0, 1, 0 ...
+pell:     | 0, 1, 2, 5, 12 ...
+
+pattern = ['fib', 'pad', 'pel']
+n = 6
+#          ['fib',        'pad',      'pel',   'fib',        'pad',      'pel']
+# result = [fibonacci(0), padovan(0), pell(0), fibonacci(1), padovan(1), pell(1)]
+result = [0, 1, 0, 1, 0, 1]
+
+pattern = ['fib', 'fib', 'pel']
+n = 6
+#          ['fib', 'fib', 'pel', 'fib', 'fib', 'pel']
+# result = [fibonacci(0), fibonacci(1), pell(0), fibonacci(2), fibonacci(3), pell(1)]
+result = [0, 1, 0, 1, 2, 1]
+</code></pre>
+<h3 id="sequences">Sequences</h3>
+<ul>
+<li><a href="https://oeis.org/A000045" target="_blank">fibonacci</a> : 0, 1, 1, 2, 3 ...</li>
+<li><a href="https://oeis.org/A000931" target="_blank">padovan</a>: 1, 0, 0, 1, 0 ...</li>
+<li><a href="https://oeis.org/A001045" target="_blank">jacobsthal</a>: 0, 1, 1, 3, 5 ...</li>
+<li><a href="https://oeis.org/A000129" target="_blank">pell</a>: 0, 1, 2, 5, 12 ...</li>
+<li><a href="https://oeis.org/A000073" target="_blank">tribonacci</a>: 0, 0, 1, 1, 2 ...</li>
+<li><a href="https://oeis.org/A000078" target="_blank">tetranacci</a>: 0, 0, 0, 1, 1 ...</li>
+</ul>
+<h3 id="pattern-mapping">Pattern mapping</h3>
+<ul>
+<li><code>'fib'</code> -&gt; fibonacci</li>
+<li><code>'pad'</code> -&gt; padovan</li>
+<li><code>'jac'</code> -&gt; jacobstahl</li>
+<li><code>'pel'</code> -&gt; pell</li>
+<li><code>'tri'</code> -&gt; tribonacci</li>
+<li><code>'tet'</code> -&gt; tetranacci</li>
+</ul>
+<p>If you like this kata, check out the <a href="https://www.codewars.com/kata/5b7c80094a6aca207000004d" target="_blank">zozonacci</a> sequence.</p>
+                        </div>
+                    </div>
+                </div>
+            </main>
+        </div>
+    </div>
+</body>
+</html>

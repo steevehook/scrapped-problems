@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Longest Common Subsequence</title>
+    <link rel="stylesheet" media="screen" href="css/style.css">
+</head>
+<body>
+    <div id="app">
+        <div class="w-full" id="shell">
+            <main id="shell_content">
+                <div class="w-full mt-2">
+                    <h2>Longest Common Subsequence</h2>
+                    <h2>Points: 5 kyu</h2>
+                    <a href="https://www.codewars.com/kata/52756e5ad454534f220001ef"><h2>Kata ID: 52756e5ad454534f220001ef</h2></a>
+                    <div class="w-full panel bg-ui-section">
+                        <div class="markdown prose max-w-5xl mx-auto" id="description">
+                            <p>Write a function called <code>LCS</code> that accepts two sequences and returns the longest subsequence common to the passed in sequences.</p>
+<h3 id="subsequence">Subsequence</h3>
+<p>A subsequence is different from a substring. The terms of a subsequence need not be consecutive terms of the original sequence.</p>
+<h3 id="example-subsequence">Example subsequence</h3>
+<p>Subsequences of <code>"abc"</code> = <code>"a"</code>, <code>"b"</code>, <code>"c"</code>, <code>"ab"</code>, <code>"ac"</code>, <code>"bc"</code> and <code>"abc"</code>.</p>
+<h3 id="lcs-examples">LCS examples</h3>
+<pre><code class="language-javascript"><span class="cm-variable">LCS</span>( <span class="cm-string">"abcdef"</span> , <span class="cm-string">"abc"</span> ) <span class="cm-operator">=&gt;</span> <span class="cm-variable">returns</span> <span class="cm-string">"abc"</span>
+<span class="cm-variable">LCS</span>( <span class="cm-string">"abcdef"</span> , <span class="cm-string">"acf"</span> ) <span class="cm-operator">=&gt;</span> <span class="cm-variable">returns</span> <span class="cm-string">"acf"</span>
+<span class="cm-variable">LCS</span>( <span class="cm-string">"132535365"</span> , <span class="cm-string">"123456789"</span> ) <span class="cm-operator">=&gt;</span> <span class="cm-variable">returns</span> <span class="cm-string">"12356"</span>
+</code></pre>
+<pre style="display: none;"><code class="language-haskell"><span class="cm-variable">lcs</span> <span class="cm-string">"a"</span>         <span class="cm-string">"b"</span>         `<span class="cm-variable">shouldBe</span>` <span class="cm-string">""</span>
+<span class="cm-variable">lcs</span> <span class="cm-string">"abcdef"</span>    <span class="cm-string">"abc"</span>       `<span class="cm-variable">shouldBe</span>` <span class="cm-string">"abc"</span>
+<span class="cm-variable">lcs</span> <span class="cm-string">"132535365"</span> <span class="cm-string">"123456789"</span> `<span class="cm-variable">shouldBe</span>` <span class="cm-string">"12356"</span>
+</code></pre>
+<pre style="display: none;"><code class="language-python"><span class="cm-variable">lcs</span>( <span class="cm-string">"abcdef"</span> , <span class="cm-string">"abc"</span> ) <span class="cm-operator">=&gt;</span> <span class="cm-variable">returns</span> <span class="cm-string">"abc"</span>
+<span class="cm-variable">lcs</span>( <span class="cm-string">"abcdef"</span> , <span class="cm-string">"acf"</span> ) <span class="cm-operator">=&gt;</span> <span class="cm-variable">returns</span> <span class="cm-string">"acf"</span>
+<span class="cm-variable">lcs</span>( <span class="cm-string">"132535365"</span> , <span class="cm-string">"123456789"</span> ) <span class="cm-operator">=&gt;</span> <span class="cm-variable">returns</span> <span class="cm-string">"12356"</span>
+</code></pre>
+<pre style="display: none;"><code class="language-ruby"><span class="cm-variable">lcs</span>( <span class="cm-string">"abcdef"</span> , <span class="cm-string">"abc"</span> ) <span class="cm-operator">=&gt;</span> <span class="cm-variable">returns</span> <span class="cm-string">"abc"</span>
+<span class="cm-variable">lcs</span>( <span class="cm-string">"abcdef"</span> , <span class="cm-string">"acf"</span> ) <span class="cm-operator">=&gt;</span> <span class="cm-variable">returns</span> <span class="cm-string">"acf"</span>
+<span class="cm-variable">lcs</span>( <span class="cm-string">"132535365"</span> , <span class="cm-string">"123456789"</span> ) <span class="cm-operator">=&gt;</span> <span class="cm-variable">returns</span> <span class="cm-string">"12356"</span>
+</code></pre>
+<pre style="display: none;"><code class="language-java"><span class="cm-variable">Solution</span>.<span class="cm-variable">lcs</span>(<span class="cm-string">"abcdef"</span>, <span class="cm-string">"abc"</span>) <span class="cm-operator">=&gt;</span> <span class="cm-variable">returns</span> <span class="cm-string">"abc"</span>
+<span class="cm-variable">Solution</span>.<span class="cm-variable">lcs</span>(<span class="cm-string">"abcdef"</span>, <span class="cm-string">"acf"</span>) <span class="cm-operator">=&gt;</span> <span class="cm-variable">returns</span> <span class="cm-string">"acf"</span>
+<span class="cm-variable">Solution</span>.<span class="cm-variable">lcs</span>(<span class="cm-string">"132535365"</span>, <span class="cm-string">"123456789"</span>) <span class="cm-operator">=&gt;</span> <span class="cm-variable">returns</span> <span class="cm-string">"12356"</span>
+</code></pre>
+<pre style="display: none;"><code class="language-go"><span class="cm-variable">LCS</span>( <span class="cm-string">"abcdef"</span>, <span class="cm-string">"abc"</span> ) <span class="cm-operator">=&gt;</span> <span class="cm-variable">returns</span> <span class="cm-string">"abc"</span>
+<span class="cm-variable">LCS</span>( <span class="cm-string">"abcdef"</span>, <span class="cm-string">"acf"</span> ) <span class="cm-operator">=&gt;</span> <span class="cm-variable">returns</span> <span class="cm-string">"acf"</span>
+<span class="cm-variable">LCS</span>( <span class="cm-string">"132535365"</span>, <span class="cm-string">"123456789"</span> ) <span class="cm-operator">=&gt;</span> <span class="cm-variable">returns</span> <span class="cm-string">"12356"</span>
+</code></pre>
+<pre style="display: none;"><code class="language-ocaml"><span class="cm-variable">lcs</span> ['<span class="cm-variable">a</span>';'<span class="cm-variable">b</span>';'<span class="cm-variable">c</span>';'<span class="cm-variable">d</span>';'<span class="cm-variable">e</span>';'<span class="cm-variable">f</span>'] ['<span class="cm-variable">a</span>';'<span class="cm-variable">b</span>';'<span class="cm-variable">c</span>'] <span class="cm-operator">=</span><span class="cm-operator">&gt;</span> <span class="cm-variable">returns</span> ['<span class="cm-variable">a</span>';'<span class="cm-variable">b</span>';'<span class="cm-variable">c</span>']
+<span class="cm-variable">lcs</span> ['<span class="cm-variable">a</span>';'<span class="cm-variable">b</span>';'<span class="cm-variable">c</span>';'<span class="cm-variable">d</span>';'<span class="cm-variable">e</span>';'<span class="cm-variable">f</span>'] ['<span class="cm-variable">a</span>';'<span class="cm-variable">c</span>';'<span class="cm-variable">f</span>'] <span class="cm-operator">=</span><span class="cm-operator">&gt;</span> <span class="cm-variable">returns</span> ['<span class="cm-variable">a</span>';'<span class="cm-variable">c</span>';'<span class="cm-variable">f</span>']
+<span class="cm-variable">lcs</span> [<span class="cm-number">1</span>;<span class="cm-number">3</span>;<span class="cm-number">2</span>;<span class="cm-number">5</span>;<span class="cm-number">3</span>;<span class="cm-number">5</span>;<span class="cm-number">3</span>;<span class="cm-number">6</span>;<span class="cm-number">5</span>] [<span class="cm-number">1</span>;<span class="cm-number">2</span>;<span class="cm-number">3</span>;<span class="cm-number">4</span>;<span class="cm-number">5</span>;<span class="cm-number">6</span>;<span class="cm-number">7</span>;<span class="cm-number">8</span>;<span class="cm-number">9</span>] <span class="cm-operator">=</span><span class="cm-operator">&gt;</span> <span class="cm-variable">returns</span> [<span class="cm-number">1</span>;<span class="cm-number">2</span>;<span class="cm-number">3</span>;<span class="cm-number">5</span>;<span class="cm-number">6</span>]
+</code></pre>
+<h3 id="notes">Notes</h3>
+<ul>
+<li>Both arguments will be strings</li>
+<li>Return value must be a string</li>
+<li>Return an empty string if there exists no common subsequence</li>
+<li>Both arguments will have one or more characters (in JavaScript)</li>
+<li>All tests will only have a single longest common subsequence. Don't worry about cases such as <code>LCS( "1234", "3412" )</code>, which would have two possible longest common subsequences: <code>"12"</code> and <code>"34"</code>.</li>
+</ul>
+<p>Note that the Haskell variant will use randomized testing, but any longest common subsequence will be valid.</p>
+<p>Note that the OCaml variant is using generic lists instead of strings, and will also have randomized tests (any longest common subsequence will be valid).</p>
+<h3 id="tips">Tips</h3>
+<p>Wikipedia has an explanation of the two properties that can be used to solve the problem:</p>
+<ul>
+<li><a href="http://en.wikipedia.org/wiki/Longest_common_subsequence_problem#First_property" target="_blank">First property</a></li>
+<li><a href="http://en.wikipedia.org/wiki/Longest_common_subsequence_problem#Second_property" target="_blank">Second property</a></li>
+</ul>
+                        </div>
+                    </div>
+                </div>
+            </main>
+        </div>
+    </div>
+</body>
+</html>

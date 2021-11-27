@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>CamelCase Method</title>
+    <link rel="stylesheet" media="screen" href="css/style.css">
+</head>
+<body>
+    <div id="app">
+        <div class="w-full" id="shell">
+            <main id="shell_content">
+                <div class="w-full mt-2">
+                    <h2>CamelCase Method</h2>
+                    <h2>Points: 6 kyu</h2>
+                    <a href="https://www.codewars.com/kata/587731fda577b3d1b0001196"><h2>Kata ID: 587731fda577b3d1b0001196</h2></a>
+                    <div class="w-full panel bg-ui-section">
+                        <div class="markdown prose max-w-5xl mx-auto" id="description">
+                            <p>Write simple .camelCase method (<code>camel_case</code> function in PHP, <code>CamelCase</code> in C# or <code>camelCase</code> in Java) for strings. All words must have their first letter capitalized without spaces.</p>
+<p>For instance:</p>
+<pre style="display: none;"><code class="language-java"><span class="cm-variable">camelCase</span>(<span class="cm-string">"hello case"</span>); <span class="cm-comment">// =&gt; "HelloCase"</span>
+<span class="cm-variable">camelCase</span>(<span class="cm-string">"camel case word"</span>); <span class="cm-comment">// =&gt; "CamelCaseWord"</span>
+</code></pre>
+<pre style="display: none;"><code class="language-javascript"><span class="cm-string">"hello case"</span>.<span class="cm-property">camelCase</span>() <span class="cm-operator">=&gt;</span> <span class="cm-variable">HelloCase</span>
+<span class="cm-string">"camel case word"</span>.<span class="cm-property">camelCase</span>() <span class="cm-operator">=&gt;</span> <span class="cm-variable">CamelCaseWord</span>
+</code></pre>
+<pre style="display: none;"><code class="language-python"><span class="cm-variable">camelcase</span>(<span class="cm-string">"hello case"</span>) <span class="cm-operator">=&gt;</span> <span class="cm-variable">HelloCase</span>
+<span class="cm-variable">camelcase</span>(<span class="cm-string">"camel case word"</span>) <span class="cm-operator">=&gt;</span> <span class="cm-variable">CamelCaseWord</span>
+</code></pre>
+<pre><code class="language-ruby"><span class="cm-string">'hello case'</span><span class="cm-operator">.</span><span class="cm-property">camelcase</span> <span class="cm-operator">=&gt;</span> <span class="cm-tag">HelloCase</span>
+<span class="cm-string">'camel case word'</span><span class="cm-operator">.</span><span class="cm-property">camelcase</span> <span class="cm-operator">=&gt;</span> <span class="cm-tag">CamelCaseWord</span>
+</code></pre>
+<pre style="display: none;"><code class="language-crystal"><span class="cm-string">"hello case"</span><span class="cm-operator">.</span><span class="cm-property">camelcase</span> <span class="cm-operator">=</span><span class="cm-operator">&gt;</span> <span class="cm-tag">HelloCase</span>
+<span class="cm-string">"camel case word"</span><span class="cm-operator">.</span><span class="cm-property">camelcase</span> <span class="cm-operator">=</span><span class="cm-operator">&gt;</span> <span class="cm-tag">CamelCaseWord</span>
+</code></pre>
+<pre style="display: none;"><code class="language-php"><span class="cm-variable">camel_case</span>(<span class="cm-string">"</span><span class="cm-string">hello case"</span>); <span class="cm-comment">// =&gt; "HelloCase"</span>
+<span class="cm-variable">camel_case</span>(<span class="cm-string">"</span><span class="cm-string">camel case word"</span>); <span class="cm-comment">// =&gt; "CamelCaseWord"</span>
+</code></pre>
+<pre style="display: none;"><code class="language-cpp"><span class="cm-variable">camelCase</span>(<span class="cm-string">"hello case"</span>); <span class="cm-comment">// =&gt; "HelloCase"</span>
+<span class="cm-variable">camelCase</span>(<span class="cm-string">"camel case word"</span>); <span class="cm-comment">// =&gt; "CamelCaseWord"</span>
+</code></pre>
+<pre style="display: none;"><code class="language-c#">using Kata;
+
+"hello case".CamelCase(); // =&gt; "HelloCase"
+"camel case word".CamelCase(); // =&gt; "CamelCaseWord"
+</code></pre>
+<pre style="display: none;"><code class="language-rust"><span class="cm-variable">camel_case</span>(<span class="cm-string">"</span><span class="cm-string">hello case</span><span class="cm-string">"</span>); <span class="cm-comment">// =&gt; "HelloCase"</span>
+<span class="cm-variable">camel_case</span>(<span class="cm-string">"</span><span class="cm-string">camel case word</span><span class="cm-string">"</span>); <span class="cm-comment">// =&gt; "CamelCaseWord"</span>
+</code></pre>
+<pre style="display: none;"><code class="language-typescript"><span class="cm-variable">camelCase</span>(<span class="cm-string">"hello case"</span>); <span class="cm-comment">// =&gt; "HelloCase"</span>
+<span class="cm-variable">camelCase</span>(<span class="cm-string">"camel case word"</span>); <span class="cm-comment">// =&gt; "CamelCaseWord"</span>
+</code></pre>
+<pre style="display: none;"><code class="language-c"><span class="cm-variable">camel_case</span>(<span class="cm-string">"hello case"</span>);      <span class="cm-comment">/* =&gt; "HelloCase" */</span>
+<span class="cm-variable">camel_case</span>(<span class="cm-string">"camel case word"</span>); <span class="cm-comment">/* =&gt; "CamelCaseWord" */</span>
+</code></pre>
+<pre style="display: none;"><code class="language-go"><span class="cm-variable">CamelCase</span>(<span class="cm-string">"hello case"</span>)      <span class="cm-comment">// =&gt; "HelloCase"</span>
+<span class="cm-variable">CamelCase</span>(<span class="cm-string">"camel case word"</span>) <span class="cm-comment">// =&gt; "CamelCaseWord"</span>
+</code></pre>
+<pre style="display: none;"><code class="language-swift"><span class="cm-variable">camelCase</span><span class="cm-punctuation">(</span><span class="cm-string">"hello case"</span><span class="cm-punctuation">)</span><span class="cm-punctuation">;</span> <span class="cm-comment">// ==&gt; "HelloCase"</span>
+<span class="cm-variable">camelCase</span><span class="cm-punctuation">(</span><span class="cm-string">"camel case word"</span><span class="cm-punctuation">)</span><span class="cm-punctuation">;</span> <span class="cm-comment">// ==&gt; "CamelCaseWord"</span>
+</code></pre>
+<p>Don't forget to rate this kata! Thanks :)</p>
+                        </div>
+                    </div>
+                </div>
+            </main>
+        </div>
+    </div>
+</body>
+</html>

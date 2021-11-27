@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Easy Line</title>
+    <link rel="stylesheet" media="screen" href="css/style.css">
+</head>
+<body>
+    <div id="app">
+        <div class="w-full" id="shell">
+            <main id="shell_content">
+                <div class="w-full mt-2">
+                    <h2>Easy Line</h2>
+                    <h2>Points: 7 kyu</h2>
+                    <a href="https://www.codewars.com/kata/56e7d40129035aed6c000632"><h2>Kata ID: 56e7d40129035aed6c000632</h2></a>
+                    <div class="w-full panel bg-ui-section">
+                        <div class="markdown prose max-w-5xl mx-auto" id="description">
+                            <p>In the drawing below we have a part of the Pascal's triangle, horizontal lines are numbered from <strong>zero</strong> (top).</p>
+<p>We want to calculate the sum of the squares of the binomial coefficients on a given horizontal line with a function called <code>easyline</code> (or easyLine or easy-line).</p>
+<p>Can you write a program which calculate <code>easyline(n)</code> where <code>n</code> is the horizontal line number?</p>
+<p>The function will take n (with: <code>n&gt;= 0</code>) as parameter and will return the sum
+of the squares of the binomial coefficients on line n.</p>
+<h4 id="examples">Examples:</h4>
+<pre><code>easyline(0) =&gt; 1
+easyline(1) =&gt; 2
+easyline(4) =&gt; 70
+easyline(50) =&gt; 100891344545564193334812497256
+</code></pre>
+<h4 id="ref">Ref:</h4>
+<p><a href="http://mathworld.wolfram.com/BinomialCoefficient.html" target="_blank">http://mathworld.wolfram.com/BinomialCoefficient.html</a></p>
+<p><img alt="alternative text" src="images/eUGaNvIm.jpg"></p>
+<h4 id="note">Note:</h4>
+<p>In Javascript, Coffeescript, Typescript, C++, PHP, C, R, Nim, Fortran to get around the fact that we have no big integers the function <code>easyLine(n)</code> will in fact return </p>
+<p><code>round(log(easyline(n)))</code>  </p>
+<p>and not the <code>easyline(n)</code> of the other languages. </p>
+<p>So, in Javascript, Coffeescript, Typescript, C++, PHP, R, Nim, C, Fortran:</p>
+<pre><code>easyLine(0) =&gt; 0
+easyLine(1) =&gt; 1
+easyLine(4) =&gt; 4
+easyLine(50) =&gt; 67
+</code></pre>
+                        </div>
+                    </div>
+                </div>
+            </main>
+        </div>
+    </div>
+</body>
+</html>

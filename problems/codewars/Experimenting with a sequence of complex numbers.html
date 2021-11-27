@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Experimenting with a sequence of complex numbers</title>
+    <link rel="stylesheet" media="screen" href="css/style.css">
+</head>
+<body>
+    <div id="app">
+        <div class="w-full" id="shell">
+            <main id="shell_content">
+                <div class="w-full mt-2">
+                    <h2>Experimenting with a sequence of complex numbers</h2>
+                    <h2>Points: 6 kyu</h2>
+                    <a href="https://www.codewars.com/kata/5b06c990908b7eea73000069"><h2>Kata ID: 5b06c990908b7eea73000069</h2></a>
+                    <div class="w-full panel bg-ui-section">
+                        <div class="markdown prose max-w-5xl mx-auto" id="description">
+                            <p>Consider the sequence <code>S(n, z) = (1 - z)(z + z**2 + z**3 + ... + z**n)</code> where <code>z</code> is a complex number
+ and <code>n</code> a positive integer (n &gt; 0).</p>
+<p>When <code>n</code> goes to infinity and <code>z</code> has a correct value (ie <code>z</code> is in its domain of convergence <code>D</code>), <code>S(n, z)</code> goes to a finite limit
+ <code>lim</code> depending on <code>z</code>.</p>
+<p>Experiment with <code>S(n, z)</code> to guess the domain of convergence <code>D</code>of <code>S</code> and <code>lim</code> value when <code>z</code> is in <code>D</code>.</p>
+<p> Then determine the smallest integer <code>n</code> such that <code>abs(S(n, z) - lim) &lt; eps</code>
+ where <code>eps</code> is a given small real number and <code>abs(Z)</code> is the modulus or norm of the complex number Z.</p>
+<p> Call <code>f</code> the function <code>f(z, eps)</code> which returns <code>n</code>.
+ If <code>z</code> is such that <code>S(n, z)</code> has no finite limit (when <code>z</code> is outside of <code>D</code>) <code>f</code> will return -1.</p>
+<h4 id="examples">Examples:</h4>
+<p>I is a complex number such as I * I = -1 (sometimes written <code>i</code> or <code>j</code>).</p>
+<p> <code>f(0.3 + 0.5 * I, 1e-4) returns 17</code></p>
+<p> <code>f(30 + 5 * I, 1e-4) returns -1</code></p>
+<h4 id="remark">Remark:</h4>
+<p>For languages that don't have complex numbers or "easy" complex numbers, a complex number <code>z</code> is represented by two real numbers <code>x</code> (real part) and <code>y</code> (imaginary part).</p>
+<p><code>f(0.3, 0.5, 1e-4) returns 17</code></p>
+<p> <code>f(30, 5, 1e-4) returns -1</code></p>
+<h4 id="note">Note:</h4>
+<p>You pass the tests if <code>abs(actual - exoected) &lt;= 1</code></p>
+                        </div>
+                    </div>
+                </div>
+            </main>
+        </div>
+    </div>
+</body>
+</html>

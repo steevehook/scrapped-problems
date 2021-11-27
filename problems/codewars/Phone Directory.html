@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Phone Directory</title>
+    <link rel="stylesheet" media="screen" href="css/style.css">
+</head>
+<body>
+    <div id="app">
+        <div class="w-full" id="shell">
+            <main id="shell_content">
+                <div class="w-full mt-2">
+                    <h2>Phone Directory</h2>
+                    <h2>Points: 5 kyu</h2>
+                    <a href="https://www.codewars.com/kata/56baeae7022c16dd7400086e"><h2>Kata ID: 56baeae7022c16dd7400086e</h2></a>
+                    <div class="w-full panel bg-ui-section">
+                        <div class="markdown prose max-w-5xl mx-auto" id="description">
+                            <p>John keeps a backup of his old personal phone book as a text file. On each line of the file
+he can find the phone number (formated as <code>+X-abc-def-ghij</code> where X stands for one or two digits), the corresponding name
+between <code>&lt;</code> and <code>&gt;</code> and the address. </p>
+<p>Unfortunately everything is mixed, things are not always in the same order; parts of lines are cluttered with non-alpha-numeric characters
+(except inside phone number and name).</p>
+<p>Examples of John's phone book lines:</p>
+<p><code>"/+1-541-754-3010 156 Alphand_St. &lt;J Steeve&gt;\n"</code></p>
+<p><code>" 133, Green, Rd. &lt;E Kustur&gt; NY-56423 ;+1-541-914-3010!\n"</code></p>
+<p><code>"&lt;Anastasia&gt; +48-421-674-8974 Via Quirinal Roma\n"</code></p>
+<p>Could you help John with a program that, given the lines of his phone book and a phone number <code>num</code>
+returns a string for this number : <code>"Phone =&gt; num, Name =&gt; name, Address =&gt; adress"</code></p>
+<h4 id="examples">Examples:</h4>
+<pre><code>s = "/+1-541-754-3010 156 Alphand_St. &lt;J Steeve&gt;\n 133, Green, Rd. &lt;E Kustur&gt; NY-56423 ;+1-541-914-3010!\n"
+
+phone(s, "1-541-754-3010") should return "Phone =&gt; 1-541-754-3010, Name =&gt; J Steeve, Address =&gt; 156 Alphand St."
+</code></pre>
+<ul>
+<li><p>It can happen that there are many people for a phone number <code>num</code>, then return : <code>"Error =&gt; Too many people: num"</code> </p>
+</li>
+<li><p>or it can happen that the number <code>num</code> is not in the phone book, in that case 
+return: <code>"Error =&gt; Not found: num"</code></p>
+</li>
+</ul>
+<h4 id="notes">Notes</h4>
+<ul>
+<li><p>Codewars stdout doesn't print part of a string when between <code>&lt;</code> and <code>&gt;</code></p>
+</li>
+<li><p>You can see other examples in the test cases.</p>
+</li>
+<li><p>JavaScript random tests completed by @matt c.</p>
+</li>
+</ul>
+                        </div>
+                    </div>
+                </div>
+            </main>
+        </div>
+    </div>
+</body>
+</html>

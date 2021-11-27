@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Ease the StockBroker</title>
+    <link rel="stylesheet" media="screen" href="css/style.css">
+</head>
+<body>
+    <div id="app">
+        <div class="w-full" id="shell">
+            <main id="shell_content">
+                <div class="w-full mt-2">
+                    <h2>Ease the StockBroker</h2>
+                    <h2>Points: 6 kyu</h2>
+                    <a href="https://www.codewars.com/kata/54de3257f565801d96001200"><h2>Kata ID: 54de3257f565801d96001200</h2></a>
+                    <div class="w-full panel bg-ui-section">
+                        <div class="markdown prose max-w-5xl mx-auto" id="description">
+                            <p>Clients place orders to a stockbroker as strings. The order can be simple or multiple or empty.</p>
+<p>  Type of a simple order: Quote/white-space/Quantity/white-space/Price/white-space/Status</p>
+<p>  where Quote is formed of non-whitespace character, 
+  Quantity is an int, 
+  Price a double (with mandatory decimal point "." ), 
+  Status is represented by the letter B (buy) or the letter S (sell).</p>
+<h4 id="example">Example:</h4>
+<p>  <code>"GOOG 300 542.0 B"</code></p>
+<p>  A multiple order is the concatenation of simple orders with a comma between each.</p>
+<h4 id="example-1">Example:</h4>
+<p>  <code>"ZNGA 1300 2.66 B, CLH15.NYM 50 56.32 B, OWW 1000 11.623 B, OGG 20 580.1 B"</code></p>
+<p>  or</p>
+<p>  <code>"ZNGA 1300 2.66 B,CLH15.NYM 50 56.32 B,OWW 1000 11.623 B,OGG 20 580.1 B"</code></p>
+<p>  To ease the stockbroker your task is to produce a string of type</p>
+<p><code>"Buy: b Sell: s"</code>
+  where b and s are 'double' 
+  formatted with no decimal, b representing the total price of bought stocks and s the total price of sold stocks.</p>
+<h4 id="example-2">Example:</h4>
+<p>  <code>"Buy: 294990 Sell: 0"</code></p>
+<p>  Unfortunately sometimes clients make mistakes. When you find mistakes in orders, you must pinpoint these badly formed orders
+  and produce a string of type:</p>
+<p>  <code>"Buy: b Sell: s; Badly formed nb: badly-formed 1st simple order ;badly-formed nth simple order ;"</code></p>
+<p>  where nb is the number of badly formed simple orders, b representing the total price of bought stocks
+  with correct simple order and s the total price of sold stocks with correct simple order.</p>
+<h4 id="examples">Examples:</h4>
+<p>  <code>"Buy: 263 Sell: 11802; Badly formed 2: CLH16.NYM 50 56 S ;OWW 1000 11 S ;"</code></p>
+<p>  <code>"Buy: 100 Sell: 56041; Badly formed 1: ZNGA 1300 2.66 ;"</code></p>
+<h4 id="notes">Notes:</h4>
+<ul>
+<li>If the order is empty, Buy is 0 and Sell is 0 hence the return is: "Buy: 0 Sell: 0".</li>
+<li>Due to Codewars whitespace differences will not always show up in test results.</li>
+<li>With Golang (and maybe others) you can use a format with "%.0f" for "Buy" and "Sell".</li>
+</ul>
+                        </div>
+                    </div>
+                </div>
+            </main>
+        </div>
+    </div>
+</body>
+</html>

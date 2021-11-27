@@ -1,0 +1,356 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>6 By 6 Skyscrapers</title>
+    <link rel="stylesheet" media="screen" href="css/style.css">
+</head>
+<body>
+    <div id="app">
+        <div class="w-full" id="shell">
+            <main id="shell_content">
+                <div class="w-full mt-2">
+                    <h2>6 By 6 Skyscrapers</h2>
+                    <h2>Points: 2 kyu</h2>
+                    <a href="https://www.codewars.com/kata/5679d5a3f2272011d700000d"><h2>Kata ID: 5679d5a3f2272011d700000d</h2></a>
+                    <div class="w-full panel bg-ui-section">
+                        <div class="markdown prose max-w-5xl mx-auto" id="description">
+                            <p>In a grid of 6 by 6 squares you want to place a skyscraper in each square with only some clues:</p>
+<ul>
+    <li>The height of the skyscrapers is between 1 and 6</li>
+    <li>No two skyscrapers in a row or column may have the same number of floors</li>
+    <li>A clue is the number of skyscrapers that you can see in a row or column from the outside</li>
+    <li>Higher skyscrapers block the view of lower skyscrapers located behind them</li>
+</ul>
+<br>
+Can you write a program that can solve each 6 by 6 puzzle?
+<br>
+<br>
+<b style="font-size:16px">Example:</b>
+<br>
+<br>
+To understand how the puzzle works, this is an example of a row with 2 clues. Seen from the left there are 6 buildings visible while seen from the right side only 1:
+<br>
+<br>
+<table>
+    <tbody><tr>
+        <td style="text-align:center;height:16px;">&nbsp;6</td>
+        <td style="text-align:center; border: solid 1px;height:16px;border-color:gray;">&nbsp;&nbsp;</td>
+        <td style="text-align:center; border: solid 1px;height:16px;border-color:gray;">&nbsp;&nbsp;</td>
+        <td style="text-align:center; border: solid 1px;height:16px;border-color:gray;">&nbsp;&nbsp;</td>
+        <td style="text-align:center; border: solid 1px;height:16px;border-color:gray;">&nbsp;&nbsp;</td>
+        <td style="text-align:center; border: solid 1px;height:16px;border-color:gray;">&nbsp;&nbsp;</td>
+        <td style="text-align:center; border: solid 1px;height:16px;border-color:gray;">&nbsp;&nbsp;</td>
+        <td style="text-align:center;height:16px;">&nbsp;1</td>
+    </tr>
+</tbody></table>
+<br>
+There is only one way in which the skyscrapers can be placed. From left-to-right all six buildings must be visible and no building may hide behind another building:
+<br>
+<br>
+<table>
+    <tbody><tr>
+        <td style="text-align:center;height:16px;">&nbsp;6</td>
+        <td style="text-align:center; border: solid 1px;height:16px;border-color:gray;">&nbsp;1</td>
+        <td style="text-align:center; border: solid 1px;height:16px;border-color:gray;">&nbsp;2</td>
+        <td style="text-align:center; border: solid 1px;height:16px;border-color:gray;">&nbsp;3</td>
+        <td style="text-align:center; border: solid 1px;height:16px;border-color:gray;">&nbsp;4</td>
+        <td style="text-align:center; border: solid 1px;height:16px;border-color:gray;">&nbsp;5</td>
+        <td style="text-align:center; border: solid 1px;height:16px;border-color:gray;">&nbsp;6</td>
+        <td style="text-align:center;height:16px;">&nbsp;1</td>
+    </tr>
+</tbody></table>
+<br>
+Example of a 6 by 6 puzzle with the solution:
+<br>
+<br>
+<table>
+    <tbody><tr>
+        <td style="text-align:center; border: 0px;height:16px;">&nbsp;&nbsp;</td>
+        <td style="text-align:center; border-bottom: solid 1px;height:16px;border-color:gray;">&nbsp;&nbsp;&nbsp;</td>
+        <td style="text-align:center; border-bottom: solid 1px;height:16px;border-color:gray;">&nbsp;&nbsp;&nbsp;</td>
+        <td style="text-align:center; border-bottom: solid 1px;height:16px;border-color:gray;">&nbsp;&nbsp;&nbsp;</td>
+        <td style="text-align:center; border-bottom: solid 1px;height:16px;border-color:gray;"> 2</td>
+        <td style="text-align:center; border-bottom: solid 1px;height:16px;border-color:gray;"> 2</td>
+        <td style="text-align:center; border-bottom: solid 1px;height:16px;border-color:gray;">&nbsp;&nbsp;&nbsp;</td>
+        <td style="text-align:center; border: 0px;height:16px;">&nbsp;&nbsp;</td>
+    </tr>
+    <tr>
+        <td style="text-align:center; border: 0px;height:16px;">&nbsp;&nbsp;</td>
+        <td style="text-align:center; border: solid 1px;height:16px;border-color:gray;">&nbsp;&nbsp;</td>
+        <td style="text-align:center; border: solid 1px;height:16px;border-color:gray;">&nbsp;&nbsp;</td>
+        <td style="text-align:center; border: solid 1px;height:16px;border-color:gray;">&nbsp;&nbsp;</td>
+        <td style="text-align:center; border: solid 1px;height:16px;border-color:gray;">&nbsp;&nbsp;</td>
+        <td style="text-align:center; border: solid 1px;height:16px;border-color:gray;">&nbsp;&nbsp;</td>
+        <td style="text-align:center; border: solid 1px;height:16px;border-color:gray;">&nbsp;&nbsp;</td>
+        <td style="text-align:center; border: 0px;height:16px;">&nbsp;&nbsp;</td>
+    </tr>
+    <tr>
+        <td style="text-align:center; border: 0px;height:16px;">&nbsp;&nbsp;</td>
+        <td style="text-align:center; border: solid 1px;height:16px;border-color:gray;">&nbsp;&nbsp;</td>
+        <td style="text-align:center; border: solid 1px;height:16px;border-color:gray;">&nbsp;&nbsp;</td>
+        <td style="text-align:center; border: solid 1px;height:16px;border-color:gray;">&nbsp;&nbsp;</td>
+        <td style="text-align:center; border: solid 1px;height:16px;border-color:gray;">&nbsp;&nbsp;</td>
+        <td style="text-align:center; border: solid 1px;height:16px;border-color:gray;">&nbsp;&nbsp;</td>
+        <td style="text-align:center; border: solid 1px;height:16px;border-color:gray;">&nbsp;&nbsp;</td>
+        <td style="text-align:center; border: 0px;height:16px;">&nbsp;&nbsp;</td>
+    </tr>
+    <tr>
+        <td style="text-align:center; border: 0px;height:16px;">&nbsp;3</td>
+        <td style="text-align:center; border: solid 1px;height:16px;border-color:gray;">&nbsp;&nbsp;</td>
+        <td style="text-align:center; border: solid 1px;height:16px;border-color:gray;">&nbsp;&nbsp;</td>
+        <td style="text-align:center; border: solid 1px;height:16px;border-color:gray;">&nbsp;&nbsp;</td>
+        <td style="text-align:center; border: solid 1px;height:16px;border-color:gray;">&nbsp;&nbsp;</td>
+        <td style="text-align:center; border: solid 1px;height:16px;border-color:gray;">&nbsp;&nbsp;</td>
+        <td style="text-align:center; border: solid 1px;height:16px;border-color:gray;">&nbsp;&nbsp;</td>
+        <td style="text-align:center; border: 0px;height:16px;">&nbsp;&nbsp;</td>
+    </tr>
+    <tr>
+        <td style="text-align:center; border: 0px;height:16px;">&nbsp;&nbsp;</td>
+        <td style="text-align:center; border: solid 1px;height:16px;border-color:gray;">&nbsp;&nbsp;</td>
+        <td style="text-align:center; border: solid 1px;height:16px;border-color:gray;">&nbsp;&nbsp;</td>
+        <td style="text-align:center; border: solid 1px;height:16px;border-color:gray;">&nbsp;&nbsp;</td>
+        <td style="text-align:center; border: solid 1px;height:16px;border-color:gray;">&nbsp;&nbsp;</td>
+        <td style="text-align:center; border: solid 1px;height:16px;border-color:gray;">&nbsp;&nbsp;</td>
+        <td style="text-align:center; border: solid 1px;height:16px;border-color:gray;">&nbsp;&nbsp;</td>
+        <td style="text-align:center; border: 0px;height:16px;">&nbsp;6</td>
+    </tr>
+    <tr>
+        <td style="text-align:center; border: 0px;height:16px;">&nbsp;4</td>
+        <td style="text-align:center; border: solid 1px;height:16px;border-color:gray;">&nbsp;&nbsp;</td>
+        <td style="text-align:center; border: solid 1px;height:16px;border-color:gray;">&nbsp;&nbsp;</td>
+        <td style="text-align:center; border: solid 1px;height:16px;border-color:gray;">&nbsp;&nbsp;</td>
+        <td style="text-align:center; border: solid 1px;height:16px;border-color:gray;">&nbsp;&nbsp;</td>
+        <td style="text-align:center; border: solid 1px;height:16px;border-color:gray;">&nbsp;&nbsp;</td>
+        <td style="text-align:center; border: solid 1px;height:16px;border-color:gray;">&nbsp;&nbsp;</td>
+        <td style="text-align:center; border: 0px;height:16px;">&nbsp;3</td>
+    </tr>
+    <tr>
+        <td style="text-align:center; border: 0px;height:16px;">&nbsp;4</td>
+        <td style="text-align:center; border: solid 1px;height:16px;border-color:gray;">&nbsp;&nbsp;</td>
+        <td style="text-align:center; border: solid 1px;height:16px;border-color:gray;">&nbsp;&nbsp;</td>
+        <td style="text-align:center; border: solid 1px;height:16px;border-color:gray;">&nbsp;&nbsp;</td>
+        <td style="text-align:center; border: solid 1px;height:16px;border-color:gray;">&nbsp;&nbsp;</td>
+        <td style="text-align:center; border: solid 1px;height:16px;border-color:gray;">&nbsp;&nbsp;</td>
+        <td style="text-align:center; border: solid 1px;height:16px;border-color:gray;">&nbsp;&nbsp;</td>
+        <td style="text-align:center; border: 0px;height:16px;">&nbsp;&nbsp;</td>
+    </tr>
+    <tr>
+        <td style="text-align:center; border: 0px;height:16px;">&nbsp;&nbsp;</td>
+        <td style="height:16px;">&nbsp;&nbsp;</td>
+        <td style="height:16px;">&nbsp;&nbsp;</td>
+        <td style="height:16px;">&nbsp;&nbsp;</td>
+        <td style="height:16px;">&nbsp;&nbsp;</td>
+        <td style="text-align:center;height:16px;"> 4</td>
+        <td style="height:16px;">&nbsp;&nbsp;</td>
+        <td style="text-align:center; border: 0px;height:16px;">&nbsp;&nbsp;</td>
+    </tr>
+</tbody></table>
+<br>
+<table>
+    <tbody><tr>
+        <td style="text-align:center; border: 0px;height:16px;">&nbsp;&nbsp;</td>
+        <td style="text-align:center; border-bottom: solid 1px;height:16px;border-color:gray;">&nbsp;&nbsp;</td>
+        <td style="text-align:center; border-bottom: solid 1px;height:16px;border-color:gray;">&nbsp;&nbsp;</td>
+        <td style="text-align:center; border-bottom: solid 1px;height:16px;border-color:gray;">&nbsp;&nbsp;</td>
+        <td style="text-align:center; border-bottom: solid 1px;height:16px;border-color:gray;">&nbsp;2</td>
+        <td style="text-align:center; border-bottom: solid 1px;height:16px;border-color:gray;">&nbsp;2</td>
+        <td style="text-align:center; border-bottom: solid 1px;height:16px;border-color:gray;">&nbsp;&nbsp;</td>
+        <td style="text-align:center; border: 0px;height:16px;">&nbsp;&nbsp;</td>
+    </tr>
+    <tr>
+        <td style="text-align:center; border: 0px;height:16px;">&nbsp;&nbsp;</td>
+        <td style="text-align:center; border: solid 1px;height:16px;border-color:gray;">&nbsp;5</td>
+        <td style="text-align:center; border: solid 1px;height:16px;border-color:gray;">&nbsp;6</td>
+        <td style="text-align:center; border: solid 1px;height:16px;border-color:gray;">&nbsp;1</td>
+        <td style="text-align:center; border: solid 1px;height:16px;border-color:gray;">&nbsp;4</td>
+        <td style="text-align:center; border: solid 1px;height:16px;border-color:gray;">&nbsp;3</td>
+        <td style="text-align:center; border: solid 1px;height:16px;border-color:gray;">&nbsp;2</td>
+        <td style="text-align:center; border: 0px;height:16px;">&nbsp;&nbsp;</td>
+    </tr>
+    <tr>
+        <td style="text-align:center; border: 0px;height:16px;">&nbsp;&nbsp;</td>
+        <td style="text-align:center; border: solid 1px;height:16px;border-color:gray;">&nbsp;4</td>
+        <td style="text-align:center; border: solid 1px;height:16px;border-color:gray;">&nbsp;1</td>
+        <td style="text-align:center; border: solid 1px;height:16px;border-color:gray;">&nbsp;3</td>
+        <td style="text-align:center; border: solid 1px;height:16px;border-color:gray;">&nbsp;2</td>
+        <td style="text-align:center; border: solid 1px;height:16px;border-color:gray;">&nbsp;6</td>
+        <td style="text-align:center; border: solid 1px;height:16px;border-color:gray;">&nbsp;5</td>
+        <td style="text-align:center; border: 0px;height:16px;">&nbsp;&nbsp;</td>
+    </tr>
+    <tr>
+        <td style="text-align:center; border: 0px;height:16px;">&nbsp;3</td>
+        <td style="text-align:center; border: solid 1px;height:16px;border-color:gray;">&nbsp;2</td>
+        <td style="text-align:center; border: solid 1px;height:16px;border-color:gray;">&nbsp;3</td>
+        <td style="text-align:center; border: solid 1px;height:16px;border-color:gray;">&nbsp;6</td>
+        <td style="text-align:center; border: solid 1px;height:16px;border-color:gray;">&nbsp;1</td>
+        <td style="text-align:center; border: solid 1px;height:16px;border-color:gray;">&nbsp;5</td>
+        <td style="text-align:center; border: solid 1px;height:16px;border-color:gray;">&nbsp;4</td>
+        <td style="text-align:center; border: 0px;height:16px;">&nbsp;&nbsp;</td>
+    </tr>
+    <tr>
+        <td style="text-align:center; border: 0px;height:16px;">&nbsp;&nbsp;</td>
+        <td style="text-align:center; border: solid 1px;height:16px;border-color:gray;">&nbsp;6</td>
+        <td style="text-align:center; border: solid 1px;height:16px;border-color:gray;">&nbsp;5</td>
+        <td style="text-align:center; border: solid 1px;height:16px;border-color:gray;">&nbsp;4</td>
+        <td style="text-align:center; border: solid 1px;height:16px;border-color:gray;">&nbsp;3</td>
+        <td style="text-align:center; border: solid 1px;height:16px;border-color:gray;">&nbsp;2</td>
+        <td style="text-align:center; border: solid 1px;height:16px;border-color:gray;">&nbsp;1</td>
+        <td style="text-align:center; border: 0px;height:16px;">&nbsp;6</td>
+    </tr>
+    <tr>
+        <td style="text-align:center; border: 0px;height:16px;">&nbsp;4</td>
+        <td style="text-align:center; border: solid 1px;height:16px;border-color:gray;">&nbsp;1</td>
+        <td style="text-align:center; border: solid 1px;height:16px;border-color:gray;">&nbsp;2</td>
+        <td style="text-align:center; border: solid 1px;height:16px;border-color:gray;">&nbsp;5</td>
+        <td style="text-align:center; border: solid 1px;height:16px;border-color:gray;">&nbsp;6</td>
+        <td style="text-align:center; border: solid 1px;height:16px;border-color:gray;">&nbsp;4</td>
+        <td style="text-align:center; border: solid 1px;height:16px;border-color:gray;">&nbsp;3</td>
+        <td style="text-align:center; border: 0px;height:16px;">&nbsp;3</td>
+    </tr>
+    <tr>
+        <td style="text-align:center; border: 0px;height:16px;">&nbsp;4</td>
+        <td style="text-align:center; border: solid 1px;height:16px;border-color:gray;">&nbsp;3</td>
+        <td style="text-align:center; border: solid 1px;height:16px;border-color:gray;">&nbsp;4</td>
+        <td style="text-align:center; border: solid 1px;height:16px;border-color:gray;">&nbsp;2</td>
+        <td style="text-align:center; border: solid 1px;height:16px;border-color:gray;">&nbsp;5</td>
+        <td style="text-align:center; border: solid 1px;height:16px;border-color:gray;">&nbsp;1</td>
+        <td style="text-align:center; border: solid 1px;height:16px;border-color:gray;">&nbsp;6</td>
+        <td style="text-align:center; border: 0px;height:16px;">&nbsp;&nbsp;</td>
+    </tr>
+    <tr>
+        <td style="text-align:center; border: 0px;height:16px;">&nbsp;&nbsp;</td>
+        <td style="height:16px;">&nbsp;&nbsp;</td>
+        <td style="height:16px;">&nbsp;&nbsp;</td>
+        <td style="height:16px;">&nbsp;&nbsp;</td>
+        <td style="height:16px;">&nbsp;&nbsp;</td>
+        <td style="text-align:center;height:16px;"> 4</td>
+        <td style="height:16px;">&nbsp;&nbsp;</td>
+        <td style="text-align:center; border: 0px;height:16px;">&nbsp;&nbsp;</td>
+    </tr>
+</tbody></table>
+<br>
+<b style="font-size:16px">Task:</b>
+<br>
+<br>
+
+<ul>
+    <li>Finish:</li>
+</ul>
+
+<pre style="display: none;"><code class="language-javascript"><span class="cm-keyword">function</span> <span class="cm-def">solvePuzzle</span>(<span class="cm-def">clues</span>)
+</code></pre>
+<pre><code class="language-csharp"><span class="cm-keyword">public</span> <span class="cm-keyword">static</span> <span class="cm-type">int</span>[][] <span class="cm-def">SolvePuzzle</span>(<span class="cm-type">int</span>[] <span class="cm-variable">clues</span>)
+</code></pre>
+<pre style="display: none;"><code class="language-java"><span class="cm-keyword">public</span> <span class="cm-keyword">static</span> <span class="cm-type">int</span>[][] <span class="cm-def">solvePuzzle</span>(<span class="cm-type">int</span>[] <span class="cm-variable">clues</span>)
+</code></pre>
+<pre style="display: none;"><code class="language-c"><span class="cm-type">int</span> <span class="cm-type">*</span><span class="cm-type">*</span><span class="cm-def">SolvePuzzle</span>(<span class="cm-type">int</span> <span class="cm-type">*</span><span class="cm-variable">clues</span>);
+</code></pre>
+<pre style="display: none;"><code class="language-cpp"><span class="cm-variable">std::vector</span><span class="cm-operator">&lt;</span><span class="cm-variable">std::vector</span><span class="cm-operator">&lt;</span><span class="cm-type">int</span><span class="cm-operator">&gt;&gt;</span> <span class="cm-def">SolvePuzzle</span>(<span class="cm-keyword">const</span> <span class="cm-variable">std::vector</span><span class="cm-operator">&lt;</span><span class="cm-type">int</span><span class="cm-operator">&gt;</span> <span class="cm-operator">&amp;</span><span class="cm-variable">clues</span>);
+</code></pre>
+<pre style="display: none;"><code class="language-clojure"><span class="cm-bracket">(</span><span class="cm-keyword">defn</span> <span class="cm-variable">solve-puzzle</span> <span class="cm-bracket">[</span><span class="cm-variable">clues</span><span class="cm-bracket">]</span><span class="cm-bracket">)</span>
+</code></pre>
+<pre style="display: none;"><code class="language-fsharp"><span class="cm-variable">solvePuzzle</span> (<span class="cm-variable">clues</span> <span class="cm-operator">:</span> <span class="cm-builtin">int</span>[]) <span class="cm-operator">:</span> <span class="cm-builtin">int</span>[][]
+</code></pre>
+<ul>
+    <li>
+        Pass the clues in an array of 24 items. The clues are in the array around the clock. Index:
+        <br>
+        <table>
+            <tbody><tr>
+                <td style="text-align:center; border: 0px;height:16px;">&nbsp;&nbsp;</td>
+                <td style="text-align:center; border-bottom: solid 1px;height:16px;border-color:gray;">&nbsp;0</td>
+                <td style="text-align:center; border-bottom: solid 1px;height:16px;border-color:gray;">&nbsp;1</td>
+                <td style="text-align:center; border-bottom: solid 1px;height:16px;border-color:gray;">&nbsp;2</td>
+                <td style="text-align:center; border-bottom: solid 1px;height:16px;border-color:gray;">&nbsp;3</td>
+                <td style="text-align:center; border-bottom: solid 1px;height:16px;border-color:gray;">&nbsp;4</td>
+                <td style="text-align:center; border-bottom: solid 1px;height:16px;border-color:gray;">&nbsp;5</td>
+                <td style="text-align:center; border: 0px;height:16px;">&nbsp;&nbsp;</td>
+            </tr>
+            <tr>
+                <td style="text-align:center; border: 0px;height:16px;">&nbsp;23</td>
+                <td style="text-align:center; border: solid 1px;height:16px;border-color:gray;">&nbsp;&nbsp;</td>
+                <td style="text-align:center; border: solid 1px;height:16px;border-color:gray;">&nbsp;&nbsp;</td>
+                <td style="text-align:center; border: solid 1px;height:16px;border-color:gray;">&nbsp;&nbsp;</td>
+                <td style="text-align:center; border: solid 1px;height:16px;border-color:gray;">&nbsp;&nbsp;</td>
+                <td style="text-align:center; border: solid 1px;height:16px;border-color:gray;">&nbsp;&nbsp;</td>
+                <td style="text-align:center; border: solid 1px;height:16px;border-color:gray;">&nbsp;&nbsp;</td>
+                <td style="text-align:center; border: 0px;height:16px;">&nbsp;6</td>
+            </tr>
+            <tr>
+                <td style="text-align:center; border: 0px;height:16px;">&nbsp;22</td>
+                <td style="text-align:center; border: solid 1px;height:16px;border-color:gray;">&nbsp;&nbsp;</td>
+                <td style="text-align:center; border: solid 1px;height:16px;border-color:gray;">&nbsp;&nbsp;</td>
+                <td style="text-align:center; border: solid 1px;height:16px;border-color:gray;">&nbsp;&nbsp;</td>
+                <td style="text-align:center; border: solid 1px;height:16px;border-color:gray;">&nbsp;&nbsp;</td>
+                <td style="text-align:center; border: solid 1px;height:16px;border-color:gray;">&nbsp;&nbsp;</td>
+                <td style="text-align:center; border: solid 1px;height:16px;border-color:gray;">&nbsp;&nbsp;</td>
+                <td style="text-align:center; border: 0px;height:16px;">&nbsp;7</td>
+            </tr>
+            <tr>
+                <td style="text-align:center; border: 0px;height:16px;">&nbsp;21</td>
+                <td style="text-align:center; border: solid 1px;height:16px;border-color:gray;">&nbsp;&nbsp;</td>
+                <td style="text-align:center; border: solid 1px;height:16px;border-color:gray;">&nbsp;&nbsp;</td>
+                <td style="text-align:center; border: solid 1px;height:16px;border-color:gray;">&nbsp;&nbsp;</td>
+                <td style="text-align:center; border: solid 1px;height:16px;border-color:gray;">&nbsp;&nbsp;</td>
+                <td style="text-align:center; border: solid 1px;height:16px;border-color:gray;">&nbsp;&nbsp;</td>
+                <td style="text-align:center; border: solid 1px;height:16px;border-color:gray;">&nbsp;&nbsp;</td>
+                <td style="text-align:center; border: 0px;height:16px;">&nbsp;8</td>
+            </tr>
+            <tr>
+                <td style="text-align:center; border: 0px;height:16px;">&nbsp;20</td>
+                <td style="text-align:center; border: solid 1px;height:16px;border-color:gray;">&nbsp;&nbsp;</td>
+                <td style="text-align:center; border: solid 1px;height:16px;border-color:gray;">&nbsp;&nbsp;</td>
+                <td style="text-align:center; border: solid 1px;height:16px;border-color:gray;">&nbsp;&nbsp;</td>
+                <td style="text-align:center; border: solid 1px;height:16px;border-color:gray;">&nbsp;&nbsp;</td>
+                <td style="text-align:center; border: solid 1px;height:16px;border-color:gray;">&nbsp;&nbsp;</td>
+                <td style="text-align:center; border: solid 1px;height:16px;border-color:gray;">&nbsp;&nbsp;</td>
+                <td style="text-align:center; border: 0px;height:16px;">&nbsp;9</td>
+            </tr>
+            <tr>
+                <td style="text-align:center; border: 0px;height:16px;">&nbsp;19</td>
+                <td style="text-align:center; border: solid 1px;height:16px;border-color:gray;">&nbsp;&nbsp;</td>
+                <td style="text-align:center; border: solid 1px;height:16px;border-color:gray;">&nbsp;&nbsp;</td>
+                <td style="text-align:center; border: solid 1px;height:16px;border-color:gray;">&nbsp;&nbsp;</td>
+                <td style="text-align:center; border: solid 1px;height:16px;border-color:gray;">&nbsp;&nbsp;</td>
+                <td style="text-align:center; border: solid 1px;height:16px;border-color:gray;">&nbsp;&nbsp;</td>
+                <td style="text-align:center; border: solid 1px;height:16px;border-color:gray;">&nbsp;&nbsp;</td>
+                <td style="text-align:center; border: 0px;height:16px;">&nbsp;10</td>
+            </tr>
+            <tr>
+                <td style="text-align:center; border: 0px;height:16px;">&nbsp;18</td>
+                <td style="text-align:center; border: solid 1px;height:16px;border-color:gray;">&nbsp;&nbsp;</td>
+                <td style="text-align:center; border: solid 1px;height:16px;border-color:gray;">&nbsp;&nbsp;</td>
+                <td style="text-align:center; border: solid 1px;height:16px;border-color:gray;">&nbsp;&nbsp;</td>
+                <td style="text-align:center; border: solid 1px;height:16px;border-color:gray;">&nbsp;&nbsp;</td>
+                <td style="text-align:center; border: solid 1px;height:16px;border-color:gray;">&nbsp;&nbsp;</td>
+                <td style="text-align:center; border: solid 1px;height:16px;border-color:gray;">&nbsp;&nbsp;</td>
+                <td style="text-align:center; border: 0px;height:16px;">&nbsp;11</td>
+            </tr>
+            <tr>
+                <td style="text-align:center; border: 0px;height:16px;">&nbsp;&nbsp;</td>
+                <td style="text-align:center;'height:16px;'">17</td>
+                <td style="text-align:center;height:16px;">16</td>
+                <td style="text-align:center;height:16px;">15</td>
+                <td style="text-align:center;height:16px;">14</td>
+                <td style="text-align:center;height:16px;">13</td>
+                <td style="text-align:center;height:16px;">12</td>
+                <td style="text-align:center; border: 0px;height:16px;">&nbsp;&nbsp;</td>
+            </tr>
+        </tbody></table>
+    </li>
+    <li>If no clue is available, add value `0`</li>
+    <li>Each puzzle has only one possible solution</li>
+    <li>`SolvePuzzle()` returns matrix `int[][]`. The first indexer is for the row, the second indexer for the column. Python returns a 6-tuple of 6-tuples, Ruby a 6-Array of 6-Arrays.</li>
+</ul>
+                        </div>
+                    </div>
+                </div>
+            </main>
+        </div>
+    </div>
+</body>
+</html>

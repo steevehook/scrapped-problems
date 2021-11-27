@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>John and Ann sign up for Codewars</title>
+    <link rel="stylesheet" media="screen" href="css/style.css">
+</head>
+<body>
+    <div id="app">
+        <div class="w-full" id="shell">
+            <main id="shell_content">
+                <div class="w-full mt-2">
+                    <h2>John and Ann sign up for Codewars</h2>
+                    <h2>Points: 5 kyu</h2>
+                    <a href="https://www.codewars.com/kata/57591ef494aba64d14000526"><h2>Kata ID: 57591ef494aba64d14000526</h2></a>
+                    <div class="w-full panel bg-ui-section">
+                        <div class="markdown prose max-w-5xl mx-auto" id="description">
+                            <p>John and his wife Ann have decided to go to Codewars. </p>
+<p>On first day Ann will do one kata and John - he wants to know how it is working - 0 kata.</p>
+<p>Let us call <code>a(n)</code> - and <code>j(n)</code> - the number of katas done by Ann - and John - at day <code>n</code>. We have <code>a(0) = 1</code> and in the same manner <code>j(0) = 0</code>.</p>
+<p>They have chosen the following rules:</p>
+<ul>
+<li><p>On day <code>n</code> the number of katas done by Ann should be <code>n</code> minus the number of katas done by John at day <code>t</code>, <code>t</code> being equal to the number of katas done
+by Ann herself at day <code>n - 1</code>.</p>
+</li>
+<li><p>On day <code>n</code> the number of katas done by John should be <code>n</code> minus the number of katas done by Ann at day <code>t</code>, <code>t</code> being equal to the number of katas done
+by John himself at day <code>n - 1</code>.</p>
+</li>
+</ul>
+<p>Whoops! I think they need to lay out a little clearer exactly what there're getting themselves into!</p>
+<h4 id="could-you-write">Could you write:</h4>
+<ul>
+<li><ol>
+<li>two functions <code>ann</code> and <code>john (parameter n)</code> giving the list of the numbers of katas Ann and John should take on the first n days (see first examples below)? </li>
+</ol>
+</li>
+<li><ol start="2">
+<li>The total number of katas taken by ann <code>function sum_ann(n)</code> and john <code>function sum_john(n)</code> - on the first n days? </li>
+</ol>
+</li>
+</ul>
+<p>The functions in 1) are not tested in Fortran and not tested in Shell.</p>
+<h4 id="examples">Examples:</h4>
+<pre><code>john(11) --&gt;  [0, 0, 1, 2, 2, 3, 4, 4, 5, 6, 6]
+ann(6) --&gt;  [1, 1, 2, 2, 3, 3]
+
+sum_john(75) --&gt;  1720
+sum_ann(150) --&gt;  6930
+</code></pre>
+<h4 id="shell-note">Shell Note:</h4>
+<p>sumJohnAndAnn has two parameters:</p>
+<ul>
+<li><p>first one : n (number of days, $1)</p>
+</li>
+<li><p>second one : which($2) -&gt;</p>
+</li>
+<li><p>1 for getting John's sum</p>
+</li>
+<li><p>2 for getting Ann's sum.</p>
+</li>
+</ul>
+<p>See "Sample Tests".</p>
+<h4 id="note">Note:</h4>
+<p>Keep an eye on performance.</p>
+                        </div>
+                    </div>
+                </div>
+            </main>
+        </div>
+    </div>
+</body>
+</html>

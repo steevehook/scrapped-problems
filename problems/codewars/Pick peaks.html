@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Pick peaks</title>
+    <link rel="stylesheet" media="screen" href="css/style.css">
+</head>
+<body>
+    <div id="app">
+        <div class="w-full" id="shell">
+            <main id="shell_content">
+                <div class="w-full mt-2">
+                    <h2>Pick peaks</h2>
+                    <h2>Points: 5 kyu</h2>
+                    <a href="https://www.codewars.com/kata/5279f6fe5ab7f447890006a7"><h2>Kata ID: 5279f6fe5ab7f447890006a7</h2></a>
+                    <div class="w-full panel bg-ui-section">
+                        <div class="markdown prose max-w-5xl mx-auto" id="description">
+                            <p>In this kata, you will write a function that returns the positions and the values of the "peaks" (or local maxima) of a numeric array.</p>
+<p>For example, the array <code>arr = [0, 1, 2, 5, 1, 0]</code> has a peak at position <code>3</code> with a value of <code>5</code> (since <code>arr[3]</code> equals <code>5</code>).</p>
+<p>The output will be returned as an object with two properties: pos and peaks. Both of these properties should be arrays. If there is no peak in the given array, then the output should be <code>{pos: [], peaks: []}</code>.</p>
+<p>Example: <code>pickPeaks([3, 2, 3, 6, 4, 1, 2, 3, 2, 1, 2, 3])</code> should return <code>{pos: [3, 7], peaks: [6, 3]}</code> (or equivalent in other languages)</p>
+<p>All input arrays will be valid integer arrays (although it could still be empty), so you won't need to validate the input.</p>
+<p>The first and last elements of the array will not be considered as peaks (in the context of a mathematical function, we don't know what is after and before and therefore, we don't know if it is a peak or not).</p>
+<p>Also, beware of plateaus !!! <code>[1, 2, 2, 2, 1]</code> has a peak while <code>[1, 2, 2, 2, 3]</code> and <code>[1, 2, 2, 2, 2]</code> do not. In case of a plateau-peak, please only return the position and value of the beginning of the plateau. For example: 
+<code>pickPeaks([1, 2, 2, 2, 1])</code> returns <code>{pos: [1], peaks: [2]}</code> (or equivalent in other languages)</p>
+<p>Have fun!</p>
+                        </div>
+                    </div>
+                </div>
+            </main>
+        </div>
+    </div>
+</body>
+</html>

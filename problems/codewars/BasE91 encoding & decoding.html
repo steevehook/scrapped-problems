@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>BasE91 encoding & decoding</title>
+    <link rel="stylesheet" media="screen" href="css/style.css">
+</head>
+<body>
+    <div id="app">
+        <div class="w-full" id="shell">
+            <main id="shell_content">
+                <div class="w-full mt-2">
+                    <h2>BasE91 encoding & decoding</h2>
+                    <h2>Points: 4 kyu</h2>
+                    <a href="https://www.codewars.com/kata/58a57c6bcebc069d7e0001fe"><h2>Kata ID: 58a57c6bcebc069d7e0001fe</h2></a>
+                    <div class="w-full panel bg-ui-section">
+                        <div class="markdown prose max-w-5xl mx-auto" id="description">
+                            <p><a href="http://base91.sourceforge.net/" target="_blank">BasE91</a> is a method for encoding binary as ASCII characters. It is more efficient than Base64 and needs 91 characters to represent the encoded data.</p>
+<p>The following ASCII charakters are used:</p>
+<pre><code>'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789'
+'!#$%&amp;()*+,./:;&lt;=&gt;?@[]^_`{|}~"'
+</code></pre>
+<p>Create two functions that encode strings to basE91 string and decodes the other way round. </p>
+<pre><code>b91encode('test') = 'fPNKd'
+b91decode('fPNKd') = 'test'
+
+b91decode('&gt;OwJh&gt;Io0Tv!8PE') = 'Hello World!'
+b91encode('Hello World!') = '&gt;OwJh&gt;Io0Tv!8PE'
+</code></pre>
+<p>Input strings are valid.</p>
+                        </div>
+                    </div>
+                </div>
+            </main>
+        </div>
+    </div>
+</body>
+</html>
